@@ -1,4 +1,3 @@
-import { join } from 'path'
 import { InferGetStaticPropsType, NextPage } from 'next'
 import { globby } from 'globby'
 import * as fs from 'fs'
