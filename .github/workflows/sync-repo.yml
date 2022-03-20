@@ -1,0 +1,19 @@
+name: send-target-updated-events
+on:
+  push:
+    branches:
+      - master
+jobs:
+  send-target-updated-events:
+    strategy:
+      matrix:
+        repo: ['pilefort/blog']
+    name: send target updated events
+    runs-on: ubuntu-latest
+    steps:
+      - name: send target updated events
+        uses: peter-evans/repository-dispatch@v1
+        with:
+          token: ${{ secrets.PILEFORT_BLOG_ACCESS_TOKEN }}
+          repository: ${{ matrix.repo }}
+          event-type: target-updated
