@@ -1,6 +1,9 @@
 module.exports = {
   content: ['./pages/**/*.{js,ts,jsx,tsx}', './src/components/**/*.{js,ts,jsx,tsx}'],
   theme: {
+    screens: {
+      lg: '900px',
+    },
     extend: {
       animation: {
         fadeIn: 'fadeIn 0.5s ease-in forwards',
