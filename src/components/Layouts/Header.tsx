@@ -2,8 +2,34 @@ import AccordionOpenIcon from '../../../public/assets/AccordionOpen.svg'
 import AccordionCloseIcon from '../../../public/assets/AccordionClose.svg'
 import Image from 'next/image'
 import { useState, MouseEventHandler } from 'react'
+import { useMediaQuery } from 'react-responsive'
 
 const Header = () => {
+  const isDesktop = useMediaQuery({
+    query: '(min-width: 900px)',
+  })
+
+  return <div>{isDesktop ? <DesktopHeader /> : <SPHeader />}</div>
+}
+
+const DesktopHeader = () => {
+  return (
+    <>
+      <div className="flex h-[80px] items-center justify-between p-[16px] pr-[24px]">
+        <div className="text-[36px] text-[#104359]">Pilefort</div>
+        <div className="flex items-center text-[32px] text-[#104359]">
+          <div>Notes</div>
+          <div className="ml-[24px]">Scraps</div>
+          <div className="ml-[24px]">Snippets</div>
+          <div className="ml-[24px]">Works</div>
+        </div>
+      </div>
+      <hr className={'border-t-[4px] border-[#104359]'} />
+    </>
+  )
+}
+
+const SPHeader = () => {
   const [toggleClass, setToggleClass] = useState('hidden')
   const setToggleCloseClass = () => setToggleClass('animate-slideOut')
   const setToggleOpenClass = () => setToggleClass('animate-slideIn block')
@@ -17,7 +43,7 @@ const Header = () => {
         />
       }
       <div className="flex h-[35px] items-center justify-between p-[8px]">
-        <div className="text-[16px] text-[#104359]">Pilefort</div>
+        <div className="text-[24px] text-[#104359]">Pilefort</div>
         <div onClick={setToggleOpenClass}>
           <Image
             src={AccordionOpenIcon}
