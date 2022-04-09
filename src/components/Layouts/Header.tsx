@@ -10,11 +10,19 @@ const Header = () => {
 
   return (
     <>
-      {<ToggleMenu toggleClass={toggleClass} setToggleCloseClass={setToggleCloseClass} />}
+      {
+        <ToggleMenu
+          toggleClass={toggleClass}
+          setToggleCloseClass={setToggleCloseClass}
+        />
+      }
       <div className="flex h-[35px] items-center justify-between p-[8px]">
         <div className="text-[16px] text-[#104359]">Pilefort</div>
         <div onClick={setToggleOpenClass}>
-          <Image src={AccordionOpenIcon} alt={'toggle open'} />
+          <Image
+            src={AccordionOpenIcon}
+            alt={'toggle open'}
+          />
         </div>
       </div>
       <hr className={'border-[2px] border-[#104359]'} />
@@ -25,8 +33,14 @@ const Header = () => {
 const ToggleMenu = ({ toggleClass, setToggleCloseClass }: { toggleClass: string; setToggleCloseClass: MouseEventHandler<HTMLDivElement> }) => {
   return (
     <div className={`fixed right-0 z-10 h-[100vh] w-[108px] ${toggleClass} bg-[#104359]`}>
-      <div className="absolute right-0 p-[8px]" onClick={setToggleCloseClass}>
-        <Image src={AccordionCloseIcon} alt={'toggle close'} />
+      <div
+        className="absolute right-0 p-[8px]"
+        onClick={setToggleCloseClass}
+      >
+        <Image
+          src={AccordionCloseIcon}
+          alt={'toggle close'}
+        />
       </div>
       <div className="flex h-[95%] flex-col justify-between p-[8px]">
         <div>
