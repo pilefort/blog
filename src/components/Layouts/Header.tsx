@@ -1,20 +1,37 @@
 import AccordionOpenIcon from '../../../public/assets/AccordionOpen.svg'
 import AccordionCloseIcon from '../../../public/assets/AccordionClose.svg'
 import Image from 'next/image'
-import { useState, MouseEventHandler } from 'react'
+import { useState, MouseEventHandler, useEffect } from 'react'
 import { useMediaQuery } from 'react-responsive'
+import { useRouter } from 'next/router'
 
 const Header = () => {
-  const isDesktop = useMediaQuery({
-    query: '(min-width: 900px)',
-  })
+  const router = useRouter()
+  const [isDesktop, setIsDesktop] = useState(true)
 
-  return <div>{isDesktop ? <DesktopHeader /> : <SPHeader />}</div>
+  useEffect(() => {
+    if (!router.isReady) return
+
+    window.innerWidth >= 900 ? setIsDesktop(true) : setIsDesktop(false)
+  }, [router.isReady])
+
+  return (
+    <div>
+      {isDesktop ? (
+        <>
+          <DesktopHeader />
+          <SPHeader />
+        </>
+      ) : (
+        <SPHeader />
+      )}
+    </div>
+  )
 }
 
 const DesktopHeader = () => {
   return (
-    <>
+    <div className="hidden lg:block">
       <div className="flex h-[80px] items-center justify-between p-[16px] pr-[24px]">
         <div className="text-[36px] text-[#104359]">Pilefort</div>
         <div className="flex items-center text-[32px] text-[#104359]">
@@ -24,8 +41,8 @@ const DesktopHeader = () => {
           <div className="ml-[24px]">Works</div>
         </div>
       </div>
-      <hr className={'border-t-[4px] border-[#104359]'} />
-    </>
+      <hr className="border-t-[4px] border-[#104359]" />
+    </div>
   )
 }
 
@@ -35,7 +52,7 @@ const SPHeader = () => {
   const setToggleOpenClass = () => setToggleClass('animate-slideIn block')
 
   return (
-    <>
+    <div className="lg:hidden">
       {
         <ToggleMenu
           toggleClass={toggleClass}
@@ -51,8 +68,8 @@ const SPHeader = () => {
           />
         </div>
       </div>
-      <hr className={'border-[2px] border-[#104359]'} />
-    </>
+      <hr className="border-t-[2px] border-[#104359]" />
+    </div>
   )
 }
 
