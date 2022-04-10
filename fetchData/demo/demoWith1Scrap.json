@@ -1,0 +1,268 @@
+{
+  "id": "crwirlnie-ev",
+  "createdAt": "2022-04-09T13:41:05.608Z",
+  "updatedAt": "2022-04-10T04:34:33.258Z",
+  "publishedAt": "2022-04-09T13:41:05.608Z",
+  "revisedAt": "2022-04-10T04:34:33.258Z",
+  "date": "2022-04-08T15:00:00.000Z",
+  "highlight": "<p>ここにまとめを書きます！</p>",
+  "scraps": [
+    {
+      "id": "0n-aq2klw",
+      "createdAt": "2022-04-09T13:24:48.078Z",
+      "updatedAt": "2022-04-10T03:58:31.972Z",
+      "publishedAt": "2022-04-09T13:24:48.078Z",
+      "revisedAt": "2022-04-10T03:58:31.972Z",
+      "tags": [
+        {
+          "id": "smq5fskl9",
+          "createdAt": "2022-04-10T03:58:13.724Z",
+          "updatedAt": "2022-04-10T03:58:13.724Z",
+          "publishedAt": "2022-04-10T03:58:13.724Z",
+          "revisedAt": "2022-04-10T03:58:13.724Z",
+          "title": "React",
+          "description": "<p>React関連の記事</p>"
+        }
+      ],
+      "links": [
+        {
+          "fieldId": "link",
+          "url": "https://reactjs.org/blog/2022/03/29/react-v18.html"
+        }
+      ],
+      "title": "React18リリース",
+      "body": [
+        {
+          "fieldId": "richText",
+          "content": "<h3 id=\"h2bf8df24e5\">新機能 - 自動バッチ処理の更新</h3><p>自動バッチ処理は、複数のstateの更新を、1回の再レンダリングでグルーピングする機能です。<br><br>React18以前はsetTimeoutやイベントハンドラでのstate更新は、stateを更新するたびに再レンダリングが起きていた。</p>"
+        },
+        {
+          "fieldId": "plainText",
+          "content": "```javascript\n// 以前はsetCountとsetFlagで2回レンダリングしていた\nsetTimeout(() => {\n  setCount(c => c + 1);\n  setFlag(f => !f);\n}, 1000);\n\n// React18ではsetCountとsetFlagの更新を、1回のレンダリングでまとめるようになった\nsetTimeout(() => {\n  setCount(c => c + 1);\n  setFlag(f => !f);\n}, 1000);\n```"
+        },
+        {
+          "fieldId": "richText",
+          "content": "<h3 id=\"h3ebf5762e1\">新機能 - Transitions</h3><p>すぐに反映する必要があるものと、そうでないものを区別できるようになった。<br><br>キー入力やクリックでstateが更新されるときに、すぐに反映する必要がないものはstartTransitionで囲んで使うことで、中断できるようになった。</p>"
+        },
+        {
+          "fieldId": "plainText",
+          "content": "```javascript\nimport {startTransition} from 'react';\n\n// 入力された値を表示 (すぐに反映される)\nsetInputValue(input);\n\n// 入力した値で検索 (すぐに反映されない)\nstartTransition(() => {\n  setSearchQuery(input);\n});\n```"
+        },
+        {
+          "fieldId": "richText",
+          "content": "<h3 id=\"h588c9c6620\">新機能 - Suspenseのサーバーレンダリング対応</h3><p>Suspenseはデータの取得中状態を宣言的に記述するためのコンポーネントです。<br><br>Suspenseはpromiseをthrowされたときに、fallbackで指定した要素を返し、データが取得できると、Suspenseで囲んだ要素を返すことができる。<br>生のReactではpromiseをthrowさせるには追加のコードが必要で、RelayやSWRなどのライブラリを併用することが推奨されている。</p>"
+        },
+        {
+          "fieldId": "plainText",
+          "content": "```javascript\n<Suspense fallback={<Spinner />}>\n  <Comments />\n</Suspense>\n```"
+        },
+        {
+          "fieldId": "richText",
+          "content": "<h3 id=\"h321e9b5527\">Strictモードの挙動変更</h3><p>開発時はコンポーネントがマウントされるたびに、全てのコンポーネントを自動的にアンマウント、再マウントし、2回目のマウントで表示するようになった。<br><br>将来的に、ステートを維持した状態でUIのセクションを追加・削除する機能を追加する予定で、複数回のマウント・アンマウントに強いコンポーネントが必要なためだそうです。<br></p>"
+        }
+      ],
+      "related": [
+        {
+          "id": "2dpfu2ymk",
+          "createdAt": "2022-04-09T13:26:22.478Z",
+          "updatedAt": "2022-04-10T03:58:55.783Z",
+          "publishedAt": "2022-04-09T13:26:22.478Z",
+          "revisedAt": "2022-04-10T03:58:55.783Z",
+          "tags": [
+            {
+              "id": "smq5fskl9"
+            }
+          ],
+          "links": [],
+          "title": "React 型定義更新",
+          "body": [
+            {
+              "fieldId": "richText",
+              "content": "<p>Functional Componentで暗黙的なchildrenが削除された。</p>"
+            },
+            {
+              "fieldId": "plainText",
+              "content": "```typescript\nimport * as React from 'react';\n\nconst Input: React.FC = ({ children }) => <div>{children}</div>;\n//                         ^^^^^^^^ will error with \"Property 'children'\n//                                  does not exist on type '{}'.\n<Input>children</Input>;\n```"
+            },
+            {
+              "fieldId": "richText",
+              "content": "<p>以下のように明示的に書く必要がある。</p>"
+            },
+            {
+              "fieldId": "plainText",
+              "content": "```typescript\nimport * as React from 'react';\n\ninterface InputProps {\n\ttype: string;\n}\n\nconst Input: React.FC<InputProps> = ({ type }) => <input type={type} />;\n\n<Input type=\"search\" />;\n```"
+            }
+          ],
+          "related": [
+            {
+              "id": "0n-aq2klw"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "2dpfu2ymk",
+      "createdAt": "2022-04-09T13:26:22.478Z",
+      "updatedAt": "2022-04-10T03:58:55.783Z",
+      "publishedAt": "2022-04-09T13:26:22.478Z",
+      "revisedAt": "2022-04-10T03:58:55.783Z",
+      "tags": [
+        {
+          "id": "smq5fskl9",
+          "createdAt": "2022-04-10T03:58:13.724Z",
+          "updatedAt": "2022-04-10T03:58:13.724Z",
+          "publishedAt": "2022-04-10T03:58:13.724Z",
+          "revisedAt": "2022-04-10T03:58:13.724Z",
+          "title": "React",
+          "description": "<p>React関連の記事</p>"
+        }
+      ],
+      "links": [],
+      "title": "React 型定義更新",
+      "body": [
+        {
+          "fieldId": "richText",
+          "content": "<p>Functional Componentで暗黙的なchildrenが削除された。</p>"
+        },
+        {
+          "fieldId": "plainText",
+          "content": "```typescript\nimport * as React from 'react';\n\nconst Input: React.FC = ({ children }) => <div>{children}</div>;\n//                         ^^^^^^^^ will error with \"Property 'children'\n//                                  does not exist on type '{}'.\n<Input>children</Input>;\n```"
+        },
+        {
+          "fieldId": "richText",
+          "content": "<p>以下のように明示的に書く必要がある。</p>"
+        },
+        {
+          "fieldId": "plainText",
+          "content": "```typescript\nimport * as React from 'react';\n\ninterface InputProps {\n\ttype: string;\n}\n\nconst Input: React.FC<InputProps> = ({ type }) => <input type={type} />;\n\n<Input type=\"search\" />;\n```"
+        }
+      ],
+      "related": [
+        {
+          "id": "0n-aq2klw",
+          "createdAt": "2022-04-09T13:24:48.078Z",
+          "updatedAt": "2022-04-10T03:58:31.972Z",
+          "publishedAt": "2022-04-09T13:24:48.078Z",
+          "revisedAt": "2022-04-10T03:58:31.972Z",
+          "tags": [
+            {
+              "id": "smq5fskl9"
+            }
+          ],
+          "links": [
+            {
+              "fieldId": "link",
+              "url": "https://reactjs.org/blog/2022/03/29/react-v18.html"
+            }
+          ],
+          "title": "React18リリース",
+          "body": [
+            {
+              "fieldId": "richText",
+              "content": "<h3 id=\"h2bf8df24e5\">新機能 - 自動バッチ処理の更新</h3><p>自動バッチ処理は、複数のstateの更新を、1回の再レンダリングでグルーピングする機能です。<br><br>React18以前はsetTimeoutやイベントハンドラでのstate更新は、stateを更新するたびに再レンダリングが起きていた。</p>"
+            },
+            {
+              "fieldId": "plainText",
+              "content": "```javascript\n// 以前はsetCountとsetFlagで2回レンダリングしていた\nsetTimeout(() => {\n  setCount(c => c + 1);\n  setFlag(f => !f);\n}, 1000);\n\n// React18ではsetCountとsetFlagの更新を、1回のレンダリングでまとめるようになった\nsetTimeout(() => {\n  setCount(c => c + 1);\n  setFlag(f => !f);\n}, 1000);\n```"
+            },
+            {
+              "fieldId": "richText",
+              "content": "<h3 id=\"h3ebf5762e1\">新機能 - Transitions</h3><p>すぐに反映する必要があるものと、そうでないものを区別できるようになった。<br><br>キー入力やクリックでstateが更新されるときに、すぐに反映する必要がないものはstartTransitionで囲んで使うことで、中断できるようになった。</p>"
+            },
+            {
+              "fieldId": "plainText",
+              "content": "```javascript\nimport {startTransition} from 'react';\n\n// 入力された値を表示 (すぐに反映される)\nsetInputValue(input);\n\n// 入力した値で検索 (すぐに反映されない)\nstartTransition(() => {\n  setSearchQuery(input);\n});\n```"
+            },
+            {
+              "fieldId": "richText",
+              "content": "<h3 id=\"h588c9c6620\">新機能 - Suspenseのサーバーレンダリング対応</h3><p>Suspenseはデータの取得中状態を宣言的に記述するためのコンポーネントです。<br><br>Suspenseはpromiseをthrowされたときに、fallbackで指定した要素を返し、データが取得できると、Suspenseで囲んだ要素を返すことができる。<br>生のReactではpromiseをthrowさせるには追加のコードが必要で、RelayやSWRなどのライブラリを併用することが推奨されている。</p>"
+            },
+            {
+              "fieldId": "plainText",
+              "content": "```javascript\n<Suspense fallback={<Spinner />}>\n  <Comments />\n</Suspense>\n```"
+            },
+            {
+              "fieldId": "richText",
+              "content": "<h3 id=\"h321e9b5527\">Strictモードの挙動変更</h3><p>開発時はコンポーネントがマウントされるたびに、全てのコンポーネントを自動的にアンマウント、再マウントし、2回目のマウントで表示するようになった。<br><br>将来的に、ステートを維持した状態でUIのセクションを追加・削除する機能を追加する予定で、複数回のマウント・アンマウントに強いコンポーネントが必要なためだそうです。<br></p>"
+            }
+          ],
+          "related": [
+            {
+              "id": "2dpfu2ymk"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "dsebo5n88fo",
+      "createdAt": "2022-04-09T13:28:24.877Z",
+      "updatedAt": "2022-04-09T13:28:24.877Z",
+      "publishedAt": "2022-04-09T13:28:24.877Z",
+      "revisedAt": "2022-04-09T13:28:24.877Z",
+      "tags": [],
+      "links": [
+        {
+          "fieldId": "link",
+          "url": "https://aws.amazon.com/jp/blogs/aws/announcing-aws-lambda-function-urls-built-in-https-endpoints-for-single-function-microservices/"
+        }
+      ],
+      "title": "AWS LambdaでURLを発行できるようになった",
+      "body": [
+        {
+          "fieldId": "richText",
+          "content": "<p>認証タイプは2通りあり、「認証されたIAMユーザーのみアクセス許可」「全ユーザーにアクセス許可」を選べるようになった。<br>また、オプションでCORSヘッダーも設定できる<br><br>URLの形式はこのような感じ<br><br></p>"
+        },
+        {
+          "fieldId": "plainText",
+          "content": "```shell\nhttps://xxxxx.lambda-url.ap-northeast-1.on.aws/\n```"
+        },
+        {
+          "fieldId": "richText",
+          "content": "<p><img src=\"https://images.microcms-assets.io/assets/1eee0d842b03431580c3bb6f540e9e7b/9aeb1700cd464caa900e5c8ad91cadca/aws_lambda_url.png\" alt=\"\"></p>"
+        }
+      ],
+      "related": []
+    },
+    {
+      "id": "rpkgdvmgc6x",
+      "createdAt": "2022-04-09T13:35:27.602Z",
+      "updatedAt": "2022-04-09T13:35:27.602Z",
+      "publishedAt": "2022-04-09T13:35:27.602Z",
+      "revisedAt": "2022-04-09T13:35:27.602Z",
+      "tags": [],
+      "links": [],
+      "title": "Rome Formatterリリース",
+      "body": [
+        {
+          "fieldId": "richText",
+          "content": "<p>RomeはBabel, ESLint, Webpack, Prettier, Jestの代替を目指しているオールインワンツールで、TypeScript, HTML, CSSなどのフォーマッターかつ、リンターかつ、バンドラーの役割を目指しているツールです。<br><br>Rustでの再実装を進めており、今回フォーマッターとしての機能が使えるようになりました。<br>VSCodeのプラグインも配布されています。<br><img src=\"https://images.microcms-assets.io/assets/1eee0d842b03431580c3bb6f540e9e7b/2e384dc5ad0f424089b89baac3fd6fb0/rome_vscode.png\" alt=\"\"><br></p><h3 id=\"hbb91171464\">Rome Formatterとprettierの挙動の違い</h3><p>Rome Formatterでは、エラーリカバリーを強化しています。<br>例えば、4行目に構文エラーがあっても、6行目のフォーマットが効きます。<br>Prettierの場合は4行目の構文エラーが原因で、6行目のフォーマットが効きません。<br><br>フォーマットを当てる前<br><img src=\"https://images.microcms-assets.io/assets/1eee0d842b03431580c3bb6f540e9e7b/ca522be9f9de46549522c6ca8ff8e233/rome_formatter_before.png\" alt=\"\"><br><br>フォーマットを当てた後<br><img src=\"https://images.microcms-assets.io/assets/1eee0d842b03431580c3bb6f540e9e7b/06c26a801708445daca56074de8d47c3/rome_formatter_after.png\" alt=\"\"><br></p><h3 id=\"h3ca59def96\">Rome Formatterとprettierの処理速度の違い</h3><p>規模の大きなOSSに対してフォーマットをかけた時の速度を測定しているそうです。<br>規模の大きなOSSとして、ESLint, Webpack, TypeScriptを選らんで実施したそうです。<br><br>Rome FormatterはPrettierと比較して、9-12倍高速だそうです。<br><img src=\"https://images.microcms-assets.io/assets/1eee0d842b03431580c3bb6f540e9e7b/5570e8a47fc242e48885d93988b40c44/rome_formatter_vs_prettier.png\" alt=\"\"><br></p><h3 id=\"hcf83e1357e\"><br></h3>"
+        }
+      ],
+      "related": []
+    },
+    {
+      "id": "3bphomfkedy",
+      "createdAt": "2022-04-09T13:36:56.669Z",
+      "updatedAt": "2022-04-09T13:36:56.669Z",
+      "publishedAt": "2022-04-09T13:36:56.669Z",
+      "revisedAt": "2022-04-09T13:36:56.669Z",
+      "tags": [],
+      "links": [
+        {
+          "fieldId": "link",
+          "url": "https://irb-wasm.vercel.app/"
+        }
+      ],
+      "title": "RubyのWebAssembly化が実現",
+      "body": [
+        {
+          "fieldId": "richText",
+          "content": "<p>ブラウザ上でRubyを動かせるようになりました。<br><br><img src=\"https://images.microcms-assets.io/assets/1eee0d842b03431580c3bb6f540e9e7b/b42bcd6a9a9249fe80c7b339323f4d16/ruby_browser.png\" alt=\"\"></p>"
+        }
+      ],
+      "related": []
+    }
+  ]
+}
