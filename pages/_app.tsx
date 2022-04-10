@@ -7,7 +7,7 @@ function MyApp({ Component, pageProps }: AppProps) {
   return (
     <>
       <Header />
-      <div className="h-[calc(100vh-(80px+80px))]">
+      <div className="h-min-[calc(100vh-(80px+80px))]">
         <Component {...pageProps} />
       </div>
       <Footer />
