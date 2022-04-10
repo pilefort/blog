@@ -2,7 +2,6 @@ import AccordionOpenIcon from '../../../public/assets/AccordionOpen.svg'
 import AccordionCloseIcon from '../../../public/assets/AccordionClose.svg'
 import Image from 'next/image'
 import { useState, MouseEventHandler, useEffect } from 'react'
-import { useMediaQuery } from 'react-responsive'
 import { useRouter } from 'next/router'
 
 const Header = () => {
