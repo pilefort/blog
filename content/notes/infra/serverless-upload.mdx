@@ -14,7 +14,7 @@ cf. https://github.com/serverless/serverless/tree/master/docs/providers
 # セットアップ方法
 基本的には[こちら](https://www.serverless.com/framework/docs/providers/aws/guide/installation/)に書かれた方法でセットアップできます。
 
-```terminal
+```shell
 $ npm install -g serverless
 $ serverless --version
 Framework Core: 2.57.0
@@ -26,7 +26,7 @@ Components: 3.17.0
 # デプロイ
 使用できるテンプレートの一覧は以下で確認できます (大量のテンプレートがあります)。
 
-```terminal
+```shell
 $ sls create --help
 Template for the service. Available templates:
 "aws-clojure-gradle", "aws-clojurescript-gradle", "aws-nodejs", "aws-nodejs-docker", "aws-nodejs-typescript", "aws-alexa-typescript", "aws-nodejs-ecma-script", "aws-python","aws-python3", "aws-python-docker", "aws-groovy-gradle", "aws-java-maven", "aws-java-gradle", "aws-kotlin-jvm-maven", "aws-kotlin-jvm-gradle", "aws-kotlin-jvm-gradle-kts", "aws-kotlin-nodejs-gradle", "aws-scala-sbt", "aws-csharp", "aws-fsharp", "aws-go", "aws-go-dep", "aws-go-mod", "aws-ruby", "aws-provided", "tencent-go", "tencent-nodejs", "tencent-python", "tencent-php", "azure-csharp", "azure-nodejs", "azure-nodejs-typescript", "azure-python", "cloudflare-workers", "cloudflare-workers-enterprise", "cloudflare-workers-rust", "fn-nodejs", "fn-go", "google-nodejs", "google-nodejs-typescript", "google-python", "google-go", "kubeless-python", "kubeless-nodejs", "knative-docker", "openwhisk-java-maven", "openwhisk-nodejs", "openwhisk-php", "openwhisk-python", "openwhisk-ruby", "openwhisk-swift", "spotinst-nodejs", "spotinst-python", "spotinst-ruby", "spotinst-java8", "twilio-nodejs", "aliyun-nodejs", "plugin","hello-world"
@@ -34,7 +34,7 @@ Template for the service. Available templates:
 
 それでは、typescriptでAWSにデプロイするためのテンプレートを作成してみます。
 
-```terminal
+```shell
 $ sls create --template aws-nodejs-typescript --path <project_name>
 Serverless: Generating boilerplate...
 Serverless: Generating boilerplate in "/Users/kusakabe/projects/serverless-sample/test"
@@ -57,7 +57,7 @@ cf. https://www.serverless.com/framework/docs/providers/aws/cli-reference/create
 基本的な書き方は以下を参考にすると良いです。
 cf. https://www.serverless.com/framework/docs/providers/aws/guide/intro/
 
-```typescript:title=serverless.ts
+```typescript
 import type { AWS } from '@serverless/typescript';
 
 import hello from '@functions/hello';
@@ -100,7 +100,7 @@ serverless-dotenv-pluginはdotenvを使うためのプラグインです。
 
 他にもデプロイ済みのものと、デプロイ前のものの差分を表示する serverless-plugin-diff などもありますが、 こちらは1.xでのみ対応で2.xや3.xでは利用できません。
 
-```diff-highlight-typescript
+```
 - plugins: ['serverless-webpack'],
 
 + plugins: ['serverless-webpack', 'serverless-offline', 'serverless-dotenv-plugin'],
@@ -112,14 +112,14 @@ dry runを実行したいところですが、残念ながらServerlessにはそ
 
 気を取り直して、以下でデプロイします。
 
-```terminal
+```shell
 $ sls deploy --stage <デプロイする環境 dev|staging|production> --aws-profile <aws_profile>
 ```
 
 ## 削除
 削除は以下でできます。
 
-```terminal
+```shell
 $ sls remove --stage <デプロイする環境 dev|staging|production> --aws-profile <aws_profile>
 ```
 

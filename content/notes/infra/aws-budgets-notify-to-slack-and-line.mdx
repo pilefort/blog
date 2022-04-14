@@ -72,7 +72,7 @@ Amazon Simple Notification Service にアクセスします！
 SNS は AWS Budgets から実行したいので、アクセスポリシーを修正します。
 デフォルトでは以下のようになってます (メソッドを『高度な』に変えると JSON エディタが開きます)。
 
-```yaml
+```yml
 {
   "Version": "2008-10-17",
   "Id": "__default_policy_ID",
@@ -114,9 +114,9 @@ AWS Budgets から SNS を push するように、これを Statement に追加�
 }
 ```
 
-最終的にこうなります。
+最終的にこうなります (6-12行目追加)。
 
-```yaml{6-12}
+```yaml
 {
   "Version": "2008-10-17",
   "Id": "__default_policy_ID",
