@@ -34,7 +34,7 @@ brew install peco ghq gh
 ghqのrootディレクトリを以下のように設定します。
 rootディレクトリは複数設定することもできます。
 
-```.gitconfig
+```
 # ~/.gitconfig
 [ghq]
 	root = ~/<GitHubのプロジェクトが存在する大元のディレクトリ>
@@ -53,7 +53,7 @@ cd $(ghq list --full-path | peco)
 # GitHubのPRをインクリメンタルに検索しチェックアウトする
 ローカルのGitHubプロジェクトがあるディレクトリで実行します。
 gh pr listでPRのリストが一覧表示され、pecoでインクリメンタルに検索します。
-cut -f 1 にすることで、PRの番号を切り取り、gh pr checkout <PR番号> でチェックアウトできます。
+cut -f 1 にすることで、PRの番号を切り取り、gh pr checkout `<PR番号>` でチェックアウトできます。
 
 ```bash
 gh pr checkout $(gh pr list | peco | cut -f 1)
