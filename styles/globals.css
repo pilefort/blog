@@ -20,3 +20,7 @@ a {
   text-decoration: none;
   word-break: break-all;
 }
+
+#__next {
+ height: 100%;
+}
