@@ -1,8 +1,11 @@
+import { useState, MouseEventHandler, useEffect } from 'react'
+
+import { useRouter } from 'next/router'
+import Image from 'next/image'
+import Link from 'next/link'
+
 import AccordionOpenIcon from '../../../public/assets/AccordionOpen.svg'
 import AccordionCloseIcon from '../../../public/assets/AccordionClose.svg'
-import Image from 'next/image'
-import { useState, MouseEventHandler, useEffect } from 'react'
-import { useRouter } from 'next/router'
 
 const Header = () => {
   const router = useRouter()
@@ -32,12 +35,38 @@ const DesktopHeader = () => {
   return (
     <div className="hidden lg:block">
       <div className="flex h-[80px] items-center justify-between p-[16px] pr-[24px]">
-        <div className="text-[36px] text-[#104359]">Pilefort</div>
+        <Link
+          href="/"
+          passHref
+        >
+          <a className="text-[36px] text-[#104359]">Pilefort</a>
+        </Link>
         <div className="flex items-center text-[32px] text-[#104359]">
-          <div>Notes</div>
-          <div className="ml-[24px]">Scraps</div>
-          <div className="ml-[24px]">Snippets</div>
-          <div className="ml-[24px]">Works</div>
+          <Link
+            href="/notes"
+            passHref
+          >
+            <a>Notes</a>
+          </Link>
+
+          <Link
+            href="/scraps"
+            passHref
+          >
+            <a className="ml-[24px]">Scraps</a>
+          </Link>
+          <Link
+            href="/snippets"
+            passHref
+          >
+            <a className="ml-[24px]">Snippets</a>
+          </Link>
+          <Link
+            href="/works"
+            passHref
+          >
+            <a className="ml-[24px]">Works</a>
+          </Link>
         </div>
       </div>
       <hr className="border-t-[4px] border-[#104359]" />
@@ -85,16 +114,51 @@ const ToggleMenu = ({ toggleClass, setToggleCloseClass }: { toggleClass: string;
         />
       </div>
       <div className="flex h-[95%] flex-col justify-between p-[8px]">
-        <div>
-          <div className="mt-[16px] text-[white]">Notes</div>
-          <div className="mt-[16px] text-[white]">Scraps</div>
-          <div className="mt-[16px] text-[white]">Snippets</div>
-          <div className="mt-[16px] text-[white]">Works</div>
+        <div className="mt-[24px] flex flex-col justify-between">
+          <Link
+            href="/notes"
+            passHref
+          >
+            <a className="mt-[16px] text-[white]">Notes</a>
+          </Link>
+          <Link
+            href="/scraps"
+            passHref
+          >
+            <a className="mt-[16px] text-[white]">Scraps</a>
+          </Link>
+          <Link
+            href="/snippets"
+            passHref
+          >
+            <a className="mt-[16px] text-[white]">Snippets</a>
+          </Link>
+          <Link
+            href="/works"
+            passHref
+          >
+            <a className="mt-[16px] text-[white]">Works</a>
+          </Link>
         </div>
-        <div>
-          <div className="text-[white]">GitHub</div>
-          <div className="mt-[16px] text-[white]">Twitter</div>
-          <div className="mt-[16px] text-[white]">Zenn</div>
+        <div className="flex flex-col justify-between">
+          <Link
+            href="https://github.com/pilefort"
+            passHref
+          >
+            <a className="text-[white]">GitHub</a>
+          </Link>
+          <Link
+            href="https://twitter.com/pilefort"
+            passHref
+          >
+            <a className="mt-[16px] text-[white]">Twitter</a>
+          </Link>
+          <Link
+            href="https://zenn.dev/pilefort"
+            passHref
+          >
+            <a className="mt-[16px] text-[white]">Zenn</a>
+          </Link>
         </div>
       </div>
     </div>
