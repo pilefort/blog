@@ -1,0 +1,63 @@
+import { join, parse } from 'path'
+import { globby } from 'globby'
+import * as fs from 'fs'
+import matter from 'gray-matter'
+
+export const getAllContentPaths = async ({ target }: { target: string }) => {
+  const searchPath = join('contents', target)
+
+  const targetFullFilePaths: string[] = await globby([searchPath], {
+    expandDirectories: {
+      extensions: ['mdx'],
+    },
+    absolute: false,
+  })
+
+  return targetFullFilePaths.map((targetFullFilePath) => {
+    return targetFullFilePath.replace(/^contents/, '').replace(/\.mdx$/, '')
+  })
+}
+
+export const getContentBySlug = (fullFilePath: string, fields: string[]) => {
+  // NOTE: mdxの中身を取得
+  const fileContent = fs.readFileSync(fullFilePath, { encoding: 'utf-8' })
+
+  // NOTE: `---`で囲った部分をdata, それ以外をcontentとして分けて取得
+  // data => {
+  //   title: '画像の拡張子や色空間を変換する方法',
+  //   tags: 'shell,image',
+  //   date: '2021-03-07 16:52:01',
+  //   category: 'Shell',
+  //   metaTitle: 'This is the title tag of this page',
+  //   metaDescription: 'This is the meta description'
+  // }
+  // content =>
+  // -colorspace で色空間を指定できます。
+  //
+  // ```bash
+  // $ convert -colorspace RGB original.jpg converted.png
+  // ```
+  // ...
+  const { data, content } = matter(fileContent)
+
+  const items: {
+    title: string
+    content: string
+    date: string
+    tags: string[]
+  } = {
+    title: '',
+    content: '',
+    date: '',
+    tags: [''],
+  }
+
+  fields.forEach((field) => {
+    field === 'title' && (items.title = data.title)
+    field === 'content' && (items.content = content)
+    field === 'date' && (items.date = data.date)
+    field === 'tags' && (items.tags = data.tags)
+  })
+
+  return items
+}
