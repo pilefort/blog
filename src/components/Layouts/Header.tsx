@@ -145,19 +145,34 @@ const ToggleMenu = ({ toggleClass, setToggleCloseClass }: { toggleClass: string;
             href="https://github.com/pilefort"
             passHref
           >
-            <a className="text-[white]">GitHub</a>
+            <a
+              target="_blank"
+              className="text-[white]"
+            >
+              GitHub
+            </a>
           </Link>
           <Link
             href="https://twitter.com/pilefort"
             passHref
           >
-            <a className="mt-[16px] text-[white]">Twitter</a>
+            <a
+              target="_blank"
+              className="mt-[16px] text-[white]"
+            >
+              Twitter
+            </a>
           </Link>
           <Link
             href="https://zenn.dev/pilefort"
             passHref
           >
-            <a className="mt-[16px] text-[white]">Zenn</a>
+            <a
+              target="_blank"
+              className="mt-[16px] text-[white]"
+            >
+              Zenn
+            </a>
           </Link>
         </div>
       </div>
