@@ -1,0 +1,1282 @@
+{
+  "contents": [
+    {
+      "id": "crwirlnie-ev",
+      "createdAt": "2022-04-09T13:41:05.608Z",
+      "updatedAt": "2022-04-09T13:41:05.608Z",
+      "publishedAt": "2022-04-09T13:41:05.608Z",
+      "revisedAt": "2022-04-09T13:41:05.608Z",
+      "scraps": [
+        {
+          "id": "0n-aq2klw",
+          "createdAt": "2022-04-09T13:24:48.078Z",
+          "updatedAt": "2022-04-09T13:24:48.078Z",
+          "publishedAt": "2022-04-09T13:24:48.078Z",
+          "revisedAt": "2022-04-09T13:24:48.078Z",
+          "tags": [],
+          "links": [
+            {
+              "fieldId": "link",
+              "url": "https://reactjs.org/blog/2022/03/29/react-v18.html"
+            }
+          ],
+          "title": "React18リリース",
+          "body": [
+            {
+              "fieldId": "richText",
+              "content": "<h3 id=\"h2bf8df24e5\">新機能 - 自動バッチ処理の更新</h3><p>自動バッチ処理は、複数のstateの更新を、1回の再レンダリングでグルーピングする機能です。<br><br>React18以前はsetTimeoutやイベントハンドラでのstate更新は、stateを更新するたびに再レンダリングが起きていた。</p>"
+            },
+            {
+              "fieldId": "plainText",
+              "content": "```javascript\n// 以前はsetCountとsetFlagで2回レンダリングしていた\nsetTimeout(() => {\n  setCount(c => c + 1);\n  setFlag(f => !f);\n}, 1000);\n\n// React18ではsetCountとsetFlagの更新を、1回のレンダリングでまとめるようになった\nsetTimeout(() => {\n  setCount(c => c + 1);\n  setFlag(f => !f);\n}, 1000);\n```"
+            },
+            {
+              "fieldId": "richText",
+              "content": "<h3 id=\"h3ebf5762e1\">新機能 - Transitions</h3><p>すぐに反映する必要があるものと、そうでないものを区別できるようになった。<br><br>キー入力やクリックでstateが更新されるときに、すぐに反映する必要がないものはstartTransitionで囲んで使うことで、中断できるようになった。</p>"
+            },
+            {
+              "fieldId": "plainText",
+              "content": "```javascript\nimport {startTransition} from 'react';\n\n// 入力された値を表示 (すぐに反映される)\nsetInputValue(input);\n\n// 入力した値で検索 (すぐに反映されない)\nstartTransition(() => {\n  setSearchQuery(input);\n});\n```"
+            },
+            {
+              "fieldId": "richText",
+              "content": "<h3 id=\"h588c9c6620\">新機能 - Suspenseのサーバーレンダリング対応</h3><p>Suspenseはデータの取得中状態を宣言的に記述するためのコンポーネントです。<br><br>Suspenseはpromiseをthrowされたときに、fallbackで指定した要素を返し、データが取得できると、Suspenseで囲んだ要素を返すことができる。<br>生のReactではpromiseをthrowさせるには追加のコードが必要で、RelayやSWRなどのライブラリを併用することが推奨されている。</p>"
+            },
+            {
+              "fieldId": "plainText",
+              "content": "```javascript\n<Suspense fallback={<Spinner />}>\n  <Comments />\n</Suspense>\n```"
+            },
+            {
+              "fieldId": "richText",
+              "content": "<h3 id=\"h321e9b5527\">Strictモードの挙動変更</h3><p>開発時はコンポーネントがマウントされるたびに、全てのコンポーネントを自動的にアンマウント、再マウントし、2回目のマウントで表示するようになった。<br><br>将来的に、ステートを維持した状態でUIのセクションを追加・削除する機能を追加する予定で、複数回のマウント・アンマウントに強いコンポーネントが必要なためだそうです。<br></p>"
+            }
+          ],
+          "related": []
+        },
+        {
+          "id": "2dpfu2ymk",
+          "createdAt": "2022-04-09T13:26:22.478Z",
+          "updatedAt": "2022-04-09T13:26:22.478Z",
+          "publishedAt": "2022-04-09T13:26:22.478Z",
+          "revisedAt": "2022-04-09T13:26:22.478Z",
+          "tags": [],
+          "links": [],
+          "title": "React 型定義更新",
+          "body": [
+            {
+              "fieldId": "richText",
+              "content": "<p>Functional Componentで暗黙的なchildrenが削除された。</p>"
+            },
+            {
+              "fieldId": "plainText",
+              "content": "```typescript\nimport * as React from 'react';\n\nconst Input: React.FC = ({ children }) => <div>{children}</div>;\n//                         ^^^^^^^^ will error with \"Property 'children'\n//                                  does not exist on type '{}'.\n<Input>children</Input>;\n```"
+            },
+            {
+              "fieldId": "richText",
+              "content": "<p>以下のように明示的に書く必要がある。</p>"
+            },
+            {
+              "fieldId": "plainText",
+              "content": "```typescript\nimport * as React from 'react';\n\ninterface InputProps {\n\ttype: string;\n}\n\nconst Input: React.FC<InputProps> = ({ type }) => <input type={type} />;\n\n<Input type=\"search\" />;\n```"
+            }
+          ],
+          "related": []
+        },
+        {
+          "id": "dsebo5n88fo",
+          "createdAt": "2022-04-09T13:28:24.877Z",
+          "updatedAt": "2022-04-09T13:28:24.877Z",
+          "publishedAt": "2022-04-09T13:28:24.877Z",
+          "revisedAt": "2022-04-09T13:28:24.877Z",
+          "tags": [],
+          "links": [
+            {
+              "fieldId": "link",
+              "url": "https://aws.amazon.com/jp/blogs/aws/announcing-aws-lambda-function-urls-built-in-https-endpoints-for-single-function-microservices/"
+            }
+          ],
+          "title": "AWS LambdaでURLを発行できるようになった",
+          "body": [
+            {
+              "fieldId": "richText",
+              "content": "<p>認証タイプは2通りあり、「認証されたIAMユーザーのみアクセス許可」「全ユーザーにアクセス許可」を選べるようになった。<br>また、オプションでCORSヘッダーも設定できる<br><br>URLの形式はこのような感じ<br><br></p>"
+            },
+            {
+              "fieldId": "plainText",
+              "content": "```shell\nhttps://xxxxx.lambda-url.ap-northeast-1.on.aws/\n```"
+            },
+            {
+              "fieldId": "richText",
+              "content": "<p><img src=\"https://images.microcms-assets.io/assets/1eee0d842b03431580c3bb6f540e9e7b/9aeb1700cd464caa900e5c8ad91cadca/aws_lambda_url.png\" alt=\"\"></p>"
+            }
+          ],
+          "related": []
+        },
+        {
+          "id": "rpkgdvmgc6x",
+          "createdAt": "2022-04-09T13:35:27.602Z",
+          "updatedAt": "2022-04-09T13:35:27.602Z",
+          "publishedAt": "2022-04-09T13:35:27.602Z",
+          "revisedAt": "2022-04-09T13:35:27.602Z",
+          "tags": [],
+          "links": [],
+          "title": "Rome Formatterリリース",
+          "body": [
+            {
+              "fieldId": "richText",
+              "content": "<p>RomeはBabel, ESLint, Webpack, Prettier, Jestの代替を目指しているオールインワンツールで、TypeScript, HTML, CSSなどのフォーマッターかつ、リンターかつ、バンドラーの役割を目指しているツールです。<br><br>Rustでの再実装を進めており、今回フォーマッターとしての機能が使えるようになりました。<br>VSCodeのプラグインも配布されています。<br><img src=\"https://images.microcms-assets.io/assets/1eee0d842b03431580c3bb6f540e9e7b/2e384dc5ad0f424089b89baac3fd6fb0/rome_vscode.png\" alt=\"\"><br></p><h3 id=\"hbb91171464\">Rome Formatterとprettierの挙動の違い</h3><p>Rome Formatterでは、エラーリカバリーを強化しています。<br>例えば、4行目に構文エラーがあっても、6行目のフォーマットが効きます。<br>Prettierの場合は4行目の構文エラーが原因で、6行目のフォーマットが効きません。<br><br>フォーマットを当てる前<br><img src=\"https://images.microcms-assets.io/assets/1eee0d842b03431580c3bb6f540e9e7b/ca522be9f9de46549522c6ca8ff8e233/rome_formatter_before.png\" alt=\"\"><br><br>フォーマットを当てた後<br><img src=\"https://images.microcms-assets.io/assets/1eee0d842b03431580c3bb6f540e9e7b/06c26a801708445daca56074de8d47c3/rome_formatter_after.png\" alt=\"\"><br></p><h3 id=\"h3ca59def96\">Rome Formatterとprettierの処理速度の違い</h3><p>規模の大きなOSSに対してフォーマットをかけた時の速度を測定しているそうです。<br>規模の大きなOSSとして、ESLint, Webpack, TypeScriptを選らんで実施したそうです。<br><br>Rome FormatterはPrettierと比較して、9-12倍高速だそうです。<br><img src=\"https://images.microcms-assets.io/assets/1eee0d842b03431580c3bb6f540e9e7b/5570e8a47fc242e48885d93988b40c44/rome_formatter_vs_prettier.png\" alt=\"\"><br></p><h3 id=\"hcf83e1357e\"><br></h3>"
+            }
+          ],
+          "related": []
+        },
+        {
+          "id": "3bphomfkedy",
+          "createdAt": "2022-04-09T13:36:56.669Z",
+          "updatedAt": "2022-04-09T13:36:56.669Z",
+          "publishedAt": "2022-04-09T13:36:56.669Z",
+          "revisedAt": "2022-04-09T13:36:56.669Z",
+          "tags": [],
+          "links": [
+            {
+              "fieldId": "link",
+              "url": "https://irb-wasm.vercel.app/"
+            }
+          ],
+          "title": "RubyのWebAssembly化が実現",
+          "body": [
+            {
+              "fieldId": "richText",
+              "content": "<p>ブラウザ上でRubyを動かせるようになりました。<br><br><img src=\"https://images.microcms-assets.io/assets/1eee0d842b03431580c3bb6f540e9e7b/b42bcd6a9a9249fe80c7b339323f4d16/ruby_browser.png\" alt=\"\"></p>"
+            }
+          ],
+          "related": []
+        }
+      ]
+    },
+    {
+      "id": "3ovy0xqdt",
+      "createdAt": "2022-04-09T13:17:42.941Z",
+      "updatedAt": "2022-04-09T13:17:42.941Z",
+      "publishedAt": "2022-04-09T13:17:42.941Z",
+      "revisedAt": "2022-04-09T13:17:42.941Z",
+      "date": "2022-03-07T14:00:00.000Z",
+      "scraps": [
+        {
+          "id": "b0yf6m92yo",
+          "createdAt": "2022-04-09T13:09:58.590Z",
+          "updatedAt": "2022-04-09T13:17:06.594Z",
+          "publishedAt": "2022-04-09T13:09:58.590Z",
+          "revisedAt": "2022-04-09T13:17:06.594Z",
+          "date": "2022-03-07T14:00:00.000Z",
+          "tags": [],
+          "links": [
+            {
+              "fieldId": "link",
+              "url": "https://github.blog/changelog/2022-03-24-ignore-commits-in-the-blame-view-beta/"
+            }
+          ],
+          "title": "GitHub上で一部コミットのgit blameを非表示にできるようになった",
+          "body": [
+            {
+              "fieldId": "richText",
+              "content": "<p>git blame &lt;filename&gt;で、指定したファイルで、行ごとに誰が最後にコードを追加・編集したかを確認できる。<br><br>今回のアップデートで、<span style=\"color:#cf3e51\">.git-blame-ignore-vervs</span>に追加されたコミットを非表示にできるようになった。<br>これはコードを大幅変更し、過去のコミットをBlameで出したくないときに使えそう。<br><br><img src=\"https://images.microcms-assets.io/assets/1eee0d842b03431580c3bb6f540e9e7b/3574f7f8de804b6099c9cd7b3e82ffce/github_blame1.png\" alt=\"\"><br><br><img src=\"https://images.microcms-assets.io/assets/1eee0d842b03431580c3bb6f540e9e7b/dcc5eefcc6c4428c8b1ecb527c8b9a34/github_blame2.png\" alt=\"\"></p>"
+            }
+          ],
+          "related": []
+        },
+        {
+          "id": "20-49qzhh59",
+          "createdAt": "2022-04-09T13:14:18.304Z",
+          "updatedAt": "2022-04-09T13:17:21.626Z",
+          "publishedAt": "2022-04-09T13:14:18.304Z",
+          "revisedAt": "2022-04-09T13:17:21.626Z",
+          "date": "2022-03-07T14:00:00.000Z",
+          "tags": [],
+          "links": [
+            {
+              "fieldId": "link",
+              "url": "https://github.blog/changelog/2022-03-23-following-organizations/"
+            }
+          ],
+          "title": "GitHubで組織をフォローできるようになった",
+          "body": [
+            {
+              "fieldId": "richText",
+              "content": "<p><img src=\"https://images.microcms-assets.io/assets/1eee0d842b03431580c3bb6f540e9e7b/e88995915c844021bb3b7b75191c29a0/github_org_follow.png\" alt=\"\"></p>"
+            }
+          ],
+          "related": []
+        }
+      ]
+    },
+    {
+      "id": "bltluifxa38",
+      "createdAt": "2022-04-09T13:03:06.811Z",
+      "updatedAt": "2022-04-09T13:03:06.811Z",
+      "publishedAt": "2022-04-09T13:03:06.811Z",
+      "revisedAt": "2022-04-09T13:03:06.811Z",
+      "date": "2022-02-12T15:00:00.000Z",
+      "scraps": [
+        {
+          "id": "uqgjugxw2q5f",
+          "createdAt": "2022-04-09T12:59:30.973Z",
+          "updatedAt": "2022-04-09T13:10:40.513Z",
+          "publishedAt": "2022-04-09T12:59:30.973Z",
+          "revisedAt": "2022-04-09T13:10:40.513Z",
+          "date": "2022-02-13T14:00:00.000Z",
+          "tags": [],
+          "links": [
+            {
+              "fieldId": "link",
+              "url": "https://www.conventionalcommits.org/ja/v1.0.0/"
+            }
+          ],
+          "title": "Conventional Commits 1.0.0リリース",
+          "body": [
+            {
+              "fieldId": "richText",
+              "content": "<p><span style=\"color:#3b454e\">より良いコミットメッセージを書くための規則を紹介している。</span></p>"
+            }
+          ],
+          "related": []
+        },
+        {
+          "id": "9ndlu56kt64",
+          "createdAt": "2022-04-09T12:59:51.586Z",
+          "updatedAt": "2022-04-09T13:10:47.743Z",
+          "publishedAt": "2022-04-09T12:59:51.586Z",
+          "revisedAt": "2022-04-09T13:10:47.743Z",
+          "date": "2022-02-13T14:00:00.000Z",
+          "tags": [],
+          "links": [
+            {
+              "fieldId": "link",
+              "url": "https://forest.watch.impress.co.jp/docs/news/1387277.html"
+            }
+          ],
+          "title": "VSCode Web が PWA化",
+          "body": [
+            {
+              "fieldId": "richText",
+              "content": "<p><span style=\"color:#3b454e\">オフラインで使えるようになったけど、それならVSCodeで良いのでは感。</span></p>"
+            }
+          ],
+          "related": []
+        },
+        {
+          "id": "eai7_x4g3d",
+          "createdAt": "2022-04-09T13:00:04.650Z",
+          "updatedAt": "2022-04-09T13:10:55.254Z",
+          "publishedAt": "2022-04-09T13:00:04.650Z",
+          "revisedAt": "2022-04-09T13:10:55.254Z",
+          "date": "2022-02-13T14:00:00.000Z",
+          "tags": [],
+          "links": [
+            {
+              "fieldId": "link",
+              "url": "https://twitter.com/deno_land/status/1491807786199445508"
+            }
+          ],
+          "title": "Deno Deployが静的ホスティングに対応",
+          "body": [],
+          "related": []
+        },
+        {
+          "id": "kz3_yxrb-r",
+          "createdAt": "2022-04-09T13:00:21.122Z",
+          "updatedAt": "2022-04-09T13:11:06.893Z",
+          "publishedAt": "2022-04-09T13:00:21.122Z",
+          "revisedAt": "2022-04-09T13:11:06.893Z",
+          "date": "2022-02-13T14:00:00.000Z",
+          "tags": [],
+          "links": [
+            {
+              "fieldId": "link",
+              "url": "https://laravel-news.com/laravel-9-released"
+            }
+          ],
+          "title": "Laravel 9.0リリース",
+          "body": [],
+          "related": []
+        },
+        {
+          "id": "q4vmsrx2t",
+          "createdAt": "2022-04-09T13:00:40.477Z",
+          "updatedAt": "2022-04-09T13:11:01.122Z",
+          "publishedAt": "2022-04-09T13:00:40.477Z",
+          "revisedAt": "2022-04-09T13:11:01.122Z",
+          "date": "2022-02-13T14:00:00.000Z",
+          "tags": [],
+          "links": [
+            {
+              "fieldId": "link",
+              "url": "https://aws.amazon.com/jp/blogs/aws/new-for-app-runner-vpc-support/"
+            }
+          ],
+          "title": "App RunnerでVPCをサポート",
+          "body": [
+            {
+              "fieldId": "richText",
+              "content": "<p><span style=\"color:#3b454e\">VPC内のリソースにアクセスできるみたいで、出来ることが増えた印象。</span></p>"
+            }
+          ],
+          "related": []
+        },
+        {
+          "id": "cmqcslph3e9",
+          "createdAt": "2022-04-09T13:00:56.590Z",
+          "updatedAt": "2022-04-09T13:11:13.306Z",
+          "publishedAt": "2022-04-09T13:00:56.590Z",
+          "revisedAt": "2022-04-09T13:11:13.306Z",
+          "date": "2022-02-13T14:00:00.000Z",
+          "tags": [],
+          "links": [
+            {
+              "fieldId": "link",
+              "url": "https://github.blog/2022-02-02-new-sponsors-only-repositories-custom-amounts-and-more/"
+            }
+          ],
+          "title": "GitHubスポンサーだけが見れるリポジトリを作れるようになった",
+          "body": [],
+          "related": []
+        },
+        {
+          "id": "z5m5hkkc4uly",
+          "createdAt": "2022-04-09T13:01:13.211Z",
+          "updatedAt": "2022-04-09T13:11:19.129Z",
+          "publishedAt": "2022-04-09T13:01:13.211Z",
+          "revisedAt": "2022-04-09T13:11:19.129Z",
+          "date": "2022-02-13T14:00:00.000Z",
+          "tags": [],
+          "links": [
+            {
+              "fieldId": "link",
+              "url": "https://medium.com/flutter/announcing-flutter-for-windows-6979d0d01fed"
+            }
+          ],
+          "title": "FlutterでWindowsアプリが作れるらしい",
+          "body": [],
+          "related": []
+        },
+        {
+          "id": "or88ams1p",
+          "createdAt": "2022-04-09T13:01:31.644Z",
+          "updatedAt": "2022-04-09T13:11:25.076Z",
+          "publishedAt": "2022-04-09T13:01:31.644Z",
+          "revisedAt": "2022-04-09T13:11:25.076Z",
+          "date": "2022-02-13T14:00:00.000Z",
+          "tags": [],
+          "links": [
+            {
+              "fieldId": "link",
+              "url": "https://partytown.builder.io/"
+            }
+          ],
+          "title": "Partytownのドキュメントリリース",
+          "body": [],
+          "related": []
+        },
+        {
+          "id": "y-s2sulefm",
+          "createdAt": "2022-04-09T13:01:56.347Z",
+          "updatedAt": "2022-04-09T13:11:31.505Z",
+          "publishedAt": "2022-04-09T13:01:56.347Z",
+          "revisedAt": "2022-04-09T13:11:31.505Z",
+          "date": "2022-02-13T14:00:00.000Z",
+          "tags": [],
+          "links": [
+            {
+              "fieldId": "link",
+              "url": "https://twitter.com/FirefoxDevTools/status/1488553788843642880"
+            }
+          ],
+          "title": "Firefox 98の新機能",
+          "body": [
+            {
+              "fieldId": "richText",
+              "content": "<p>M<span style=\"color:#3b454e\">DNらしく、ブラウザのサポート状況がDevTools上で見れるようになった。</span></p>"
+            }
+          ],
+          "related": []
+        }
+      ]
+    },
+    {
+      "id": "apslpjir0",
+      "createdAt": "2022-04-09T12:58:08.672Z",
+      "updatedAt": "2022-04-09T12:58:08.672Z",
+      "publishedAt": "2022-04-09T12:58:08.672Z",
+      "revisedAt": "2022-04-09T12:58:08.672Z",
+      "date": "2022-01-30T14:00:00.000Z",
+      "scraps": [
+        {
+          "id": "bg6_r6ak2--8",
+          "createdAt": "2022-04-09T12:54:14.956Z",
+          "updatedAt": "2022-04-09T12:54:14.956Z",
+          "publishedAt": "2022-04-09T12:54:14.956Z",
+          "revisedAt": "2022-04-09T12:54:14.956Z",
+          "date": "2022-01-30T14:00:00.000Z",
+          "tags": [],
+          "links": [
+            {
+              "fieldId": "link",
+              "url": "https://open-props.style/"
+            }
+          ],
+          "title": "新しいCSSフレームワーク",
+          "body": [
+            {
+              "fieldId": "richText",
+              "content": "<p><span style=\"color:#3b454e\">Figma Tokenを使えるらしい</span></p>"
+            }
+          ],
+          "related": []
+        },
+        {
+          "id": "awwbl23fqtc",
+          "createdAt": "2022-04-09T12:54:41.395Z",
+          "updatedAt": "2022-04-09T12:54:41.395Z",
+          "publishedAt": "2022-04-09T12:54:41.395Z",
+          "revisedAt": "2022-04-09T12:54:41.395Z",
+          "date": "2022-01-30T14:00:00.000Z",
+          "tags": [],
+          "links": [
+            {
+              "fieldId": "link",
+              "url": "https://vercel.com/changelog/checkly-integration-and-checks-api-now-generally-available"
+            }
+          ],
+          "title": "Vercel Checkly GA",
+          "body": [],
+          "related": []
+        },
+        {
+          "id": "cl3ta9ebl",
+          "createdAt": "2022-04-09T12:54:57.564Z",
+          "updatedAt": "2022-04-09T12:58:21.079Z",
+          "publishedAt": "2022-04-09T12:54:57.564Z",
+          "revisedAt": "2022-04-09T12:58:21.079Z",
+          "date": "2022-01-30T14:00:00.000Z",
+          "tags": [],
+          "links": [
+            {
+              "fieldId": "link",
+              "url": "https://github.com/11ty/eleventy/releases/tag/v1.0.0"
+            }
+          ],
+          "title": "11ty v1.0.0リリース",
+          "body": [],
+          "related": []
+        },
+        {
+          "id": "g6q723futs",
+          "createdAt": "2022-04-09T12:55:11.927Z",
+          "updatedAt": "2022-04-09T12:58:26.173Z",
+          "publishedAt": "2022-04-09T12:55:11.927Z",
+          "revisedAt": "2022-04-09T12:58:26.173Z",
+          "date": "2022-01-30T14:00:00.000Z",
+          "tags": [],
+          "links": [
+            {
+              "fieldId": "link",
+              "url": "https://tinybase.org/"
+            }
+          ],
+          "title": "TinyBase v1.0.0リリース",
+          "body": [],
+          "related": []
+        },
+        {
+          "id": "h37srf-rzmml",
+          "createdAt": "2022-04-09T12:55:27.762Z",
+          "updatedAt": "2022-04-09T12:58:31.435Z",
+          "publishedAt": "2022-04-09T12:55:27.762Z",
+          "revisedAt": "2022-04-09T12:58:31.435Z",
+          "date": "2022-01-30T14:00:00.000Z",
+          "tags": [],
+          "links": [
+            {
+              "fieldId": "link",
+              "url": "https://github.com/smeijer/unimported"
+            }
+          ],
+          "title": "使ってない依存とかを検知して修正できるもの",
+          "body": [],
+          "related": []
+        },
+        {
+          "id": "7u_mnjb2x",
+          "createdAt": "2022-04-09T12:55:41.852Z",
+          "updatedAt": "2022-04-09T12:58:39.653Z",
+          "publishedAt": "2022-04-09T12:55:41.852Z",
+          "revisedAt": "2022-04-09T12:58:39.653Z",
+          "date": "2022-01-30T14:00:00.000Z",
+          "tags": [],
+          "links": [
+            {
+              "fieldId": "link",
+              "url": "https://twitter.com/lcasdev/status/1483507347859378182"
+            }
+          ],
+          "title": "nodeとdenoのチェックシート",
+          "body": [],
+          "related": []
+        },
+        {
+          "id": "m7s8sl4gl0",
+          "createdAt": "2022-04-09T12:56:03.052Z",
+          "updatedAt": "2022-04-09T12:58:44.153Z",
+          "publishedAt": "2022-04-09T12:56:03.052Z",
+          "revisedAt": "2022-04-09T12:58:44.153Z",
+          "date": "2022-01-30T14:00:00.000Z",
+          "tags": [],
+          "links": [
+            {
+              "fieldId": "link",
+              "url": "https://awsstash.com/"
+            },
+            {
+              "fieldId": "link",
+              "url": "https://aws.amazon.com/jp/whitepapers/"
+            }
+          ],
+          "title": "AWSのリファレンス",
+          "body": [],
+          "related": []
+        },
+        {
+          "id": "x5yyela4va",
+          "createdAt": "2022-04-09T12:56:17.116Z",
+          "updatedAt": "2022-04-09T12:58:50.741Z",
+          "publishedAt": "2022-04-09T12:56:17.116Z",
+          "revisedAt": "2022-04-09T12:58:50.741Z",
+          "date": "2022-01-30T14:00:00.000Z",
+          "tags": [],
+          "links": [
+            {
+              "fieldId": "link",
+              "url": "https://www.oreilly.com/library/view/bash-idioms/9781492094746/"
+            }
+          ],
+          "title": "オライリーのBash本",
+          "body": [],
+          "related": []
+        },
+        {
+          "id": "r3_t0r74kdpq",
+          "createdAt": "2022-04-09T12:56:37.965Z",
+          "updatedAt": "2022-04-09T12:58:57.266Z",
+          "publishedAt": "2022-04-09T12:56:37.965Z",
+          "revisedAt": "2022-04-09T12:58:57.266Z",
+          "date": "2022-01-30T14:00:00.000Z",
+          "tags": [],
+          "links": [
+            {
+              "fieldId": "link",
+              "url": "https://gihyo.jp/book/2022/978-4-297-12562-2"
+            }
+          ],
+          "title": "コンセプトから理解するRust",
+          "body": [
+            {
+              "fieldId": "richText",
+              "content": "<p><span style=\"color:#3b454e\">他の言語と比較した解説本</span></p>"
+            }
+          ],
+          "related": []
+        }
+      ]
+    },
+    {
+      "id": "yimdegfb6",
+      "createdAt": "2022-04-09T12:53:04.966Z",
+      "updatedAt": "2022-04-09T12:53:04.966Z",
+      "publishedAt": "2022-04-09T12:53:04.966Z",
+      "revisedAt": "2022-04-09T12:53:04.966Z",
+      "date": "2022-01-29T14:00:00.000Z",
+      "scraps": [
+        {
+          "id": "uqkmrtlzq-_u",
+          "createdAt": "2022-04-09T12:44:35.487Z",
+          "updatedAt": "2022-04-09T12:48:20.313Z",
+          "publishedAt": "2022-04-09T12:44:35.487Z",
+          "revisedAt": "2022-04-09T12:48:20.313Z",
+          "date": "2022-01-29T14:00:00.000Z",
+          "tags": [],
+          "links": [
+            {
+              "fieldId": "link",
+              "url": "https://github.blog/changelog/2022-01-21-allow-to-upload-svg-files-to-markdown/"
+            }
+          ],
+          "title": "GitHub SVG対応",
+          "body": [],
+          "related": []
+        },
+        {
+          "id": "kwxlwdrwis",
+          "createdAt": "2022-04-09T12:44:54.317Z",
+          "updatedAt": "2022-04-09T12:48:26.121Z",
+          "publishedAt": "2022-04-09T12:44:54.317Z",
+          "revisedAt": "2022-04-09T12:48:26.121Z",
+          "date": "2022-01-29T14:00:00.000Z",
+          "tags": [],
+          "links": [
+            {
+              "fieldId": "link",
+              "url": "https://devblogs.microsoft.com/typescript/announcing-typescript-4-6-beta/"
+            }
+          ],
+          "title": "TypeScript 4.6β",
+          "body": [],
+          "related": []
+        },
+        {
+          "id": "8jr5lg41byk",
+          "createdAt": "2022-04-09T12:47:10.048Z",
+          "updatedAt": "2022-04-09T12:48:42.320Z",
+          "publishedAt": "2022-04-09T12:47:10.048Z",
+          "revisedAt": "2022-04-09T12:48:42.320Z",
+          "date": "2022-01-29T14:00:00.000Z",
+          "tags": [],
+          "links": [
+            {
+              "fieldId": "link",
+              "url": "https://github.blog/2022-01-24-highlights-from-git-2-35/"
+            }
+          ],
+          "title": "Git 2.35リリース",
+          "body": [
+            {
+              "fieldId": "richText",
+              "content": "<p>diff3の進化版zdiff3というのが使えるようになったらしい。<br>ちなみにdiff3はこんな感じ。</p>"
+            },
+            {
+              "fieldId": "plainText",
+              "content": "```shell\n<<<<<<< HEAD\nfoo,\nbar,\nbaz,\n||||||| 60c6bd0\n# add more here\n=======\nfoo,\nbar,\nquux,\nwoot,\nbaz,\n>>>>>>> side\n3,\n```"
+            },
+            {
+              "fieldId": "richText",
+              "content": "<p><span style=\"color:#3b454e\">zdiff3ではこうなるらしい。見やすくなったかも。</span></p>"
+            },
+            {
+              "fieldId": "plainText",
+              "content": "```shell\n1,\nfoo,\nbar,\n<<<<<<< HEAD\n||||||| 60c6bd0\n# add more here\n=======\nquux,\nwoot,\n>>>>>>> side\nbaz,\n3,\n```"
+            }
+          ],
+          "related": []
+        },
+        {
+          "id": "kvlqtan9m",
+          "createdAt": "2022-04-09T12:46:08.890Z",
+          "updatedAt": "2022-04-09T12:48:37.091Z",
+          "publishedAt": "2022-04-09T12:46:08.890Z",
+          "revisedAt": "2022-04-09T12:48:37.091Z",
+          "date": "2022-01-29T14:00:00.000Z",
+          "tags": [],
+          "links": [
+            {
+              "fieldId": "link",
+              "url": "https://github.com/awslabs/aws-lambda-powertools-typescript"
+            }
+          ],
+          "title": "AWS Lambda用のTypeScriptのユーティリティセット",
+          "body": [
+            {
+              "fieldId": "richText",
+              "content": "<p><span style=\"color:#3b454e\">トレースやロギング、メトリクス関連のベストプラクティスを試せるもの。まだ開発者プレビュー。</span></p>"
+            }
+          ],
+          "related": []
+        },
+        {
+          "id": "8jr5lg41byk",
+          "createdAt": "2022-04-09T12:47:10.048Z",
+          "updatedAt": "2022-04-09T12:48:42.320Z",
+          "publishedAt": "2022-04-09T12:47:10.048Z",
+          "revisedAt": "2022-04-09T12:48:42.320Z",
+          "date": "2022-01-29T14:00:00.000Z",
+          "tags": [],
+          "links": [
+            {
+              "fieldId": "link",
+              "url": "https://github.blog/2022-01-24-highlights-from-git-2-35/"
+            }
+          ],
+          "title": "Git 2.35リリース",
+          "body": [
+            {
+              "fieldId": "richText",
+              "content": "<p>diff3の進化版zdiff3というのが使えるようになったらしい。<br>ちなみにdiff3はこんな感じ。</p>"
+            },
+            {
+              "fieldId": "plainText",
+              "content": "```shell\n<<<<<<< HEAD\nfoo,\nbar,\nbaz,\n||||||| 60c6bd0\n# add more here\n=======\nfoo,\nbar,\nquux,\nwoot,\nbaz,\n>>>>>>> side\n3,\n```"
+            },
+            {
+              "fieldId": "richText",
+              "content": "<p><span style=\"color:#3b454e\">zdiff3ではこうなるらしい。見やすくなったかも。</span></p>"
+            },
+            {
+              "fieldId": "plainText",
+              "content": "```shell\n1,\nfoo,\nbar,\n<<<<<<< HEAD\n||||||| 60c6bd0\n# add more here\n=======\nquux,\nwoot,\n>>>>>>> side\nbaz,\n3,\n```"
+            }
+          ],
+          "related": []
+        },
+        {
+          "id": "tv8hdns_a4b8",
+          "createdAt": "2022-04-09T12:47:33.635Z",
+          "updatedAt": "2022-04-09T12:48:47.058Z",
+          "publishedAt": "2022-04-09T12:47:33.635Z",
+          "revisedAt": "2022-04-09T12:48:47.058Z",
+          "date": "2022-01-29T14:00:00.000Z",
+          "tags": [],
+          "links": [
+            {
+              "fieldId": "link",
+              "url": "https://tailwindcss.com/blog/automatic-class-sorting-with-prettier"
+            }
+          ],
+          "title": "TailwindCSS用のPrettierプラグイン",
+          "body": [
+            {
+              "fieldId": "richText",
+              "content": "<p><span style=\"color:#3b454e\">クラス名とかの並べ替えをしてくれる</span></p>"
+            }
+          ],
+          "related": []
+        },
+        {
+          "id": "rcgcrv8w4",
+          "createdAt": "2022-04-09T12:47:47.732Z",
+          "updatedAt": "2022-04-09T12:48:55.568Z",
+          "publishedAt": "2022-04-09T12:47:47.732Z",
+          "revisedAt": "2022-04-09T12:48:55.568Z",
+          "date": "2022-01-29T14:00:00.000Z",
+          "tags": [],
+          "links": [
+            {
+              "fieldId": "link",
+              "url": "https://www.youtube.com/watch?v=DsF4sXkdPeE"
+            }
+          ],
+          "title": "Remotionが会社化",
+          "body": [],
+          "related": []
+        },
+        {
+          "id": "z8h9l0zhfcd",
+          "createdAt": "2022-04-09T12:48:02.236Z",
+          "updatedAt": "2022-04-09T12:49:00.588Z",
+          "publishedAt": "2022-04-09T12:48:02.236Z",
+          "revisedAt": "2022-04-09T12:49:00.588Z",
+          "date": "2022-01-29T14:00:00.000Z",
+          "tags": [],
+          "links": [
+            {
+              "fieldId": "link",
+              "url": "https://nhost.io/"
+            }
+          ],
+          "title": "新しいサーバレスサービス nhost",
+          "body": [],
+          "related": []
+        }
+      ]
+    },
+    {
+      "id": "oj05fv33uw",
+      "createdAt": "2022-04-09T12:51:59.878Z",
+      "updatedAt": "2022-04-09T12:51:59.878Z",
+      "publishedAt": "2022-04-09T12:51:59.878Z",
+      "revisedAt": "2022-04-09T12:51:59.878Z",
+      "date": "2022-01-22T14:00:00.000Z",
+      "scraps": [
+        {
+          "id": "9zhsq2bmag9",
+          "createdAt": "2022-04-09T12:38:38.813Z",
+          "updatedAt": "2022-04-09T12:43:09.975Z",
+          "publishedAt": "2022-04-09T12:38:38.813Z",
+          "revisedAt": "2022-04-09T12:43:09.975Z",
+          "date": "2022-01-22T14:00:00.000Z",
+          "tags": [],
+          "links": [
+            {
+              "fieldId": "link",
+              "url": "https://aws.amazon.com/jp/about-aws/whats-new/2022/01/aws-lambda-es-modules-top-level-await-node-js-14/"
+            }
+          ],
+          "title": "AWS LambdaのESModule対応",
+          "body": [
+            {
+              "fieldId": "richText",
+              "content": "<p><span style=\"color:#3b454e\">LambdaでESModuleが使えるようになり、かつ、Top Level Awaitが有効になった。 コールドスタートしてるようなアプリで、事前にリソース情報を読み込みたいときに便利。</span></p>"
+            }
+          ],
+          "related": []
+        },
+        {
+          "id": "c_404yxzf-0",
+          "createdAt": "2022-04-09T12:39:00.752Z",
+          "updatedAt": "2022-04-09T12:43:21.828Z",
+          "publishedAt": "2022-04-09T12:39:00.752Z",
+          "revisedAt": "2022-04-09T12:43:21.828Z",
+          "date": "2022-01-22T14:00:00.000Z",
+          "tags": [],
+          "links": [
+            {
+              "fieldId": "link",
+              "url": "https://risingstars.js.org/2021/ja"
+            }
+          ],
+          "title": "JavaScriptライジングスター2021",
+          "body": [
+            {
+              "fieldId": "richText",
+              "content": "<p><span style=\"color:#3b454e\">GitHubリポジトリのスター数が多かったリポジトリの説明など</span></p>"
+            }
+          ],
+          "related": []
+        },
+        {
+          "id": "zpu9_33c_z",
+          "createdAt": "2022-04-09T12:39:27.901Z",
+          "updatedAt": "2022-04-09T12:43:29.707Z",
+          "publishedAt": "2022-04-09T12:39:27.901Z",
+          "revisedAt": "2022-04-09T12:43:29.707Z",
+          "date": "2022-01-22T14:00:00.000Z",
+          "tags": [],
+          "links": [
+            {
+              "fieldId": "link",
+              "url": "https://github.com/Marak/colors.js/issues/285"
+            }
+          ],
+          "title": "color.jsやfaker.jsで意図的なバグ混入",
+          "body": [
+            {
+              "fieldId": "plainText",
+              "content": " faker.jsの方はブランチの中身が削除された。 フォークされていたfaker.jsを統合して新しくリポジトリが作られ、コミュニティ主導になった。"
+            }
+          ],
+          "related": []
+        },
+        {
+          "id": "wh0p49dyma",
+          "createdAt": "2022-04-09T12:39:54.755Z",
+          "updatedAt": "2022-04-09T12:43:34.776Z",
+          "publishedAt": "2022-04-09T12:39:54.755Z",
+          "revisedAt": "2022-04-09T12:43:34.776Z",
+          "date": "2022-01-22T14:00:00.000Z",
+          "tags": [],
+          "links": [
+            {
+              "fieldId": "link",
+              "url": "https://www.volcengine.com/"
+            }
+          ],
+          "title": "新しいクラウドサービス",
+          "body": [
+            {
+              "fieldId": "richText",
+              "content": "<p><span style=\"color:#3b454e\">TikTokを提供するByteDance社のクラウドサービス。 中国向けっぽいけど、Alibaba Cloudが強いから、どうなるかな。</span></p>"
+            }
+          ],
+          "related": []
+        },
+        {
+          "id": "ikl5inj5ay4",
+          "createdAt": "2022-04-09T12:40:13.610Z",
+          "updatedAt": "2022-04-09T12:43:16.234Z",
+          "publishedAt": "2022-04-09T12:40:13.610Z",
+          "revisedAt": "2022-04-09T12:43:16.234Z",
+          "date": "2022-01-22T14:00:00.000Z",
+          "tags": [],
+          "links": [
+            {
+              "fieldId": "link",
+              "url": "https://astro.build/blog/the-astro-technology-company/"
+            }
+          ],
+          "title": "Astro会社化",
+          "body": [],
+          "related": []
+        },
+        {
+          "id": "ckx0y5ff4l5",
+          "createdAt": "2022-04-09T12:40:43.785Z",
+          "updatedAt": "2022-04-09T12:43:42.556Z",
+          "publishedAt": "2022-04-09T12:40:43.785Z",
+          "revisedAt": "2022-04-09T12:43:42.556Z",
+          "date": "2022-01-22T14:00:00.000Z",
+          "tags": [],
+          "links": [
+            {
+              "fieldId": "link",
+              "url": "https://www.nvidia.com/en-us/studio/canvas/"
+            }
+          ],
+          "title": "NVIDIA CANVAS",
+          "body": [
+            {
+              "fieldId": "richText",
+              "content": "<p><span style=\"color:#3b454e\">抽象的な表現を具体的に描き起こしてくれるツール。</span></p>"
+            }
+          ],
+          "related": []
+        },
+        {
+          "id": "sn9y9uypd054",
+          "createdAt": "2022-04-09T12:41:57.404Z",
+          "updatedAt": "2022-04-09T12:43:48.292Z",
+          "publishedAt": "2022-04-09T12:41:57.404Z",
+          "revisedAt": "2022-04-09T12:43:48.292Z",
+          "date": "2022-01-22T14:00:00.000Z",
+          "tags": [],
+          "links": [
+            {
+              "fieldId": "link",
+              "url": "https://www.typescriptlang.org/cheatsheets"
+            },
+            {
+              "fieldId": "link",
+              "url": "https://www.figma.com/file/x8FJrNqj6oupqWn1s3uMg4/TypeScript-Website-Design?node-id=3319%3A1675"
+            }
+          ],
+          "title": "TypeScriptチートシート発表",
+          "body": [
+            {
+              "fieldId": "richText",
+              "content": "<p>TypeScript公式のチートシートはこちらで確認できる<br><a style=\"color:#1000ee\" href=\"https://www.typescriptlang.org/cheatsheets\" target=\"_blank\" rel=\"noopener noreferrer\">https://www.typescriptlang.org/cheatsheets</a><br><br>チートシートはFigmaで管理されてる<br><a style=\"color:#1000ee\" href=\"https://www.figma.com/file/x8FJrNqj6oupqWn1s3uMg4/TypeScript-Website-Design?node-id=3319%3A1675\" target=\"_blank\" rel=\"noopener noreferrer\">https://www.figma.com/file/x8FJrNqj6oupqWn1s3uMg4/TypeScript-Website-Design?node-id=3319%3A1675</a><br></p>"
+            }
+          ],
+          "related": []
+        },
+        {
+          "id": "aqyaj29dj2",
+          "createdAt": "2022-04-09T12:42:28.271Z",
+          "updatedAt": "2022-04-09T12:43:53.132Z",
+          "publishedAt": "2022-04-09T12:42:28.271Z",
+          "revisedAt": "2022-04-09T12:43:53.132Z",
+          "date": "2022-01-22T14:00:00.000Z",
+          "tags": [],
+          "links": [
+            {
+              "fieldId": "link",
+              "url": "https://circleci.com/blog/most-generous-free-cicd-plan/"
+            }
+          ],
+          "title": "CircleCI無料枠拡大",
+          "body": [
+            {
+              "fieldId": "richText",
+              "content": "<p><span style=\"color:#3b454e\">無料枠で並列処理ができるようになったのは嬉しい。</span></p>"
+            }
+          ],
+          "related": []
+        },
+        {
+          "id": "jpoz8e01dr",
+          "createdAt": "2022-04-09T12:42:52.816Z",
+          "updatedAt": "2022-04-09T12:43:58.338Z",
+          "publishedAt": "2022-04-09T12:42:52.816Z",
+          "revisedAt": "2022-04-09T12:43:58.338Z",
+          "date": "2022-01-22T14:00:00.000Z",
+          "tags": [],
+          "links": [
+            {
+              "fieldId": "link",
+              "url": "https://blog.vuejs.org/posts/vue-3-as-the-new-default.html"
+            }
+          ],
+          "title": "Vue3がデフォルトバージョンになる",
+          "body": [],
+          "related": []
+        }
+      ]
+    },
+    {
+      "id": "34pye-g5v_c",
+      "createdAt": "2022-04-09T12:35:18.970Z",
+      "updatedAt": "2022-04-09T12:35:18.970Z",
+      "publishedAt": "2022-04-09T12:35:18.970Z",
+      "revisedAt": "2022-04-09T12:35:18.970Z",
+      "date": "2022-01-02T14:00:00.000Z",
+      "scraps": [
+        {
+          "id": "d2ccgnpiuy",
+          "createdAt": "2022-04-09T12:29:20.835Z",
+          "updatedAt": "2022-04-09T12:33:59.449Z",
+          "publishedAt": "2022-04-09T12:29:20.835Z",
+          "revisedAt": "2022-04-09T12:33:59.449Z",
+          "date": "2022-01-02T14:00:00.000Z",
+          "tags": [],
+          "links": [
+            {
+              "fieldId": "link",
+              "url": "https://svelte.dev/blog/whats-new-in-svelte-january-2022"
+            }
+          ],
+          "title": "What's new in Svelte: January 2022",
+          "body": [
+            {
+              "fieldId": "richText",
+              "content": "<p><span style=\"color:#3b454e\">Svelteの新機能の話。最近追ってなかったけど、いつの間にかViteと連携できるようになってた。 ページの並列レンダリングとBrotli圧縮、Service Workersの登録を無効にできる機能が気になるところ。</span></p>"
+            }
+          ],
+          "related": []
+        },
+        {
+          "id": "qu5vc9qx5",
+          "createdAt": "2022-04-09T12:29:54.002Z",
+          "updatedAt": "2022-04-09T12:34:18.081Z",
+          "publishedAt": "2022-04-09T12:29:54.002Z",
+          "revisedAt": "2022-04-09T12:34:18.081Z",
+          "date": "2022-01-02T14:00:00.000Z",
+          "tags": [],
+          "links": [
+            {
+              "fieldId": "link",
+              "url": "https://lightest.app/"
+            }
+          ],
+          "title": "lightest.app",
+          "body": [
+            {
+              "fieldId": "richText",
+              "content": "<p><span style=\"color:#3b454e\">サイトの表示速度を比較できるサイト</span></p>"
+            }
+          ],
+          "related": []
+        },
+        {
+          "id": "a427h2ofc",
+          "createdAt": "2022-04-09T12:30:31.975Z",
+          "updatedAt": "2022-04-09T12:34:23.807Z",
+          "publishedAt": "2022-04-09T12:30:31.975Z",
+          "revisedAt": "2022-04-09T12:34:23.807Z",
+          "date": "2022-01-02T14:00:00.000Z",
+          "tags": [],
+          "links": [
+            {
+              "fieldId": "link",
+              "url": "https://keens.github.io/blog/2022/01/02/svgnoanime_shonnoobenkyou/"
+            }
+          ],
+          "title": "SVGアニメーション",
+          "body": [
+            {
+              "fieldId": "richText",
+              "content": "<p><span style=\"color:#3b454e\">SVGでアニメーションができるという紹介ブログ。</span></p>"
+            }
+          ],
+          "related": []
+        },
+        {
+          "id": "lcbgjrgxb",
+          "createdAt": "2022-04-09T12:31:29.953Z",
+          "updatedAt": "2022-04-09T12:34:29.107Z",
+          "publishedAt": "2022-04-09T12:31:29.953Z",
+          "revisedAt": "2022-04-09T12:34:29.107Z",
+          "date": "2022-01-02T14:00:00.000Z",
+          "tags": [],
+          "links": [
+            {
+              "fieldId": "link",
+              "url": "https://blog-dry.com/entry/2021/01/23/141936"
+            }
+          ],
+          "title": "Rustを始めるための資料",
+          "body": [
+            {
+              "fieldId": "richText",
+              "content": "<p><a style=\"color:#1000ee;background-color:#ffffff\" href=\"https://doc.rust-lang.org/book/index.html\" target=\"_blank\" rel=\"noopener noreferrer\">The Rust Programming Language</a><span style=\"color:#3b454e\">を読む前に軽く読めそうなコンテンツが多くて良さそう。 上のコンテンツもまだ7割ぐらいしか読めてないし、復習がてらに触ってみても良いかも。</span></p>"
+            }
+          ],
+          "related": []
+        },
+        {
+          "id": "wuunj2o1500",
+          "createdAt": "2022-04-09T12:32:00.253Z",
+          "updatedAt": "2022-04-09T12:34:34.476Z",
+          "publishedAt": "2022-04-09T12:32:00.253Z",
+          "revisedAt": "2022-04-09T12:34:34.476Z",
+          "date": "2022-01-02T14:00:00.000Z",
+          "tags": [],
+          "links": [
+            {
+              "fieldId": "link",
+              "url": "https://blog.deleu.dev/aws-vpc-for-software-engineers/"
+            }
+          ],
+          "title": "ソフトウェアエンジニア向けてAWSの用語説明",
+          "body": [
+            {
+              "fieldId": "richText",
+              "content": "<p><span style=\"color:#3b454e\">VPC, サブネット, igw, NAT gwなどについて解説。 port7777のホームページを眺めてるときに発見して、分かりやすかった。</span></p>"
+            }
+          ],
+          "related": []
+        },
+        {
+          "id": "p1aiaf4-4de",
+          "createdAt": "2022-04-09T12:33:11.427Z",
+          "updatedAt": "2022-04-09T12:34:41.871Z",
+          "publishedAt": "2022-04-09T12:33:11.427Z",
+          "revisedAt": "2022-04-09T12:34:41.871Z",
+          "date": "2022-01-02T14:00:00.000Z",
+          "tags": [],
+          "links": [],
+          "title": "開発元を検証できないツールの実行",
+          "body": [
+            {
+              "fieldId": "richText",
+              "content": "<p>安全なのはわかってるけど、開発元が検証できずに、Macで拒否されるときの対処法<br>以下のコマンドで解除できる。</p>"
+            },
+            {
+              "fieldId": "plainText",
+              "content": "```shell\n$ sudo spctl --master-disable\n```"
+            },
+            {
+              "fieldId": "richText",
+              "content": "<p>戻すときはこうする。</p>"
+            },
+            {
+              "fieldId": "plainText",
+              "content": "```shell\n$ sudo spctl --master-enable\n```"
+            }
+          ],
+          "related": []
+        }
+      ]
+    },
+    {
+      "id": "fe50f7q9tvxn",
+      "createdAt": "2022-04-09T12:28:19.180Z",
+      "updatedAt": "2022-04-09T12:28:19.180Z",
+      "publishedAt": "2022-04-09T12:28:19.180Z",
+      "revisedAt": "2022-04-09T12:28:19.180Z",
+      "date": "2021-12-27T14:00:00.000Z",
+      "scraps": [
+        {
+          "id": "9rcfcwauntr",
+          "createdAt": "2022-04-09T12:27:12.652Z",
+          "updatedAt": "2022-04-09T12:33:44.462Z",
+          "publishedAt": "2022-04-09T12:27:12.652Z",
+          "revisedAt": "2022-04-09T12:33:44.462Z",
+          "date": "2021-12-27T14:00:00.000Z",
+          "tags": [],
+          "links": [
+            {
+              "fieldId": "link",
+              "url": "https://circleci.com/ja/changelog/#%E3%83%AF%E3%83%BC%E3%82%AF%E3%83%95%E3%83%AD%E3%83%BC%E3%81%A8%E3%81%97%E3%81%A6%E3%81%AE-ssh-%E3%81%A7%E3%81%AE%E5%86%8D%E5%AE%9F%E8%A1%8C"
+            }
+          ],
+          "title": "CircleCIのSSHでの再実行が改善",
+          "body": [
+            {
+              "fieldId": "richText",
+              "content": "<p>CircleCIでテストが失敗したときなどに、コンテナの中身に入ってファイルを見たり、テストを再実行したりするときに便利なSSHでの再実行がアップデート。<br><br>前までは独立したジョブとしてSSHが実行されたため、プロジェクト画面などに戻ると、どこでSSH接続が続いているのかが探しづらかった。今回のアップデートでワークフローに紐づくようになったため、探しやすくなった。</p>"
+            }
+          ],
+          "related": []
+        }
+      ]
+    },
+    {
+      "id": "8-ixrsaax",
+      "createdAt": "2022-04-09T12:27:58.604Z",
+      "updatedAt": "2022-04-09T12:27:58.604Z",
+      "publishedAt": "2022-04-09T12:27:58.604Z",
+      "revisedAt": "2022-04-09T12:27:58.604Z",
+      "date": "2021-12-26T14:00:00.000Z",
+      "scraps": [
+        {
+          "id": "npl5vinl6fbg",
+          "createdAt": "2022-04-09T12:20:21.218Z",
+          "updatedAt": "2022-04-09T12:33:22.991Z",
+          "publishedAt": "2022-04-09T12:20:21.218Z",
+          "revisedAt": "2022-04-09T12:33:22.991Z",
+          "date": "2021-12-26T14:00:00.000Z",
+          "tags": [],
+          "links": [
+            {
+              "fieldId": "link",
+              "url": "https://rubyonrails.org/2021/12/15/Rails-7-fulfilling-a-vision"
+            },
+            {
+              "fieldId": "link",
+              "url": "https://world.hey.com/dhh/modern-web-apps-without-javascript-bundling-or-transpiling-a20f2755"
+            }
+          ],
+          "title": "Rails 7.0リリース",
+          "body": [
+            {
+              "fieldId": "richText",
+              "content": "<p>フロントエンド周りを強化。RailsはAPIモードでの利用が主で、フロントとかはNext.jsとかNuxt.jsを使っている印象なので、必要なアップデートか若干疑問に感じた。<br>DHH氏の<a style=\"color:#1000ee\" href=\"https://world.hey.com/dhh/modern-web-apps-without-javascript-bundling-or-transpiling-a20f2755\" target=\"_blank\" rel=\"noopener noreferrer\">Modern web apps without JavaScript bundling or transpiling</a>をまとめると以下のような感じ？</p><ul><li>主要ブラウザES6がサポートされたので、Babel不要</li><li>HTTP/2が普及し小さいファイルを大量に送ってもあまり問題ないので、Webpackでまとめる必要なし</li><li>Import mapsでCDN経由でモジュールを取り込めるので、Node.js不要</li></ul><p><br>フロントエンド周りのアップデートを無視すると、ActiveRecord::Encryptionとか、Relation#load_asyncあたりが良さげ。<br>前者はアプリケーションレベルの暗号化機能で、ActiveRecordで扱うときは平文で扱えて、DBに保存するときは暗号化できる機能。後者はクエリの実行を並列でできる機能みたいで、使い勝手良さそう。あと、Springがデフォルトでオフになったらしい。</p>"
+            }
+          ],
+          "related": []
+        },
+        {
+          "id": "fvl21an4niy",
+          "createdAt": "2022-04-09T12:21:40.336Z",
+          "updatedAt": "2022-04-09T12:33:31.360Z",
+          "publishedAt": "2022-04-09T12:21:40.336Z",
+          "revisedAt": "2022-04-09T12:33:31.360Z",
+          "date": "2021-12-26T14:00:00.000Z",
+          "tags": [],
+          "links": [
+            {
+              "fieldId": "link",
+              "url": "https://www.ruby-lang.org/en/news/2021/12/25/ruby-3-1-0-released/"
+            }
+          ],
+          "title": "Ruby 3.1リリース",
+          "body": [
+            {
+              "fieldId": "richText",
+              "content": "<p><span style=\"color:#3b454e\">ES6みたいな書き方ができるようになった。あとはデバッグ系の機能が強化されたり、IRBでオートコンプリートができるようになったりしてた。</span></p>"
+            },
+            {
+              "fieldId": "plainText",
+              "content": "```ruby\n> {x: x, y: y} == {x:, y:}\n```"
+            }
+          ],
+          "related": []
+        },
+        {
+          "id": "npm7jgf84u0",
+          "createdAt": "2022-04-09T12:25:47.980Z",
+          "updatedAt": "2022-04-09T12:25:47.980Z",
+          "publishedAt": "2022-04-09T12:25:47.980Z",
+          "revisedAt": "2022-04-09T12:25:47.980Z",
+          "date": "2021-12-26T14:00:00.000Z",
+          "tags": [],
+          "links": [
+            {
+              "fieldId": "link",
+              "url": "https://github.blog/changelog/2021-12-21-specify-who-can-force-push-to-a-repository/"
+            }
+          ],
+          "title": "GitHubでforce pushできるユーザーを制限できるようになった",
+          "body": [],
+          "related": []
+        }
+      ]
+    },
+    {
+      "id": "5_mqtbnrw",
+      "createdAt": "2022-01-29T00:17:38.700Z",
+      "updatedAt": "2022-01-29T00:17:38.700Z",
+      "publishedAt": "2022-01-29T00:17:38.700Z",
+      "revisedAt": "2022-01-29T00:17:38.700Z",
+      "title": "Rails 7.0リリース",
+      "scraps": []
+    }
+  ],
+  "totalCount": 10,
+  "offset": 0,
+  "limit": 10
+}

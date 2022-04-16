@@ -1,4 +1,4 @@
-import { microCMSClient } from './microCMSClient'
+import { microCMSClient } from '../libs/microCMSClient'
 import { MicroCMSQuery, MicroCMSQueryWithGetAllContents } from '../types/microCMS/Common'
 
 // NOTE: List型のコンテンツに対し、ID指定でコンテンツを取得したいときに使う

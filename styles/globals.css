@@ -7,11 +7,6 @@ body {
   background: #FCFDFF;
 }
 
-a {
-  color: inherit;
-  text-decoration: none;
-}
-
 * {
   box-sizing: border-box;
 }
@@ -19,3 +14,9 @@ a {
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+a {
+  color: inherit;
+  text-decoration: none;
+  word-break: break-all;
+}
