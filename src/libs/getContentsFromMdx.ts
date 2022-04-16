@@ -1,4 +1,4 @@
-import { join, parse } from 'path'
+import { join } from 'path'
 import { globby } from 'globby'
 import * as fs from 'fs'
 import matter from 'gray-matter'
