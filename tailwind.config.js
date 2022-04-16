@@ -3,6 +3,7 @@ module.exports = {
   theme: {
     screens: {
       lg: '900px',
+      xl: '2000px',
     },
     extend: {
       animation: {
