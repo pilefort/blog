@@ -11,7 +11,6 @@ const NotesIndexPage: NextPage<InferGetStaticPropsType<typeof getStaticProps>> =
       </div>
       <div className="mt-[48px]">
         {allContents.map(({ slug, title, description, date }) => {
-          console.warn('title, slug: ', title, slug)
           return (
             <div
               key={slug}
