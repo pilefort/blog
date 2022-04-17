@@ -2,7 +2,6 @@ import React from 'react'
 
 import { NextPage, InferGetStaticPropsType } from 'next'
 
-import { join } from 'path'
 import MDX from '@mdx-js/runtime'
 
 import { getAllContentPaths, getContentBySlug } from '../../src/libs/getContentsFromMdx'
@@ -33,9 +32,8 @@ export const getStaticPaths = async () => {
 }
 
 export const getStaticProps = ({ params }: { params: { slug: string } }) => {
-  const fullFilePath = join(process.cwd(), '/contents/snippets/', params.slug + '.mdx')
-
-  const contents = getContentBySlug(fullFilePath, ['title', 'content', 'tags', 'date'])
+  // NOTE: paramsから取得できるslugはページの[slug]であるため、snippetsが抜けている
+  const contents = getContentBySlug('snippets/' + params.slug, ['title', 'content', 'tags', 'date'])
 
   const { title, content, tags, date } = contents
 
