@@ -25,7 +25,7 @@ const SnippetsIndexPage: NextPage<InferGetStaticPropsType<typeof getStaticProps>
 
 export const getStaticPaths = () => {
   const paths = tags.map((tag) => '/snippets/tags/' + tag.slug)
-  console.warn('aaa', paths)
+
   return { paths, fallback: false }
 }
 
