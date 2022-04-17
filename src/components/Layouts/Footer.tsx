@@ -1,12 +1,12 @@
-import { MouseEventHandler, useEffect, useState, MouseEvent } from 'react'
+import { MouseEventHandler, useState, MouseEvent } from 'react'
 
-import { useRouter } from 'next/router'
 import Link from 'next/link'
 import Image from 'next/image'
 
 import TechDojin12Image from '../../../public/assets/tech-dojin/tech12.jpg'
 import TechDojin12NoObiImage from '../../../public/assets/tech-dojin/tech12-no-obi.png'
 import OpenNewWindow from '../../../public/assets/OpenNewWindow.svg'
+import { useMediaQuery } from '../../hooks/useMediaQuery'
 
 type StaticImageData = {
   src: string
@@ -16,14 +16,7 @@ type StaticImageData = {
 }
 
 const Footer = () => {
-  const router = useRouter()
-  const [isDesktop, setIsDesktop] = useState(true)
-
-  useEffect(() => {
-    if (!router.isReady) return
-
-    window.innerWidth >= 900 ? setIsDesktop(true) : setIsDesktop(false)
-  }, [router.isReady])
+  const isDesktop = useMediaQuery()
 
   return <div>{isDesktop ? <DesktopFooter /> : <></>}</div>
 }
