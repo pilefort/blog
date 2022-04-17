@@ -5,22 +5,18 @@ import { getAllContentPaths, getContentBySlug } from '../src/libs/getContentsFro
 
 import tags from '../fetchData/snippets/tags.json'
 
-// TODO: cursor-pointerが動かない
 const SnippetsIndexPage: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({ allContents }) => {
   return (
-    <div>
+    <>
       <div>
         <div>タグ一覧</div>
         {tags.map((tag) => {
           return (
-            <div key={tag.slug}>
-              <Link
-                href={`/snippets/tags/${tag.slug}`}
-                passHref
-              >
-                <a>{tag.name}</a>
-              </Link>
-            </div>
+            <ul key={tag.slug}>
+              <a href={`/snippets?tags=${tag.slug}`}>
+                <span>{tag.name}</span>
+              </a>
+            </ul>
           )
         })}
       </div>
@@ -43,7 +39,7 @@ const SnippetsIndexPage: NextPage<InferGetStaticPropsType<typeof getStaticProps>
           )
         })}
       </div>
-    </div>
+    </>
   )
 }
 

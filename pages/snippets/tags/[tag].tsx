@@ -29,12 +29,12 @@ export const getStaticPaths = () => {
   return { paths, fallback: false }
 }
 
-export const getStaticProps: ({ params }: GetStaticPropsContext<{ id: string }>) => {
+export const getStaticProps: ({ params }: GetStaticPropsContext<{ tag: string }>) => {
   props: { slug: string; group: { name: string; slug: string }[] }
 } = ({ params }) => {
-  if (!params?.id) throw new Error('params.id not found')
+  if (!params?.tag) throw new Error('params tag not found')
 
-  const { slug, group } = groupingData.filter((data) => data.slug === params.id)[0]
+  const { slug, group } = groupingData.filter((data) => data.slug === params.tag)[0]
 
   return {
     props: {
