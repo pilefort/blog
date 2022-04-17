@@ -1,163 +1,25 @@
 import data from '../fetchData/scraps/demoWith1Scrap.json'
 import scrapsListsData from '../fetchData/scraps/demoWithScrapLists.json'
 
-import { NextPage, InferGetStaticPropsType } from 'next'
 import { useState } from 'react'
-import Link from 'next/link'
-import { utcToJst } from '../src/libs/date'
+
 import Image from 'next/image'
+import Link from 'next/link'
+import { NextPage, InferGetStaticPropsType } from 'next'
+
+import { utcToJst } from '../src/libs/date'
 
 import TagIcon from '../public/assets/Tag.svg'
 import LinkIcon from '../public/assets/Link.svg'
 
-type CommonMicroCMSResponse = {
-  createdAt?: string
-  updatedAt?: string
-  publishedAt?: string
-  revisedAt?: string
-}
-
-type ContentType = CommonMicroCMSResponse & {
-  id: string
-  date: string
-  createdAt: string
-  highlight: string
-  scraps: (CommonMicroCMSResponse & {
-    id: string
-    updatedAt: string
-    tags?: (CommonMicroCMSResponse & {
-      id: string
-      title: string
-      description: string
-    })[]
-    links?: {
-      fieldId: string
-      url: string
-    }[]
-    title: string
-    body: {
-      fieldId: string
-      content: string
-    }[]
-    related?: {
-      id: string
-      title: string
-    }[]
-  })[]
-}
-
-type ScrapsListType = {
-  id: string
-  date?: string
-  createdAt: string
-}[]
+import { ScrapsListType, ContentType, ScrapsType } from '../src/types/microCMS/Common'
 
 const ScrapsIndexPage: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({ content: { scraps, highlight }, scrapsLists }) => {
-  const [isHover, setIsHover] = useState(false)
-
   return (
     <div className="p-[24px]">
-      <select
-        className="text-[24px]"
-        name="scraps"
-      >
-        {scrapsLists.map(({ id, createdAt, date }) => {
-          const dateTime = utcToJst({ date: date || createdAt })
-
-          return (
-            <option
-              key={id}
-              value={id}
-            >
-              {dateTime}
-            </option>
-          )
-        })}
-      </select>
-
-      <div>
-        <div className="mt-[24px] w-[120px] rounded-[10px_10px_0_0px] border-[5px_5px_0_5px] border-[#1ED3C6] text-center text-[18px]">
-          ハイライト
-        </div>
-        <div
-          className={'border-[5px] border-[#1ED3C6] p-[8px]'}
-          dangerouslySetInnerHTML={{ __html: highlight }}
-        />
-      </div>
-      <div className="mt-[64px]">
-        {scraps.map(({ id, title, tags, updatedAt, body, links }) => {
-          const date = utcToJst({ date: updatedAt })
-
-          return (
-            <div
-              className="mt-[52px]"
-              key={id}
-            >
-              <div className="text-[32px]">{title}</div>
-              <div>{date}</div>
-              {tags &&
-                tags.map(({ id, title, description }) => {
-                  return (
-                    <div
-                      key={id}
-                      className="mr-[8px] flex items-center"
-                    >
-                      <Image
-                        src={TagIcon}
-                        alt="tag"
-                      />
-                      <span
-                        className="ml-[4px]"
-                        onMouseOver={() => setIsHover(true)}
-                        onMouseLeave={() => setIsHover(false)}
-                      >
-                        {title}
-                      </span>
-                      {isHover && <div dangerouslySetInnerHTML={{ __html: description }} />}
-                    </div>
-                  )
-                })}
-              <div className="mt-[16px]">
-                {body.map(({ content, fieldId }, index) => {
-                  return fieldId === 'plainText' ? (
-                    <div key={index}>MarkdownToHTMLで表示する部分</div>
-                  ) : (
-                    <div
-                      key={index}
-                      dangerouslySetInnerHTML={{ __html: content }}
-                    />
-                  )
-                })}
-              </div>
-              {links &&
-                links.map(({ url }, index) => {
-                  return (
-                    <div
-                      key={index}
-                      className="mt-[8px] flex"
-                    >
-                      <div className="mt-[2px] h-[24px] w-[60px]">
-                        <Image
-                          src={LinkIcon}
-                          width={24}
-                          height={24}
-                          alt="link"
-                        />
-                      </div>
-                      <Link
-                        href={url}
-                        key={index}
-                        passHref
-                      >
-                        <a className="ml-[8px] text-[#10AFA4]">{url}</a>
-                      </Link>
-                    </div>
-                  )
-                })}
-            </div>
-          )
-        })}
-      </div>
+      <SelectboxComponent scrapsLists={scrapsLists} />
+      <HighlightComponent highlight={highlight} />
+      <ContentsComponent scraps={scraps} />
     </div>
   )
 }
@@ -177,6 +39,156 @@ export const getStaticProps = (): {
       scrapsLists,
     },
   }
+}
+
+// selectbox component
+const SelectboxComponent = ({ scrapsLists }: { scrapsLists: ScrapsListType }) => {
+  return (
+    <select
+      className="text-[24px]"
+      name="scraps"
+    >
+      {scrapsLists.map(({ id, createdAt, date }) => {
+        const dateTime = utcToJst({ date: date || createdAt })
+
+        return (
+          <SelectboxContentComponent
+            key={id}
+            id={id}
+            dateTime={dateTime}
+          />
+        )
+      })}
+    </select>
+  )
+}
+
+// selectbox component
+const SelectboxContentComponent = ({ id, dateTime }: { id: string; dateTime: string }) => {
+  return (
+    <option
+      key={id}
+      value={id}
+    >
+      {dateTime}
+    </option>
+  )
+}
+
+// highlight component
+const HighlightComponent = ({ highlight }: { highlight: string }) => {
+  return (
+    <div>
+      <div className="mt-[24px] w-[120px] rounded-[10px_10px_0_0px] border-[5px_5px_0_5px] border-[#1ED3C6] text-center text-[18px]">ハイライト</div>
+      <div
+        className={'border-[5px] border-[#1ED3C6] p-[8px]'}
+        dangerouslySetInnerHTML={{ __html: highlight }}
+      />
+    </div>
+  )
+}
+
+const ContentsComponent = ({ scraps }: { scraps: ScrapsType }) => {
+  return (
+    <div className="mt-[64px]">
+      {scraps.map(({ id, title, tags, updatedAt, body, links }) => {
+        const date = utcToJst({ date: updatedAt })
+
+        return (
+          <div
+            className="mt-[52px]"
+            key={id}
+          >
+            <div className="text-[32px]">{title}</div>
+            <div>{date}</div>
+            {tags &&
+              tags.map(({ id, title, description }) => {
+                return (
+                  <TagComponent
+                    key={id}
+                    id={id}
+                    title={title}
+                    description={description}
+                  />
+                )
+              })}
+            <div className="mt-[16px]">
+              {body.map(({ content, fieldId }, index) => {
+                return (
+                  <ContentBodyComponent
+                    key={index}
+                    fieldId={fieldId}
+                    content={content}
+                  />
+                )
+              })}
+            </div>
+            {links &&
+              links.map(({ url }, index) => {
+                return (
+                  <LinkComponent
+                    key={index}
+                    url={url}
+                  />
+                )
+              })}
+          </div>
+        )
+      })}
+    </div>
+  )
+}
+
+// content component
+const ContentBodyComponent = ({ fieldId, content }: { fieldId: string; content: string }) => {
+  return fieldId === 'plainText' ? <div>MarkdownToHTMLで表示する部分</div> : <div dangerouslySetInnerHTML={{ __html: content }} />
+}
+
+// content component
+const TagComponent = ({ id, title, description }: { id: string; title: string; description: string }) => {
+  const [isHover, setIsHover] = useState(false)
+
+  return (
+    <div
+      key={id}
+      className="mr-[8px] flex items-center"
+    >
+      <Image
+        src={TagIcon}
+        alt="tag"
+      />
+      <span
+        className="ml-[4px]"
+        onMouseOver={() => setIsHover(true)}
+        onMouseLeave={() => setIsHover(false)}
+      >
+        {title}
+      </span>
+      {isHover && <div dangerouslySetInnerHTML={{ __html: description }} />}
+    </div>
+  )
+}
+
+// content component
+const LinkComponent = ({ url }: { url: string }) => {
+  return (
+    <div className="mt-[8px] flex">
+      <div className="mt-[2px] h-[24px] w-[60px]">
+        <Image
+          src={LinkIcon}
+          width={24}
+          height={24}
+          alt="link"
+        />
+      </div>
+      <Link
+        href={url}
+        passHref
+      >
+        <a className="ml-[8px] text-[#10AFA4]">{url}</a>
+      </Link>
+    </div>
+  )
 }
 
 export default ScrapsIndexPage
