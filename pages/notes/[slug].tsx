@@ -25,7 +25,6 @@ const NotesDetailsPage: NextPage<InferGetStaticPropsType<typeof getStaticProps>>
 
 export const getStaticPaths = async () => {
   const paths = await getAllContentPaths({ target: 'notes', depth: 1 })
-  console.warn('paths!!!', paths)
 
   return { paths, fallback: false }
 }
