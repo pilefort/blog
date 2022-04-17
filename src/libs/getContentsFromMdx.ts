@@ -18,7 +18,8 @@ export const getAllContentPaths = async ({ target }: { target: string }) => {
   })
 }
 
-export const getContentBySlug = (fullFilePath: string, fields: string[]) => {
+export const getContentBySlug = (slug: string, fields: string[]) => {
+  const fullFilePath = join(process.cwd(), '/contents', slug + '.mdx')
   // NOTE: mdxの中身を取得
   const fileContent = fs.readFileSync(fullFilePath, { encoding: 'utf-8' })
 
@@ -42,11 +43,13 @@ export const getContentBySlug = (fullFilePath: string, fields: string[]) => {
 
   const items: {
     title: string
+    slug: string
     content: string
     date: string
     tags: string[]
   } = {
     title: '',
+    slug: '',
     content: '',
     date: '',
     tags: [''],
@@ -54,6 +57,7 @@ export const getContentBySlug = (fullFilePath: string, fields: string[]) => {
 
   fields.forEach((field) => {
     field === 'title' && (items.title = data.title)
+    field === 'slug' && (items.slug = slug)
     field === 'content' && (items.content = content)
     field === 'date' && (items.date = data.date)
     field === 'tags' && (items.tags = data.tags)
