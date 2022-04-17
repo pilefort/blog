@@ -120,7 +120,7 @@ const ScrapsIndexPage: NextPage<InferGetStaticPropsType<typeof getStaticProps>> 
               <div className="mt-[16px]">
                 {body.map(({ content, fieldId }, index) => {
                   return fieldId === 'plainText' ? (
-                    <div>MarkdownToHTMLで表示する部分</div>
+                    <div key={index}>MarkdownToHTMLで表示する部分</div>
                   ) : (
                     <div
                       key={index}
