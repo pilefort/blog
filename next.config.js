@@ -6,12 +6,25 @@ const withMDX = require('@next/mdx')({
 module.exports = {
   reactStrictMode: true,
   async rewrites() {
-    return [
-      {
-        source: '/',
-        destination: '/scraps',
-      },
-    ]
+    return {
+      beforeFiles: [
+        {
+          source: '/',
+          destination: '/scraps',
+        },
+        {
+          source: '/snippets',
+          has: [
+            {
+              type: 'query',
+              key: 'tags',
+              value: '(?<tag>.*)',
+            },
+          ],
+          destination: '/snippets/tags/:tag',
+        },
+      ],
+    }
   },
   webpack: (config, { isServer }) => {
     if (!isServer) {

@@ -46,7 +46,7 @@ const DesktopFooter = () => {
         />
       )}
       <div className="flex h-[80px] items-center justify-end bg-[#104359] text-[24px] text-[white]">
-        <div className="mx-[24px] flex w-[500px] items-center  justify-between">
+        <div className="mx-[24px] flex w-[500px] items-center justify-between">
           <Link
             href="https://github.com/pilefort"
             passHref
@@ -92,7 +92,7 @@ const DesktopFooter = () => {
               このブログでは、普段の業務や趣味で気になったことをまとめたり、フロントやAWS,
               GitHubやTwitterで見かけた面白い記事やニュースをまとめるためのものです。少しでも何かの役に立てば幸いです。
             </div>
-            <div className="mt-[128px]">
+            <div className="mt-[112px]">
               <div className="hr-with-title w-[calc(100vw-160px)] text-center">最近の活動</div>
               <div className="mt-[24px] flex">
                 <div className="w-[calc(100%-350px)] xl:w-auto">
@@ -145,7 +145,7 @@ const DesktopFooter = () => {
                   </div>
                 </div>
                 <div
-                  className="ml-[32px] w-[350px]"
+                  className="ml-[32px] w-[350px] cursor-zoom-in"
                   onClick={() => setImageUrlHandler(TechDojin12Image)}
                 >
                   <Image
@@ -158,7 +158,7 @@ const DesktopFooter = () => {
               </div>
             </div>
           </div>
-          <div className="mt-[128px]">
+          <div className="mt-[112px]">
             <div className="hr-with-title w-[calc(100vw-160px)] text-center">サイトマップ</div>
             <div className="mt-[24px] grid grid-cols-2 gap-[10%] xl:grid-cols-4">
               <div>
@@ -218,7 +218,7 @@ const Modal = ({ image, closeModalHandler }: { image: StaticImageData; closeModa
       onClick={closeModalHandler}
     >
       <div
-        className="relative"
+        className="relative cursor-alias"
         onClick={stopPropagationHandler}
       >
         {isDisableBookObi ? (
