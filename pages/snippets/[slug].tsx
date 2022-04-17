@@ -2,7 +2,6 @@ import React from 'react'
 
 import { NextPage, InferGetStaticPropsType } from 'next'
 
-import { join } from 'path'
 import MDX from '@mdx-js/runtime'
 
 import { getAllContentPaths, getContentBySlug } from '../../src/libs/getContentsFromMdx'
