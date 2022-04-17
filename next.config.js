@@ -17,7 +17,7 @@ module.exports = {
           has: [
             {
               type: 'query',
-              key: 'tag',
+              key: 'tags',
               value: '(?<tag>.*)',
             },
           ],
