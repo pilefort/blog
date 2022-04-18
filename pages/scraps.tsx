@@ -14,6 +14,11 @@ import LinkIcon from '../public/assets/Link.svg'
 
 import { ScrapsListType, ContentType, ScrapsType } from '../src/types/microCMS/Common'
 
+import MDX from '@mdx-js/runtime'
+
+import { CodeBlock } from '../src/components/Mdx/CodeBlock'
+import { CustomImage } from '../src/components/Mdx/CustomImage'
+
 const ScrapsIndexPage: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({ content: { scraps, highlight }, scrapsLists }) => {
   return (
     <div className="p-[24px]">
@@ -141,7 +146,16 @@ const ContentsComponent = ({ scraps }: { scraps: ScrapsType }) => {
 
 // content component
 const ContentBodyComponent = ({ fieldId, content }: { fieldId: string; content: string }) => {
-  return fieldId === 'plainText' ? <div>MarkdownToHTMLで表示する部分</div> : <div dangerouslySetInnerHTML={{ __html: content }} />
+  const components = {
+    code: CodeBlock,
+    img: CustomImage,
+  }
+
+  return (
+    <div className="break-all">
+      {fieldId === 'plainText' ? <MDX components={components}>{content}</MDX> : <div dangerouslySetInnerHTML={{ __html: content }} />}
+    </div>
+  )
 }
 
 // content component
