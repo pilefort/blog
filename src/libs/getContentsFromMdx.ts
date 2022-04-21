@@ -3,7 +3,7 @@ import { globby } from 'globby'
 import * as fs from 'fs'
 import matter from 'gray-matter'
 
-export const getAllContentPaths = async ({ target }: { target: string }) => {
+export const getAllContentPaths = async ({ target, depth }: { target: string; depth?: number }) => {
   const searchPath = join('contents', target)
 
   const targetFullFilePaths: string[] = await globby([searchPath], {
@@ -11,6 +11,7 @@ export const getAllContentPaths = async ({ target }: { target: string }) => {
       extensions: ['mdx'],
     },
     absolute: false,
+    deep: depth || Infinity,
   })
 
   return targetFullFilePaths.map((targetFullFilePath) => {
@@ -44,12 +45,14 @@ export const getContentBySlug = (slug: string, fields: string[]) => {
   const items: {
     title: string
     slug: string
+    description: string
     content: string
     date: string
     tags: string[]
   } = {
     title: '',
     slug: '',
+    description: '',
     content: '',
     date: '',
     tags: [''],
@@ -58,6 +61,7 @@ export const getContentBySlug = (slug: string, fields: string[]) => {
   fields.forEach((field) => {
     field === 'title' && (items.title = data.title)
     field === 'slug' && (items.slug = slug)
+    field === 'description' && (items.description = data.description)
     field === 'content' && (items.content = content)
     field === 'date' && (items.date = data.date)
     field === 'tags' && (items.tags = data.tags)
