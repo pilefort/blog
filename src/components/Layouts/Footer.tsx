@@ -6,7 +6,6 @@ import Image from 'next/image'
 import TechDojin12Image from '../../../public/assets/tech-dojin/tech12.jpg'
 import TechDojin12NoObiImage from '../../../public/assets/tech-dojin/tech12-no-obi.png'
 import OpenNewWindow from '../../../public/assets/OpenNewWindow.svg'
-import { useMediaQuery } from '../../hooks/useMediaQuery'
 
 type StaticImageData = {
   src: string
@@ -16,12 +15,10 @@ type StaticImageData = {
 }
 
 const Footer = () => {
-  const isDesktop = useMediaQuery()
-
-  return <div>{isDesktop ? <DesktopFooter /> : <></>}</div>
+  return <CommonFooter />
 }
 
-const DesktopFooter = () => {
+const CommonFooter = () => {
   const [isShowModal, setIsShowModal] = useState(false)
   const [imageUrl, setImageUrl] = useState<StaticImageData>({ src: '', width: 0, height: 0 })
   const closeModalHandler = () => setIsShowModal(false)
@@ -31,15 +28,15 @@ const DesktopFooter = () => {
   }
 
   return (
-    <div className="hidden lg:block">
+    <div>
       {isShowModal && (
         <Modal
           image={imageUrl}
           closeModalHandler={closeModalHandler}
         />
       )}
-      <div className="flex h-[80px] items-center justify-end bg-[#104359] text-[24px] text-[white]">
-        <div className="mx-[24px] flex w-[500px] items-center justify-between">
+      <div className="mt-[128px] flex h-[80px] items-center justify-end bg-[#104359] text-white md:text-[24px]">
+        <div className="mx-[24px] flex w-full items-center justify-between md:w-[500px]">
           <Link
             href="https://github.com/pilefort"
             passHref
@@ -72,10 +69,10 @@ const DesktopFooter = () => {
           </Link>
         </div>
       </div>
-      <div className="h-auto bg-[#104359] text-[24px] text-[white]">
-        <div className="p-[80px]">
-          <div className="hr-with-title w-[calc(100vw-160px)] text-center">自己紹介</div>
-          <div className="mt-[24px] w-[calc(100vw-180px)]">
+      <div className="h-auto bg-[#104359] text-white md:text-[24px]">
+        <div className="p-[16px] md:p-[80px]">
+          <div className="hr-with-title text-center md:w-[calc(100vw-160px)]">自己紹介</div>
+          <div className="mt-[24px] md:w-[calc(100vw-180px)]">
             <div>はじめまして Pilefortです。</div>
             <div>東京でエソジニアをしてます。</div>
             <div className="mt-[24px]">
@@ -85,10 +82,10 @@ const DesktopFooter = () => {
               このブログでは、普段の業務や趣味で気になったことをまとめたり、フロントやAWS,
               GitHubやTwitterで見かけた面白い記事やニュースをまとめるためのものです。少しでも何かの役に立てば幸いです。
             </div>
-            <div className="mt-[112px]">
-              <div className="hr-with-title w-[calc(100vw-160px)] text-center">最近の活動</div>
-              <div className="mt-[24px] flex">
-                <div className="w-[calc(100%-350px)] xl:w-auto">
+            <div className="mt-[64px] md:mt-[112px]">
+              <div className="hr-with-title text-center md:w-[calc(100vw-160px)]">最近の活動</div>
+              <div className="mt-[24px] md:flex">
+                <div className="md:w-[calc(100%-350px)] xl:w-auto">
                   <div className="font-bold">技術書典12 (2022.1.22 - 2022.1.30) で本を出しました。</div>
                   <div className="mt-[24px]">
                     2021年に登場したり、大幅なアップデートがあったWebサービスや開発ツール、ライブラリ、フレームワークを紹介した本です。
@@ -96,8 +93,8 @@ const DesktopFooter = () => {
                   <div>
                     TailwindCSSv3やRailway, Partytown, Nextjs12なんかの紹介やChrome DevToolsやChrome Extensions Manifest V3などの話を書いてます。
                   </div>
-                  <div className="mt-[24px]">
-                    <div>
+                  <div className="mt-[24px] text-[14px] md:text-[16px]">
+                    <div className="">
                       <span>Sample: </span>
                       <Link
                         href="https://sample.pilefort.dev/"
@@ -138,7 +135,7 @@ const DesktopFooter = () => {
                   </div>
                 </div>
                 <div
-                  className="ml-[32px] w-[350px] cursor-zoom-in"
+                  className="cursor-zoom-in md:ml-[32px] md:w-[350px]"
                   onClick={() => setImageUrlHandler(TechDojin12Image)}
                 >
                   <Image
@@ -151,9 +148,9 @@ const DesktopFooter = () => {
               </div>
             </div>
           </div>
-          <div className="mt-[112px]">
-            <div className="hr-with-title w-[calc(100vw-160px)] text-center">サイトマップ</div>
-            <div className="mt-[24px] grid grid-cols-2 gap-[10%] xl:grid-cols-4">
+          <div className="mt-[64px] md:mt-[112px]">
+            <div className="hr-with-title text-center md:w-[calc(100vw-160px)]">サイトマップ</div>
+            <div className="mt-[24px] grid grid-cols-1 md:grid-cols-2 md:gap-[10%] xl:grid-cols-4">
               <div>
                 <Link
                   href="/notes"
@@ -163,7 +160,7 @@ const DesktopFooter = () => {
                 </Link>
                 <div className="mt-[8px]">業務や趣味での気づき・メモ</div>
               </div>
-              <div>
+              <div className="mt-[32px]">
                 <Link
                   href="/scraps"
                   passHref
@@ -172,7 +169,7 @@ const DesktopFooter = () => {
                 </Link>
                 <div className="mt-[8px]">雑記。ネットで見つけた面白い記事やニュース</div>
               </div>
-              <div>
+              <div className="mt-[32px]">
                 <Link
                   href="/snippets"
                   passHref
@@ -181,7 +178,7 @@ const DesktopFooter = () => {
                 </Link>
                 <div className="mt-[8px]">記事にするまでもないけど、便利なコマンドや豆知識</div>
               </div>
-              <div>
+              <div className="mt-[32px]">
                 <Link
                   href="/works"
                   passHref

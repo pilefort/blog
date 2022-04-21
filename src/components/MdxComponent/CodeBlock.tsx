@@ -7,7 +7,7 @@ export const CodeBlock = ({ children, className }: { children: string; className
 
   // cf. https://github.com/FormidableLabs/prism-react-renderer
   return (
-    <div className="my-[16px]">
+    <div className="my-[16px] md:my-[32px]">
       <Highlight
         {...defaultProps}
         code={children}
@@ -16,7 +16,7 @@ export const CodeBlock = ({ children, className }: { children: string; className
       >
         {({ className, style, tokens, getLineProps, getTokenProps }) => (
           <pre
-            className={`${className} mb-[32px] overflow-auto p-[16px] text-[20px] sm:text-[15px]`}
+            className={`${className} mb-[32px] overflow-auto p-[16px] text-[15px] md:text-[20px]`}
             style={{ ...style }}
           >
             {tokens.map((line, index) => {
