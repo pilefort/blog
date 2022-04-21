@@ -1,5 +1,5 @@
-import data from '../fetchData/demo/demoWith1Scrap.json'
-import scrapsListsData from '../fetchData/demo/demoWithScrapLists.json'
+import data from '../fetchData/scraps/demoWith1Scrap.json'
+import scrapsListsData from '../fetchData/scraps/demoWithScrapLists.json'
 
 import { NextPage, InferGetStaticPropsType } from 'next'
 import { useState } from 'react'
