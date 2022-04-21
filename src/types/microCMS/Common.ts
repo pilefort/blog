@@ -35,6 +35,9 @@ export type ScrapsType = ScrapType[]
 
 type ScrapType = CommonMicroCMSResponse & {
   id: string
+  createdAt: string
+  publishedAt: string
+  revisedAt: string
   updatedAt: string
   tags?: (CommonMicroCMSResponse & {
     id: string
