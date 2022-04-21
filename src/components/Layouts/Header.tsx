@@ -82,7 +82,12 @@ const SPHeader = () => {
         />
       }
       <div className="flex h-[35px] items-center justify-between p-[8px]">
-        <div className="text-[24px] text-[#104359]">Pilefort</div>
+        <Link
+          href="/"
+          passHref
+        >
+          <a className="text-[24px] text-[#104359]">Pilefort</a>
+        </Link>
         <div onClick={setToggleOpenClass}>
           <Image
             src={AccordionOpenIcon}
@@ -132,41 +137,6 @@ const ToggleMenu = ({ toggleClass, setToggleCloseClass }: { toggleClass: string;
             passHref
           >
             <a className="mt-[16px] text-[white]">Works</a>
-          </Link>
-        </div>
-        <div className="flex flex-col justify-between">
-          <Link
-            href="https://github.com/pilefort"
-            passHref
-          >
-            <a
-              target="_blank"
-              className="text-[white]"
-            >
-              GitHub
-            </a>
-          </Link>
-          <Link
-            href="https://twitter.com/pilefort"
-            passHref
-          >
-            <a
-              target="_blank"
-              className="mt-[16px] text-[white]"
-            >
-              Twitter
-            </a>
-          </Link>
-          <Link
-            href="https://zenn.dev/pilefort"
-            passHref
-          >
-            <a
-              target="_blank"
-              className="mt-[16px] text-[white]"
-            >
-              Zenn
-            </a>
           </Link>
         </div>
       </div>

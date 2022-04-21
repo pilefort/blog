@@ -8,7 +8,7 @@ const NotesIndexPage: NextPage<InferGetStaticPropsType<typeof getStaticProps>> =
   return (
     <div className="m-[32px]">
       <div>
-        <div>最新記事</div>
+        <div className="md:text-[36px]">最新記事</div>
         <hr className="mt-[24px] border-[1px] border-black" />
       </div>
       <div>
@@ -24,10 +24,10 @@ const NotesIndexPage: NextPage<InferGetStaticPropsType<typeof getStaticProps>> =
                 href={slug}
                 passHref
               >
-                <a className="text-[16px] text-[#1ED3C6]">{title}</a>
+                <a className="text-[16px] text-[#1ED3C6] md:text-[32px]">{title}</a>
               </Link>
-              <div className="text-[14px]">{createdAt}</div>
-              <div className="mt-[16px]">{description}</div>
+              <div className="text-[14px] md:text-[28px]">{createdAt}</div>
+              <div className="mt-[16px] md:text-[24px]">{description}</div>
               <hr className="mt-[24px] border-[1px] border-black" />
             </div>
           )
