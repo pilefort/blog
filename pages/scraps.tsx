@@ -12,16 +12,12 @@ import { utcToJst } from '../src/libs/date'
 import TagIcon from '../public/assets/Tag.svg'
 import LinkIcon from '../public/assets/Link.svg'
 
+import { Mdx } from '../src/components/MdxComponent/Mdx'
 import { ScrapsListType, ContentType, ScrapsType } from '../src/types/microCMS/Common'
-
-import MDX from '@mdx-js/runtime'
-
-import { CodeBlock } from '../src/components/Mdx/CodeBlock'
-import { CustomImage } from '../src/components/Mdx/CustomImage'
 
 const ScrapsIndexPage: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({ content: { scraps, highlight }, scrapsLists }) => {
   return (
-    <div className="p-[24px]">
+    <div className="m-[24px]">
       <SelectboxComponent scrapsLists={scrapsLists} />
       <HighlightComponent highlight={highlight} />
       <ContentsComponent scraps={scraps} />
@@ -49,22 +45,24 @@ export const getStaticProps = (): {
 // selectbox component
 const SelectboxComponent = ({ scrapsLists }: { scrapsLists: ScrapsListType }) => {
   return (
-    <select
-      className="text-[24px]"
-      name="scraps"
-    >
-      {scrapsLists.map(({ id, createdAt, date }) => {
-        const dateTime = utcToJst({ date: date || createdAt })
+    <>
+      <select
+        className="border-b-[4px] border-[#10AFA4] text-[24px]"
+        name="scraps"
+      >
+        {scrapsLists.map(({ id, createdAt, date }) => {
+          const dateTime = utcToJst({ date: date || createdAt })
 
-        return (
-          <SelectboxContentComponent
-            key={id}
-            id={id}
-            dateTime={dateTime}
-          />
-        )
-      })}
-    </select>
+          return (
+            <SelectboxContentComponent
+              key={id}
+              id={id}
+              dateTime={dateTime}
+            />
+          )
+        })}
+      </select>
+    </>
   )
 }
 
@@ -72,6 +70,7 @@ const SelectboxComponent = ({ scrapsLists }: { scrapsLists: ScrapsListType }) =>
 const SelectboxContentComponent = ({ id, dateTime }: { id: string; dateTime: string }) => {
   return (
     <option
+      className="text-[24px]"
       key={id}
       value={id}
     >
@@ -146,16 +145,7 @@ const ContentsComponent = ({ scraps }: { scraps: ScrapsType }) => {
 
 // content component
 const ContentBodyComponent = ({ fieldId, content }: { fieldId: string; content: string }) => {
-  const components = {
-    code: CodeBlock,
-    img: CustomImage,
-  }
-
-  return (
-    <div className="break-all">
-      {fieldId === 'plainText' ? <MDX components={components}>{content}</MDX> : <div dangerouslySetInnerHTML={{ __html: content }} />}
-    </div>
-  )
+  return <div className="break-all">{fieldId === 'plainText' ? <Mdx>{content}</Mdx> : <div dangerouslySetInnerHTML={{ __html: content }} />}</div>
 }
 
 // content component
