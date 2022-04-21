@@ -1,10 +1,15 @@
-const withMDX = require('@next/mdx')({
+import mdx from '@next/mdx'
+
+const withMDX = mdx({
   extension: /\.mdx?$/,
 })
 
 /** @type {import('next').NextConfig} */
-module.exports = {
+export default {
   reactStrictMode: true,
+  images: {
+    domains: ['images.microcms-assets.io'],
+  },
   async rewrites() {
     return {
       beforeFiles: [
