@@ -30,26 +30,28 @@ export const Contents = ({ scraps }: { scraps: ScrapsType }) => {
                   />
                 )
               })}
-            <div className="mt-[16px]">
-              {body.map(({ content, fieldId }, index) => {
-                return (
-                  <ContentBody
-                    key={index}
-                    fieldId={fieldId}
-                    content={content}
-                  />
-                )
-              })}
-            </div>
-            {links &&
-              links.map(({ url }, index) => {
-                return (
-                  <CustomLink
-                    key={index}
-                    url={url}
-                  />
-                )
-              })}
+            <details>
+              <div className="mt-[16px]">
+                {body.map(({ content, fieldId }, index) => {
+                  return (
+                    <ContentBody
+                      key={index}
+                      fieldId={fieldId}
+                      content={content}
+                    />
+                  )
+                })}
+              </div>
+              {links &&
+                links.map(({ url }, index) => {
+                  return (
+                    <CustomLink
+                      key={index}
+                      url={url}
+                    />
+                  )
+                })}
+            </details>
           </div>
         )
       })}
