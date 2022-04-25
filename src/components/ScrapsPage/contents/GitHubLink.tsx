@@ -1,8 +1,9 @@
 import Image from 'next/image'
-
-import GitHubIcon from '../../public/assets/GitHubIcon.svg'
 import Link from 'next/link'
-import { useMediaQuery } from '../hooks/useMediaQuery'
+
+import { useMediaQuery } from '../../../hooks/useMediaQuery'
+
+import GitHubIcon from '../../../../public/assets/GitHubIcon.svg'
 
 export const GitHubLink = ({ slug }: { slug: string }) => {
   const isDesktop = useMediaQuery()

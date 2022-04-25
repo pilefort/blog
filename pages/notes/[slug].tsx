@@ -4,7 +4,7 @@ import { GetStaticPropsContext, InferGetStaticPropsType, NextPage } from 'next'
 
 import { getAllContentPaths, getContentBySlug } from '../../src/libs/getContentsFromMdx'
 
-import { GitHubLink } from '../../src/components/GitHubLink'
+import { GitHubLink } from '../../src/components/ScrapsPage/contents/GitHubLink'
 
 import { utcToJst } from '../../src/libs/date'
 
