@@ -6,7 +6,7 @@ import LinkIcon from '../../../../public/assets/Link.svg'
 export const CustomLink = ({ url }: { url: string }) => {
   return (
     <div className="mt-[8px] flex">
-      <div className="mt-[2px] h-[24px] w-[60px]">
+      <div className="mt-[2px] h-[24px] w-[24px]">
         <Image
           src={LinkIcon}
           width={24}
@@ -18,7 +18,7 @@ export const CustomLink = ({ url }: { url: string }) => {
         href={url}
         passHref
       >
-        <a className="ml-[8px] text-[#10AFA4]">{url}</a>
+        <a className="ml-[8px] w-[calc(100%-120px)] text-[#10AFA4]">{url}</a>
       </Link>
     </div>
   )

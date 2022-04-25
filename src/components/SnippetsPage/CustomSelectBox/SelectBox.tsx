@@ -1,22 +1,41 @@
+import Link from 'next/link'
+import { useRouter } from 'next/router'
+
 export const CustomSelectBox = ({ tags }: { tags: { slug: string; name: string }[] }) => {
+  const router = useRouter()
+  const currentPageTag = router.query.tag
+  console.warn('cpt', currentPageTag)
+
   return (
     <>
-      <div>タグ一覧</div>
-      <select>
-        <option value="all">すべて</option>
-        {tags.map((tag, index) => {
+      <div className="text-[32px]">タグ一覧</div>
+      <div className="flex">
+        {tags.map(({ slug, name }, index) => {
           return (
-            <option
-              key={tag.slug}
-              className={`${index === 0 ? '' : 'ml-[8px]'}`}
-            >
-              <a href={`/snippets?tags=${tag.slug}`}>
-                <span>{tag.name}</span>
-              </a>
-            </option>
+            <>
+              {index === 0 && (
+                <Link
+                  href="/snippets"
+                  passHref
+                >
+                  <a className="text-[32px]">
+                    <span className={currentPageTag === undefined ? 'text-[red]' : ''}>すべて</span>
+                  </a>
+                </Link>
+              )}
+              <Link
+                key={slug}
+                href={`/snippets?tag=${slug}`}
+                passHref
+              >
+                <a className="ml-[32px] text-[32px]">
+                  <span className={currentPageTag === slug ? 'text-[red]' : ''}>{name}</span>
+                </a>
+              </Link>
+            </>
           )
         })}
-      </select>
+      </div>
     </>
   )
 }
