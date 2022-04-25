@@ -4,7 +4,6 @@ import { useRouter } from 'next/router'
 export const CustomSelectBox = ({ tags }: { tags: { slug: string; name: string }[] }) => {
   const router = useRouter()
   const currentPageTag = router.query.tag
-  console.warn('cpt', currentPageTag)
 
   return (
     <>
