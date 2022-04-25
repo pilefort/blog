@@ -22,11 +22,11 @@ export default {
           has: [
             {
               type: 'query',
-              key: 'tags',
+              key: 'tag',
               value: '(?<tag>.*)',
             },
           ],
-          destination: '/snippets/tags/:tag',
+          destination: '/snippets/tag/:tag',
         },
       ],
     }

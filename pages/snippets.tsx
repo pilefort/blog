@@ -10,7 +10,9 @@ import { Contents } from '../src/components/SnippetsPage/Contents'
 const SnippetsIndexPage: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({ allContents }) => {
   return (
     <div className="m-[16px]">
-      <CustomSelectBox tags={tags} />
+      <div>
+        <CustomSelectBox tags={tags} />
+      </div>
       <Contents allContents={allContents} />
     </div>
   )
