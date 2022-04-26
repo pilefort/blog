@@ -17,7 +17,7 @@ export const Contents = ({ allContents }: { allContents: { slug: string; title: 
             >
               <a className="text-[#1ED3C6]">{title}</a>
             </Link>
-            <div>
+            <div className="flex">
               {tags.map((tag, index) => {
                 return (
                   <span
