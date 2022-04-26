@@ -4,7 +4,7 @@ import Image from 'next/image'
 
 import TagIcon from '../../../../public/assets/Tag.svg'
 
-export const Tag = ({ id, title, description }: { id: string; title: string; description: string }) => {
+export const Tag = ({ id, title, description }: { id: string; title: string; description?: string }) => {
   const [isHover, setIsHover] = useState(false)
 
   return (
@@ -23,7 +23,7 @@ export const Tag = ({ id, title, description }: { id: string; title: string; des
       >
         {title}
       </span>
-      {isHover && <div dangerouslySetInnerHTML={{ __html: description }} />}
+      {isHover && description && <div dangerouslySetInnerHTML={{ __html: description }} />}
     </div>
   )
 }
