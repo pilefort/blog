@@ -37,7 +37,6 @@ export default {
     }
     return config
   },
-  swcMinify: true,
   withMDX: withMDX({
     pageExtensions: ['ts', 'tsx', 'mdx'],
   }),
