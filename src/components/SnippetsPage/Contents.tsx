@@ -1,12 +1,11 @@
-import { utcToJst } from '../../libs/date'
 import Link from 'next/link'
+
+import { Tag } from '../ScrapsPage/contents/Tag'
 
 export const Contents = ({ allContents }: { allContents: { slug: string; title: string; tags: string[]; date: string }[] }) => {
   return (
     <div className="mt-[48px]">
-      {allContents.map(({ slug, title, tags, date }) => {
-        const createdAt = utcToJst({ date })
-
+      {allContents.map(({ slug, title, tags }) => {
         return (
           <div
             key={slug}
@@ -25,12 +24,14 @@ export const Contents = ({ allContents }: { allContents: { slug: string; title: 
                     key={index}
                     className={`${index === 0 ? '' : 'ml-[8px]'}`}
                   >
-                    {tag}
+                    <Tag
+                      id={tag}
+                      title={tag}
+                    />
                   </span>
                 )
               })}
             </div>
-            <div>{createdAt}</div>
           </div>
         )
       })}
