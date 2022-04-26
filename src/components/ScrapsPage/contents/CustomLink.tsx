@@ -18,7 +18,7 @@ export const CustomLink = ({ url }: { url: string }) => {
         href={url}
         passHref
       >
-        <a className="ml-[8px] w-[calc(100%-120px)] text-[#10AFA4]">{url}</a>
+        <a className="ml-[8px] w-[calc(100%-40px)] text-[#10AFA4]">{url}</a>
       </Link>
     </div>
   )

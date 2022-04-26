@@ -30,7 +30,8 @@ export const Contents = ({ scraps }: { scraps: ScrapsType }) => {
                   />
                 )
               })}
-            <details>
+            <details className="mt-[8px] text-[18px]">
+              <summary>詳細を開く</summary>
               <div className="mt-[16px]">
                 {body.map(({ content, fieldId }, index) => {
                   return (
