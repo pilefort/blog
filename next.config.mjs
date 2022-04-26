@@ -37,6 +37,8 @@ export default {
     }
     return config
   },
+  // NOTE: total blocking timeが短くなるため、有効化
+  swcMinify: true,
   withMDX: withMDX({
     pageExtensions: ['ts', 'tsx', 'mdx'],
   }),
