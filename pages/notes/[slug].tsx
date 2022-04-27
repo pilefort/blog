@@ -2,13 +2,13 @@ import React from 'react'
 
 import { GetStaticPropsContext, InferGetStaticPropsType, NextPage } from 'next'
 
-import { getAllContentPaths, getContentBySlug } from '../../src/libs/getContentsFromMdx'
+import { getAllContentPaths, getContentBySlug } from '../../libs/getContentsFromMdx'
 
-import { GitHubLink } from '../../src/components/ScrapsPage/contents/GitHubLink'
+import { GitHubLink } from '../../components/ScrapsPage/contents/GitHubLink'
 
-import { utcToJst } from '../../src/libs/date'
+import { utcToJst } from '../../libs/date'
 
-import { Mdx } from '../../src/components/MdxComponent/Mdx'
+import { Mdx } from '../../components/MdxComponent/Mdx'
 
 const NotesDetailsPage: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({ slug, title, content, date }) => {
   const createdAt = utcToJst({ date })

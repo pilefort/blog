@@ -2,10 +2,10 @@ import React from 'react'
 
 import { NextPage, InferGetStaticPropsType } from 'next'
 
-import { getAllContentPaths, getContentBySlug } from '../../src/libs/getContentsFromMdx'
+import { getAllContentPaths, getContentBySlug } from '../../libs/getContentsFromMdx'
 
-import { Mdx } from '../../src/components/MdxComponent/Mdx'
-import { utcToJst } from '../../src/libs/date'
+import { Mdx } from '../../components/MdxComponent/Mdx'
+import { utcToJst } from '../../libs/date'
 
 const SnippetDetailsPage: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({ title, tags, date, content }) => {
   const createdAt = utcToJst({ date })

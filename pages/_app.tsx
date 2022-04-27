@@ -1,10 +1,10 @@
 import '../styles/globals.css'
 import type { AppProps } from 'next/app'
-import Footer from '../src/components/Layouts/Footer'
-import { CustomHead } from '../src/components/Head/CustomHead'
-import { useMediaQuery } from '../src/hooks/useMediaQuery'
-import { DesktopHeader } from '../src/components/Layouts/Header/DesktopHeader'
-import { SPHeader } from '../src/components/Layouts/Header/SP/SPHeader'
+import Footer from '../components/Layouts/Footer'
+import { CustomHead } from '../components/Head/CustomHead'
+import { useMediaQuery } from '../hooks/useMediaQuery'
+import { DesktopHeader } from '../components/Layouts/Header/DesktopHeader'
+import { SPHeader } from '../components/Layouts/Header/SP/SPHeader'
 
 function MyApp({ Component, pageProps }: AppProps) {
   const isDesktop = useMediaQuery()

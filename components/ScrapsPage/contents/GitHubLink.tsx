@@ -3,7 +3,7 @@ import Link from 'next/link'
 
 import { useMediaQuery } from '../../../hooks/useMediaQuery'
 
-import GitHubIcon from '../../../../public/assets/GitHubIcon.svg'
+import GitHubIcon from '../../../public/assets/GitHubIcon.svg'
 
 export const GitHubLink = ({ slug }: { slug: string }) => {
   const isDesktop = useMediaQuery()
