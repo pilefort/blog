@@ -2,7 +2,7 @@ import { useState } from 'react'
 
 import Image from 'next/image'
 
-import TagIcon from '../../../../public/assets/Tag.svg'
+import TagIcon from '../../../public/assets/Tag.svg'
 
 export const Tag = ({ id, title, description }: { id: string; title: string; description?: string }) => {
   const [isHover, setIsHover] = useState(false)
@@ -17,7 +17,7 @@ export const Tag = ({ id, title, description }: { id: string; title: string; des
         alt="tag"
       />
       <span
-        className="ml-[4px]"
+        className="ml-[4px] text-[28px]"
         onMouseOver={() => setIsHover(true)}
         onMouseLeave={() => setIsHover(false)}
       >

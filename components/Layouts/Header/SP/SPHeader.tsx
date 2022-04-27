@@ -5,7 +5,7 @@ import Image from 'next/image'
 
 import { ToggleMenu } from './ToggleMenu'
 
-import AccordionOpenIcon from '../../../../../public/assets/AccordionOpen.svg'
+import AccordionOpenIcon from '../../../../public/assets/AccordionOpen.svg'
 
 export const SPHeader = () => {
   const [toggleClass, setToggleClass] = useState('hidden')

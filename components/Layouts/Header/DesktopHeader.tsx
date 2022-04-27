@@ -1,6 +1,12 @@
 import Link from 'next/link'
+import { useRouter } from 'next/router'
+
+import { checkCurrentPathAndApplyStyles } from '../../../libs/checkCurrentPathAndApplyStyles'
 
 export const DesktopHeader = () => {
+  const router = useRouter()
+  const currentPagePath = router.pathname
+
   return (
     <div className="hidden lg:block">
       <div className="flex h-[80px] items-center justify-between p-[16px] pr-[24px]">
@@ -15,26 +21,20 @@ export const DesktopHeader = () => {
             href="/notes"
             passHref
           >
-            <a>Notes</a>
+            <a className={`${checkCurrentPathAndApplyStyles({ currentPagePath, targetPath: '/notes' })}`}>Notes</a>
           </Link>
 
           <Link
             href="/scraps"
             passHref
           >
-            <a className="ml-[24px]">Scraps</a>
+            <a className={`ml-[24px] ${checkCurrentPathAndApplyStyles({ currentPagePath, targetPath: '/scraps' })}`}>Scraps</a>
           </Link>
           <Link
             href="/snippets"
             passHref
           >
-            <a className="ml-[24px]">Snippets</a>
-          </Link>
-          <Link
-            href="/works"
-            passHref
-          >
-            <a className="ml-[24px]">Works</a>
+            <a className={`ml-[24px] ${checkCurrentPathAndApplyStyles({ currentPagePath, targetPath: '/snippets' })}`}>Snippets</a>
           </Link>
         </div>
       </div>
