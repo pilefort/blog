@@ -1,7 +1,7 @@
 import Image from 'next/image'
 import Link from 'next/link'
 
-import LinkIcon from '../../../../public/assets/Link.svg'
+import LinkIcon from '../../../public/assets/Link.svg'
 
 export const CustomLink = ({ url }: { url: string }) => {
   return (

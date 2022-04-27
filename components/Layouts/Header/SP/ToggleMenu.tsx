@@ -3,7 +3,7 @@ import { MouseEvent, MouseEventHandler } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 
-import AccordionCloseIcon from '../../../../../public/assets/AccordionClose.svg'
+import AccordionCloseIcon from '../../../../public/assets/AccordionClose.svg'
 
 export const ToggleMenu = ({ toggleClass, setToggleCloseClass }: { toggleClass: string; setToggleCloseClass: MouseEventHandler<HTMLDivElement> }) => {
   const stopPropagationHandler = (event: MouseEvent<HTMLDivElement>) => {

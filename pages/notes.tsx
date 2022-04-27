@@ -1,8 +1,8 @@
 import Link from 'next/link'
 import { InferGetStaticPropsType, NextPage } from 'next'
 
-import { getAllContentPaths, getContentBySlug } from '../src/libs/getContentsFromMdx'
-import { utcToJst } from '../src/libs/date'
+import { getAllContentPaths, getContentBySlug } from '../libs/getContentsFromMdx'
+import { utcToJst } from '../libs/date'
 
 const NotesIndexPage: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({ allContents }) => {
   return (

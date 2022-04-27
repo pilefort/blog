@@ -3,11 +3,11 @@ import scrapsListsData from '../fetchData/scraps/demoWithScrapLists.json'
 
 import { NextPage, InferGetStaticPropsType } from 'next'
 
-import { CustomSelectbox } from '../src/components/ScrapsPage/CustomSelectBox/CustomSelectbox'
-import { Highlight } from '../src/components/ScrapsPage/contents/Highlight'
-import { Contents } from '../src/components/ScrapsPage/contents/Contents'
+import { CustomSelectbox } from '../components/ScrapsPage/CustomSelectBox/CustomSelectbox'
+import { Highlight } from '../components/ScrapsPage/contents/Highlight'
+import { Contents } from '../components/ScrapsPage/contents/Contents'
 
-import { ScrapsListType, ContentType } from '../src/types/microCMS/Common'
+import { ScrapsListType, ContentType } from '../types/microCMS/Common'
 
 const ScrapsIndexPage: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({ content: { scraps, highlight }, scrapsLists }) => {
   return (
