@@ -2,10 +2,16 @@ import { MouseEvent, MouseEventHandler } from 'react'
 
 import Image from 'next/image'
 import Link from 'next/link'
+import { useRouter } from 'next/router'
 
 import AccordionCloseIcon from '../../../../public/assets/AccordionClose.svg'
 
+import { checkCurrentPathAndApplyStyles } from '../../../../libs/checkCurrentPathAndApplyStyles'
+
 export const ToggleMenu = ({ toggleClass, setToggleCloseClass }: { toggleClass: string; setToggleCloseClass: MouseEventHandler<HTMLDivElement> }) => {
+  const router = useRouter()
+  const currentPagePath = router.pathname
+
   const stopPropagationHandler = (event: MouseEvent<HTMLDivElement>) => {
     event.stopPropagation()
   }
@@ -34,19 +40,19 @@ export const ToggleMenu = ({ toggleClass, setToggleCloseClass }: { toggleClass: 
               href="/notes"
               passHref
             >
-              <a className="mt-[16px] text-[white]">Notes</a>
+              <a className={`mt-[16px] text-[white] ${checkCurrentPathAndApplyStyles({ currentPagePath, targetPath: '/notes' })}`}>Notes</a>
             </Link>
             <Link
               href="/scraps"
               passHref
             >
-              <a className="mt-[16px] text-[white]">Scraps</a>
+              <a className={`mt-[16px] text-[white] ${checkCurrentPathAndApplyStyles({ currentPagePath, targetPath: '/scraps' })}`}>Scraps</a>
             </Link>
             <Link
               href="/snippets"
               passHref
             >
-              <a className="mt-[16px] text-[white]">Snippets</a>
+              <a className={`mt-[16px] text-[white] ${checkCurrentPathAndApplyStyles({ currentPagePath, targetPath: '/snippets' })}`}>Snippets</a>
             </Link>
           </div>
         </div>
