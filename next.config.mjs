@@ -37,8 +37,9 @@ export default {
     }
     return config
   },
-  // NOTE: total blocking timeが短くなるため、有効化
-  swcMinify: true,
+  // TODO: total blocking timeは短くなるが、next/linkの動きが悪くなる (クリックしても数秒間ページ遷移しない)
+  // 今後の動向を見て、有効にするかどうか判断
+  // swcMinify: true,
   withMDX: withMDX({
     pageExtensions: ['ts', 'tsx', 'mdx'],
   }),
