@@ -17,7 +17,7 @@ export const Tag = ({ id, title, description }: { id: string; title: string; des
         alt="tag"
       />
       <span
-        className="ml-[4px]"
+        className="ml-[4px] text-[28px]"
         onMouseOver={() => setIsHover(true)}
         onMouseLeave={() => setIsHover(false)}
       >

@@ -6,7 +6,7 @@ import { utcToJst } from '../libs/date'
 
 const NotesIndexPage: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({ allContents }) => {
   return (
-    <div className="m-[32px]">
+    <div className="p-[32px]">
       <div>
         <div className="md:text-[36px]">最新記事</div>
         <hr className="mt-[24px] border-[1px] border-black" />
