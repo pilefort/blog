@@ -1,10 +1,10 @@
 import { utcToJst } from '../../../libs/date'
 
 import { Tag } from './Tag'
-import { ContentBody } from './Content'
 import { CustomLink } from './CustomLink'
 
 import { ScrapsType } from '../../../types/microCMS/Common'
+import { Mdx } from '../../MdxComponent/Mdx'
 
 export const Contents = ({ scraps }: { scraps: ScrapsType }) => {
   return (
@@ -33,13 +33,14 @@ export const Contents = ({ scraps }: { scraps: ScrapsType }) => {
             <details className="mt-[8px] text-[18px]">
               <summary>詳細を開く</summary>
               <div className="mt-[16px]">
-                {body.map(({ content, fieldId }, index) => {
+                {body.map(({ content }, index) => {
                   return (
-                    <ContentBody
+                    <div
                       key={index}
-                      fieldId={fieldId}
-                      content={content}
-                    />
+                      className="break-all"
+                    >
+                      <Mdx>{content}</Mdx>
+                    </div>
                   )
                 })}
               </div>
