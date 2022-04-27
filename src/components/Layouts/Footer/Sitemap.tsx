@@ -32,15 +32,6 @@ export const Sitemap = () => {
           </Link>
           <div className="mt-[8px]">記事にするまでもないけど、便利なコマンドや豆知識</div>
         </div>
-        <div className="mt-[32px]">
-          <Link
-            href="/works"
-            passHref
-          >
-            <a className="text-[32px] font-bold">Works</a>
-          </Link>
-          <div className="mt-[8px]">作ったもの。同人誌やツールなど</div>
-        </div>
       </div>
     </div>
   )

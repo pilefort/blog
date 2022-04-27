@@ -30,12 +30,6 @@ export const DesktopHeader = () => {
           >
             <a className="ml-[24px]">Snippets</a>
           </Link>
-          <Link
-            href="/works"
-            passHref
-          >
-            <a className="ml-[24px]">Works</a>
-          </Link>
         </div>
       </div>
       <hr className="border-t-[4px] border-[#104359]" />

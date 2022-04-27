@@ -48,12 +48,6 @@ export const ToggleMenu = ({ toggleClass, setToggleCloseClass }: { toggleClass: 
             >
               <a className="mt-[16px] text-[white]">Snippets</a>
             </Link>
-            <Link
-              href="/works"
-              passHref
-            >
-              <a className="mt-[16px] text-[white]">Works</a>
-            </Link>
           </div>
         </div>
       </div>
