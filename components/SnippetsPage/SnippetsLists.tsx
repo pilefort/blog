@@ -2,20 +2,20 @@ import Link from 'next/link'
 
 import { Tag } from '../ScrapsPage/contents/Tag'
 
-export const Contents = ({ allContents }: { allContents: { slug: string; title: string; tags: string[]; date: string }[] }) => {
+export const SnippetsLists = ({ allContents }: { allContents: { slug: string; title: string; tags: string[]; date: string }[] }) => {
   return (
     <div className="mt-[48px]">
       {allContents.map(({ slug, title, tags }) => {
         return (
           <div
             key={slug}
-            className="mb-[16px]"
+            className="mb-[32px]"
           >
             <Link
               href={slug}
               passHref
             >
-              <a className="text-[#1ED3C6]">{title}</a>
+              <a className="text-[32px] text-[#1ED3C6]">{title}</a>
             </Link>
             <div className="flex">
               {tags.map((tag, index) => {

@@ -1,19 +1,17 @@
 import tags from '../fetchData/snippets/tags.json'
 
-import { getAllContentPaths, getContentBySlug } from '../src/libs/getContentsFromMdx'
+import { getAllContentPaths, getContentBySlug } from '../libs/getContentsFromMdx'
 
 import { InferGetStaticPropsType, NextPage } from 'next'
 
-import { CustomSelectBox } from '../src/components/SnippetsPage/CustomSelectBox/SelectBox'
-import { Contents } from '../src/components/SnippetsPage/Contents'
+import { SelectLists } from '../components/SnippetsPage/SelectLists'
+import { SnippetsLists } from '../components/SnippetsPage/SnippetsLists'
 
 const SnippetsIndexPage: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({ allContents }) => {
   return (
-    <div className="m-[16px]">
-      <div>
-        <CustomSelectBox tags={tags} />
-      </div>
-      <Contents allContents={allContents} />
+    <div className="p-[16px]">
+      <SelectLists tags={tags} />
+      <SnippetsLists allContents={allContents} />
     </div>
   )
 }

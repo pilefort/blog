@@ -1,7 +1,7 @@
 import Link from 'next/link'
 import Image from 'next/image'
-import OpenNewWindow from '../../../../public/assets/OpenNewWindow.svg'
-import TechDojin12Image from '../../../../public/assets/tech-dojin/tech12.jpg'
+import OpenNewWindow from '../../../public/assets/OpenNewWindow.svg'
+import TechDojin12Image from '../../../public/assets/tech-dojin/tech12.jpg'
 
 export const LatestActivity = () => {
   return (
