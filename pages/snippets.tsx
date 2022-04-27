@@ -4,16 +4,14 @@ import { getAllContentPaths, getContentBySlug } from '../libs/getContentsFromMdx
 
 import { InferGetStaticPropsType, NextPage } from 'next'
 
-import { CustomSelectBox } from '../components/SnippetsPage/CustomSelectBox/SelectBox'
-import { Contents } from '../components/SnippetsPage/Contents'
+import { SelectLists } from '../components/SnippetsPage/SelectLists'
+import { SnippetsLists } from '../components/SnippetsPage/SnippetsLists'
 
 const SnippetsIndexPage: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({ allContents }) => {
   return (
-    <div className="m-[16px]">
-      <div>
-        <CustomSelectBox tags={tags} />
-      </div>
-      <Contents allContents={allContents} />
+    <div className="p-[16px]">
+      <SelectLists tags={tags} />
+      <SnippetsLists allContents={allContents} />
     </div>
   )
 }
