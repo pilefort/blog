@@ -1,21 +1,15 @@
-import { useState, MouseEventHandler, useEffect } from 'react'
+import { useState, MouseEventHandler } from 'react'
 
-import { useRouter } from 'next/router'
 import Image from 'next/image'
 import Link from 'next/link'
 
 import AccordionOpenIcon from '../../../public/assets/AccordionOpen.svg'
 import AccordionCloseIcon from '../../../public/assets/AccordionClose.svg'
 
+import { useMediaQuery } from '../../hooks/useMediaQuery'
+
 const Header = () => {
-  const router = useRouter()
-  const [isDesktop, setIsDesktop] = useState(true)
-
-  useEffect(() => {
-    if (!router.isReady) return
-
-    window.innerWidth >= 900 ? setIsDesktop(true) : setIsDesktop(false)
-  }, [router.isReady])
+  const isDesktop = useMediaQuery()
 
   return (
     <div>
