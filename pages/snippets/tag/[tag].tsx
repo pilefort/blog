@@ -3,13 +3,13 @@ import { InferGetStaticPropsType, NextPage, GetStaticPropsContext } from 'next'
 
 import tags from '../../../fetchData/snippets/tags.json'
 import groupingData from '../../../fetchData/snippets/groupingByTag.json'
-import { CustomSelectBox } from '../../../components/SnippetsPage/CustomSelectBox/SelectBox'
+import { SelectLists } from '../../../components/SnippetsPage/SelectLists'
 
 const SnippetsIndexPage: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({ slug, group }) => {
   return (
     <div>
       <div>
-        <CustomSelectBox tags={tags} />
+        <SelectLists tags={tags} />
       </div>
       <div>{slug}</div>
       <div>
