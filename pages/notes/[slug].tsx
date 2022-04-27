@@ -1,23 +1,30 @@
+import React from 'react'
+
 import { GetStaticPropsContext, InferGetStaticPropsType, NextPage } from 'next'
 
 import { getAllContentPaths, getContentBySlug } from '../../src/libs/getContentsFromMdx'
-import { CodeBlock } from '../../src/components/Mdx/CodeBlock'
-import { CustomImage } from '../../src/components/Mdx/CustomImage'
-import MDX from '@mdx-js/runtime'
-import React from 'react'
 
-const NotesDetailsPage: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({ title, content, date }) => {
-  const components = {
-    code: CodeBlock,
-    img: CustomImage,
-  }
+import { GitHubLink } from '../../src/components/ScrapsPage/contents/GitHubLink'
+
+import { utcToJst } from '../../src/libs/date'
+
+import { Mdx } from '../../src/components/MdxComponent/Mdx'
+
+const NotesDetailsPage: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({ slug, title, content, date }) => {
+  const createdAt = utcToJst({ date })
 
   return (
     <>
-      <div>
-        <div>{title}</div>
-        <div>{date}</div>
-        <MDX components={components}>{content}</MDX>
+      <div className="m-[24px]">
+        <div className="border-l-[6px] border-[#104359] p-[8px] text-[24px] md:text-[36px]">
+          <span>{title}</span>
+        </div>
+        <GitHubLink slug={slug} />
+
+        <div className="mt-[8px] md:text-[24px]">{createdAt}</div>
+        <div className="mt-[32px]">
+          <Mdx>{content}</Mdx>
+        </div>
       </div>
     </>
   )
@@ -30,7 +37,7 @@ export const getStaticPaths = async () => {
 }
 
 export const getStaticProps: ({ params }: GetStaticPropsContext<{ slug: string }>) => {
-  props: { title: string; date: string; content: string }
+  props: { slug: string; title: string; date: string; content: string }
 } = ({ params }) => {
   if (!params?.slug) throw new Error('slug not found')
 
@@ -39,6 +46,7 @@ export const getStaticProps: ({ params }: GetStaticPropsContext<{ slug: string }
 
   return {
     props: {
+      slug: '/blob/master/notes/' + params.slug,
       title,
       content,
       date,

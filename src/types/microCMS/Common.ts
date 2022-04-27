@@ -16,9 +16,51 @@ export type MicroCMSQuery = MakeRequest & {
 type Endpoint = 'scraps'
 
 // NOTE: APIの種類によらず、常に取得できる値
-export type CommonProps = {
+type CommonMicroCMSResponse = {
   createdAt?: string
-  updatedAt: string
+  updatedAt?: string
   publishedAt?: string
   revisedAt?: string
 }
+
+export type ContentType = CommonMicroCMSResponse & {
+  id: string
+  date: string
+  createdAt: string
+  highlight: string
+  scraps: ScrapsType
+}
+
+export type ScrapsType = ScrapType[]
+
+type ScrapType = CommonMicroCMSResponse & {
+  id: string
+  createdAt: string
+  publishedAt: string
+  revisedAt: string
+  updatedAt: string
+  tags?: (CommonMicroCMSResponse & {
+    id: string
+    title: string
+    description: string
+  })[]
+  links?: {
+    fieldId: string
+    url: string
+  }[]
+  title: string
+  body: {
+    fieldId: string
+    content: string
+  }[]
+  related?: {
+    id: string
+    title: string
+  }[]
+}
+
+export type ScrapsListType = {
+  id: string
+  date?: string
+  createdAt: string
+}[]

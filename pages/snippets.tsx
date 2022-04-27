@@ -1,45 +1,20 @@
-import Link from 'next/link'
-import { InferGetStaticPropsType, NextPage } from 'next'
+import tags from '../fetchData/snippets/tags.json'
 
 import { getAllContentPaths, getContentBySlug } from '../src/libs/getContentsFromMdx'
 
-import tags from '../fetchData/snippets/tags.json'
+import { InferGetStaticPropsType, NextPage } from 'next'
+
+import { CustomSelectBox } from '../src/components/SnippetsPage/CustomSelectBox/SelectBox'
+import { Contents } from '../src/components/SnippetsPage/Contents'
 
 const SnippetsIndexPage: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({ allContents }) => {
   return (
-    <>
+    <div className="m-[16px]">
       <div>
-        <div>タグ一覧</div>
-        {tags.map((tag) => {
-          return (
-            <ul key={tag.slug}>
-              <a href={`/snippets?tags=${tag.slug}`}>
-                <span>{tag.name}</span>
-              </a>
-            </ul>
-          )
-        })}
+        <CustomSelectBox tags={tags} />
       </div>
-      <div className="mt-[48px]">
-        {allContents.map(({ slug, title, tags, date }) => {
-          return (
-            <div
-              key={slug}
-              className="mb-[16px]"
-            >
-              <Link
-                href={slug}
-                passHref
-              >
-                <a className="text-[#1ED3C6]">{title}</a>
-              </Link>
-              <div>{tags}</div>
-              <div>{date}</div>
-            </div>
-          )
-        })}
-      </div>
-    </>
+      <Contents allContents={allContents} />
+    </div>
   )
 }
 

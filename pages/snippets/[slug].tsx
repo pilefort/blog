@@ -2,25 +2,20 @@ import React from 'react'
 
 import { NextPage, InferGetStaticPropsType } from 'next'
 
-import MDX from '@mdx-js/runtime'
-
 import { getAllContentPaths, getContentBySlug } from '../../src/libs/getContentsFromMdx'
 
-import { CodeBlock } from '../../src/components/Mdx/CodeBlock'
-import { CustomImage } from '../../src/components/Mdx/CustomImage'
+import { Mdx } from '../../src/components/MdxComponent/Mdx'
+import { utcToJst } from '../../src/libs/date'
 
 const SnippetDetailsPage: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({ title, tags, date, content }) => {
-  const components = {
-    code: CodeBlock,
-    img: CustomImage,
-  }
+  const createdAt = utcToJst({ date })
 
   return (
     <div>
       <div>{title}</div>
       <div>{tags}</div>
-      <div>{date}</div>
-      <MDX components={components}>{content}</MDX>
+      <div>{createdAt}</div>
+      <Mdx>{content}</Mdx>
     </div>
   )
 }
