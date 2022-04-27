@@ -1,4 +1,5 @@
 import mdx from '@next/mdx'
+import withPWA from 'next-pwa'
 
 const withMDX = mdx({
   extension: /\.mdx?$/,
@@ -43,4 +44,12 @@ export default {
   withMDX: withMDX({
     pageExtensions: ['ts', 'tsx', 'mdx'],
   }),
+  withPWA: withPWA({
+    pwa: {
+      dest: "public",
+      register: true,
+      skipWaiting: true,
+      disable: process.env.NODE_ENV === "development",
+    }
+  })
 }
