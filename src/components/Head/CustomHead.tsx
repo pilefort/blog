@@ -4,6 +4,18 @@ export const CustomHead = ({ title, description }: { title?: string; description
   return (
     <Head>
       <title>{title ? title + ' | ' : ''}Pilefort</title>
+      <link
+        rel="manifest"
+        href="/manifest.json"
+      />
+      <link
+        rel="apple-touch-icon"
+        href="/icon.png"
+      />
+      <meta
+        name="theme-color"
+        content="#fff"
+      />
       <meta
         name="viewport"
         content="initial-scale=1.0, width=device-width"
