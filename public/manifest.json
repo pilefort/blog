@@ -1,7 +1,7 @@
 {
     "theme_color": "#104359",
     "background_color": "#104359",
-    "display": "browser",
+    "display": "fullscreen",
     "scope": "/",
     "start_url": "/",
     "name": "pilefort",
