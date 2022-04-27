@@ -33,6 +33,7 @@ export const CustomImage = (props: ImagePropsType) => {
           src={src}
           width={props.width}
           height={props.height}
+          placeholder="blur"
         />
       </div>
       {isShowModal && (

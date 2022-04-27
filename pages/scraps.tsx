@@ -11,7 +11,7 @@ import { ScrapsListType, ContentType } from '../src/types/microCMS/Common'
 
 const ScrapsIndexPage: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({ content: { scraps, highlight }, scrapsLists }) => {
   return (
-    <div className="m-[24px]">
+    <div className="p-[24px]">
       <CustomSelectbox scrapsLists={scrapsLists} />
       <Highlight highlight={highlight} />
       <Contents scraps={scraps} />
