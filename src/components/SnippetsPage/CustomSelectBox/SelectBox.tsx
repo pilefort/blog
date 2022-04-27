@@ -25,7 +25,7 @@ export const CustomSelectBox = ({ tags }: { tags: { slug: string; name: string }
               )}
               <Link
                 key={slug}
-                href={`/snippets?tag=${slug}`}
+                href={`/snippets/tag/${slug}`}
                 passHref
               >
                 <a className="ml-[16px] md:ml-[32px] md:text-[32px]">
