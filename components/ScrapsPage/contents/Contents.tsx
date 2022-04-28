@@ -20,13 +20,12 @@ export const Contents = ({ scraps }: { scraps: ScrapsType }) => {
             <div className="text-[32px]">{title}</div>
             <div>{date}</div>
             {tags &&
-              tags.map(({ id, title, description }) => {
+              tags.map(({ id, title }) => {
                 return (
                   <Tag
                     key={id}
                     id={id}
                     title={title}
-                    description={description}
                   />
                 )
               })}
