@@ -31,6 +31,8 @@ export const SPHeader = () => {
           <Image
             src={AccordionOpenIcon}
             alt={'toggle open'}
+            width={32}
+            height={17}
           />
         </div>
       </div>

@@ -32,6 +32,8 @@ export const ToggleMenu = ({ toggleClass, setToggleCloseClass }: { toggleClass: 
           <Image
             src={AccordionCloseIcon}
             alt={'toggle close'}
+            width={24}
+            height={24}
           />
         </div>
         <div className="flex h-[95%] flex-col justify-between p-[8px]">
