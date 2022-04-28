@@ -14,6 +14,7 @@ export const CustomImage = (props: ImagePropsType) => {
   const src = props.src.replace(/^\.\./, '')
 
   const [isShowModal, setIsShowModal] = useState(false)
+  const [isShowImage, setIsShowImage] = useState(false)
   const stopPropagationHandler = (event: MouseEvent<HTMLDivElement>) => {
     event.stopPropagation()
 
@@ -22,38 +23,48 @@ export const CustomImage = (props: ImagePropsType) => {
   const [isDisableBookObi, setIsDisableBookObi] = useState(false)
   const closeModalHandler = () => setIsShowModal(false)
 
+  setTimeout(() => {
+    setIsShowImage(true)
+  }, 5000)
+
   return (
     <>
-      <div
-        className="cursor-zoom-in"
-        onClick={() => setIsShowModal(true)}
-      >
-        <Image
-          alt={props.alt}
-          src={src}
-          width={props.width}
-          height={props.height}
-          placeholder="blur"
-          blurDataURL={'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mP8z/C/HgAGgwJ/lK3Q6wAAAABJRU5ErkJggg=='}
-        />
-      </div>
-      {isShowModal && (
-        <div
-          className="fixed top-0 left-0 z-[100] flex h-screen w-screen items-center justify-center bg-black bg-opacity-60 transition duration-500 ease-out xl:scale-[1.5]"
-          onClick={closeModalHandler}
-        >
+      {isShowImage ? (
+        <>
           <div
-            className="relative"
-            onClick={stopPropagationHandler}
+            className="cursor-zoom-in"
+            onClick={() => setIsShowModal(true)}
           >
             <Image
               alt={props.alt}
               src={src}
               width={props.width}
               height={props.height}
+              placeholder="blur"
+              blurDataURL={'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mP8z/C/HgAGgwJ/lK3Q6wAAAABJRU5ErkJggg=='}
             />
           </div>
-        </div>
+          {isShowModal && (
+            <div
+              className="fixed top-0 left-0 z-[100] flex h-screen w-screen items-center justify-center bg-black bg-opacity-60 transition duration-500 ease-out xl:scale-[1.5]"
+              onClick={closeModalHandler}
+            >
+              <div
+                className="relative"
+                onClick={stopPropagationHandler}
+              >
+                <Image
+                  alt={props.alt}
+                  src={src}
+                  width={props.width}
+                  height={props.height}
+                />
+              </div>
+            </div>
+          )}
+        </>
+      ) : (
+        <div>画像読み込み中...</div>
       )}
     </>
   )
