@@ -1,12 +1,8 @@
-import { useState } from 'react'
-
 import Image from 'next/image'
 
 import TagIcon from '../../../public/assets/Tag.svg'
 
-export const Tag = ({ id, title, description }: { id: string; title: string; description?: string }) => {
-  const [isHover, setIsHover] = useState(false)
-
+export const Tag = ({ id, title }: { id: string; title: string }) => {
   return (
     <div
       key={id}
@@ -15,15 +11,10 @@ export const Tag = ({ id, title, description }: { id: string; title: string; des
       <Image
         src={TagIcon}
         alt="tag"
+        width={18}
+        height={18}
       />
-      <span
-        className="ml-[4px] text-[28px]"
-        onMouseOver={() => setIsHover(true)}
-        onMouseLeave={() => setIsHover(false)}
-      >
-        {title}
-      </span>
-      {isHover && description && <div dangerouslySetInnerHTML={{ __html: description }} />}
+      <span className="ml-[4px] text-[28px]">{title}</span>
     </div>
   )
 }
