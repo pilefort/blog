@@ -40,8 +40,8 @@ export const CustomImage = (props: ImagePropsType) => {
               src={src}
               width={props.width}
               height={props.height}
-              placeholder="blur"
-              blurDataURL={'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mP8z/C/HgAGgwJ/lK3Q6wAAAABJRU5ErkJggg=='}
+              // placeholder="blur"
+              // blurDataURL={'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mP8z/C/HgAGgwJ/lK3Q6wAAAABJRU5ErkJggg=='}
             />
           </div>
           {isShowModal && (
