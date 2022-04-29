@@ -34,6 +34,8 @@ export const CustomImage = (props: ImagePropsType) => {
           src={src}
           width={props.width}
           height={props.height}
+          loading="lazy"
+          decoding="async"
           className={`${isImageLoaded ? 'blur-none' : 'blur-sm'}`}
           onLoadingComplete={() => setIsImageLoaded(true)}
         />
@@ -52,6 +54,8 @@ export const CustomImage = (props: ImagePropsType) => {
               src={src}
               width={props.width}
               height={props.height}
+              loading="lazy"
+              decoding="async"
             />
           </div>
         </div>
