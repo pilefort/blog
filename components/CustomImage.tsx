@@ -26,7 +26,7 @@ export const CustomImage = (props: ImagePropsType) => {
   return (
     <>
       <div
-        className="cursor-zoom-in"
+        className="w-fit cursor-zoom-in"
         onClick={() => setIsShowModal(true)}
       >
         <Image
