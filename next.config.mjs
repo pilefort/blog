@@ -1,9 +1,5 @@
-import mdx from '@next/mdx'
+import withMDX from '@next/mdx'
 import withPWA from 'next-pwa'
-
-const withMDX = mdx({
-  extension: /\.mdx?$/,
-})
 
 /** @type {import('next').NextConfig} */
 export default withPWA({
@@ -42,6 +38,7 @@ export default withPWA({
   // 今後の動向を見て、有効にするかどうか判断
   // swcMinify: true,
   withMDX: withMDX({
+    extension: /\.mdx?$/,
     pageExtensions: ['ts', 'tsx', 'mdx'],
   }),
   pwa: {
