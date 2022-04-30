@@ -1,11 +1,8 @@
 import { useState } from 'react'
 
 import Link from 'next/link'
-import Image from 'next/image'
 
 import { ToggleMenu } from './ToggleMenu'
-
-import AccordionOpenIcon from '../../../../public/assets/AccordionOpen.svg'
 
 export const SPHeader = () => {
   const [toggleClass, setToggleClass] = useState('hidden')
@@ -27,13 +24,13 @@ export const SPHeader = () => {
         >
           <a className="text-[24px] text-[#104359]">Pilefort</a>
         </Link>
-        <div onClick={setToggleOpenClass}>
-          <Image
-            src={AccordionOpenIcon}
-            alt={'toggle open'}
-            width={32}
-            height={17}
-          />
+        <div
+          onClick={setToggleOpenClass}
+          className="rotate-90"
+        >
+          <span className="border-[2px] border-[#104359]" />
+          <span className="ml-[4px] border-[2px] border-[#104359]" />
+          <span className="ml-[4px] border-[2px] border-[#104359]" />
         </div>
       </div>
       <hr className="border-t-[2px] border-[#104359]" />
