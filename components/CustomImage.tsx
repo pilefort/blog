@@ -52,8 +52,8 @@ export const CustomImage = (props: ImagePropsType) => {
             <Image
               alt={props.alt}
               src={src}
-              width={props.width}
-              height={props.height}
+              width={props.width * 2}
+              height={props.height * 2}
               loading="lazy"
               decoding="async"
             />
