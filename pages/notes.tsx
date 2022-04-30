@@ -41,6 +41,10 @@ export const getStaticProps = async () => {
   const slugs = await getAllContentPaths({ target: 'notes' })
   const allContents = slugs.map((slug) => getContentBySlug(slug, ['title', 'description', 'date', 'slug']))
 
+  allContents.sort((a, b) => {
+    return a.date > b.date ? -1 : 1
+  })
+
   return {
     props: {
       allContents,
