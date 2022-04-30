@@ -11,6 +11,7 @@ type ImagePropsType = {
 }
 
 export const CustomImage = (props: ImagePropsType) => {
+  // TODO: 開発環境用の処理を追加
   const src = props.src.replace(/^\.\./, '')
 
   const [isShowModal, setIsShowModal] = useState<boolean>(false)
