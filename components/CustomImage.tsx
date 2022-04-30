@@ -13,7 +13,8 @@ type ImagePropsType = {
 export const CustomImage = (props: ImagePropsType) => {
   const src = props.src.replace(/^\.\./, '')
 
-  const [isShowModal, setIsShowModal] = useState(false)
+  const [isShowModal, setIsShowModal] = useState<boolean>(false)
+  const [isImageLoaded, setIsImageLoaded] = useState<boolean>(false)
   const stopPropagationHandler = (event: MouseEvent<HTMLDivElement>) => {
     event.stopPropagation()
 
@@ -25,7 +26,7 @@ export const CustomImage = (props: ImagePropsType) => {
   return (
     <>
       <div
-        className="cursor-zoom-in"
+        className="w-fit cursor-zoom-in"
         onClick={() => setIsShowModal(true)}
       >
         <Image
@@ -33,8 +34,10 @@ export const CustomImage = (props: ImagePropsType) => {
           src={src}
           width={props.width}
           height={props.height}
-          placeholder="blur"
-          blurDataURL={'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mP8z/C/HgAGgwJ/lK3Q6wAAAABJRU5ErkJggg=='}
+          loading="lazy"
+          decoding="async"
+          className={`${isImageLoaded ? 'blur-none' : 'blur-sm'}`}
+          onLoadingComplete={() => setIsImageLoaded(true)}
         />
       </div>
       {isShowModal && (
@@ -49,8 +52,10 @@ export const CustomImage = (props: ImagePropsType) => {
             <Image
               alt={props.alt}
               src={src}
-              width={props.width}
-              height={props.height}
+              width={props.width * 2}
+              height={props.height * 2}
+              loading="lazy"
+              decoding="async"
             />
           </div>
         </div>

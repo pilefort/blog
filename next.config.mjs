@@ -1,12 +1,8 @@
-import mdx from '@next/mdx'
+import withMDX from '@next/mdx'
 import withPWA from 'next-pwa'
 
-const withMDX = mdx({
-  extension: /\.mdx?$/,
-})
-
 /** @type {import('next').NextConfig} */
-export default {
+export default withPWA({
   reactStrictMode: true,
   images: {
     domains: ['images.microcms-assets.io'],
@@ -42,14 +38,13 @@ export default {
   // 今後の動向を見て、有効にするかどうか判断
   // swcMinify: true,
   withMDX: withMDX({
+    extension: /\.mdx?$/,
     pageExtensions: ['ts', 'tsx', 'mdx'],
   }),
-  withPWA: withPWA({
-    pwa: {
-      dest: "public",
-      register: true,
-      skipWaiting: true,
-      disable: process.env.NODE_ENV === "development",
-    }
-  })
-}
+  pwa: {
+    dest: "public",
+    register: true,
+    skipWaiting: true,
+    disable: process.env.NODE_ENV === "development",
+  }
+})
