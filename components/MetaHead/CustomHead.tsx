@@ -22,20 +22,20 @@ export const CustomHead = ({ title, description }: { title?: string; description
       />
       <meta
         name="title"
-        content="Pilefort"
+        content={title}
       />
       <meta
         name="description"
         content={description}
       />
-
+      {/*  OGP設定 */}
       <meta
         property="og:locale"
         content="ja_JP"
       />
       <meta
         property="og:title"
-        content="Pilefort"
+        content={title}
       />
       <meta
         property="og:type"
@@ -43,14 +43,22 @@ export const CustomHead = ({ title, description }: { title?: string; description
       />
       <meta
         property="og:description"
-        content="技術ブログです。"
+        content={description}
       />
       <meta
         property="og:url"
         content="https://pilefort.dev"
       />
       {/*<meta property="og:image" content="/assets/ogp.png" />*/}
-
+      {/* Twitter OGP */}
+      <meta
+        property="twitter:title"
+        content={title}
+      />
+      <meta
+        property="twitter:description"
+        content={description}
+      />
       <link
         rel="icon"
         href="/assets/favicon.png"
