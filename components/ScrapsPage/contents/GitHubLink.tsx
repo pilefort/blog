@@ -16,7 +16,7 @@ export const GitHubLink = ({ slug }: { slug: string }) => {
       passHref
     >
       <a
-        className="absolute right-[16px] top-[100px] mt-[8px] mr-0 ml-auto flex w-[140px] border-[2px] border-black p-[8px] md:w-[250px] md:p-[24px]"
+        className="absolute right-[16px] top-[100px] mt-[8px] mr-0 ml-auto flex w-[140px] border-[2px] border-black p-[8px] lg:w-[250px] lg:p-[24px]"
         target="_blank"
       >
         <Image

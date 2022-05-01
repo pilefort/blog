@@ -30,8 +30,6 @@ const Desktop = ({ notesLists }: { notesLists: { title: string; slug: string }[]
       <div className="text-[32px]">Notes一覧</div>
       <div className="mt-[16px] flex flex-col">
         {notesLists.map(({ title, slug }) => {
-          console.warn('s', slug)
-          console.warn('c', currentSlug)
           return (
             <Link
               key={slug}
