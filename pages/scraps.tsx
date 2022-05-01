@@ -8,14 +8,21 @@ import { Contents } from '../components/ScrapsPage/contents/Contents'
 
 import { ScrapsListType, ScrapsType } from '../types/microCMS/Common'
 import { getListContents } from '../utils/getContents'
+import { utcToJst } from '../libs/date'
 
 const ScrapsIndexPage: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({ date, createdAt, highlight, scraps, scrapsLists }) => {
+  const postDate = utcToJst({ date: date || createdAt })
+
   return (
-    <div className="p-[24px]">
-      <CustomSelectbox scrapsLists={scrapsLists} />
-      <div>{date || createdAt}</div>
-      <Highlight highlight={highlight} />
-      <Contents scraps={scraps} />
+    <div className="p-[24px] md:flex">
+      <div>
+        <CustomSelectbox scrapsLists={scrapsLists} />
+      </div>
+      <div>
+        <div className="text-[32px]">{postDate}</div>
+        <Highlight highlight={highlight} />
+        <Contents scraps={scraps} />
+      </div>
     </div>
   )
 }
