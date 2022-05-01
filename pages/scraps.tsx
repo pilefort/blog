@@ -1,14 +1,13 @@
-import data from '../fetchData/scraps/demoWith1Scrap.json'
 import scrapsListsData from '../fetchData/scraps/demoWithScrapLists.json'
 
-import { NextPage, InferGetStaticPropsType, GetStaticPropsContext } from 'next'
+import { NextPage, InferGetStaticPropsType } from 'next'
 
 import { CustomSelectbox } from '../components/ScrapsPage/CustomSelectBox/CustomSelectbox'
 import { Highlight } from '../components/ScrapsPage/contents/Highlight'
 import { Contents } from '../components/ScrapsPage/contents/Contents'
 
-import { ScrapsListType, ContentType, ScrapsType } from '../types/microCMS/Common'
-import { getAllListContents, getListContentById, getListContents } from '../utils/getContents'
+import { ScrapsListType, ScrapsType } from '../types/microCMS/Common'
+import { getListContents } from '../utils/getContents'
 
 const ScrapsIndexPage: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({ date, createdAt, highlight, scraps, scrapsLists }) => {
   return (
