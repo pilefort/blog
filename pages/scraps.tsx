@@ -1,4 +1,3 @@
-import data from '../fetchData/scraps/demoWith1Scrap.json'
 import scrapsListsData from '../fetchData/scraps/demoWithScrapLists.json'
 
 import { NextPage, InferGetStaticPropsType } from 'next'
@@ -7,30 +6,52 @@ import { CustomSelectbox } from '../components/ScrapsPage/CustomSelectBox/Custom
 import { Highlight } from '../components/ScrapsPage/contents/Highlight'
 import { Contents } from '../components/ScrapsPage/contents/Contents'
 
-import { ScrapsListType, ContentType } from '../types/microCMS/Common'
+import { ScrapsListType, ScrapsType } from '../types/microCMS/Common'
+import { getListContents } from '../utils/getContents'
+import { utcToJst } from '../libs/date'
 
-const ScrapsIndexPage: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({ content: { scraps, highlight }, scrapsLists }) => {
+const ScrapsIndexPage: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({ date, createdAt, highlight, scraps, scrapsLists }) => {
+  const postDate = utcToJst({ date: date || createdAt })
+
   return (
-    <div className="p-[24px]">
-      <CustomSelectbox scrapsLists={scrapsLists} />
-      <Highlight highlight={highlight} />
-      <Contents scraps={scraps} />
+    <div className="p-[24px] md:flex">
+      <div>
+        <CustomSelectbox scrapsLists={scrapsLists} />
+      </div>
+      <div>
+        <div className="text-[32px]">{postDate}</div>
+        <Highlight highlight={highlight} />
+        <Contents scraps={scraps} />
+      </div>
     </div>
   )
 }
 
-export const getStaticProps = (): {
-  props: {
-    content: ContentType
-    scrapsLists: ScrapsListType
+export const getStaticProps: () => Promise<{
+  props: { date: string; createdAt: string; highlight: string; scraps: ScrapsType; scrapsLists: ScrapsListType }
+}> = async () => {
+  const endpoint = 'scraps'
+  const queries = {
+    fields: 'date,createdAt,highlight,scraps',
+    depth: 3 as const,
+    orders: '-createdAt',
+    limit: 1,
   }
-} => {
-  const content = data
+
+  const { contents } = await getListContents({
+    endpoint,
+    queries,
+  })
+  const { date, createdAt, highlight, scraps }: { date: string; createdAt: string; highlight: string; scraps: ScrapsType } = contents[0]
+
   const { contents: scrapsLists } = scrapsListsData
 
   return {
     props: {
-      content,
+      date,
+      createdAt,
+      highlight,
+      scraps,
       scrapsLists,
     },
   }
