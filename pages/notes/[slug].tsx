@@ -9,6 +9,7 @@ import { GitHubLink } from '../../components/ScrapsPage/contents/GitHubLink'
 import { utcToJst } from '../../libs/date'
 
 import { Mdx } from '../../components/MdxComponent/Mdx'
+import { TOC } from '../../components/MdxComponent/TOC'
 import { CustomHead } from '../../components/MetaHead/CustomHead'
 import { Sidebar } from '../../components/NotesPage/Sidebar'
 
@@ -25,7 +26,7 @@ const NotesDetailsPage: NextPage<InferGetStaticPropsType<typeof getStaticProps>>
         <div className="m-[32px] hidden lg:block">
           <Sidebar />
         </div>
-        <div>
+        <div className="w-auto overflow-x-auto lg:w-[calc(100vw-600px-300px-100px)]">
           <div className="m-[24px]">
             <div className="border-l-[6px] border-[#104359] p-[8px] text-[24px] md:text-[36px]">
               <span>{title}</span>
@@ -37,6 +38,9 @@ const NotesDetailsPage: NextPage<InferGetStaticPropsType<typeof getStaticProps>>
               <Mdx>{content}</Mdx>
             </div>
           </div>
+        </div>
+        <div className="fixed right-0 mt-[100px] hidden text-[#104359] lg:block">
+          <TOC>{content}</TOC>
         </div>
       </div>
     </>
