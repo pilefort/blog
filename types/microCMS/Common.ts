@@ -64,3 +64,29 @@ export type ScrapsListType = {
   date?: string
   createdAt: string
 }[]
+
+// 記事の内容を含む、含まないにかかわらず共通している型
+type CommonListApiProps = {
+  createdAt?: string
+  updatedAt?: string
+  publishedAt?: string
+  revisedAt?: string
+}
+
+// 記事の内容を含まない型
+export type ContentsWithNoBody = CommonListApiProps & {
+  id: string
+  title?: string
+  date?: string
+  highlight: string
+  createdAt: string
+  scraps?: ScrapsType
+}
+
+// 全記事のリストを取得するときの型 (記事の内容は含まない)
+export type ListsApiProps = {
+  contents: ContentsWithNoBody[]
+  totalCount: number
+  offset: number
+  limit: number
+}
