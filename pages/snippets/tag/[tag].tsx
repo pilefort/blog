@@ -1,34 +1,21 @@
-import Link from 'next/link'
 import { InferGetStaticPropsType, NextPage, GetStaticPropsContext } from 'next'
 
 import tags from '../../../fetchData/snippets/tags.json'
-import groupingData from '../../../fetchData/snippets/groupingByTag.json'
 import { SelectLists } from '../../../components/SnippetsPage/SelectLists'
 import { CustomHead } from '../../../components/MetaHead/CustomHead'
+import { SnippetsLists } from '../../../components/SnippetsPage/SnippetsLists'
+import { getAllContentPaths, getContentBySlug } from '../../../libs/getContentsFromMdx'
 
-const SnippetsIndexPage: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({ slug, group }) => {
+const SnippetsIndexPage: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({ contents }) => {
   return (
     <>
       <CustomHead
         title="スニペット一覧"
         description="個人的に便利だと感じたスニペット一覧です"
       />
-      <div>
-        <div>
-          <SelectLists tags={tags} />
-        </div>
-        <div>{slug}</div>
-        <div>
-          {group.map(({ name, slug }) => {
-            return (
-              <div key={slug}>
-                <Link href={'/snippets/' + slug}>
-                  <a className="text-[#1ED3C6]">{name}</a>
-                </Link>
-              </div>
-            )
-          })}
-        </div>
+      <div className="p-[16px]">
+        <SelectLists tags={tags} />
+        <SnippetsLists allContents={contents} />
       </div>
     </>
   )
@@ -40,17 +27,21 @@ export const getStaticPaths = () => {
   return { paths, fallback: false }
 }
 
-export const getStaticProps: ({ params }: GetStaticPropsContext<{ tag: string }>) => {
-  props: { slug: string; group: { name: string; slug: string }[] }
-} = ({ params }) => {
+export const getStaticProps = async ({ params }: GetStaticPropsContext<{ tag: string }>) => {
   if (!params?.tag) throw new Error('params tag not found')
 
-  const { slug, group } = groupingData.filter((data) => data.slug === params.tag)[0]
+  const slugs = await getAllContentPaths({ target: 'snippets' })
+  const allContents = slugs.map((slug) => getContentBySlug(slug, ['title', 'tags', 'date', 'slug']))
+
+  allContents.sort((a, b) => {
+    return a.date > b.date ? -1 : 1
+  })
+
+  const contents = allContents.filter((data) => data.tags.includes(params.tag))
 
   return {
     props: {
-      slug,
-      group,
+      contents,
     },
   }
 }
