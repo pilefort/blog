@@ -9,21 +9,28 @@ import { GitHubLink } from '../../components/ScrapsPage/contents/GitHubLink'
 import { utcToJst } from '../../libs/date'
 
 import { Mdx } from '../../components/MdxComponent/Mdx'
+import { CustomHead } from '../../components/MetaHead/CustomHead'
 
 const NotesDetailsPage: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({ slug, title, content, date }) => {
   const createdAt = utcToJst({ date })
 
   return (
     <>
-      <div className="m-[24px]">
-        <div className="border-l-[6px] border-[#104359] p-[8px] text-[24px] md:text-[36px]">
-          <span>{title}</span>
-        </div>
-        <GitHubLink slug={slug} />
+      <CustomHead
+        title={`${title}`}
+        description={`${title}に関するノートです`}
+      />
+      <div>
+        <div className="m-[24px]">
+          <div className="border-l-[6px] border-[#104359] p-[8px] text-[24px] md:text-[36px]">
+            <span>{title}</span>
+          </div>
+          <GitHubLink slug={slug} />
 
-        <div className="mt-[8px] md:text-[24px]">{createdAt}</div>
-        <div className="mt-[32px]">
-          <Mdx>{content}</Mdx>
+          <div className="mt-[8px] md:text-[24px]">{createdAt}</div>
+          <div className="mt-[32px]">
+            <Mdx>{content}</Mdx>
+          </div>
         </div>
       </div>
     </>

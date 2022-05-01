@@ -4,26 +4,33 @@ import { InferGetStaticPropsType, NextPage, GetStaticPropsContext } from 'next'
 import tags from '../../../fetchData/snippets/tags.json'
 import groupingData from '../../../fetchData/snippets/groupingByTag.json'
 import { SelectLists } from '../../../components/SnippetsPage/SelectLists'
+import { CustomHead } from '../../../components/MetaHead/CustomHead'
 
 const SnippetsIndexPage: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({ slug, group }) => {
   return (
-    <div>
+    <>
+      <CustomHead
+        title="スニペット一覧"
+        description="個人的に便利だと感じたスニペット一覧です"
+      />
       <div>
-        <SelectLists tags={tags} />
+        <div>
+          <SelectLists tags={tags} />
+        </div>
+        <div>{slug}</div>
+        <div>
+          {group.map(({ name, slug }) => {
+            return (
+              <div key={slug}>
+                <Link href={'/snippets/' + slug}>
+                  <a className="text-[#1ED3C6]">{name}</a>
+                </Link>
+              </div>
+            )
+          })}
+        </div>
       </div>
-      <div>{slug}</div>
-      <div>
-        {group.map(({ name, slug }) => {
-          return (
-            <div key={slug}>
-              <Link href={'/snippets/' + slug}>
-                <a className="text-[#1ED3C6]">{name}</a>
-              </Link>
-            </div>
-          )
-        })}
-      </div>
-    </div>
+    </>
   )
 }
 

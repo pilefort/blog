@@ -6,17 +6,24 @@ import { getAllContentPaths, getContentBySlug } from '../../libs/getContentsFrom
 
 import { Mdx } from '../../components/MdxComponent/Mdx'
 import { utcToJst } from '../../libs/date'
+import { CustomHead } from '../../components/MetaHead/CustomHead'
 
 const SnippetDetailsPage: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({ title, tags, date, content }) => {
   const createdAt = utcToJst({ date })
 
   return (
-    <div>
-      <div>{title}</div>
-      <div>{tags}</div>
-      <div>{createdAt}</div>
-      <Mdx>{content}</Mdx>
-    </div>
+    <>
+      <CustomHead
+        title={title}
+        description={`${title}に関するスニペットです`}
+      />
+      <div>
+        <div>{title}</div>
+        <div>{tags}</div>
+        <div>{createdAt}</div>
+        <Mdx>{content}</Mdx>
+      </div>
+    </>
   )
 }
 
