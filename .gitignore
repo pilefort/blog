@@ -48,3 +48,6 @@ yarn-error.log*
 
 # ブログ画像 images
 **/public/images
+
+# 環境変数
+.envrc
