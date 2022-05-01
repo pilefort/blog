@@ -12,6 +12,14 @@ export const CustomHead = ({ title, description }: { title?: string; description
         rel="apple-touch-icon"
         href="/icon.png"
       />
+      <link
+        rel="icon"
+        href="/assets/favicon.png"
+      />
+      <link
+        rel="canonical"
+        href="https://pilefort.dev"
+      />
       <meta
         name="theme-color"
         content="#fff"
@@ -58,10 +66,6 @@ export const CustomHead = ({ title, description }: { title?: string; description
       <meta
         property="twitter:description"
         content={description}
-      />
-      <link
-        rel="icon"
-        href="/assets/favicon.png"
       />
     </Head>
   )
