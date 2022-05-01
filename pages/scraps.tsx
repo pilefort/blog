@@ -2,7 +2,7 @@ import scrapsListsData from '../fetchData/scraps/demoWithScrapLists.json'
 
 import { NextPage, InferGetStaticPropsType } from 'next'
 
-import { CustomSelectbox } from '../components/ScrapsPage/CustomSelectBox/CustomSelectbox'
+import { Sidebar } from '../components/ScrapsPage/Sidebar/Sidebar'
 import { Highlight } from '../components/ScrapsPage/contents/Highlight'
 import { Contents } from '../components/ScrapsPage/contents/Contents'
 
@@ -21,9 +21,7 @@ const ScrapsIndexPage: NextPage<InferGetStaticPropsType<typeof getStaticProps>> 
         description="個人的に収集した情報をまとめています"
       />
       <div className="p-[24px] md:flex">
-        <div>
-          <CustomSelectbox scrapsLists={scrapsLists} />
-        </div>
+        <Sidebar scrapsLists={scrapsLists} />
         <div>
           <div className="text-[32px]">{postDate}</div>
           <Highlight highlight={highlight} />
