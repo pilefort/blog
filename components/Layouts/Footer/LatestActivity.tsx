@@ -6,16 +6,16 @@ import TechDojin12Image from '../../../public/assets/tech-dojin/tech12.jpg'
 export const LatestActivity = () => {
   return (
     <>
-      <div className="hr-with-title text-center md:w-[calc(100vw-160px)]">最近の活動</div>
-      <div className="mt-[24px] md:flex">
-        <div className="md:w-[calc(100%-350px)] xl:w-auto">
+      <div className="hr-with-title text-center lg:w-[calc(100vw-160px)]">最近の活動</div>
+      <div className="mt-[24px] lg:flex">
+        <div className="lg:w-[calc(100%-350px)] xl:w-auto">
           <div className="font-bold">技術書典12 (2022.1.22 - 2022.1.30) で本を出しました。</div>
           <div className="mt-[24px]">
             2021年に登場したり、大幅なアップデートがあったWebサービスや開発ツール、ライブラリ、フレームワークを紹介した本です。
           </div>
           <div>TailwindCSSv3やRailway, Partytown, Nextjs12なんかの紹介やChrome DevToolsやChrome Extensions Manifest V3などの話を書いてます。</div>
-          <div className="mt-[24px] text-[14px] md:text-[16px]">
-            <div className="">
+          <div className="mt-[24px] text-[16px]">
+            <div>
               <span>Sample: </span>
               <Link
                 href="https://sample.pilefort.dev/"
