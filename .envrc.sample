@@ -1,0 +1,2 @@
+export API_KEY=<microCMSのAPIキー、権限はGETのみ>
+export SERVICE_DOMAIN=<microCMSのサービスドメイン>
