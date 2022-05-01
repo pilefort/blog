@@ -8,7 +8,7 @@ import { List } from './List'
 import { ScrapsListType } from '../../../types/microCMS/Common'
 import { useMediaQuery } from '../../../hooks/useMediaQuery'
 
-export const CustomSelectbox = ({ scrapsLists }: { scrapsLists: ScrapsListType }) => {
+export const Sidebar = ({ scrapsLists }: { scrapsLists: ScrapsListType }) => {
   const isDesktop = useMediaQuery()
 
   return (
