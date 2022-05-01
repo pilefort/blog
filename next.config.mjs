@@ -5,6 +5,7 @@ import withPWA from 'next-pwa'
 export default withPWA({
   reactStrictMode: true,
   images: {
+    formats: ['image/webp'],
     domains: ['images.microcms-assets.io'],
   },
   async rewrites() {
@@ -38,13 +39,13 @@ export default withPWA({
   // 今後の動向を見て、有効にするかどうか判断
   // swcMinify: true,
   withMDX: withMDX({
-    extension: /\.mdx?$/,
-    pageExtensions: ['ts', 'tsx', 'mdx'],
+    extension: /\.md?$/,
+    pageExtensions: ['ts', 'tsx', 'mdx', 'md'],
   }),
   pwa: {
     dest: "public",
     register: true,
     skipWaiting: true,
     disable: process.env.NODE_ENV === "development",
-  }
+  },
 })

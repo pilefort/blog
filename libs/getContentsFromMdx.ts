@@ -8,20 +8,20 @@ export const getAllContentPaths = async ({ target, depth }: { target: string; de
 
   const targetFullFilePaths: string[] = await globby([searchPath], {
     expandDirectories: {
-      extensions: ['mdx'],
+      extensions: ['md'],
     },
     absolute: false,
     deep: depth || Infinity,
   })
 
   return targetFullFilePaths.map((targetFullFilePath) => {
-    return targetFullFilePath.replace(/^contents/, '').replace(/\.mdx$/, '')
+    return targetFullFilePath.replace(/^contents/, '').replace(/\.md$/, '')
   })
 }
 
 export const getContentBySlug = (slug: string, fields: string[]) => {
-  const fullFilePath = join(process.cwd(), '/contents', slug + '.mdx')
-  // NOTE: mdxの中身を取得
+  const fullFilePath = join(process.cwd(), '/contents', slug + '.md')
+  // NOTE: mdの中身を取得
   const fileContent = fs.readFileSync(fullFilePath, { encoding: 'utf-8' })
 
   // NOTE: `---`で囲った部分をdata, それ以外をcontentとして分けて取得
