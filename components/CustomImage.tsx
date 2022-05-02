@@ -1,8 +1,8 @@
-import React  from 'react'
+import React from 'react'
 import { useState, MouseEvent } from 'react'
 
 import Image from 'next/image'
-import { StaticImageData } from "next/image";
+import { StaticImageData } from 'next/image'
 
 type ImagePropsType = {
   alt: string
