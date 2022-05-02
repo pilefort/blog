@@ -2,17 +2,24 @@ import React from 'react'
 import { useState, MouseEvent } from 'react'
 
 import Image from 'next/image'
+import { StaticImageData } from 'next/image'
 
 type ImagePropsType = {
   alt: string
-  src: string
+  src: string | StaticImageData
   width: number
   height: number
 }
 
 export const CustomImage = (props: ImagePropsType) => {
   // TODO: 開発環境用の処理を追加
-  const src = props.src.replace(/^\.\./, '')
+  // NOTE: typeof StaticImageData = {
+  //   src: string
+  //   height: number
+  //   width: number
+  //   blurDataURL: string
+  // }
+  const src = typeof props.src === 'string' ? props.src.replace(/^\.\./, '') : props.src.src
 
   const [isShowModal, setIsShowModal] = useState<boolean>(false)
   const [isImageLoaded, setIsImageLoaded] = useState<boolean>(false)
