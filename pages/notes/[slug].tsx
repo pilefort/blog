@@ -14,7 +14,7 @@ import { CustomHead } from '../../components/MetaHead/CustomHead'
 import { Sidebar } from '../../components/NotesPage/Sidebar'
 
 const NotesDetailsPage: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({ slug, title, content, date }) => {
-  const createdAt = utcToJst({ date })
+  const dateTime = utcToJst({ date })
 
   return (
     <>
@@ -23,23 +23,22 @@ const NotesDetailsPage: NextPage<InferGetStaticPropsType<typeof getStaticProps>>
         description={`${title}に関するノートです`}
       />
       <div className="flex">
-        <div className="m-[32px] hidden lg:block">
+        <div className="m-[32px] hidden xl:block">
           <Sidebar />
         </div>
-        <div className="w-auto overflow-x-auto lg:w-[calc(100vw-600px-300px-100px)]">
+        <div className="w-auto overflow-x-auto xl:w-[calc(100vw-550px-300px-100px)]">
           <div className="m-[24px]">
             <div className="border-l-[6px] border-[#104359] p-[8px] text-[24px] md:text-[36px]">
               <span>{title}</span>
             </div>
             <GitHubLink slug={slug} />
-
-            <div className="mt-[8px] md:text-[24px]">{createdAt}</div>
+            <div className="mt-[8px] md:text-[24px]">{dateTime}</div>
             <div className="mt-[32px]">
               <Mdx>{content}</Mdx>
             </div>
           </div>
         </div>
-        <div className="fixed right-0 mt-[100px] hidden text-[#104359] lg:block">
+        <div className="fixed right-0 mt-[100px] hidden text-[#104359] xl:block">
           <TOC>{content}</TOC>
         </div>
       </div>

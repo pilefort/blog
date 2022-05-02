@@ -1,7 +1,5 @@
 import React from 'react'
 
-import Link from 'next/link'
-
 import MDX from '@mdx-js/runtime'
 
 export const TOC = ({ children }: { children: string }) => {
@@ -31,7 +29,7 @@ export const TOC = ({ children }: { children: string }) => {
   }
 
   return (
-    <div className="w-[600px]">
+    <div className="xl:w-[550px]">
       <div className="text-[32px]">目次</div>
       <MDX components={components}>{children}</MDX>
     </div>
