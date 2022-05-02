@@ -1,19 +1,14 @@
-import scrapsListsData from '../../fetchData/scraps/demoWithScrapLists.json'
-
 import { GetStaticPropsContext, InferGetStaticPropsType, NextPage } from 'next'
 
 import { getAllListContents } from '../../utils/getContents'
 import { getListContentById } from '../../utils/getContents'
 
-import { Contents } from '../../components/ScrapsPage/contents/Contents'
-import { Sidebar } from '../../components/ScrapsPage/Sidebar/Sidebar'
-import { Highlight } from '../../components/ScrapsPage/contents/Highlight'
-
-import { ScrapsListType, ScrapsType } from '../../types/microCMS/Common'
+import { ScrapsType } from '../../types/microCMS/Common'
 import { utcToJst } from '../../libs/date'
 import { CustomHead } from '../../components/MetaHead/CustomHead'
+import { CommonScrapsPage } from '../../components/ScrapsPage/CommonScrapsPage'
 
-const ScrapsDetailsPage: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({ date, createdAt, highlight, scraps, scrapsLists }) => {
+const ScrapsDetailsPage: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({ date, createdAt, highlight, scraps }) => {
   const dateTime = utcToJst({ date: date || createdAt })
 
   return (
@@ -22,16 +17,11 @@ const ScrapsDetailsPage: NextPage<InferGetStaticPropsType<typeof getStaticProps>
         title={`${dateTime}`}
         description={`${dateTime}のスクラップです`}
       />
-      <div className="flex p-[24px]">
-        <div>
-          <Sidebar scrapsLists={scrapsLists} />
-        </div>
-        <div className="ml-[32px]">
-          <div className="text-[32px]">{dateTime}</div>
-          <Highlight highlight={highlight} />
-          <Contents scraps={scraps} />
-        </div>
-      </div>
+      <CommonScrapsPage
+        scraps={scraps}
+        highlight={highlight}
+        dateTime={dateTime}
+      />
     </>
   )
 }
@@ -47,7 +37,7 @@ export const getStaticPaths: () => Promise<{ paths: string[]; fallback: boolean 
 }
 
 export const getStaticProps: ({ params }: GetStaticPropsContext<{ id: string }>) => Promise<{
-  props: { date: string; createdAt: string; highlight: string; scraps: ScrapsType; scrapsLists: ScrapsListType }
+  props: { date: string; createdAt: string; highlight: string; scraps: ScrapsType }
 }> = async ({ params }) => {
   if (!params?.id) throw new Error('ビルドに失敗しました。再度実行してください。')
 
@@ -65,15 +55,12 @@ export const getStaticProps: ({ params }: GetStaticPropsContext<{ id: string }>)
     }
   )
 
-  const { contents: scrapsLists } = scrapsListsData
-
   return {
     props: {
       date,
       createdAt,
       highlight,
       scraps,
-      scrapsLists,
     },
   }
 }
