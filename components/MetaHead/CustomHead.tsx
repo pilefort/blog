@@ -12,6 +12,14 @@ export const CustomHead = ({ title, description }: { title?: string; description
         rel="apple-touch-icon"
         href="/icon.png"
       />
+      <link
+        rel="icon"
+        href="/assets/favicon.png"
+      />
+      <link
+        rel="canonical"
+        href="https://pilefort.dev"
+      />
       <meta
         name="theme-color"
         content="#fff"
@@ -22,20 +30,20 @@ export const CustomHead = ({ title, description }: { title?: string; description
       />
       <meta
         name="title"
-        content="Pilefort"
+        content={title}
       />
       <meta
         name="description"
         content={description}
       />
-
+      {/*  OGP設定 */}
       <meta
         property="og:locale"
         content="ja_JP"
       />
       <meta
         property="og:title"
-        content="Pilefort"
+        content={title}
       />
       <meta
         property="og:type"
@@ -43,17 +51,21 @@ export const CustomHead = ({ title, description }: { title?: string; description
       />
       <meta
         property="og:description"
-        content="技術ブログです。"
+        content={description}
       />
       <meta
         property="og:url"
         content="https://pilefort.dev"
       />
       {/*<meta property="og:image" content="/assets/ogp.png" />*/}
-
-      <link
-        rel="icon"
-        href="/assets/favicon.png"
+      {/* Twitter OGP */}
+      <meta
+        property="twitter:title"
+        content={title}
+      />
+      <meta
+        property="twitter:description"
+        content={description}
       />
     </Head>
   )
