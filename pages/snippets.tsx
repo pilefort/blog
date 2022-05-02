@@ -6,13 +6,20 @@ import { InferGetStaticPropsType, NextPage } from 'next'
 
 import { SelectLists } from '../components/SnippetsPage/SelectLists'
 import { SnippetsLists } from '../components/SnippetsPage/SnippetsLists'
+import { CustomHead } from '../components/MetaHead/CustomHead'
 
 const SnippetsIndexPage: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({ allContents }) => {
   return (
-    <div className="p-[16px]">
-      <SelectLists tags={tags} />
-      <SnippetsLists allContents={allContents} />
-    </div>
+    <>
+      <CustomHead
+        title="スニペット一覧"
+        description="個人的に便利だと感じたスニペット一覧です"
+      />
+      <div className="p-[16px]">
+        <SelectLists tags={tags} />
+        <SnippetsLists allContents={allContents} />
+      </div>
+    </>
   )
 }
 

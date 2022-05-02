@@ -9,21 +9,28 @@ import { Contents } from '../components/ScrapsPage/contents/Contents'
 import { ScrapsListType, ScrapsType } from '../types/microCMS/Common'
 import { getListContents } from '../utils/getContents'
 import { utcToJst } from '../libs/date'
+import { CustomHead } from '../components/MetaHead/CustomHead'
 
 const ScrapsIndexPage: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({ date, createdAt, highlight, scraps, scrapsLists }) => {
   const postDate = utcToJst({ date: date || createdAt })
 
   return (
-    <div className="p-[24px] md:flex">
-      <div>
-        <CustomSelectbox scrapsLists={scrapsLists} />
+    <>
+      <CustomHead
+        title="最新のスクラップ"
+        description="個人的に収集した情報をまとめています"
+      />
+      <div className="p-[24px] md:flex">
+        <div>
+          <CustomSelectbox scrapsLists={scrapsLists} />
+        </div>
+        <div>
+          <div className="text-[32px]">{postDate}</div>
+          <Highlight highlight={highlight} />
+          <Contents scraps={scraps} />
+        </div>
       </div>
-      <div>
-        <div className="text-[32px]">{postDate}</div>
-        <Highlight highlight={highlight} />
-        <Contents scraps={scraps} />
-      </div>
-    </div>
+    </>
   )
 }
 
