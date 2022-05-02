@@ -28,6 +28,7 @@ export const LatestActivity = () => {
                   <span>https://sample.pilefort.dev/</span>
                   <span className="ml-[8px]">
                     <Image
+                      alt="open new window"
                       src={OpenNewWindow}
                       width={24}
                       height={24}
