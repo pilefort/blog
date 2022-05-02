@@ -1,5 +1,8 @@
 import Link from 'next/link'
 import Image from 'next/image'
+
+import { CustomImage } from '../../CustomImage'
+
 import OpenNewWindow from '../../../public/assets/OpenNewWindow.svg'
 import TechDojin12Image from '../../../public/assets/tech-dojin/tech12.jpg'
 
@@ -25,10 +28,10 @@ export const LatestActivity = () => {
                   <span>https://sample.pilefort.dev/</span>
                   <span className="ml-[8px]">
                     <Image
+                      alt="open new window"
                       src={OpenNewWindow}
                       width={24}
                       height={24}
-                      alt="open new window"
                     />
                   </span>
                 </a>
@@ -55,9 +58,9 @@ export const LatestActivity = () => {
             </div>
           </div>
         </div>
-        <Image
+        <CustomImage
+          alt="うぇぶちぇんじろぐ2022"
           src={TechDojin12Image}
-          alt={'web changelog'}
           width={350}
           height={495}
         />
