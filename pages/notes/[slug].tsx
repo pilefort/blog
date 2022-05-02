@@ -10,6 +10,7 @@ import { utcToJst } from '../../libs/date'
 
 import { Mdx } from '../../components/MdxComponent/Mdx'
 import { CustomHead } from '../../components/MetaHead/CustomHead'
+import { Sidebar } from '../../components/NotesPage/Sidebar'
 
 const NotesDetailsPage: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({ slug, title, content, date }) => {
   const createdAt = utcToJst({ date })
@@ -20,16 +21,21 @@ const NotesDetailsPage: NextPage<InferGetStaticPropsType<typeof getStaticProps>>
         title={`${title}`}
         description={`${title}に関するノートです`}
       />
-      <div>
-        <div className="m-[24px]">
-          <div className="border-l-[6px] border-[#104359] p-[8px] text-[24px] md:text-[36px]">
-            <span>{title}</span>
-          </div>
-          <GitHubLink slug={slug} />
+      <div className="flex">
+        <div className="m-[32px] hidden lg:block">
+          <Sidebar />
+        </div>
+        <div>
+          <div className="m-[24px]">
+            <div className="border-l-[6px] border-[#104359] p-[8px] text-[24px] md:text-[36px]">
+              <span>{title}</span>
+            </div>
+            <GitHubLink slug={slug} />
 
-          <div className="mt-[8px] md:text-[24px]">{createdAt}</div>
-          <div className="mt-[32px]">
-            <Mdx>{content}</Mdx>
+            <div className="mt-[8px] md:text-[24px]">{createdAt}</div>
+            <div className="mt-[32px]">
+              <Mdx>{content}</Mdx>
+            </div>
           </div>
         </div>
       </div>

@@ -6,7 +6,7 @@ import { getAllListContents } from '../../utils/getContents'
 import { getListContentById } from '../../utils/getContents'
 
 import { Contents } from '../../components/ScrapsPage/contents/Contents'
-import { CustomSelectbox } from '../../components/ScrapsPage/CustomSelectBox/CustomSelectbox'
+import { Sidebar } from '../../components/ScrapsPage/Sidebar/Sidebar'
 import { Highlight } from '../../components/ScrapsPage/contents/Highlight'
 
 import { ScrapsListType, ScrapsType } from '../../types/microCMS/Common'
@@ -24,7 +24,7 @@ const ScrapsDetailsPage: NextPage<InferGetStaticPropsType<typeof getStaticProps>
       />
       <div className="flex p-[24px]">
         <div>
-          <CustomSelectbox scrapsLists={scrapsLists} />
+          <Sidebar scrapsLists={scrapsLists} />
         </div>
         <div className="ml-[32px]">
           <div className="text-[32px]">{dateTime}</div>
