@@ -14,6 +14,12 @@ export const Mdx = ({ children }: { children: string }) => {
     img: CustomImage,
     p: P,
     li: List,
+    Pending: ({ children }: { children: string }) => (
+      <>
+        <div className="text-center text-[80px] font-bold">準備中</div>
+        <div className="blur-sm">{children}</div>
+      </>
+    ),
   }
 
   return <MDX components={components}>{children}</MDX>

@@ -1,8 +1,10 @@
 ---
 title: "Next.jsでts-nodeを使う方法"
-description: 'Next.jsのプロジェクトでts-nodeを使う方法'
-date: '2022-03-21 20:03:55'
+description: '準備中'
+date: '2022-05-03 20:03:55'
 ---
+
+<Pending>
 
 # 対象読者
 - Next.jsでページ生成前に事前にファイル (JSONなど) を作成したい方
@@ -108,3 +110,4 @@ https://github.com/TypeStrong/ts-node/discussions/1612
 cf. --skip-projectを使う理由
 
 https://stackoverflow.com/questions/69580704/nextjs-run-a-typescript-script-on-the-server
+</Pending>

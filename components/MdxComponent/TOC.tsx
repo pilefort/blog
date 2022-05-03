@@ -26,12 +26,15 @@ export const TOC = ({ children }: { children: string }) => {
     li: () => <></>,
     code: () => <></>,
     p: () => <></>,
+    img: () => <></>,
   }
 
   return (
     <div className="xl:w-[550px]">
       <div className="text-[32px]">目次</div>
-      <MDX components={components}>{children}</MDX>
+      <div className="mt-[32px] flex flex-col">
+        <MDX components={components}>{children}</MDX>
+      </div>
     </div>
   )
 }
