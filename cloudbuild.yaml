@@ -1,4 +1,10 @@
 steps:
+  - name: node:16.15.0
+    entrypoint: yarn
+    args: [ "run", "create-env" ]
+    env:
+      - 'API_KEY=${_API_KEY}'
+      - 'SERVICE_DOMAIN=${_SERVICE_DOMAIN}'
   # Build the container image
   - name: 'gcr.io/cloud-builders/docker'
     args: ['build', '-t', 'gcr.io/$PROJECT_ID/blog-placeholder:$COMMIT_SHA', '.']
@@ -16,18 +22,12 @@ steps:
       - 'gcr.io/$PROJECT_ID/blog-placeholder:$COMMIT_SHA'
       - '--region'
       - 'asia-northeast1'
-  - name: node:16.15.0
-    entrypoint: yarn
-    args: ["install"]
-  - name: node:16.15.0
-    entrypoint: yarn
-    args: ["run", "create-env"]
-    env:
-      - 'API_KEY=${_API_KEY}'
-      - 'SERVICE_DOMAIN=${_SERVICE_DOMAIN}'
-  - name: node:16.15.0
-    entrypoint: yarn
-    args: ["build"]
+#  - name: node:16.15.0
+#    entrypoint: yarn
+#    args: ["install"]
+#  - name: node:16.15.0
+#    entrypoint: yarn
+#    args: ["build"]
 #  - name: "gcr.io/cloud-builders/gcloud"
 #    args: ["app", "deploy"]
 timeout: "1600s"
