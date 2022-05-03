@@ -37,7 +37,7 @@ export const getStaticPaths: () => Promise<{ paths: string[]; fallback: boolean 
 }
 
 export const getStaticProps: ({ params }: GetStaticPropsContext<{ id: string }>) => Promise<{
-  props: { date: string; createdAt: string; highlight: string; scraps: ScrapsType }
+  props: { date: string; createdAt: string; highlight?: string; scraps: ScrapsType }
 }> = async ({ params }) => {
   if (!params?.id) throw new Error('ビルドに失敗しました。再度実行してください。')
 
@@ -47,7 +47,7 @@ export const getStaticProps: ({ params }: GetStaticPropsContext<{ id: string }>)
     depth: 2 as const,
   }
 
-  const { date, createdAt, highlight, scraps }: { date: string; createdAt: string; highlight: string; scraps: ScrapsType } = await getListContentById(
+  const { date, createdAt, highlight, scraps }: { date: string; createdAt: string; highlight?: string; scraps: ScrapsType } = await getListContentById(
     {
       endpoint,
       queries,
