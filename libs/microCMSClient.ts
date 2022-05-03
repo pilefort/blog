@@ -1,3 +1,6 @@
+import * as dotenv from 'dotenv'
+dotenv.config()
+
 import { createClient } from 'microcms-js-sdk'
 let apiKey, serviceDomain
 
