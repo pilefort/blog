@@ -1,0 +1,13 @@
+steps:
+  - name: node:16.15.0
+    entrypoint: yarn
+    args: ["install"]
+  - name: node:16.15.0
+    entrypoint: yarn
+    args: ["run", "create-env"]
+    env:
+      - 'API_KEY=${_API_KEY}'
+      - 'SERVICE_DOMAIN=${_SERVICE_DOMAIN}'
+  - name: "gcr.io/cloud-builders/gcloud"
+    args: ["app", "deploy"]
+timeout: "1600s"
