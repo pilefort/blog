@@ -1,16 +1,32 @@
 [
 		{
+				"title": "Next.jsでMDXを使う方法",
+				"slug": "/notes/how-to-use-mdx-with-nextjs",
+				"description": "準備中",
+				"content": "",
+				"date": "2022-05-03 20:03:55",
+				"tags": [ "" ]
+		},
+		{
 				"title": "Next.jsでts-nodeを使う方法",
 				"slug": "/notes/how-to-use-tsnode-with-nextjs",
-				"description": "Next.jsのプロジェクトでts-nodeを使う方法",
+				"description": "準備中",
 				"content": "",
-				"date": "2022-03-21 20:03:55",
+				"date": "2022-05-03 20:03:55",
+				"tags": [ "" ]
+		},
+		{
+				"title": "asdfについて",
+				"slug": "/notes/what-is-asdf-for-version-control",
+				"description": "準備中",
+				"content": "",
+				"date": "2022-05-03 20:03:55",
 				"tags": [ "" ]
 		},
 		{
 				"title": "Next.jsにGoogle Analytics (GA4) を導入する方法",
 				"slug": "/notes/add-ga4-to-nextjs",
-				"description": "aaa",
+				"description": "準備中",
 				"content": "",
 				"date": "2021-12-12 05:41:55",
 				"tags": [ "" ]
