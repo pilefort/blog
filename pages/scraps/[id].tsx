@@ -47,13 +47,12 @@ export const getStaticProps: ({ params }: GetStaticPropsContext<{ id: string }>)
     depth: 2 as const,
   }
 
-  const { date, createdAt, highlight, scraps }: { date: string; createdAt: string; highlight?: string; scraps: ScrapsType } = await getListContentById(
-    {
+  const { date, createdAt, highlight, scraps }: { date: string; createdAt: string; highlight?: string; scraps: ScrapsType } =
+    await getListContentById({
       endpoint,
       queries,
       contentId: params.id,
-    }
-  )
+    })
 
   return {
     props: {
