@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "cp -R contents/images public && next build",
     "start": "next start",
-    "lint": "tsc && next lint"
+    "lint": "tsc && next lint",
+    "create-env": "printenv> .env"
   },
   "dependencies": {
     "microcms-js-sdk": "^2.0.0",
@@ -26,6 +27,7 @@
     "@typescript-eslint/eslint-plugin": "^5.15.0",
     "@typescript-eslint/parser": "^5.15.0",
     "autoprefixer": "^10.4.4",
+    "dotenv": "^16.0.0",
     "eslint": "8.13.0",
     "eslint-config-next": "12.1.4",
     "eslint-config-prettier": "^8.5.0",
