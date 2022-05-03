@@ -8,6 +8,9 @@ steps:
     env:
       - 'API_KEY=${_API_KEY}'
       - 'SERVICE_DOMAIN=${_SERVICE_DOMAIN}'
+  - name: node:16.15.0
+    entrypoint: yarn
+    args: ["build"]
   - name: "gcr.io/cloud-builders/gcloud"
     args: ["app", "deploy"]
 timeout: "1600s"
