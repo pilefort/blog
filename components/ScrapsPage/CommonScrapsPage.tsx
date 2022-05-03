@@ -6,7 +6,7 @@ import { Contents } from './contents/Contents'
 
 import { ScrapsType } from '../../types/microCMS/Common'
 
-export const CommonScrapsPage = ({ dateTime, highlight, scraps }: { dateTime: string; highlight: string; scraps: ScrapsType }) => {
+export const CommonScrapsPage = ({ dateTime, highlight, scraps }: { dateTime: string; highlight?: string; scraps: ScrapsType }) => {
   const { contents: scrapsLists } = scrapsListsData
 
   return (
@@ -14,7 +14,7 @@ export const CommonScrapsPage = ({ dateTime, highlight, scraps }: { dateTime: st
       <Sidebar scrapsLists={scrapsLists} />
       <div className="ml-[32px]">
         <div className="text-[32px]">{dateTime}</div>
-        <Highlight highlight={highlight} />
+        {highlight && <Highlight highlight={highlight} />}
         <Contents scraps={scraps} />
       </div>
     </div>

@@ -28,12 +28,13 @@ export const Sidebar = ({ scrapsLists }: { scrapsLists: ScrapsListType }) => {
 const Desktop = ({ scrapsLists }: { scrapsLists: ScrapsListType }) => {
   const router = useRouter()
   const currentSlug = router.query.id
+  const currentRoute = router.route
 
   return (
     <div className="w-[300px]">
       <div className="text-[32px]">Scraps一覧</div>
       <div className="mt-[16px] flex flex-col">
-        {scrapsLists.map(({ id, createdAt, date }) => {
+        {scrapsLists.map(({ id, createdAt, date }, index) => {
           const dateTime = utcToJst({ date: date || createdAt })
 
           return (
@@ -43,7 +44,10 @@ const Desktop = ({ scrapsLists }: { scrapsLists: ScrapsListType }) => {
             >
               <a
                 id={id}
-                className={`text-[24px] ${currentSlug === id ? 'bg-[#1ed3c6]' : ''} ml-[-16px] py-[16px] pl-[16px] hover:bg-[#1ed3c6]`}
+                className={`text-[24px] 
+                ${currentRoute === '/scraps' && index === 0 ? 'bg-[#1ed3c6]' : ''} 
+                ${currentSlug === id ? 'bg-[#1ed3c6]' : ''} 
+                ml-[-16px] py-[16px] pl-[16px] hover:bg-[#1ed3c6]`}
               >
                 {dateTime}
               </a>
