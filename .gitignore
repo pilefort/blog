@@ -51,6 +51,7 @@ yarn-error.log*
 
 # 環境変数
 .envrc
+.env
 
 # json
 fetchData/scraps/*.json
