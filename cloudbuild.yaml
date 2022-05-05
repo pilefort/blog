@@ -22,6 +22,23 @@ steps:
       - 'gcr.io/$PROJECT_ID/blog:$COMMIT_SHA'
       - '--region'
       - 'asia-northeast1'
+  - namne: 'set cloud run setting for min-instance'
+    entrypoint: gcloud
+    args:
+      - 'run'
+      - 'services'
+      - 'update'
+      - 'blog'
+      - '--min-instances'
+      - '1'
+  - namne: 'set cloud run setting for min-instance'
+    entrypoint: gcloud
+    args:
+      - 'run'
+      - 'services'
+      - 'update'
+      - 'blog'
+      - '--use-http2'
 timeout: "1600s"
 images:
   - 'gcr.io/$PROJECT_ID/blog:$COMMIT_SHA'
