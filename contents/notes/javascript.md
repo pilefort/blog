@@ -39,8 +39,6 @@ $ npx autoprefixer --info
 ```
 
 ## 便利サイト
-そのサイトが使ってるnpmライブラリを探すサイト
-https://bundlescanner.com/
+[そのサイトが使ってるnpmライブラリを探すサイト](https://bundlescanner.com/)
 
-ライブラリの更新頻度や安全性を調べるサイト
-https://snyk.io/advisor/
+[ライブラリの更新頻度や安全性を調べるサイト](https://snyk.io/advisor/)
