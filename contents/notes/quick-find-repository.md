@@ -12,19 +12,24 @@ date: "2021-04-13 21:32:08"
 
 # 必要なもの
 peco
+
 これは、インクリメンタル検索をするのに使います。
+
 https://github.com/peco/peco
 
 ghq
+
 これは、フォルダをリスト表示をするのに使います
+
 https://github.com/x-motemen/ghq
 
 GitHub CLI
-これは、hubのGo再実装が公式になったNTR感ある、GitHubの公式ライブラリです。
-PRやissueをCLIで確認するのに使います。
-https://github.com/cli/cli
 
-いっぺんにインストールしましょう。
+これは、hubのGo再実装が公式になったNTR感ある、GitHubの公式ライブラリです。
+
+PRやissueをCLIで確認するのに使います。
+
+https://github.com/cli/cli
 
 ```bash
 brew install peco ghq gh
@@ -32,6 +37,7 @@ brew install peco ghq gh
 
 ## ghq初期設定
 ghqのrootディレクトリを以下のように設定します。
+
 rootディレクトリは複数設定することもできます。
 
 ```
@@ -43,8 +49,6 @@ rootディレクトリは複数設定することもできます。
 
 # ローカルのGitHubプロジェクトを探す
 以下を実行することで、インクリメンタルにGitHubプロジェクトを探すことができます。
-私はAlfredに、このスニペットを登録し、!cdで入力されるようにしています。
-rootを複数設定している場合もこちらで対応できます。
 
 ```bash
 cd $(ghq list --full-path | peco)
@@ -52,7 +56,9 @@ cd $(ghq list --full-path | peco)
 
 # GitHubのPRをインクリメンタルに検索しチェックアウトする
 ローカルのGitHubプロジェクトがあるディレクトリで実行します。
+
 gh pr listでPRのリストが一覧表示され、pecoでインクリメンタルに検索します。
+
 cut -f 1 にすることで、PRの番号を切り取り、gh pr checkout `<PR番号>` でチェックアウトできます。
 
 ```bash
