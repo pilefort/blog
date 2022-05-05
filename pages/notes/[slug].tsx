@@ -23,9 +23,9 @@ const NotesDetailsPage: NextPage<InferGetStaticPropsType<typeof getStaticProps>>
         description={`${title}に関するノートです`}
       />
       <div className="flex">
-        <div className="m-[32px] hidden xl:block">
-          <Sidebar />
-        </div>
+        {/*<div className="m-[32px] hidden xl:block">*/}
+        {/*  <Sidebar />*/}
+        {/*</div>*/}
         <div className="w-auto overflow-x-auto xl:w-[calc(100vw-550px-300px-100px)]">
           <div className="m-[24px]">
             <div className="border-l-[6px] border-[#104359] p-[8px] text-[24px] md:text-[36px]">
