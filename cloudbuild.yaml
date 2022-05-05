@@ -22,7 +22,7 @@ steps:
       - 'gcr.io/$PROJECT_ID/blog:$COMMIT_SHA'
       - '--region'
       - 'asia-northeast1'
-  - namne: 'set cloud run setting for min-instance'
+  - name: 'set cloud run setting for min-instance'
     entrypoint: gcloud
     args:
       - 'run'
@@ -31,7 +31,7 @@ steps:
       - 'blog'
       - '--min-instances'
       - '1'
-  - namne: 'set cloud run setting for min-instance'
+  - name: 'set cloud run setting for http/2'
     entrypoint: gcloud
     args:
       - 'run'
