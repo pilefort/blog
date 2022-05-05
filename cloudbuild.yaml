@@ -42,5 +42,3 @@ steps:
 timeout: "1600s"
 images:
   - 'gcr.io/$PROJECT_ID/blog:$COMMIT_SHA'
-# 最小インスタンス数
-#
