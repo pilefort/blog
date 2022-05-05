@@ -1,0 +1,11 @@
+spec:
+  template:
+    spec:
+      containers:
+        - image: 'gcr.io/$PROJECT_ID/blog:$COMMIT_SHA'
+        ports:
+          - name: h2c
+            containerPort: 8080
+    metadata:
+      annotations:
+        autoscaling.knative.dev/minScale: 1
