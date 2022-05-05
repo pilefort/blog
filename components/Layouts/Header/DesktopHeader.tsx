@@ -9,6 +9,7 @@ export const DesktopHeader = () => {
 
   return (
     <div className="hidden lg:block">
+      <div className="flex h-[30px] items-center justify-center bg-[#104359] text-[20px] text-white">工事中</div>
       <div className="flex h-[80px] items-center justify-between p-[16px] pr-[24px]">
         <Link
           href="/"
