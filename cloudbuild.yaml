@@ -36,6 +36,8 @@ steps:
       - '--min-instances'
       - '1'
       - '--use-http2'
+      - '--region'
+      - 'asia-northeast1'
 timeout: "1600s"
 images:
   - 'gcr.io/$PROJECT_ID/blog:$COMMIT_SHA'
