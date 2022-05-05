@@ -18,6 +18,7 @@ steps:
       - 'run'
       - 'deploy'
       - 'blog'
+      - '--allow-unauthenticated'
       - '--image'
       - 'gcr.io/$PROJECT_ID/blog:$COMMIT_SHA'
       - '--region'
