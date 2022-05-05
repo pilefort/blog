@@ -11,7 +11,7 @@ import { utcToJst } from '../../libs/date'
 import { Mdx } from '../../components/MdxComponent/Mdx'
 import { TOC } from '../../components/MdxComponent/TOC'
 import { CustomHead } from '../../components/MetaHead/CustomHead'
-import { Sidebar } from '../../components/NotesPage/Sidebar'
+// import { Sidebar } from '../../components/NotesPage/Sidebar'
 
 const NotesDetailsPage: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({ slug, title, content, date }) => {
   const dateTime = utcToJst({ date })
