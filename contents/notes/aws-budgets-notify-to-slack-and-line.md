@@ -6,10 +6,10 @@ date: "2021-01-10 11:20:29"
 
 # 対象
 - Email通知以外の方法で利用料確認をしたい人
+- 利用料が一定額を超えたときに、LINEやSlackに通知したい人
 
-# Slack 通知を設定しよう！
-
-一定額超えたら、Slack に通知するようにすれば、早めに気づけるという結論に至ったので設定してみました。
+# Slack 通知
+一定額超えたら、Slack に通知するように設定します。
 
 マイ請求ダッシュボードの AWS Budgets から『予算を作成』をクリックします。
 
@@ -24,13 +24,14 @@ date: "2021-01-10 11:20:29"
 AWS チャットボットのアラートというのを設定しないと、Slack 通知ができないので、次はそちらを設定します。
 
 # AWS Chatbot の設定
-
 AWS Chatbot にアクセスします。
+
 [chatbot/home#/home](https://us-east-2.console.aws.amazon.com/chatbot/home#/home)
 
 <img src="../images/aws-budgets-notify-to-slack-and-line/5.webp" alt="Chatbot" width="878" height="302" />
 
 チャットクライアントを Slack に設定し、自身の作成した Slack のワークスペースと連携します。
+
 連携が終わると、以下の画面に遷移します。
 
 <img src="../images/aws-budgets-notify-to-slack-and-line/6.webp" alt="slack" width="1112" height="476" />
@@ -38,8 +39,8 @@ AWS Chatbot にアクセスします。
 新しいチャンネルを設定するためには既に作成されたSNSが必要なので、次はSNSを設定します。
 
 ## SNS の設定
+Amazon Simple Notification Service にアクセスします。
 
-Amazon Simple Notification Service にアクセスします！
 [sns/v3/home?region=ap-northeast-1#/homepage](https://ap-northeast-1.console.aws.amazon.com/sns/v3/home?region=ap-northeast-1#/homepage)
 
 <img src="../images/aws-budgets-notify-to-slack-and-line/7.webp" alt="sns" width="1079" height="433" />
@@ -47,6 +48,7 @@ Amazon Simple Notification Service にアクセスします！
 トピック名を適当に作成し、次のステップに移ります。
 
 SNS は AWS Budgets から実行したいので、アクセスポリシーを修正します。
+
 デフォルトでは以下のようになってます (メソッドを『高度な』に変えると JSON エディタが開きます)。
 
 ```yaml
@@ -137,9 +139,7 @@ arn:aws:sns:ap-northeast-1:<アカウント番号>:<SNSトピック名>
 ```
 
 ## AWS Chatbot のチャンネル設定に戻る
-
-詳細設定は適当にします。
-CloudWatch のログを有効化すると、デバッグしやすいです。
+CloudWatch のログを有効化しておきます。
 
 <img src="../images/aws-budgets-notify-to-slack-and-line/8.webp" alt="CloudWatch" width="843" height="375" />
 
@@ -154,27 +154,23 @@ Slack チャンネルはパブリックにしておきます。
 <img src="../images/aws-budgets-notify-to-slack-and-line/10.webp" alt="notification option" width="828" height="457" />
 
 ## AWS Budgets から『予算を作成』に戻る
-
 SNS の設定で、作成した ARN を貼り付けます。
 
 <img src="../images/aws-budgets-notify-to-slack-and-line/11.webp" alt="SNS ARN" width="687" height="341" />
 
 予算を 1$にし、アラート通知を 1%にすれば、通知のテストができます。
+
 こんな感じで Slack に通知がきます (AWS は自動でメンバーに追加されます)。
 
 <img src="../images/aws-budgets-notify-to-slack-and-line/12.webp" alt="Slack Notification" width="492" height="243" />
 
-AWS Budgets が SNS を push する。
-AWS Chatbot が SNS の push を検知して、Slack に通知を送る... って感じですね。
+これで、AWS Chatbot が SNS の push を検知して、Slack に通知を送るようになります。
 
-# LINE Bot を設定しよう！
-
-一応、Slack で通知できましたが、念のため、LINE Bot の設定もしておきます。
-その前に、Lambda を作りましょう！
+# LINE Bot の設定
+先に Lambda を作ります。
 
 ## Lambda の設定
-
-Node.js が好きなので、Node で作ります。
+Node.jsで作成します。
 
 <img src="../images/aws-budgets-notify-to-slack-and-line/13.webp" alt="lambda" width="829" height="431" />
 
@@ -183,7 +179,6 @@ SNS でトリガーして、Lambda が動くようにします。
 <img src="../images/aws-budgets-notify-to-slack-and-line/14.webp" alt="lambda" width="820" height="323" />
 
 Lambda に何が来るかわからないので、console.log で確認してみます。
-コードを変更したら、**Deploy**を忘れずに！
 
 ```js
 exports.handler = async event => {
@@ -200,7 +195,9 @@ exports.handler = async event => {
 ```
 
 CloudWatch では以下が返ってきました。
+
 大雑把な値を知りたい場合は、AWS Budgets で設定する予算名に値段を入れておくと良さそうです (Sns の Subject で取れます)。
+
 詳細を取り出したい場合は、Message を使います。/n とか入ってますが、LINE がいい感じに整形するので、そのまま投げても大丈夫です。
 
 ```yaml
@@ -231,7 +228,6 @@ CloudWatch では以下が返ってきました。
 ```
 
 どちらにせよ、以下で Subject と Message が取れることがわかります。
-Deploy して、テストしましょう！
 
 ```js
 exports.handler = async event => {
@@ -260,16 +256,12 @@ exports.handler = async event => {
 
 <img src="../images/aws-budgets-notify-to-slack-and-line/143.webp" alt="Lambda Test Result" width="821" height="208" />
 
-必要な値だけ取れてますね！
-
 <img src="../images/aws-budgets-notify-to-slack-and-line/144.webp" alt="CloudWatch Log" width="751" height="323" />
 
 ## LINE Bot の設定
-
 developer コンソールにログインします。
-https://developers.line.biz/console/
 
-(本筋とは離れますが、LINE が WebAuthn 対応していて驚きました)
+https://developers.line.biz/console/
 
 ログインして、Provider を作成します。
 
@@ -280,13 +272,14 @@ LINE Bot に予算アラートを喋らせるので、Messaging API を選びま
 <img src="../images/aws-budgets-notify-to-slack-and-line/16.webp" alt="LINE" width="589" height="431" />
 
 カテゴリなどを適当に設定しておきます。
+
 設定が終わると、この画面になります。
+
 Basic Setting の一番下にシークレットアクセスキーとユーザー ID、Messaging API にアクセスキーがあるので、控えておきます。
 
 <img src="../images/aws-budgets-notify-to-slack-and-line/17.webp" alt="LINEの設定" width="725" height="420" />
 
 ## Lambda に反映
-
 ローカルの適当なディレクトリで、以下のコマンドを実行します。
 
 ```bash
@@ -326,7 +319,6 @@ module.exports = new line.Client(configs)
 ```
 
 index.js はこうします。
-lineClient の処理は await を付けないと、メッセージを送る前に Lambda が終了してしまうので、気をつけましょう。
 
 ```javascript:title=index.js
 "use strict"
@@ -344,7 +336,6 @@ exports.handler = async event => {
     text: event.Records[0].Sns.Message,
   })
 
-  // TODO implement
   const response = {
     statusCode: 200,
     body: JSON.stringify("Hello from Lambda!"),
@@ -370,5 +361,4 @@ lambda_test
 <img src="../images/aws-budgets-notify-to-slack-and-line/last.webp" alt="line alert" width="1069" height="1987" />
 
 # 総括
-
 これで、設定した予算よりも利用料が超えそうになると、Slack と LINE にメッセージが飛ぶようになりました。

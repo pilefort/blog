@@ -91,7 +91,7 @@ const serverlessConfiguration: AWS = {
 module.exports = serverlessConfiguration;
 ```
 
-### 入れておくと良いプラグイン
+## 入れておくと良いプラグイン
 以下のサイトで使用できるプラグインを確認できます。
 https://www.serverless.com/plugins
 

@@ -6,13 +6,14 @@ date: '2021-12-12 05:41:55'
 
 # 環境
 使用するGatsbyのテンプレートはgatsby-gitbook-starterを使います (https://github.com/hasura/gatsby-gitbook-starter)。
+
 Gatsbyのバージョンはv4.3.0です。
 
 TailwindCSSはv3.0を使います。
-<br/>
 
 ## 注意点
 TailwindCSSはv3.x.xからpurgeセクションが消え、contentセクションの追加が必要になりました。
+
 contentセクションではTailwindCSSを適用するファイルを指定します。そのため、contentセクションを書いていないとTailwindCSSが使えません。
 
 # 導入方法
