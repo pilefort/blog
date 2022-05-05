@@ -34,7 +34,7 @@ export const CustomImage = (props: ImagePropsType) => {
   return (
     <>
       <div
-        className="w-fit cursor-zoom-in"
+        className="my-[16px] w-fit cursor-zoom-in"
         onClick={() => setIsShowModal(true)}
       >
         <Image
@@ -60,8 +60,8 @@ export const CustomImage = (props: ImagePropsType) => {
             <Image
               alt={props.alt}
               src={src}
-              width={props.width * 2}
-              height={props.height * 2}
+              width={props.width * 1.5}
+              height={props.height * 1.5}
               loading="lazy"
               decoding="async"
             />

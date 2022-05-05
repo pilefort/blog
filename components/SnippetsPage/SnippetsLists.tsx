@@ -15,7 +15,7 @@ export const SnippetsLists = ({ allContents }: { allContents: { slug: string; ti
               href={slug}
               passHref
             >
-              <a className="text-[32px] text-[#1ED3C6]">{title}</a>
+              <a className="text-[24px] text-[#1ED3C6] md:text-[32px]">{title}</a>
             </Link>
             <div className="flex">
               {tags.map((tag, index) => {

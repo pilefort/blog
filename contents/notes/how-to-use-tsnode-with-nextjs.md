@@ -99,15 +99,9 @@ $ ts-node -r dotenv/config --skip-project ./bin/getData.ts && git update-index -
 ```
 
 ## 参考
-cf. ts-nodeのインストール、設定方法
+[ts-nodeのインストール、設定方法](https://github.com/TypeStrong/ts-node)
 
-https://github.com/TypeStrong/ts-node
+[ts-nodeでdotenvを使う方法](https://github.com/TypeStrong/ts-node/discussions/1612)
 
-cf. ts-nodeでdotenvを使う方法
-
-https://github.com/TypeStrong/ts-node/discussions/1612
-
-cf. --skip-projectを使う理由
-
-https://stackoverflow.com/questions/69580704/nextjs-run-a-typescript-script-on-the-server
+[--skip-projectを使う理由](https://stackoverflow.com/questions/69580704/nextjs-run-a-typescript-script-on-the-server)
 </Pending>

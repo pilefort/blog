@@ -13,17 +13,18 @@ sapperでsitemap.xmlを生成する方法で少し時間がかかったので、
 
 ## 参考資料
 基本的にはこちらのissueを読んでいけば、できます。
+
 ソースが散らばっているのと、ブログ利用がメインの話が多かったので、今回記事化しました。
+
 https://github.com/sveltejs/sapper/issues/461
 
 # sitemapの生成
 本題、routes/sitemap.xml.jsを作成し、以下を記述します。
 
-lastmodは変更するたび (サイトを修正するたび) 更新したかったので、
-`<lastmod>${new Date().toISOString()}</lastmod>`
-としました。
+lastmodは変更するたび (サイトを修正するたび) 更新したかったので、`<lastmod>${new Date().toISOString()}</lastmod>`としました。
 
 URL (pages) は固定なら配列で、たくさん増えるなら適当にmapで処理してやります。
+
 ブログなどのたくさん増えるタイプは上記issueが詳しめです。
 
 ```js
@@ -80,6 +81,4 @@ index.svelteに以下を追記しておきます。
 }
 ```
 
-export後、
-``__sapper__/export/sitemap.xml``
-の生成を確認できます。
+export後、`__sapper__/export/sitemap.xml`の生成を確認できます。
