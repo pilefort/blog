@@ -180,7 +180,7 @@ SNS でトリガーして、Lambda が動くようにします。
 
 Lambda に何が来るかわからないので、console.log で確認してみます。
 
-```js
+```js:index.js
 exports.handler = async event => {
   console.log("AWS Budgets Test")
   console.log(event)
@@ -229,7 +229,7 @@ CloudWatch では以下が返ってきました。
 
 どちらにせよ、以下で Subject と Message が取れることがわかります。
 
-```js
+```js:index.js
 exports.handler = async event => {
   console.log("AWS Budgets Subject")
   console.log(event.Records[0].Sns.Subject)
@@ -302,7 +302,7 @@ lambda_test
 
 line.js は次のようにします。
 
-```javascript:title=apis/line.js
+```javascript:apis/line.js
 "use strict"
 
 const line = require("@line/bot-sdk")
@@ -320,7 +320,7 @@ module.exports = new line.Client(configs)
 
 index.js はこうします。
 
-```javascript:title=index.js
+```javascript:index.js
 "use strict"
 
 exports.handler = async event => {
@@ -358,7 +358,7 @@ lambda_test
 
 先ほどのように Lambda でテストをしたり、適当な予算を作ってみたりすると、LINE にもアラートが飛ぶようになります。
 
-<img src="../images/aws-budgets-notify-to-slack-and-line/last.webp" alt="line alert" width="1069" height="1987" />
+<img src="../images/aws-budgets-notify-to-slack-and-line/last.webp" alt="line alert" width="268" height="497" />
 
 # 総括
 これで、設定した予算よりも利用料が超えそうになると、Slack と LINE にメッセージが飛ぶようになりました。

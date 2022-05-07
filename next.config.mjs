@@ -1,8 +1,8 @@
-import withMDX from '@next/mdx'
 import withPWA from 'next-pwa'
 
 /** @type {import('next').NextConfig} */
 export default withPWA({
+  pageExtensions: ['ts', 'tsx', 'md', 'mdx'],
   reactStrictMode: true,
   images: {
     formats: ['image/webp'],
@@ -29,19 +29,16 @@ export default withPWA({
       ],
     }
   },
-  webpack: (config, { isServer }) => {
-    if (!isServer) {
+  webpack: (config, options) => {
+    if (!options.isServer) {
       config.resolve.fallback.fs = false
     }
-    return config
+
+    return config;
   },
   // TODO: total blocking timeは短くなるが、next/linkの動きが悪くなる (クリックしても数秒間ページ遷移しない)
   // 今後の動向を見て、有効にするかどうか判断
   // swcMinify: true,
-  withMDX: withMDX({
-    extension: /\.md?$/,
-    pageExtensions: ['ts', 'tsx', 'mdx', 'md'],
-  }),
   pwa: {
     dest: "public",
     register: true,

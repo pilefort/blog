@@ -57,7 +57,7 @@ cf. https://www.serverless.com/framework/docs/providers/aws/cli-reference/create
 基本的な書き方は以下を参考にすると良いです。
 cf. https://www.serverless.com/framework/docs/providers/aws/guide/intro/
 
-```typescript
+```typescript:serverless.ts
 import type { AWS } from '@serverless/typescript';
 
 import hello from '@functions/hello';
@@ -91,7 +91,7 @@ const serverlessConfiguration: AWS = {
 module.exports = serverlessConfiguration;
 ```
 
-## 入れておくと良いプラグイン
+### 入れておくと良いプラグイン
 以下のサイトで使用できるプラグインを確認できます。
 https://www.serverless.com/plugins
 

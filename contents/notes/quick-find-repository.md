@@ -40,8 +40,7 @@ ghqのrootディレクトリを以下のように設定します。
 
 rootディレクトリは複数設定することもできます。
 
-```
-# ~/.gitconfig
+```javascript:~/.gitconfig
 [ghq]
 	root = ~/<GitHubのプロジェクトが存在する大元のディレクトリ>
 	root = ~/ghq
