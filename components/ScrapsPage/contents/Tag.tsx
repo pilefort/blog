@@ -13,6 +13,7 @@ export const Tag = ({ id, title }: { id: string; title: string }) => {
         alt="tag"
         width={18}
         height={18}
+        loading="lazy"
       />
       <span className="ml-[4px] text-[28px]">{title}</span>
     </div>
