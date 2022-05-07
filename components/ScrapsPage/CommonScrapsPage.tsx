@@ -12,7 +12,7 @@ export const CommonScrapsPage = ({ dateTime, highlight, scraps }: { dateTime: st
   return (
     <div className="p-[24px] md:flex">
       <Sidebar scrapsLists={scrapsLists} />
-      <div className="ml-[32px]">
+      <div className="ml-[32px] w-[calc(100%-300px)]">
         <div className="text-[32px]">{dateTime}</div>
         {highlight && <Highlight highlight={highlight} />}
         <Contents scraps={scraps} />
