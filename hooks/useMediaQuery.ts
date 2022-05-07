@@ -6,10 +6,10 @@ export const useMediaQuery = () => {
   const router = useRouter()
 
   useEffect(() => {
-    if (!router.isReady) return
+    // if (!router.isReady) return
 
     window.innerWidth >= 900 ? setIsDesktop(true) : setIsDesktop(false)
-  }, [router.isReady])
+  }, [])
 
   return isDesktop
 }
