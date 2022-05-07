@@ -57,6 +57,7 @@ export const ScrapLists = () => {
                 width={55}
                 height={25}
                 alt="Open TOC"
+                loading="lazy"
               />
             </div>
           ) : (
@@ -70,6 +71,7 @@ export const ScrapLists = () => {
                   width={60}
                   height={60}
                   alt="Open TOC"
+                  loading="lazy"
                 />
               </div>
             </>

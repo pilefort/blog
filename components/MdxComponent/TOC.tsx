@@ -92,6 +92,7 @@ export const TOC = ({ children }: { children: string }) => {
                 width={55}
                 height={25}
                 alt="Open TOC"
+                loading="lazy"
               />
             </div>
           ) : (
@@ -105,6 +106,7 @@ export const TOC = ({ children }: { children: string }) => {
                   width={60}
                   height={60}
                   alt="Open TOC"
+                  loading="lazy"
                 />
               </div>
             </>

@@ -32,6 +32,7 @@ export const LatestActivity = () => {
                       src={OpenNewWindow}
                       width={24}
                       height={24}
+                      loading="lazy"
                     />
                   </span>
                 </a>
@@ -51,6 +52,7 @@ export const LatestActivity = () => {
                       width={24}
                       height={24}
                       alt="open new window"
+                      loading="lazy"
                     />
                   </span>
                 </a>
