@@ -85,7 +85,7 @@ export const TOC = ({ children }: { children: string }) => {
           {!isShowTOC ? (
             <div
               onClick={setToggleOpenClass}
-              className="flex items-center"
+              className="flex cursor-pointer items-center"
             >
               <Image
                 src={Open}
@@ -98,7 +98,7 @@ export const TOC = ({ children }: { children: string }) => {
             <>
               <div
                 onClick={setToggleCloseClass}
-                className="flex items-center"
+                className="flex cursor-pointer items-center"
               >
                 <Image
                   src={Close}
