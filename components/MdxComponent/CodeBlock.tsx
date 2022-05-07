@@ -3,11 +3,13 @@ import github from 'prism-react-renderer/themes/nightOwl'
 import React from 'react'
 
 export const CodeBlock = ({ children, className }: { children: string; className: string }) => {
-  const language: string = className ? className.replace(/language-/, '') : 'javascript'
+  const [lang, fileName] = className && className.includes(':') ? className.split(':') : [className, '']
+  const language: string = lang ? lang.replace(/language-/, '') : 'javascript'
 
   // cf. https://github.com/FormidableLabs/prism-react-renderer
   return (
     <div className="my-[16px] md:my-[32px]">
+      {fileName && <div className="w-fit rounded-t-[10px] bg-[#011627] px-[16px] pt-[8px] text-center text-[white]">{fileName}</div>}
       <Highlight
         {...defaultProps}
         code={children}
