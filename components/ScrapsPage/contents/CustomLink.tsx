@@ -12,6 +12,7 @@ export const CustomLink = ({ url }: { url: string }) => {
           width={24}
           height={24}
           alt="link"
+          loading="lazy"
         />
       </div>
       <Link
