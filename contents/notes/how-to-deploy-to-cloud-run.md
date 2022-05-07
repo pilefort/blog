@@ -18,7 +18,7 @@ Dockerfile側は特に特殊な設定は不要です。
 
 実際にDockerを動かしてみて、3000ポートにアクセスできれば、準備完了です。
 
-```Dockerfile
+```Dockerfile:Dockerfile
 FROM node:16-alpine
 
 RUN apk add --no-cache libc6-compat
@@ -56,7 +56,7 @@ CMD ["yarn", "start"]
 ## codebuild.yamlの準備
 [公式](https://cloud.google.com/build/docs/build-config-file-schema)を確認しながら、以下のように設定します。
 
-```yaml
+```yaml:codebuild.yaml
 steps:
   # 環境変数の設定
   - name: node:16.15.0
@@ -117,7 +117,7 @@ nameはクラウドビルダー (使用するコンテナ) を指定するため
 
 package.jsonでは以下のようになってます。
 
-```json
+```json:package.json
 {
   "name": "sample",
   "version": "0.1.0",
@@ -154,7 +154,7 @@ $PROJECT_IDや$COMMIT_SHAは自動で値が入ります。
 
 デフォルトだと、未認証ユーザーのアクセスが制限されるので、gcloudの引数に`--allow-unauthenticated`を設定しておきます。
 
-```yaml
+```yaml:codebuild.yaml
   # Container Registryにデプロイ
   - name: 'gcr.io/cloud-builders/docker'
     args: ['push', 'gcr.io/$PROJECT_ID/サービス名:$COMMIT_SHA']

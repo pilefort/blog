@@ -33,7 +33,7 @@ $ npx tailwindcss init -p
 
 postcssのGatsby Pluginを追加したので、gatsby-config.jsにも追記します。
 
-```js
+```js:gatsby-config.js
 module.exports = {
   plugins: [
     // ...
@@ -45,7 +45,7 @@ module.exports = {
 
 TailwindCSSの設定ファイルを修正し、TailwindCSSを適用させたいファイルをしていします。
 
-```js
+```js:tailwind.config.js
 module.exports = {
   content: [
     "./src/**/*.{js,jsx,ts,tsx}",
@@ -59,7 +59,7 @@ module.exports = {
 
 src/utils/tailwind.cssを作成し、Tailwindのレイヤーを取り込みます。
 
-```css
+```css:src/utils/tailwind.css
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -67,7 +67,7 @@ src/utils/tailwind.cssを作成し、Tailwindのレイヤーを取り込みま�
 
 gatsby-browser.jsでTailwindCSSを読み込みます。
 
-```js
+```js:gatsby-browser.js
 import './src/utils/tailwind.css'
 ```
 
