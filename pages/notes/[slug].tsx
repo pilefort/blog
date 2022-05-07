@@ -9,7 +9,6 @@ import { utcToJst } from '../../libs/date'
 import { Mdx } from '../../components/MdxComponent/Mdx'
 import { TOC } from '../../components/MdxComponent/TOC'
 import { CustomHead } from '../../components/MetaHead/CustomHead'
-// import { Sidebar } from '../../components/NotesPage/Sidebar'
 
 const NotesDetailsPage: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({ title, content, date }) => {
   const dateTime = utcToJst({ date })
@@ -21,10 +20,7 @@ const NotesDetailsPage: NextPage<InferGetStaticPropsType<typeof getStaticProps>>
         description={`${title}に関するノートです`}
       />
       <div className="flex">
-        {/*<div className="m-[32px] hidden xl:block">*/}
-        {/*  <Sidebar />*/}
-        {/*</div>*/}
-        <div className="w-auto overflow-x-auto xl:w-[calc(100vw-550px-300px-100px)]">
+        <div className="m-auto w-auto overflow-x-auto">
           <div className="m-[24px]">
             <div className="border-l-[6px] border-[#104359] p-[8px] text-[24px] md:text-[36px]">
               <span>{title}</span>
@@ -50,7 +46,7 @@ export const getStaticPaths = async () => {
 }
 
 export const getStaticProps: ({ params }: GetStaticPropsContext<{ slug: string }>) => {
-  props: { slug: string; title: string; date: string; content: string }
+  props: { title: string; date: string; content: string }
 } = ({ params }) => {
   if (!params?.slug) throw new Error('slug not found')
 
@@ -59,7 +55,6 @@ export const getStaticProps: ({ params }: GetStaticPropsContext<{ slug: string }
 
   return {
     props: {
-      slug: '/blob/master/notes/' + params.slug,
       title,
       content,
       date,
