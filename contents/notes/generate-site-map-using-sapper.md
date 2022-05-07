@@ -27,9 +27,7 @@ URL (pages) は固定なら配列で、たくさん増えるなら適当にmap�
 
 ブログなどのたくさん増えるタイプは上記issueが詳しめです。
 
-```js
-// routes/sitemap.xml.js
-
+```js:routes/sitemap.xml.js
 const pages = [
   '',
   '/main',
@@ -60,8 +58,7 @@ export function get(req, res) {
 
 index.svelteに以下を追記しておきます。
 
-```
-// index.svelte
+```javascript:index.svelte
 <script> ... </script>
 <script context="module">
 	export function preload({}) {
