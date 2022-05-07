@@ -7,11 +7,6 @@ import Link from 'next/link'
 
 import MDX from '@mdx-js/runtime'
 
-import emoji from 'remark-emoji'
-import remarkGfm from 'remark-gfm'
-
-const remarkPlugins = [emoji, remarkGfm]
-
 const components = {
   code: CodeBlock,
   h1: H1,
@@ -41,12 +36,5 @@ const components = {
 }
 
 export const Mdx = ({ children }: { children: string }) => {
-  return (
-    <MDX
-      components={components}
-      remarkPlugins={remarkPlugins}
-    >
-      {children}
-    </MDX>
-  )
+  return <MDX components={components}>{children}</MDX>
 }
