@@ -26,13 +26,11 @@ const NotesDetailsPage: NextPage<InferGetStaticPropsType<typeof getStaticProps>>
               <span>{title}</span>
             </div>
             <div className="mt-[8px] md:text-[24px]">{dateTime}</div>
-            <div className="mt-[32px]">
+            <TOC>{content}</TOC>
+            <div className="mt-[10px]">
               <Mdx>{content}</Mdx>
             </div>
           </div>
-        </div>
-        <div className="fixed right-0 mt-[100px] hidden text-[#104359] xl:block">
-          <TOC>{content}</TOC>
         </div>
       </div>
     </>
