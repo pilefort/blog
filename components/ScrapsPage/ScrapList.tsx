@@ -1,54 +1,15 @@
-import { useState, useEffect, useRef } from 'react'
-
+import scrapsListsData from '../../fetchData/scraps/demoWithScrapLists.json'
+import { useEffect, useRef, useState } from 'react'
+import { useRouter } from 'next/router'
 import Image from 'next/image'
-
-import MDX from '@mdx-js/runtime'
-
 import Open from '../../public/assets/AccordionOpen.svg'
 import Close from '../../public/assets/AccordionClose.svg'
+import { utcToJst } from '../../libs/date'
+import Link from 'next/link'
 
-const components = {
-  h1: ({ children }: { children: string }) => (
-    <a
-      className="mb-[12px] w-fit text-[28px] hover:text-[gray]"
-      href={`#${children}`}
-    >
-      {children}
-    </a>
-  ),
-  h2: ({ children }: { children: string }) => (
-    <a
-      className="ml-[28px] mb-[6px] w-fit text-[24px] hover:text-[gray]"
-      href={`#${children}`}
-    >
-      {children}
-    </a>
-  ),
-  h3: ({ children }: { children: string }) => (
-    <a
-      className="ml-[32px] w-fit text-[20px] hover:text-[gray]"
-      href={`#${children}`}
-    >
-      {children}
-    </a>
-  ),
-  h4: ({ children }: { children: string }) => (
-    <a
-      className="ml-[32px] w-fit text-[20px] hover:text-[gray]"
-      href={`#${children}`}
-    >
-      {children}
-    </a>
-  ),
-  ul: () => <></>,
-  li: () => <></>,
-  code: () => <></>,
-  p: () => <></>,
-  img: () => <></>,
-  table: () => <></>,
-}
+export const ScrapLists = () => {
+  const { contents: scrapsLists } = scrapsListsData
 
-export const TOC = ({ children }: { children: string }) => {
   const [isShowTOC, setIsShowTOC] = useState(false)
   const [scrollClass, setScrollClass] = useState('')
   const setToggleCloseClass = () => setIsShowTOC(false)
@@ -61,7 +22,7 @@ export const TOC = ({ children }: { children: string }) => {
 
   const handleScroll = () => {
     if (elementRef.current?.offsetTop && elementRef.current?.offsetTop < document.documentElement.scrollTop) {
-      setScrollClass('fixed top-0 right-0')
+      setScrollClass('fixed top-0 right-0 overflow-y-auto')
     }
 
     if (document.documentElement.scrollTop === 0) {
@@ -69,17 +30,21 @@ export const TOC = ({ children }: { children: string }) => {
     }
   }
 
+  const router = useRouter()
+  const currentSlug = router.query.id
+  const currentRoute = router.route
+
   return (
     <div
-      className={`z-[20] w-[calc(100%)] bg-[#104359] text-[white] ${isShowTOC ? 'h-auto' : 'h-[60px]'} ${scrollClass}`}
+      className={`z-[20] w-[calc(100%)] bg-[#104359] text-[white] ${isShowTOC ? 'h-auto' : 'h-[48px]'} ${scrollClass}`}
       onScroll={handleScroll}
     >
-      <div className="mx-[32px] flex items-center justify-between">
+      <div className="mx-[16px] flex items-center justify-between">
         <div
           ref={elementRef}
-          className="text-[40px]"
+          className="text-[32px]"
         >
-          目次
+          Scraps一覧
         </div>
         <>
           {!isShowTOC ? (
@@ -112,8 +77,27 @@ export const TOC = ({ children }: { children: string }) => {
         </>
       </div>
       {isShowTOC && (
-        <div className={`m-[32px] mt-[24px] flex flex-col`}>
-          <MDX components={components}>{children}</MDX>
+        <div className={`m-[16px] flex flex-col`}>
+          {scrapsLists.map(({ id, createdAt, date }, index) => {
+            const dateTime = utcToJst({ date: date || createdAt })
+
+            return (
+              <Link
+                key={id}
+                href={`/scraps/${id}`}
+              >
+                <a
+                  id={id}
+                  className={`text-[18px] md:text-[24px] 
+                ${currentRoute === '/scraps' && index === 0 ? 'bg-[#1ed3c6]' : ''} 
+                ${currentSlug === id ? 'bg-[#1ed3c6]' : ''} 
+                mx-[-16px] py-[4px] px-[16px] hover:bg-[#1ed3c6]`}
+                >
+                  {dateTime}
+                </a>
+              </Link>
+            )
+          })}
         </div>
       )}
     </div>
