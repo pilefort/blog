@@ -4,8 +4,6 @@ import { GetStaticPropsContext, InferGetStaticPropsType, NextPage } from 'next'
 
 import { getAllContentPaths, getContentBySlug } from '../../libs/getContentsFromMdx'
 
-import { GitHubLink } from '../../components/ScrapsPage/contents/GitHubLink'
-
 import { utcToJst } from '../../libs/date'
 
 import { Mdx } from '../../components/MdxComponent/Mdx'
@@ -13,7 +11,7 @@ import { TOC } from '../../components/MdxComponent/TOC'
 import { CustomHead } from '../../components/MetaHead/CustomHead'
 // import { Sidebar } from '../../components/NotesPage/Sidebar'
 
-const NotesDetailsPage: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({ slug, title, content, date }) => {
+const NotesDetailsPage: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({ title, content, date }) => {
   const dateTime = utcToJst({ date })
 
   return (
@@ -31,7 +29,6 @@ const NotesDetailsPage: NextPage<InferGetStaticPropsType<typeof getStaticProps>>
             <div className="border-l-[6px] border-[#104359] p-[8px] text-[24px] md:text-[36px]">
               <span>{title}</span>
             </div>
-            <GitHubLink slug={slug} />
             <div className="mt-[8px] md:text-[24px]">{dateTime}</div>
             <div className="mt-[32px]">
               <Mdx>{content}</Mdx>
