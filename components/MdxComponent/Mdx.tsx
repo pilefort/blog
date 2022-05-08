@@ -4,8 +4,7 @@ import { CodeBlock } from './CodeBlock'
 import { CustomImage } from '../CustomImage'
 import { H1, H2, P, List } from './Text'
 import Link from 'next/link'
-
-import MDX from '@mdx-js/runtime'
+import Markdown from 'markdown-to-jsx'
 
 const components = {
   code: CodeBlock,
@@ -36,5 +35,14 @@ const components = {
 }
 
 export const Mdx = ({ children }: { children: string }) => {
-  return <MDX components={components}>{children}</MDX>
+  return (
+    <Markdown
+      options={{
+        forceBlock: false,
+        overrides: components,
+      }}
+    >
+      {children}
+    </Markdown>
+  )
 }
