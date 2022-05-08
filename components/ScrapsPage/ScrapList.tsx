@@ -1,51 +1,29 @@
-import scrapsListsData from '../../fetchData/scraps/demoWithScrapLists.json'
-import { useEffect, useRef, useState } from 'react'
+import scrapsLists from '../../fetchData/scraps/scrapLists.json'
+
+import { useState } from 'react'
+
 import { useRouter } from 'next/router'
 import Image from 'next/image'
-import Open from '../../public/assets/AccordionOpen.svg'
-import Close from '../../public/assets/AccordionClose.svg'
-import { utcToJst } from '../../libs/date'
 import Link from 'next/link'
 
-export const ScrapLists = () => {
-  const { contents: scrapsLists } = scrapsListsData
+import { utcToJst } from '../../libs/date'
 
+import Open from '../../public/assets/AccordionOpen.svg'
+import Close from '../../public/assets/AccordionClose.svg'
+
+export const ScrapLists = () => {
   const [isShowTOC, setIsShowTOC] = useState(false)
-  const [scrollClass, setScrollClass] = useState('')
   const setToggleCloseClass = () => setIsShowTOC(false)
   const setToggleOpenClass = () => setIsShowTOC(true)
-  const elementRef = useRef(null as null | HTMLDivElement)
-
-  useEffect(() => {
-    window.addEventListener('scroll', handleScroll)
-  }, [])
-
-  const handleScroll = () => {
-    if (elementRef.current?.offsetTop && elementRef.current?.offsetTop < document.documentElement.scrollTop) {
-      setScrollClass('fixed top-0 right-0 overflow-y-auto')
-    }
-
-    if (document.documentElement.scrollTop === 0) {
-      setScrollClass('static')
-    }
-  }
 
   const router = useRouter()
   const currentSlug = router.query.id
   const currentRoute = router.route
 
   return (
-    <div
-      className={`z-[20] w-[calc(100%)] bg-[#104359] text-[white] ${isShowTOC ? 'h-auto' : 'h-[48px]'} ${scrollClass}`}
-      onScroll={handleScroll}
-    >
+    <div className={`z-[20] h-auto w-[calc(100%)] bg-[#104359] text-[white]`}>
       <div className="mx-[16px] flex items-center justify-between">
-        <div
-          ref={elementRef}
-          className="text-[32px]"
-        >
-          Scraps一覧
-        </div>
+        <div className="text-[32px]">Scraps一覧</div>
         <>
           {!isShowTOC ? (
             <div
