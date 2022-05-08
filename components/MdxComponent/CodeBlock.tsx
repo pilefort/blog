@@ -3,8 +3,12 @@ import github from 'prism-react-renderer/themes/nightOwl'
 import React from 'react'
 
 export const CodeBlock = ({ children, className }: { children: string; className: string }) => {
+  if (!className) {
+    return <code className="bg-[#afb8c1]">{children}</code>
+  }
+
   const [lang, fileName] = className && className.includes(':') ? className.split(':') : [className, '']
-  const language: string = lang ? lang.replace(/language-/, '') : 'javascript'
+  const language: string = lang ? lang.replace(/lang-/, '') : 'javascript'
 
   // cf. https://github.com/FormidableLabs/prism-react-renderer
   return (
