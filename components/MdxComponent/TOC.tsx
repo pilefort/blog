@@ -2,7 +2,7 @@ import { useState, useEffect, useRef } from 'react'
 
 import Image from 'next/image'
 
-import MDX from '@mdx-js/runtime'
+import Markdown from 'markdown-to-jsx'
 
 import Open from '../../public/assets/AccordionOpen.svg'
 import Close from '../../public/assets/AccordionClose.svg'
@@ -115,7 +115,7 @@ export const TOC = ({ children }: { children: string }) => {
       </div>
       {isShowTOC && (
         <div className={`m-[32px] mt-[24px] flex flex-col`}>
-          <MDX components={components}>{children}</MDX>
+          <Markdown components={components}>{children}</Markdown>
         </div>
       )}
     </div>
