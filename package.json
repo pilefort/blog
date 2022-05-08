@@ -4,9 +4,10 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "cp -R contents/images public && next build",
+    "build": "cp -R contents/images public && yarn fetch:scrapLists && next build",
     "start": "next start",
     "lint": "tsc && next lint",
+    "fetch:scrapLists": "ts-node ./bin/fetchSidebarDataForNotes.ts",
     "create-env": "printenv> .env",
     "analyze": "ANALYZE=true yarn build"
   },
