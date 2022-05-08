@@ -114,8 +114,16 @@ export const TOC = ({ children }: { children: string }) => {
         </>
       </div>
       {isShowTOC && (
-        <div className={`m-[32px] mt-[24px] flex flex-col`}>
-          <Markdown components={components}>{children}</Markdown>
+        <div className={`m-[32px] mt-[24px]`}>
+          <Markdown
+            options={{
+              forceBlock: false,
+              overrides: components,
+            }}
+            className="flex flex-col"
+          >
+            {children}
+          </Markdown>
         </div>
       )}
     </div>
