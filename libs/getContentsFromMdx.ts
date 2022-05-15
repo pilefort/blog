@@ -63,7 +63,7 @@ export const getContentBySlug = (slug: string, fields: string[]) => {
     field === 'slug' && (items.slug = slug)
     field === 'description' && (items.description = data.description)
     field === 'content' && (items.content = content)
-    field === 'date' && (items.date = data.date)
+    field === 'date' && (items.date = new Date(data.date).toLocaleDateString())
     field === 'tags' && (items.tags = data.tags)
   })
 

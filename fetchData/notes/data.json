@@ -1,90 +1,26 @@
 [
 		{
-				"title": "Next.jsでMDXを使う方法",
-				"slug": "/notes/how-to-use-mdx-with-nextjs",
-				"description": "準備中",
-				"content": "",
-				"date": "2022-05-03 20:03:55",
-				"tags": [ "" ]
-		},
-		{
-				"title": "Next.jsでts-nodeを使う方法",
-				"slug": "/notes/how-to-use-tsnode-with-nextjs",
-				"description": "準備中",
-				"content": "",
-				"date": "2022-05-03 20:03:55",
-				"tags": [ "" ]
-		},
-		{
-				"title": "asdfについて",
-				"slug": "/notes/what-is-asdf-for-version-control",
-				"description": "準備中",
-				"content": "",
-				"date": "2022-05-03 20:03:55",
-				"tags": [ "" ]
-		},
-		{
-				"title": "Next.jsにGoogle Analytics (GA4) を導入する方法",
-				"slug": "/notes/add-ga4-to-nextjs",
-				"description": "準備中",
-				"content": "",
-				"date": "2021-12-12 05:41:55",
-				"tags": [ "" ]
+				"title": "Cloud Run上でNext.jsのアプリを動かす方法",
+				"link": "/notes/how-to-deploy-to-cloud-run",
+				"content": "Google Cloud RunとCloud Buildを使って、Next.jsのアプリを動かす方法",
+				"pubDate": "2022-05-04 19:30:55",
 		},
 		{
 				"title": "Gatsby v4にTailwind v3を導入する",
-				"slug": "/notes/gatsby-add-tailwindcss",
-				"description": "Tailwind v3から設定ファイルの書き方が変わり、Gatsbyの公式ページやブログ記事通りにやっても設定できなくなってるので追加しました",
-				"content": "",
-				"date": "2021-12-12 05:41:55",
-				"tags": [ "" ]
+				"link": "/notes/gatsby-add-tailwindcss",
+				"content": "Tailwind v3から設定ファイルの書き方が変わり、Gatsbyの公式ページやブログ記事通りにやっても設定できなくなってるので追加しました",
+				"pubDate": "2021-12-12 05:41:55",
 		},
 		{
 				"title": "Serverless Frameworkでサーバレスアプリをデプロイする方法",
-				"slug": "/notes/serverless-upload",
-				"description": "サーバレスアプリを実装、ローカルで実験、デプロイできるツールであるServerless Frameworkの使い方を紹介します。",
-				"content": "",
-				"date": "2021-05-16 18:37:42",
-				"tags": [ "" ]
-		},
-		{
-				"title": "高速なリポジトリ移動、PR切り替えを実現する方法",
-				"slug": "/notes/quick-find-repository",
-				"description": "ワンライナーでリポジトリを参照したり、PRの切り替えができるようになります",
-				"content": "",
-				"date": "2021-04-13 21:32:08",
-				"tags": [ "" ]
-		},
-		{
-				"title": "Rust",
-				"slug": "/notes/rust",
-				"description": "Rust関連の雑記です。ある程度分量ができたら、分けます。",
-				"content": "",
-				"date": "2021-03-20 20:41:55",
-				"tags": [ "" ]
-		},
-		{
-				"title": "JavaScript",
-				"slug": "/notes/javascript",
-				"description": "javascriptに関する雑記です。分量が多くなったら別トピックに分けます",
-				"content": "",
-				"date": "2021-03-20 19:41:55",
-				"tags": [ "" ]
-		},
-		{
-				"title": "svelte/sapperでsitemapを自動生成する方法",
-				"slug": "/notes/generate-site-map-using-sapper",
-				"description": "sapperは標準ではsitemapの自動生成をサポートしておらず、トリッキーなやり方が必要です。SvelteKitでは解決されるかもしれませんが、備忘録として残しておきます。",
-				"content": "",
-				"date": "2021-03-05 20:47:08",
-				"tags": [ "" ]
+				"link": "/notes/serverless-upload",
+				"content": "サーバレスアプリを実装、ローカルで実験、デプロイできるツールであるServerless Frameworkの使い方を紹介します。",
+				"pubDate": "2021-05-16 18:37:42",
 		},
 		{
 				"title": "AWS予算オーバー時にSlack, LINEに通知する方法",
-				"slug": "/notes/aws-budgets-notify-to-slack-and-line",
-				"description": "AWSが用意している通知方法は、メールだけです。しかし、メールでは見落としてしまう可能性があります。そこで、SlackやLINEにもメッセージが届くように、AWS Budgets, Amazon SNS, AWS Chatbot, Lambdaを併用した通知システム",
-				"content": "",
-				"date": "2021-01-10 11:20:29",
-				"tags": [ "" ]
+				"link": "/notes/aws-budgets-notify-to-slack-and-line",
+				"content": "AWSが用意している通知方法は、メールだけです。しかし、メールでは見落としてしまう可能性があります。そこで、SlackやLINEにもメッセージが届くように、AWS Budgets, Amazon SNS, AWS Chatbot, Lambdaを併用した通知システム",
+				"pubDate": "2021-01-10 11:20:29",
 		}
 ]
