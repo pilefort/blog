@@ -55,6 +55,7 @@ yarn-error.log*
 
 # json
 fetchData/scraps/*.json
+fetchData/notes/zenn.json
 
 # draft
 contents/draft
