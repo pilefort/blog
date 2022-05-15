@@ -26,12 +26,6 @@ const components = {
       </a>
     </Link>
   ),
-  Pending: ({ children }: { children: string }) => (
-    <>
-      <div className="text-center text-[80px] font-bold">準備中</div>
-      <div className="blur-sm">{children}</div>
-    </>
-  ),
 }
 
 export const Mdx = ({ children }: { children: string }) => {

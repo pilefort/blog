@@ -1,3 +1,5 @@
+import zennLists from '../fetchData/notes/zenn.json'
+
 import Link from 'next/link'
 import { InferGetStaticPropsType, NextPage } from 'next'
 
@@ -46,11 +48,20 @@ const NotesIndexPage: NextPage<InferGetStaticPropsType<typeof getStaticProps>> =
 
 export const getStaticProps = async () => {
   const slugs = await getAllContentPaths({ target: 'notes' })
-  const allContents = slugs.map((slug) => getContentBySlug(slug, ['title', 'description', 'date', 'slug']))
+  const markdownContents = slugs.map((slug) => getContentBySlug(slug, ['title', 'description', 'date', 'slug']))
 
-  allContents.sort((a, b) => {
-    return a.date > b.date ? -1 : 1
-  })
+  const customZennLists = zennLists.map(({ title, link, pubDate, content }) => ({
+    title,
+    slug: link,
+    description: content,
+    date: new Date(pubDate).toLocaleDateString(),
+    content: '',
+    tags: [''],
+  }))
+
+  const allContents = markdownContents.concat(customZennLists)
+
+  allContents.sort((a, b) => (b.date < a.date ? -1 : 1))
 
   return {
     props: {
