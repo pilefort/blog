@@ -55,3 +55,6 @@ yarn-error.log*
 
 # json
 fetchData/scraps/*.json
+
+# draft
+contents/draft
