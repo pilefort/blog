@@ -18,7 +18,7 @@ Dockerfile側は特に特殊な設定は不要です。
 
 実際にDockerを動かしてみて、3000ポートにアクセスできれば、準備完了です。
 
-```Dockerfile:Dockerfile
+```dockerfile:Dockerfile
 FROM node:16-alpine
 
 RUN apk add --no-cache libc6-compat

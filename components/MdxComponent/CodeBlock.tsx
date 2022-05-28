@@ -1,6 +1,8 @@
 import Highlight, { defaultProps, Language } from 'prism-react-renderer'
 import github from 'prism-react-renderer/themes/nightOwl'
 
+import { CodeHighlightSupportLanguages } from './CodeHighlightSupportLanguages'
+
 export const CodeBlock = ({ children, className }: { children: string; className: string }) => {
   if (!className) {
     return <code className="bg-[#e1ecf7] p-[4px]">{children}</code>
@@ -22,10 +24,13 @@ export const CodeBlock = ({ children, className }: { children: string; className
           <span className="text-center text-white">{fileName}</span>
         </div>
         <Highlight
-          {...defaultProps}
           code={children}
           language={language as Language}
           theme={github}
+          Prism={{
+            ...defaultProps.Prism,
+            languages: { ...defaultProps.Prism.languages, ...CodeHighlightSupportLanguages },
+          }}
         >
           {({ className, style, tokens, getLineProps, getTokenProps }) => (
             <pre
