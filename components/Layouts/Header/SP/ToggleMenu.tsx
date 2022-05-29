@@ -20,10 +20,6 @@ export const ToggleMenu = ({
   const router = useRouter()
   const currentPagePath = router.pathname
 
-  useEffect(() => {
-    setToggleClass('animate-slideOut')
-  }, [router, setToggleClass])
-
   const stopPropagationHandler = (event: MouseEvent<HTMLDivElement>) => {
     event.stopPropagation()
   }
@@ -50,7 +46,10 @@ export const ToggleMenu = ({
           />
         </div>
         <div className="flex h-[95%] flex-col justify-between p-[8px]">
-          <div className="mt-[24px] flex flex-col justify-between">
+          <div
+            className="mt-[24px] flex flex-col justify-between"
+            onClick={() => setToggleClass('animate-slideOut')}
+          >
             <Link
               href="/notes"
               passHref
