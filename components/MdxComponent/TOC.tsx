@@ -50,7 +50,7 @@ const components = {
 
 export const TOC = ({ children }: { children: string }) => {
   const [isShowTOC, setIsShowTOC] = useState(false)
-  const [scrollClass, setScrollClass] = useState('')
+  const [scrollClass, setScrollClass] = useState('static')
   const setToggleCloseClass = () => setIsShowTOC(false)
   const setToggleOpenClass = () => setIsShowTOC(true)
   const elementRef = useRef(null as null | HTMLDivElement)
@@ -114,7 +114,10 @@ export const TOC = ({ children }: { children: string }) => {
         </>
       </div>
       {isShowTOC && (
-        <div className={`m-[32px] mt-[24px]`}>
+        <div
+          className={`m-[32px] mt-[24px]`}
+          onClick={() => setIsShowTOC(false)}
+        >
           <Markdown
             options={{
               forceBlock: false,

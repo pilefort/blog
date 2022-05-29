@@ -15,6 +15,7 @@ export const SPHeader = () => {
         <ToggleMenu
           toggleClass={toggleClass}
           setToggleCloseClass={setToggleCloseClass}
+          setToggleClass={setToggleClass}
         />
       }
       <div className="flex h-[15px] items-center justify-center bg-[#104359] text-[14px] text-white">工事中</div>

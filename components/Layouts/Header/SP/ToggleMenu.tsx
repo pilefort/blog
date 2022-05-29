@@ -1,4 +1,4 @@
-import { MouseEvent, MouseEventHandler } from 'react'
+import { Dispatch, MouseEvent, MouseEventHandler, useEffect } from 'react'
 
 import Image from 'next/image'
 import Link from 'next/link'
@@ -8,9 +8,21 @@ import AccordionCloseIcon from '../../../../public/assets/AccordionClose.svg'
 
 import { checkCurrentPathAndApplyStyles } from '../../../../libs/checkCurrentPathAndApplyStyles'
 
-export const ToggleMenu = ({ toggleClass, setToggleCloseClass }: { toggleClass: string; setToggleCloseClass: MouseEventHandler<HTMLDivElement> }) => {
+export const ToggleMenu = ({
+  toggleClass,
+  setToggleCloseClass,
+  setToggleClass,
+}: {
+  toggleClass: string
+  setToggleCloseClass: MouseEventHandler<HTMLDivElement>
+  setToggleClass: Dispatch<string>
+}) => {
   const router = useRouter()
   const currentPagePath = router.pathname
+
+  useEffect(() => {
+    setToggleClass('animate-slideOut')
+  }, [router])
 
   const stopPropagationHandler = (event: MouseEvent<HTMLDivElement>) => {
     event.stopPropagation()
