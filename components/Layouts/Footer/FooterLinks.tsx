@@ -5,7 +5,7 @@ export const FooterLinks = () => {
     <div className="mt-[128px] flex h-[80px] items-center justify-end bg-[#104359] text-white md:text-[24px]">
       <div className="mx-[24px] flex w-full items-center justify-between md:w-[500px]">
         <Link
-          href="https://github.com/pilefort"
+          href="https://github.com/kusakabe-t"
           passHref
         >
           <a target="_blank">GitHub</a>

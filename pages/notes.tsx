@@ -61,7 +61,7 @@ export const getStaticProps = async () => {
 
   const allContents = markdownContents.concat(customZennLists)
 
-  allContents.sort((a, b) => (b.date < a.date ? -1 : 1))
+  allContents.sort((a, b) => (new Date(b.date) < new Date(a.date) ? -1 : 1))
 
   return {
     props: {

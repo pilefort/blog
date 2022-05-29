@@ -1,4 +1,4 @@
-import { MouseEvent, MouseEventHandler } from 'react'
+import { Dispatch, MouseEvent, MouseEventHandler, useEffect } from 'react'
 
 import Image from 'next/image'
 import Link from 'next/link'
@@ -8,7 +8,15 @@ import AccordionCloseIcon from '../../../../public/assets/AccordionClose.svg'
 
 import { checkCurrentPathAndApplyStyles } from '../../../../libs/checkCurrentPathAndApplyStyles'
 
-export const ToggleMenu = ({ toggleClass, setToggleCloseClass }: { toggleClass: string; setToggleCloseClass: MouseEventHandler<HTMLDivElement> }) => {
+export const ToggleMenu = ({
+  toggleClass,
+  setToggleCloseClass,
+  setToggleClass,
+}: {
+  toggleClass: string
+  setToggleCloseClass: MouseEventHandler<HTMLDivElement>
+  setToggleClass: Dispatch<string>
+}) => {
   const router = useRouter()
   const currentPagePath = router.pathname
 
@@ -38,7 +46,10 @@ export const ToggleMenu = ({ toggleClass, setToggleCloseClass }: { toggleClass: 
           />
         </div>
         <div className="flex h-[95%] flex-col justify-between p-[8px]">
-          <div className="mt-[24px] flex flex-col justify-between">
+          <div
+            className="mt-[24px] flex flex-col justify-between"
+            onClick={() => setToggleClass('animate-slideOut')}
+          >
             <Link
               href="/notes"
               passHref

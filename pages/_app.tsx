@@ -14,7 +14,7 @@ function MyApp({ Component, pageProps }: AppProps) {
         <>
           <DesktopHeader />
           <SPHeader />
-          <div className="min-h-[calc(100vh-(80px+80px+128px))]">
+          <div className="min-h-[calc(100vh-(80px+80px+128px+30px))]">
             <Component {...pageProps} />
           </div>
         </>
