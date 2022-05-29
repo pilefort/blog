@@ -22,7 +22,7 @@ export const ToggleMenu = ({
 
   useEffect(() => {
     setToggleClass('animate-slideOut')
-  }, [router])
+  }, [router, setToggleClass])
 
   const stopPropagationHandler = (event: MouseEvent<HTMLDivElement>) => {
     event.stopPropagation()
