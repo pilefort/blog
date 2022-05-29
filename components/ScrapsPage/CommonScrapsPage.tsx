@@ -9,7 +9,7 @@ export const CommonScrapsPage = ({ dateTime, highlight, scraps }: { dateTime: st
   return (
     <div className="p-[24px]">
       <ScrapLists />
-      <div className="ml-[32px] w-[auto]">
+      <div className="mx-[8px] w-[auto]">
         <div className="text-[32px]">{dateTime}</div>
         {highlight && <Highlight highlight={highlight} />}
         <Contents scraps={scraps} />
