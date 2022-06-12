@@ -1,4 +1,4 @@
-import { Dispatch, MouseEvent, MouseEventHandler, useEffect } from 'react'
+import { Dispatch, MouseEvent, MouseEventHandler } from 'react'
 
 import Image from 'next/image'
 import Link from 'next/link'
