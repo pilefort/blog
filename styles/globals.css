@@ -4,42 +4,45 @@
 
 html,
 body {
-    padding: 0;
-    margin: 0;
-    font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-    background: #FCFDFF;
+	padding: 0;
+	margin: 0;
+	font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+	background: #fcfdff;
 }
 
 * {
-  box-sizing: border-box;
-  word-break: break-all;
+	box-sizing: border-box;
+	word-break: break-all;
 }
 
-
 a {
-  color: inherit;
-  text-decoration: none;
-  word-break: break-all;
+	color: inherit;
+	text-decoration: none;
+	word-break: break-all;
 }
 
 #__next {
- height: 100%;
+	height: 100%;
 }
 
 .hr-with-title {
-  display: table;
-  white-space: nowrap;
+	display: table;
+	white-space: nowrap;
 }
 
 .hr-with-title:before, .hr-with-title:after {
-   border-top: 2px solid white;
-   content: '';
-   display: table-cell;
-   position: relative;
-   top: 0.5em;
-   width: 45%;
+	border-top: 2px solid white;
+	content: '';
+	display: table-cell;
+	position: relative;
+	top: 0.5em;
+	width: 45%;
 }
 
-.hr-with-title:before { right: 1.5%; }
-.hr-with-title:after { left: 1.5%; }
+.hr-with-title:before {
+	right: 1.5%;
+}
+
+.hr-with-title:after {
+	left: 1.5%;
+}
