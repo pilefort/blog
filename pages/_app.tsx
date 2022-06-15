@@ -1,15 +1,36 @@
 import '../styles/globals.css'
-import type { AppProps } from 'next/app'
-import Footer from '../components/Layouts/Footer'
+
+import Script from 'next/script'
+
 import { useMediaQuery } from '../hooks/useMediaQuery'
+
 import { DesktopHeader } from '../components/Layouts/Header/DesktopHeader'
 import { SPHeader } from '../components/Layouts/Header/SP/SPHeader'
+import Footer from '../components/Layouts/Footer'
+
+import type { AppProps } from 'next/app'
 
 function MyApp({ Component, pageProps }: AppProps) {
   const isDesktop = useMediaQuery()
 
   return (
     <>
+      <Script
+        src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GA_TRACKING_ID}`}
+        strategy="afterInteractive"
+      />
+      <Script
+        defer
+        id="google-analytics"
+        strategy="afterInteractive"
+      >
+        {`
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){window.dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', '${process.env.NEXT_PUBLIC_GA_TRACKING_ID}');
+        `}
+      </Script>
       {isDesktop ? (
         <>
           <DesktopHeader />
