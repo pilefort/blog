@@ -1,5 +1,6 @@
 import withPlugins from 'next-compose-plugins'
 import withPWA from 'next-pwa'
+import withBundleAnalyzer from '@next/bundle-analyzer'
 
 const rewriteSetting = {
   beforeFiles: [
@@ -53,10 +54,14 @@ const usePWAPlugin = withPWA({
       },
 })
 
+const useBundleAnalyzer = withBundleAnalyzer({
+  enabled: process.env.ANALYZE = 'true'
+})
 
 /** @type {import('next').NextConfig} */
 export default withPlugins([
     [usePWAPlugin],
+    [useBundleAnalyzer]
 ],
     nextConfig
 )
