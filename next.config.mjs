@@ -42,7 +42,7 @@ const nextConfig = {
   // swcMinify: true,
 }
 
-const pwaSetting = {
+const usePWAPlugin = withPWA({
   pwa:
       {
         dest: 'public',
@@ -51,12 +51,12 @@ const pwaSetting = {
         disable:
             process.env.NODE_ENV === 'development'
       },
-}
+})
 
 
 /** @type {import('next').NextConfig} */
 export default withPlugins([
-    [withPWA, pwaSetting]
+    [usePWAPlugin],
 ],
     nextConfig
 )
