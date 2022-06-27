@@ -55,7 +55,7 @@ const usePWAPlugin = withPWA({
 })
 
 const useBundleAnalyzer = withBundleAnalyzer({
-  enabled: process.env.ANALYZE = 'true'
+  enabled: process.env.ANALYZE === 'true'
 })
 
 /** @type {import('next').NextConfig} */
