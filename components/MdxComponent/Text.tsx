@@ -74,6 +74,8 @@ export const H3 = ({ children }: { children: string }) => {
 
 export const P = ({ children }: { children: string }) => <p className="text-[16px] md:text-[24px]">{children}</p>
 
+export const Span = ({ children }: { children: string }) => <span className="text-[16px] md:text-[24px]">{children}</span>
+
 // TODO: listのdictを作る
 export const List = ({ children }: { children: string }) => <div className="text-[16px] md:text-[24px]">・ {children}</div>
 
