@@ -23,14 +23,6 @@ type CommonMicroCMSResponse = {
   revisedAt?: string
 }
 
-export type ContentType = CommonMicroCMSResponse & {
-  id: string
-  date: string
-  createdAt: string
-  highlight: string
-  scraps: ScrapsType
-}
-
 export type ScrapsType = ScrapType[]
 
 type ScrapType = CommonMicroCMSResponse & {
@@ -58,12 +50,6 @@ type ScrapType = CommonMicroCMSResponse & {
     title: string
   }[]
 }
-
-export type ScrapsListType = {
-  id: string
-  date?: string
-  createdAt: string
-}[]
 
 // 記事の内容を含む、含まないにかかわらず共通している型
 type CommonListApiProps = {
