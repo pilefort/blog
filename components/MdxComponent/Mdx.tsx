@@ -2,7 +2,7 @@ import React from 'react'
 
 import { CodeBlock } from './CodeBlock'
 import { CustomImage } from '../CustomImage'
-import { H1, H2, H3, P, List } from './Text'
+import { H1, H2, H3, P, Span, List } from './Text'
 import Link from 'next/link'
 import Markdown from 'markdown-to-jsx'
 
@@ -13,6 +13,7 @@ const components = {
   h3: H3,
   img: CustomImage,
   p: P,
+  span: Span,
   li: List,
   a: ({ children, href }: { children: string; href: string }) => (
     <Link
