@@ -1,4 +1,3 @@
-import withPlugins from 'next-compose-plugins'
 import withPWA from 'next-pwa'
 import withBundleAnalyzer from '@next/bundle-analyzer'
 
@@ -38,20 +37,14 @@ const nextConfig = {
     }
     return config
   },
-  // TODO: total blocking timeは短くなるが、next/linkの動きが悪くなる (クリックしても数秒間ページ遷移しない)
-  // 今後の動向を見て、有効にするかどうか判断
-  // swcMinify: true,
+  swcMinify: true,
 }
 
 const usePWAPlugin = withPWA({
-  pwa:
-      {
-        dest: 'public',
-        register: true,
-        skipWaiting: true,
-        disable:
-            process.env.NODE_ENV === 'development'
-      },
+  dest: 'public',
+  register: true,
+  skipWaiting: true,
+  disable: process.env.NODE_ENV === 'development'
 })
 
 const useBundleAnalyzer = withBundleAnalyzer({
@@ -59,9 +52,10 @@ const useBundleAnalyzer = withBundleAnalyzer({
 })
 
 /** @type {import('next').NextConfig} */
-export default withPlugins([
-    [usePWAPlugin],
-    [useBundleAnalyzer]
-],
-    nextConfig
-)
+const nextConfigSetting = () => {
+  const plugins = [usePWAPlugin, useBundleAnalyzer]
+  return plugins.reduce((acc, plugin) => plugin(acc), { ...nextConfig })
+}
+
+export default nextConfigSetting
+

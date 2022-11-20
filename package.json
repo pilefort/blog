@@ -42,7 +42,6 @@
     "gray-matter": "4.0.3",
     "markdown-to-jsx": "7.1.7",
     "microcms-js-sdk": "2.3.2",
-    "next-compose-plugins": "2.2.1",
     "postcss": "8.4.19",
     "prettier": "2.7.1",
     "prettier-plugin-tailwindcss": "0.1.13",
