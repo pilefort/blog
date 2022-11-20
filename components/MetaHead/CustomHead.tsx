@@ -1,9 +1,11 @@
 import Head from 'next/head'
 
 export const CustomHead = ({ title, description }: { title?: string; description: string }) => {
+  const metaTitle = title ? title + ' | Pilefort' : 'Pilefort'
+
   return (
     <Head>
-      <title>{title ? title + ' | ' : ''}Pilefort</title>
+      <title>{metaTitle}</title>
       <link
         rel="manifest"
         href="/manifest.json"
