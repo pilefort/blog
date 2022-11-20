@@ -12,6 +12,9 @@
     "create-env": "printenv> .env",
     "analyze": "ANALYZE=true yarn build"
   },
+  "engines": {
+    "node": "16.x"
+  },
   "files": [
     "dist"
   ],
