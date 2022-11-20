@@ -23,8 +23,9 @@ export const SPHeader = () => {
         <Link
           href="/"
           passHref
+          className="text-[24px] text-[#104359]"
         >
-          <a className="text-[24px] text-[#104359]">Pilefort</a>
+          Pilefort
         </Link>
         <div
           onClick={setToggleOpenClass}

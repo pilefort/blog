@@ -65,16 +65,13 @@ export const ScrapLists = () => {
               <Link
                 key={id}
                 href={`/scraps/${id}`}
-              >
-                <a
-                  id={id}
-                  className={`text-[18px] md:text-[24px] 
+                id={id}
+                className={`text-[18px] md:text-[24px] 
                 ${currentRoute === '/scraps' && index === 0 ? 'bg-[#1ed3c6]' : ''} 
                 ${currentSlug === id ? 'bg-[#1ed3c6]' : ''} 
                 mx-[-16px] py-[4px] px-[16px] hover:bg-[#1ed3c6]`}
-                >
-                  {dateTime}
-                </a>
+              >
+                {dateTime}
               </Link>
             )
           })}

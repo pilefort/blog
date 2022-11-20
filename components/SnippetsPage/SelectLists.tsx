@@ -43,20 +43,18 @@ const SelectList = ({
           key="all"
           href="/snippets"
           passHref
+          className="md:text-[32px]"
         >
-          <a className="md:text-[32px]">
-            <span className={currentPageTag === undefined ? 'text-[red]' : ''}>すべて</span>
-          </a>
+          <span className={currentPageTag === undefined ? 'text-[red]' : ''}>すべて</span>
         </Link>
       )}
       <Link
         key={slug}
         href={`/snippets/tag/${slug}`}
         passHref
+        className="ml-[16px] md:ml-[32px] md:text-[32px]"
       >
-        <a className="ml-[16px] md:ml-[32px] md:text-[32px]">
-          <span className={currentPageTag === slug ? 'text-[red]' : ''}>{name}</span>
-        </a>
+        <span className={currentPageTag === slug ? 'text-[red]' : ''}>{name}</span>
       </Link>
     </>
   )

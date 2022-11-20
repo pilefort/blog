@@ -23,19 +23,18 @@ export const LatestActivity = () => {
               <Link
                 href="https://sample.pilefort.dev/"
                 passHref
+                target="_blank"
               >
-                <a target="_blank">
-                  <span>https://sample.pilefort.dev/</span>
-                  <span className="ml-[8px]">
-                    <Image
-                      alt="open new window"
-                      src={OpenNewWindow}
-                      width={24}
-                      height={24}
-                      loading="lazy"
-                    />
-                  </span>
-                </a>
+                <span>https://sample.pilefort.dev/</span>
+                <span className="ml-[8px]">
+                  <Image
+                    alt="open new window"
+                    src={OpenNewWindow}
+                    width={24}
+                    height={24}
+                    loading="lazy"
+                  />
+                </span>
               </Link>
             </div>
             <div className="mt-[8px]">
@@ -43,19 +42,18 @@ export const LatestActivity = () => {
               <Link
                 href="https://pilefort.booth.pm/items/3633323"
                 passHref
+                target="_blank"
               >
-                <a target="_blank">
-                  <span>https://pilefort.booth.pm/items/3633323</span>
-                  <span className="ml-[8px]">
-                    <Image
-                      src={OpenNewWindow}
-                      width={24}
-                      height={24}
-                      alt="open new window"
-                      loading="lazy"
-                    />
-                  </span>
-                </a>
+                <span>https://pilefort.booth.pm/items/3633323</span>
+                <span className="ml-[8px]">
+                  <Image
+                    src={OpenNewWindow}
+                    width={24}
+                    height={24}
+                    alt="open new window"
+                    loading="lazy"
+                  />
+                </span>
               </Link>
             </div>
           </div>

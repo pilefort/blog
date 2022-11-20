@@ -9,8 +9,9 @@ export const Sitemap = () => {
           <Link
             href="/notes"
             passHref
+            className="text-[32px] font-bold"
           >
-            <a className="text-[32px] font-bold">Notes</a>
+            Notes
           </Link>
           <div className="mt-[8px]">業務や趣味での気づき・メモ</div>
         </div>
@@ -18,8 +19,9 @@ export const Sitemap = () => {
           <Link
             href="/scraps"
             passHref
+            className="text-[32px] font-bold"
           >
-            <a className="text-[32px] font-bold">Scraps</a>
+            Scraps
           </Link>
           <div className="mt-[8px]">雑記。ネットで見つけた面白い記事やニュース</div>
         </div>
@@ -27,8 +29,9 @@ export const Sitemap = () => {
           <Link
             href="/snippets"
             passHref
+            className="text-[32px] font-bold"
           >
-            <a className="text-[32px] font-bold">Snippets</a>
+            Snippets
           </Link>
           <div className="mt-[8px]">記事にするまでもないけど、便利なコマンドや豆知識</div>
         </div>

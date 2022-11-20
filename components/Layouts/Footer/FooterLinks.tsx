@@ -7,32 +7,37 @@ export const FooterLinks = () => {
         <Link
           href="https://github.com/kusakabe-t"
           passHref
+          target="_blank"
         >
-          <a target="_blank">GitHub</a>
+          GitHub
         </Link>
         <Link
           href="https://twitter.com/pilefort"
           passHref
+          target="_blank"
         >
-          <a target="_blank">Twitter</a>
+          Twitter
         </Link>
         <Link
           href="https://zenn.dev/pilefort"
           passHref
+          target="_blank"
         >
-          <a target="_blank">Zenn</a>
+          Zenn
         </Link>
         <Link
           href="https://techbookfest.org/organization/4806658536505344"
           passHref
+          target="_blank"
         >
-          <a target="_blank">技術書典</a>
+          技術書典
         </Link>
         <Link
           href="https://pilefort.booth.pm/"
           passHref
+          target="_blank"
         >
-          <a target="_blank">Booth</a>
+          Booth
         </Link>
       </div>
     </div>
