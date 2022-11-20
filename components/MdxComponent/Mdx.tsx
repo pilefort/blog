@@ -19,13 +19,10 @@ const components = {
     <Link
       href={href}
       passHref
+      target="_blank"
+      className="text-[#10AFA4]"
     >
-      <a
-        target="_blank"
-        className="text-[#10AFA4]"
-      >
-        {children}
-      </a>
+      {children}
     </Link>
   ),
 }

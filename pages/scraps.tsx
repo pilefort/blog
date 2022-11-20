@@ -25,13 +25,12 @@ const ScrapsIndexPage: NextPage<InferGetStaticPropsType<typeof getStaticProps>> 
               <Link
                 href={`/scraps/${id}`}
                 passHref
+                className="cursor-pointer"
               >
-                <a className="cursor-pointer">
-                  <div>
-                    <Mdx>{highlight}</Mdx>
-                  </div>
-                  <div>公開日: {dateTime}</div>
-                </a>
+                <div>
+                  <Mdx>{highlight}</Mdx>
+                </div>
+                <div>公開日: {dateTime}</div>
               </Link>
             </div>
           )

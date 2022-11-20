@@ -14,28 +14,32 @@ export const DesktopHeader = () => {
         <Link
           href="/"
           passHref
+          className="text-[36px] text-[#104359]"
         >
-          <a className="text-[36px] text-[#104359]">Pilefort</a>
+          Pilefort
         </Link>
         <div className="flex items-center text-[32px] text-[#104359]">
           <Link
             href="/notes"
             passHref
+            className={`${checkCurrentPathAndApplyStyles({ currentPagePath, targetPath: '/notes' })}`}
           >
-            <a className={`${checkCurrentPathAndApplyStyles({ currentPagePath, targetPath: '/notes' })}`}>Notes</a>
+            Notes
           </Link>
 
           <Link
             href="/scraps"
             passHref
+            className={`ml-[24px] ${checkCurrentPathAndApplyStyles({ currentPagePath, targetPath: '/scraps' })}`}
           >
-            <a className={`ml-[24px] ${checkCurrentPathAndApplyStyles({ currentPagePath, targetPath: '/scraps' })}`}>Scraps</a>
+            Scraps
           </Link>
           <Link
             href="/snippets"
             passHref
+            className={`ml-[24px] ${checkCurrentPathAndApplyStyles({ currentPagePath, targetPath: '/snippets' })}`}
           >
-            <a className={`ml-[24px] ${checkCurrentPathAndApplyStyles({ currentPagePath, targetPath: '/snippets' })}`}>Snippets</a>
+            Snippets
           </Link>
         </div>
       </div>
