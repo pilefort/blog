@@ -5,66 +5,148 @@ import { CustomImage } from '../../CustomImage'
 
 import OpenNewWindow from '../../../public/assets/OpenNewWindow.svg'
 import TechDojin12Image from '../../../public/assets/tech-dojin/tech12.jpg'
+import TechDojin13Image from '../../../public/assets/tech-dojin/tech13.jpg'
 
 export const LatestActivity = () => {
   return (
     <>
       <div className="hr-with-title text-center lg:w-[calc(100vw-160px)]">最近の活動</div>
-      <div className="mt-[24px] lg:flex">
-        <div className="lg:w-[calc(100%-350px)] xl:w-auto">
-          <div className="font-bold">技術書典12 (2022.1.22 - 2022.1.30) で本を出しました。</div>
-          <div className="mt-[24px]">
-            2021年に登場したり、大幅なアップデートがあったWebサービスや開発ツール、ライブラリ、フレームワークを紹介した本です。
+      <WebChangeLog2022Part1 className="mt-[16px] lg:flex" />
+      <XMind2Markdown className="mt-[128px] lg:flex" />
+      <WebChangeLog2021 className="mt-[128px] lg:flex" />
+    </>
+  )
+}
+
+const WebChangeLog2022Part1 = ({ className }: { className: string }) => {
+  return (
+    <div className={className}>
+      <div className="mr-[32px] lg:w-[calc(100%-350px)] xl:w-auto">
+        <div className="font-bold">技術書典13 (2022.9.10 - 2022.9.25) で本を出しました。</div>
+        <div className="mt-[24px]">
+          2022年の1月から8月ぐらいまでに登場したり、大幅なアップデートがあったWebサービスや開発ツール、ライブラリ、フレームワークを紹介した本です。
+        </div>
+        <div className="mt-[24px] text-[16px]">
+          <div className="mt-[16px]">
+            <span>Booth: </span>
+            <Link
+              href="https://booth.pm/ja/items/4157010"
+              passHref
+              target="_blank"
+              className="flex"
+            >
+              <Image
+                alt="open new window"
+                className="mr-[4px]"
+                src={OpenNewWindow}
+                width={24}
+                height={24}
+                loading="lazy"
+              />
+              <span>https://booth.pm/ja/items/4157010</span>
+            </Link>
           </div>
-          <div>TailwindCSSv3やRailway, Partytown, Nextjs12なんかの紹介やChrome DevToolsやChrome Extensions Manifest V3などの話を書いてます。</div>
-          <div className="mt-[24px] text-[16px]">
+        </div>
+      </div>
+      <CustomImage
+        alt="うぇぶちぇんじろぐ2023part1"
+        src={TechDojin13Image}
+        width={350}
+        height={495}
+      />
+    </div>
+  )
+}
+
+const XMind2Markdown = ({ className }: { className: string }) => {
+  return (
+    <div className={className}>
+      <div className="w-auto">
+        <div className="font-bold">XMind8ファイルをMarkdownファイルに変換するツールを作りました。</div>
+        <div className="mt-[24px] text-[16px]">
+          <span>公式のxmind-sdk-jsのバージョンを下げて作ってます (最新版だと一部メソッドが削除されてるため)。</span>
+          <div className="mt-[24px]">
             <div>
               <span>Sample: </span>
               <Link
-                href="https://sample.pilefort.dev/"
+                href="https://github.com/kusakabe-t/xmind2md"
                 passHref
                 target="_blank"
+                className="flex"
               >
-                <span>https://sample.pilefort.dev/</span>
-                <span className="ml-[8px]">
-                  <Image
-                    alt="open new window"
-                    src={OpenNewWindow}
-                    width={24}
-                    height={24}
-                    loading="lazy"
-                  />
-                </span>
-              </Link>
-            </div>
-            <div className="mt-[8px]">
-              <span>Booth: </span>
-              <Link
-                href="https://pilefort.booth.pm/items/3633323"
-                passHref
-                target="_blank"
-              >
-                <span>https://pilefort.booth.pm/items/3633323</span>
-                <span className="ml-[8px]">
-                  <Image
-                    src={OpenNewWindow}
-                    width={24}
-                    height={24}
-                    alt="open new window"
-                    loading="lazy"
-                  />
-                </span>
+                <Image
+                  alt="open new window"
+                  className="mr-[4px]"
+                  src={OpenNewWindow}
+                  width={24}
+                  height={24}
+                  loading="lazy"
+                />
+                <span>https://github.com/kusakabe-t/xmind2md</span>
               </Link>
             </div>
           </div>
         </div>
-        <CustomImage
-          alt="うぇぶちぇんじろぐ2022"
-          src={TechDojin12Image}
-          width={350}
-          height={495}
-        />
       </div>
-    </>
+    </div>
+  )
+}
+
+const WebChangeLog2021 = ({ className }: { className: string }) => {
+  return (
+    <div className={className}>
+      <div className="mr-[32px] lg:w-[calc(100%-350px)] xl:w-auto">
+        <div className="font-bold">技術書典12 (2022.1.22 - 2022.1.30) で本を出しました。</div>
+        <div className="mt-[24px]">
+          2021年に登場したり、大幅なアップデートがあったWebサービスや開発ツール、ライブラリ、フレームワークを紹介した本です。
+        </div>
+        <div className="mt-[24px] text-[16px]">
+          <div>
+            <span>Sample: </span>
+            <Link
+              href="https://sample.pilefort.dev/"
+              passHref
+              target="_blank"
+              className="flex"
+            >
+              <Image
+                alt="open new window"
+                className="mr-[4px]"
+                src={OpenNewWindow}
+                width={24}
+                height={24}
+                loading="lazy"
+              />
+              <span>https://sample.pilefort.dev/</span>
+            </Link>
+          </div>
+          <div className="mt-[16px]">
+            <span>Booth: </span>
+            <Link
+              href="https://pilefort.booth.pm/items/3633323"
+              passHref
+              target="_blank"
+              className="flex"
+            >
+              <Image
+                alt="open new window"
+                className="mr-[4px]"
+                src={OpenNewWindow}
+                width={24}
+                height={24}
+                loading="lazy"
+              />
+              <span>https://pilefort.booth.pm/items/3633323</span>
+            </Link>
+          </div>
+        </div>
+      </div>
+      <CustomImage
+        alt="うぇぶちぇんじろぐ2022"
+        src={TechDojin12Image}
+        width={350}
+        height={495}
+      />
+    </div>
   )
 }

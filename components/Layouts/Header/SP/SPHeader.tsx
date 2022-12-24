@@ -18,7 +18,6 @@ export const SPHeader = () => {
           setToggleClass={setToggleClass}
         />
       }
-      <div className="flex h-[15px] items-center justify-center bg-[#104359] text-[14px] text-white">工事中</div>
       <div className="flex h-[35px] items-center justify-between p-[8px]">
         <Link
           href="/"
