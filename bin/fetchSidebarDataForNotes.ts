@@ -1,4 +1,5 @@
 // #!/usr/bin/env ts-node
+// Scrapsのリスト一覧を取得するための処理 (Deprecated)
 import { createJsonFile } from './common/createJsonFile'
 import { getAllListContents } from '../utils/getContents'
 
