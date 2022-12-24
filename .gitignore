@@ -59,3 +59,7 @@ fetchData/notes/zenn.json
 
 # draft
 contents/draft
+
+# sitemap
+public/robots.txt
+public/sitemap.xml
