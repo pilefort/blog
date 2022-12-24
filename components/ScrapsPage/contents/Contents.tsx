@@ -29,30 +29,32 @@ export const Contents = ({ scraps }: { scraps: ScrapsType }) => {
                   />
                 )
               })}
-            <details className="mt-[8px] text-[18px]">
-              <summary>詳細を開く</summary>
-              <div className="mt-[16px]">
-                {body.map(({ content }, index) => {
-                  return (
-                    <div
-                      key={index}
-                      className="break-all"
-                    >
-                      <Mdx>{content}</Mdx>
-                    </div>
-                  )
-                })}
-              </div>
-              {links &&
-                links.map(({ url }, index) => {
-                  return (
-                    <CustomLink
-                      key={index}
-                      url={url}
-                    />
-                  )
-                })}
-            </details>
+            {links &&
+              links.map(({ url }, index) => {
+                return (
+                  <CustomLink
+                    key={index}
+                    url={url}
+                  />
+                )
+              })}
+            {body && (
+              <details className="mt-[8px] cursor-pointer text-[18px]">
+                <summary>メモ</summary>
+                <div className="mt-[16px]">
+                  {body.map(({ content }, index) => {
+                    return (
+                      <div
+                        key={index}
+                        className="break-all"
+                      >
+                        <Mdx>{content}</Mdx>
+                      </div>
+                    )
+                  })}
+                </div>
+              </details>
+            )}
           </div>
         )
       })}
