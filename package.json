@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "cp -R contents/images public && yarn fetch:scrapLists && yarn fetch:blogPostLists && next build",
+    "build": "cp -R contents/images public && yarn fetch:scrapLists && yarn fetch:blogPostLists && next build && yarn next-sitemap --config next-sitemap.config.js",
     "start": "next start",
     "lint": "tsc && next lint",
     "fetch:scrapLists": "ts-node ./bin/fetchSidebarDataForNotes.ts",
@@ -42,6 +42,7 @@
     "gray-matter": "4.0.3",
     "markdown-to-jsx": "7.1.7",
     "microcms-js-sdk": "2.3.2",
+    "next-sitemap": "^3.1.43",
     "postcss": "8.4.19",
     "prettier": "2.7.1",
     "prettier-plugin-tailwindcss": "0.1.13",
