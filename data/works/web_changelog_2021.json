@@ -1,0 +1,374 @@
+[
+  {
+    "topic": true,
+    "title": "はじめに",
+    "url": "/web_changelog_2021",
+    "depth": 1
+  },
+  {
+    "topic": false,
+    "title": "本書で扱うこと",
+    "url": "/web_changelog_2021#本書で扱うこと",
+    "depth": 2
+  },
+  {
+    "topic": false,
+    "title": "本書で扱わないこと",
+    "url": "/web_changelog_2021#本書で扱わないこと",
+    "depth": 2
+  },
+  {
+    "topic": false,
+    "title": "対象読者と前提知識",
+    "url": "/web_changelog_2021#対象読者と前提知識",
+    "depth": 2
+  },
+  {
+    "topic": false,
+    "title": "問い合わせ先",
+    "url": "/web_changelog_2021#問い合わせ先",
+    "depth": 2
+  },
+  {
+    "topic": true,
+    "title": "開発ツール編",
+    "url": "",
+    "depth": 1
+  },
+  {
+    "topic": false,
+    "title": "port7777",
+    "url": "/web_changelog_2021/tools/port7777#port7777",
+    "depth": 2
+  },
+  {
+    "topic": false,
+    "title": "GitHub CLI",
+    "url": "/web_changelog_2021/tools/github_cli#github-cli",
+    "depth": 2
+  },
+  {
+    "topic": false,
+    "title": "GitHub Copilot",
+    "url": "/web_changelog_2021/tools/copilot#github-copilot",
+    "depth": 2
+  },
+  {
+    "topic": false,
+    "title": "GitHub Dev (VSCode Web) とGitHub Codespaces",
+    "url": "/web_changelog_2021/tools/github_dev#github-dev-vscode-web-と-github-codespaces",
+    "depth": 2
+  },
+  {
+    "topic": false,
+    "title": "Berry",
+    "url": "/web_changelog_2021/tools/berry#berry",
+    "depth": 2
+  },
+  {
+    "topic": false,
+    "title": "zx",
+    "url": "/web_changelog_2021/tools/zx#zx",
+    "depth": 2
+  },
+  {
+    "topic": false,
+    "title": "Chrome DevTools",
+    "url": "/web_changelog_2021/tools/chrome_dev_tools#chrome-devtools",
+    "depth": 2
+  },
+  {
+    "topic": true,
+    "title": "その他",
+    "url": "",
+    "depth": 2
+  },
+  {
+    "topic": false,
+    "title": "bun",
+    "url": "/web_changelog_2021/tools/other1#bun",
+    "depth": 3
+  },
+  {
+    "topic": false,
+    "title": "vite",
+    "url": "/web_changelog_2021/tools/other1#vite",
+    "depth": 3
+  },
+  {
+    "topic": false,
+    "title": "Docker Desktop",
+    "url": "/web_changelog_2021/tools/other1#docker-desktop",
+    "depth": 3
+  },
+  {
+    "topic": false,
+    "title": "Google Search Console Insights",
+    "url": "/web_changelog_2021/tools/other1#google-search-console-insights",
+    "depth": 3
+  },
+  {
+    "topic": false,
+    "title": "Diagram (Tricycle)",
+    "url": "/web_changelog_2021/tools/other1#diagram-tricycle",
+    "depth": 3
+  },
+  {
+    "topic": true,
+    "title": "サービス編",
+    "url": "",
+    "depth": 1
+  },
+  {
+    "topic": false,
+    "title": "PlanetScale",
+    "url": "/web_changelog_2021/services/planet_scale#planetscale",
+    "depth": 2
+  },
+  {
+    "topic": false,
+    "title": "Render",
+    "url": "/web_changelog_2021/services/render#render",
+    "depth": 2
+  },
+  {
+    "topic": false,
+    "title": "AWS App Runner",
+    "url": "/web_changelog_2021/services/app_runner#aws-app-runner",
+    "depth": 2
+  },
+  {
+    "topic": false,
+    "title": "Cloudflare Pages",
+    "url": "/web_changelog_2021/services/cloudflare_pages#cloudflare-pages",
+    "depth": 2
+  },
+  {
+    "topic": false,
+    "title": "Gatsby Cloud",
+    "url": "/web_changelog_2021/services/gatsby_cloud#gatsby-cloud",
+    "depth": 2
+  },
+  {
+    "topic": false,
+    "title": "Serverless Cloud",
+    "url": "/web_changelog_2021/services/serverless_cloud#serverless-cloud\"",
+    "depth": 2
+  },
+  {
+    "topic": false,
+    "title": "AWS re:Post",
+    "url": "/web_changelog_2021/services/aws_re_post#awsのqaサービス-aws-repost",
+    "depth": 2
+  },
+  {
+    "topic": true,
+    "title": "その他",
+    "url": "",
+    "depth": 2
+  },
+  {
+    "topic": false,
+    "title": "GitHub Package Container",
+    "url": "/web_changelog_2021/services/other1#github-package-container",
+    "depth": 3
+  },
+  {
+    "topic": false,
+    "title": "Deno Deploy",
+    "url": "/web_changelog_2021/services/other1#deno-deploy",
+    "depth": 3
+  },
+  {
+    "topic": false,
+    "title": "Apigee",
+    "url": "/web_changelog_2021/services/other1#apigee",
+    "depth": 3
+  },
+  {
+    "topic": false,
+    "title": "HeatWave",
+    "url": "/web_changelog_2021/services/other1#heatwave",
+    "depth": 3
+  },
+  {
+    "topic": false,
+    "title": "Amazon CloudFront Functions",
+    "url": "/web_changelog_2021/services/other1#amazon-cloudfront-functions",
+    "depth": 3
+  },
+  {
+    "topic": false,
+    "title": "Google Open Source",
+    "url": "/web_changelog_2021/services/other1#google-open-source",
+    "depth": 3
+  },
+  {
+    "topic": false,
+    "title": "ライブラリ編",
+    "url": "",
+    "depth": 1
+  },
+  {
+    "topic": false,
+    "title": "Partytown",
+    "url": "/web_changelog_2021/libraries/partytown#partytown",
+    "depth": 2
+  },
+  {
+    "topic": false,
+    "title": "SWR 1.0",
+    "url": "/web_changelog_2021/libraries/swr#swr-10",
+    "depth": 2
+  },
+  {
+    "topic": false,
+    "title": "React18",
+    "url": "/web_changelog_2021/libraries/react18#react18",
+    "depth": 2
+  },
+  {
+    "topic": true,
+    "title": "その他",
+    "url": "",
+    "depth": 2
+  },
+  {
+    "topic": false,
+    "title": "React GUI",
+    "url": "/web_changelog_2021/libraries/other1#react-gui",
+    "depth": 3
+  },
+  {
+    "topic": false,
+    "title": "Remotion",
+    "url": "/web_changelog_2021/libraries/other1#remotion",
+    "depth": 3
+  },
+  {
+    "topic": true,
+    "title": "フレームワーク編",
+    "url": "",
+    "depth": 1
+  },
+  {
+    "topic": false,
+    "title": "Remix",
+    "url": "/web_changelog_2021/frameworks/remix#remix",
+    "depth": 2
+  },
+  {
+    "topic": false,
+    "title": "Nuxt3",
+    "url": "/web_changelog_2021/frameworks/nuxt3#nuxt3",
+    "depth": 2
+  },
+  {
+    "topic": false,
+    "title": "Next.js12",
+    "url": "/web_changelog_2021/frameworks/next12#nextjs-12",
+    "depth": 2
+  },
+  {
+    "topic": false,
+    "title": "TailwindCSS3.x",
+    "url": "/web_changelog_2021/frameworks/tailwind#tailwindcss-v3x",
+    "depth": 2
+  },
+  {
+    "topic": true,
+    "title": "その他",
+    "url": "",
+    "depth": 2
+  },
+  {
+    "topic": false,
+    "title": "Shopify Hydrogen",
+    "url": "/web_changelog_2021/frameworks/other1#shopify-hydrogen",
+    "depth": 3
+  },
+  {
+    "topic": false,
+    "title": "rails 7.0",
+    "url": "/web_changelog_2021/frameworks/other1#rails-70",
+    "depth": 3
+  },
+  {
+    "topic": false,
+    "title": "refine",
+    "url": "/web_changelog_2021/frameworks/other1#refine",
+    "depth": 3
+  },
+  {
+    "topic": false,
+    "title": "StyleX",
+    "url": "/web_changelog_2021/frameworks/other1#stylex",
+    "depth": 3
+  },
+  {
+    "topic": true,
+    "title": "その他",
+    "url": "",
+    "depth": 1
+  },
+  {
+    "topic": false,
+    "title": "Pulumi",
+    "url": "/web_changelog_2021/others/pulumi#pulumi",
+    "depth": 2
+  },
+  {
+    "topic": false,
+    "title": "Chrome Extension Manifest V3",
+    "url": "/web_changelog_2021/others/chrome_extension#chrome-extension-manifest-v3",
+    "depth": 2
+  },
+  {
+    "topic": false,
+    "title": "ES2021",
+    "url": "/web_changelog_2021/others/es2021#es2021",
+    "depth": 2
+  },
+  {
+    "topic": false,
+    "title": "その他",
+    "url": "",
+    "depth": 2
+  },
+  {
+    "topic": false,
+    "title": "Wasmer",
+    "url": "/web_changelog_2021/others/others#wasmer",
+    "depth": 3
+  },
+  {
+    "topic": false,
+    "title": "Dapr",
+    "url": "/web_changelog_2021/others/others#dapr",
+    "depth": 3
+  },
+  {
+    "topic": false,
+    "title": "WebExtensions Community Group",
+    "url": "/web_changelog_2021/others/others#webextensions-community-group",
+    "depth": 3
+  },
+  {
+    "topic": false,
+    "title": "Open Web Docs",
+    "url": "/web_changelog_2021/others/others#open-web-docs",
+    "depth": 3
+  },
+  {
+    "topic": true,
+    "title": "情報収集に役立つリソース",
+    "url": "",
+    "depth": 1
+  },
+  {
+    "topic": false,
+    "title": "Google / Chrome / GitHub / AWS / その他",
+    "url": "/web_changelog_2021/references#情報収集に役立つリソース",
+    "depth": 2
+  }
+]
