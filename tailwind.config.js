@@ -5,7 +5,7 @@ module.exports = {
       sm: '300px',
       md: '600px',
       lg: '900px',
-      xl: '2000px',
+      xl: '1500px',
     },
     extend: {
       animation: {
