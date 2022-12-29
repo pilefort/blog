@@ -2,20 +2,25 @@ import React from 'react'
 
 import { GetStaticPropsContext, InferGetStaticPropsType, NextPage } from 'next'
 
-import { getAllContentPaths, getContentBySlug } from '../../libs/getContentsFromMdx'
+import { getAllContentPaths, getContentBySlug } from '../../../libs/getContentsFromMdx'
 
-import { Mdx } from '../../components/MdxComponent/Mdx'
+import { Mdx } from '../../../components/MdxComponent/Mdx'
+import TOCData from '../../../data/works/web_changelog_2022part1.json'
+import { WorksTOC } from '../../../components/WorksPage/WorksTOC'
 
 const NotesDetailsPage: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({ content }) => {
   return (
-    <div className="m-auto w-auto overflow-x-auto">
-      <Mdx>{content}</Mdx>
+    <div className={'flex'}>
+      <WorksTOC TOCData={TOCData} />
+      <div className="m-[32px] w-auto overflow-x-auto">
+        <Mdx>{content}</Mdx>
+      </div>
     </div>
   )
 }
 
 export const getStaticPaths = async () => {
-  const paths = await getAllContentPaths({ target: 'works', depth: 3 })
+  const paths = await getAllContentPaths({ target: 'works/web_changelog_2022part1', depth: 3 })
 
   return { paths, fallback: false }
 }
@@ -26,7 +31,7 @@ export const getStaticProps: ({ params }: GetStaticPropsContext<{ slug: string[]
   console.warn('params', params)
   if (!params?.slug) throw new Error('slug not found')
 
-  const contents = getContentBySlug('works/' + params.slug.join('/'), ['content'])
+  const contents = getContentBySlug('works/web_changelog_2022part1/' + params.slug.join('/'), ['content'])
   const { content } = contents
 
   return {
