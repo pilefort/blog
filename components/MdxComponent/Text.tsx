@@ -77,7 +77,7 @@ export const H3 = ({ children }: { children: string[] }) => {
   )
 }
 
-export const P = ({ children }: { children: string[] }) => <p className="my-[24px] text-h4 md:indent-7 md:text-h3">{children}</p>
+export const P = ({ children }: { children: string[] }) => <p className="my-[4px] text-h4 md:indent-7 md:text-h3">{children}</p>
 
 export const Span = ({ children }: { children: string[] }) => <span className="text-h4 md:text-h3">{children}</span>
 
