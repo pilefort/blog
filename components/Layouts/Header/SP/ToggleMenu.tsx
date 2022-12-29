@@ -4,7 +4,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
 
-import AccordionCloseIcon from '../../../../public/assets/AccordionClose.svg'
+import AccordionCloseIcon from '@public/assets/AccordionClose.svg'
 
 import { checkCurrentPathAndApplyStyles } from '../../../../libs/checkCurrentPathAndApplyStyles'
 

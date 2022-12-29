@@ -1,7 +1,7 @@
 import { useRouter } from 'next/router'
 import { useState } from 'react'
 import Image from 'next/image'
-import LinkIcon from '../../public/assets/Link.svg'
+import LinkIcon from '@public/assets/Link.svg'
 import Link from 'next/link'
 
 const formattedId = (id: string) => {
