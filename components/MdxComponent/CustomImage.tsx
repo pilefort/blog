@@ -40,8 +40,8 @@ export const CustomImage = (props: ImagePropsType) => {
         <Image
           alt={props.alt}
           src={src}
-          width={props.width}
-          height={props.height}
+          width={props.width ? props.width : 500}
+          height={props.height ? props.height : 500}
           loading="lazy"
           decoding="async"
           className={`${isImageLoaded ? 'blur-none' : 'blur-sm'}`}
