@@ -1,9 +1,9 @@
 ## SWR 1.0
-　SWRはNext.jsで有名なVercelが提供しているReact Hooksライブラリで、fetchやaxios, graphql-requestなどのデータを返す非同期関数と併用し、フロントで取得したデータを再利用可能な形にできるものです[^swr]。
+SWRはNext.jsで有名なVercelが提供しているReact Hooksライブラリで、fetchやaxios, graphql-requestなどのデータを返す非同期関数と併用し、フロントで取得したデータを再利用可能な形にできるものです[^swr]。
 
-　SWRはstale-while-revalidateの頭文字を取って名付けられており、キャッシュからデータを返し (stale)、次にフェッチリクエストを送り (revalidate)、最後に最新のデータを取ってくるというのを基本戦略としています。そのため、キャッシュの扱いやリクエストの実行タイミングに関してよく考えられています。
+SWRはstale-while-revalidateの頭文字を取って名付けられており、キャッシュからデータを返し (stale)、次にフェッチリクエストを送り (revalidate)、最後に最新のデータを取ってくるというのを基本戦略としています。そのため、キャッシュの扱いやリクエストの実行タイミングに関してよく考えられています。
 
-　SWRは以下のような形式で扱うことができます。まずfetcherとして、SWRと併用したいデータフェッチライブラリの設定をします。次にuseSWRを使って、レスポンス先とfetcherを指定し、その返り値としてdataとerrorを取るようにして使います。リクエストが返るまでの間はdataとerrorはundefinedになり、値が返るとdataに、エラーが返されるとerrorに値が入ります。
+SWRは以下のような形式で扱うことができます。まずfetcherとして、SWRと併用したいデータフェッチライブラリの設定をします。次にuseSWRを使って、レスポンス先とfetcherを指定し、その返り値としてdataとerrorを取るようにして使います。リクエストが返るまでの間はdataとerrorはundefinedになり、値が返るとdataに、エラーが返されるとerrorに値が入ります。
 
 ```tsx
 import React from "react";
@@ -33,9 +33,9 @@ export default function App() {
 }
 ```
 
-　SWRでは以下のようなコンポーネントを作っておくと、他の場所でもリクエスト結果を使い回すことができます。複数のコンポーネントで使うと、使いまわした回数だけリクエストが実行されそうですが、SWRではキャッシュを使い、リクエストを1度だけしか実行しないようです (フェッチリクエストの動きを把握してないため、少し濁して説明してます)。
+SWRでは以下のようなコンポーネントを作っておくと、他の場所でもリクエスト結果を使い回すことができます。複数のコンポーネントで使うと、使いまわした回数だけリクエストが実行されそうですが、SWRではキャッシュを使い、リクエストを1度だけしか実行しないようです (フェッチリクエストの動きを把握してないため、少し濁して説明してます)。
 
-　また、デフォルトで「ページにフォーカスが当たる」「タブを切り替える」「ネットワークがオフラインからオンラインに回復する」ときにデータの再検証をしてくれるそうです[^swr_revalidation]。
+また、デフォルトで「ページにフォーカスが当たる」「タブを切り替える」「ネットワークがオフラインからオンラインに回復する」ときにデータの再検証をしてくれるそうです[^swr_revalidation]。
 
 ```tsx
 function useUser (id) {
@@ -55,13 +55,13 @@ function Avatar ({ id }) {
 }
 ```
 
-　ちなみにデータを再検証するタイミングも制御でき、定期的に実行したい場合はrefreshInterval, ウィンドウが非表示のときにポーリングしたいならrefreshWhenHidden, ネットワークがオフラインのときにポーリングしたいならrefreshWhenOfflineなどのオプションを付けて制御できるそうです[^swr_revalidation_offline]。
+ちなみにデータを再検証するタイミングも制御でき、定期的に実行したい場合はrefreshInterval, ウィンドウが非表示のときにポーリングしたいならrefreshWhenHidden, ネットワークがオフラインのときにポーリングしたいならrefreshWhenOfflineなどのオプションを付けて制御できるそうです[^swr_revalidation_offline]。
 
 ```tsx
 useSWR('/api/todos', fetcher, { refreshInterval: 1000 })
 ```
 
-　また、useSWRImmutableを使うことで、1度しかリクエスト結果を検証しないように使うこともできます[^swr_revalidation_immutable]。
+また、useSWRImmutableを使うことで、1度しかリクエスト結果を検証しないように使うこともできます[^swr_revalidation_immutable]。
 
 ```tsx
 import useSWRImmutable from 'swr/immutable'
@@ -70,7 +70,8 @@ import useSWRImmutable from 'swr/immutable'
 useSWRImmutable(key, fetcher, options)
 ```
 
-　レスポンスでエラーが返ってきたときのデータの再取得方法も指定でき、再試行しないステータスや試行回数、試行間隔なども指定できます[^swr_error_handling]。
+レスポンスでエラーが返ってきたときのデータの再取得方法も指定でき、再試行しないステータスや試行回数、試行間隔なども指定できます[^swr_error_handling]。
+
 ```tsx
 useSWR('/api/user', fetcher, {
   onErrorRetry: (error, key, config, revalidate, { retryCount }) => {

@@ -1,10 +1,10 @@
 ## Nuxt3
-　Nuxt3はVue3.xが使えるVueのフレームワークです。Vue3.xではdata, computed, mounted,  methodなどをsetup関数内で書けるようになったComposition API[^composition_api]や複数のルートノード (template) が使えるFragments[^nuxt3_fragments], モーダルの作成に便利なTeleport[^nuxt3_teleport]などが使えるようになりました。その他の新機能についてはこちら[^nuxt3_features]で確認できます。
+Nuxt3はVue3.xが使えるVueのフレームワークです。Vue3.xではdata, computed, mounted,  methodなどをsetup関数内で書けるようになったComposition API[^composition_api]や複数のルートノード (template) が使えるFragments[^nuxt3_fragments], モーダルの作成に便利なTeleport[^nuxt3_teleport]などが使えるようになりました。その他の新機能についてはこちら[^nuxt3_features]で確認できます。
 
-　以下ではNuxt3になってできるようになった機能について説明します。
+以下ではNuxt3になってできるようになった機能について説明します。
 
 ### TypeScript
-　Nuxt3からはデフォルトでTypeScriptが使えるようになりました[^nuxt3_ts]。StoreやPlugin周りのだけでなく、Vueファイル内でも`<script lang="ts">`を指定することでTypeScriptを使うことができます。設定ファイルで以下を追記することで、型をより安全にできます。
+Nuxt3からはデフォルトでTypeScriptが使えるようになりました[^nuxt3_ts]。StoreやPlugin周りのだけでなく、Vueファイル内でも`<script lang="ts">`を指定することでTypeScriptを使うことができます。設定ファイルで以下を追記することで、型をより安全にできます。
 
 ```javascript
 export default defineNuxtConfig({
@@ -15,7 +15,7 @@ export default defineNuxtConfig({
 ```
 
 ### APIのサポート
-　Nuxt3からはNextjsのようなAPIを作れるようになりました。ルートディレクトリにserver/api/xxx.tsファイルを作成し、関数をexportすることで利用できます。すべてのリクエストで実行したい処理があるときは、server/middleware/xxx.tsファイルを作成することで処理できます。
+Nuxt3からはNextjsのようなAPIを作れるようになりました。ルートディレクトリにserver/api/xxx.tsファイルを作成し、関数をexportすることで利用できます。すべてのリクエストで実行したい処理があるときは、server/middleware/xxx.tsファイルを作成することで処理できます。
 
 ```tsx
 // ~/server/api/count.ts
@@ -32,7 +32,7 @@ $ curl localhost:3000/api/count
 ```
 
 ### CDN Edge上でのSSR
-　Nuxt3は設定ファイルにデプロイ形式を指定でき、AWS LambdaやCloudflare Worker上に簡単にデプロイできるようになりました。以前まではExpress上にNuxtを起動できないと無理だった部分が、Nuxtだけでできるようになりました[^nuxt3_preset]。
+Nuxt3は設定ファイルにデプロイ形式を指定でき、AWS LambdaやCloudflare Worker上に簡単にデプロイできるようになりました。以前まではExpress上にNuxtを起動できないと無理だった部分が、Nuxtだけでできるようになりました[^nuxt3_preset]。
 
 ```tsx
 // AWS Lambda, Netlify Function用にビルドしたいとき
@@ -54,7 +54,7 @@ export default defineNuxtConfig({
 ```
 
 ### Nuxt2から3への緩やかな移行を支援する Nuxt Bridge
-　Nuxt3では従来のプラグインやモジュールを引き継いで動かすことができるそうです。Nuxt2でVue3.xのComposition APIを有効にしたり、Nuxt3の新しいサーバーエンジンであるNitroを試したりできるそうです[^nuxt3_bridge]。
+Nuxt3では従来のプラグインやモジュールを引き継いで動かすことができるそうです。Nuxt2でVue3.xのComposition APIを有効にしたり、Nuxt3の新しいサーバーエンジンであるNitroを試したりできるそうです[^nuxt3_bridge]。
 
 ```tsx
 // nuxt/bridgeをインストールして、nuxt.config.js で設定して使う
@@ -67,7 +67,7 @@ export default defineNuxtConfig({
 ```
 
 ### 今後の展開
-　GitHubのリポジトリのDiscussionにて、パスごとにビルド方式を変える機能が議論されています[^nuxt3_path_build]。ホスティングサービスにデプロイしたとして、どうやって動かすかは分かりませんが、個人的に面白い機能だと感じました。
+GitHubのリポジトリのDiscussionにて、パスごとにビルド方式を変える機能が議論されています[^nuxt3_path_build]。ホスティングサービスにデプロイしたとして、どうやって動かすかは分かりませんが、個人的に面白い機能だと感じました。
 
 ```tsx
 export default defineNuxtConfig({

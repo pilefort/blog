@@ -1,10 +1,9 @@
 ## Astro
-　AstroはDeno Freshと同じIsland Architectureを採用したフルスタックフレームワークです[^astro]。UI部分に使える言語はPreactだけでなく、React, Vue, Svelte, Solid, LitやAstroの独自言語も利用できます[^astro_support_lang]。 またデプロイ先もDenoだけでなく、AWSやVercel、GitHub Pagesなどにもデプロイできます[^astro_deploy]。
+AstroはDeno Freshと同じIsland Architectureを採用したフルスタックフレームワークです[^astro]。UI部分に使える言語はPreactだけでなく、React, Vue, Svelte, Solid, LitやAstroの独自言語も利用できます[^astro_support_lang]。 またデプロイ先もDenoだけでなく、AWSやVercel、GitHub Pagesなどにもデプロイできます[^astro_deploy]。
 
-　Astroではclientディレクティブをコンポーネントに指定することでHydrateできるようになります。
+Astroではclientディレクティブをコンポーネントに指定することでHydrateできるようになります。
 
-```html
-// src/pages/index.astro
+```html:src/pages/index.astro
 ---
 // Example: hydrating framework components in the browser.
 import InteractiveButton from '../components/InteractiveButton.jsx';

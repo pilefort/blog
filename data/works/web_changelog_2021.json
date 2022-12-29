@@ -2,31 +2,31 @@
   {
     "topic": true,
     "title": "はじめに",
-    "url": "/web_changelog_2021",
+    "url": "",
     "depth": 1
   },
   {
     "topic": false,
     "title": "本書で扱うこと",
-    "url": "/web_changelog_2021#本書で扱うこと",
+    "url": "/works/web_changelog_2021/preface#本書で扱うこと",
     "depth": 2
   },
   {
     "topic": false,
     "title": "本書で扱わないこと",
-    "url": "/web_changelog_2021#本書で扱わないこと",
+    "url": "/works/web_changelog_2021/preface#本書で扱わないこと",
     "depth": 2
   },
   {
     "topic": false,
     "title": "対象読者と前提知識",
-    "url": "/web_changelog_2021#対象読者と前提知識",
+    "url": "/works/web_changelog_2021/preface#対象読者と前提知識",
     "depth": 2
   },
   {
     "topic": false,
     "title": "問い合わせ先",
-    "url": "/web_changelog_2021#問い合わせ先",
+    "url": "/works/web_changelog_2021/preface#問い合わせ先",
     "depth": 2
   },
   {
@@ -38,43 +38,43 @@
   {
     "topic": false,
     "title": "port7777",
-    "url": "/web_changelog_2021/tools/port7777#port7777",
+    "url": "/works/web_changelog_2021/tools/port7777",
     "depth": 2
   },
   {
     "topic": false,
     "title": "GitHub CLI",
-    "url": "/web_changelog_2021/tools/github_cli#github-cli",
+    "url": "/works/web_changelog_2021/tools/github_cli",
     "depth": 2
   },
   {
     "topic": false,
     "title": "GitHub Copilot",
-    "url": "/web_changelog_2021/tools/copilot#github-copilot",
+    "url": "/works/web_changelog_2021/tools/copilot",
     "depth": 2
   },
   {
     "topic": false,
     "title": "GitHub Dev (VSCode Web) とGitHub Codespaces",
-    "url": "/web_changelog_2021/tools/github_dev#github-dev-vscode-web-と-github-codespaces",
+    "url": "/works/web_changelog_2021/tools/github_dev",
     "depth": 2
   },
   {
     "topic": false,
     "title": "Berry",
-    "url": "/web_changelog_2021/tools/berry#berry",
+    "url": "/works/web_changelog_2021/tools/berry",
     "depth": 2
   },
   {
     "topic": false,
     "title": "zx",
-    "url": "/web_changelog_2021/tools/zx#zx",
+    "url": "/works/web_changelog_2021/tools/zx",
     "depth": 2
   },
   {
     "topic": false,
     "title": "Chrome DevTools",
-    "url": "/web_changelog_2021/tools/chrome_dev_tools#chrome-devtools",
+    "url": "/works/web_changelog_2021/tools/chrome_dev_tools",
     "depth": 2
   },
   {
@@ -86,31 +86,31 @@
   {
     "topic": false,
     "title": "bun",
-    "url": "/web_changelog_2021/tools/other1#bun",
+    "url": "/works/web_changelog_2021/tools/others#bun",
     "depth": 3
   },
   {
     "topic": false,
     "title": "vite",
-    "url": "/web_changelog_2021/tools/other1#vite",
+    "url": "/works/web_changelog_2021/tools/others#vite",
     "depth": 3
   },
   {
     "topic": false,
     "title": "Docker Desktop",
-    "url": "/web_changelog_2021/tools/other1#docker-desktop",
+    "url": "/works/web_changelog_2021/tools/others#docker-desktop",
     "depth": 3
   },
   {
     "topic": false,
     "title": "Google Search Console Insights",
-    "url": "/web_changelog_2021/tools/other1#google-search-console-insights",
+    "url": "/works/web_changelog_2021/tools/others#google-search-console-insights",
     "depth": 3
   },
   {
     "topic": false,
     "title": "Diagram (Tricycle)",
-    "url": "/web_changelog_2021/tools/other1#diagram-tricycle",
+    "url": "/works/web_changelog_2021/tools/others#diagram-(tricycle)",
     "depth": 3
   },
   {
@@ -122,43 +122,43 @@
   {
     "topic": false,
     "title": "PlanetScale",
-    "url": "/web_changelog_2021/services/planet_scale#planetscale",
+    "url": "/works/web_changelog_2021/services/planet_scale",
     "depth": 2
   },
   {
     "topic": false,
     "title": "Render",
-    "url": "/web_changelog_2021/services/render#render",
+    "url": "/works/web_changelog_2021/services/render",
     "depth": 2
   },
   {
     "topic": false,
     "title": "AWS App Runner",
-    "url": "/web_changelog_2021/services/app_runner#aws-app-runner",
+    "url": "/works/web_changelog_2021/services/app_runner",
     "depth": 2
   },
   {
     "topic": false,
     "title": "Cloudflare Pages",
-    "url": "/web_changelog_2021/services/cloudflare_pages#cloudflare-pages",
+    "url": "/works/web_changelog_2021/services/cloudflare_pages",
     "depth": 2
   },
   {
     "topic": false,
     "title": "Gatsby Cloud",
-    "url": "/web_changelog_2021/services/gatsby_cloud#gatsby-cloud",
+    "url": "/works/web_changelog_2021/services/gatsby_cloud",
     "depth": 2
   },
   {
     "topic": false,
     "title": "Serverless Cloud",
-    "url": "/web_changelog_2021/services/serverless_cloud#serverless-cloud\"",
+    "url": "/works/web_changelog_2021/services/serverless_cloud",
     "depth": 2
   },
   {
     "topic": false,
     "title": "AWS re:Post",
-    "url": "/web_changelog_2021/services/aws_re_post#awsのqaサービス-aws-repost",
+    "url": "/works/web_changelog_2021/services/aws_re_post",
     "depth": 2
   },
   {
@@ -170,41 +170,41 @@
   {
     "topic": false,
     "title": "GitHub Package Container",
-    "url": "/web_changelog_2021/services/other1#github-package-container",
+    "url": "/works/web_changelog_2021/services/others#github-package-container",
     "depth": 3
   },
   {
     "topic": false,
     "title": "Deno Deploy",
-    "url": "/web_changelog_2021/services/other1#deno-deploy",
+    "url": "/works/web_changelog_2021/services/others#deno-deploy",
     "depth": 3
   },
   {
     "topic": false,
     "title": "Apigee",
-    "url": "/web_changelog_2021/services/other1#apigee",
+    "url": "/works/web_changelog_2021/services/others#apigee",
     "depth": 3
   },
   {
     "topic": false,
     "title": "HeatWave",
-    "url": "/web_changelog_2021/services/other1#heatwave",
+    "url": "/works/web_changelog_2021/services/others#heatwave",
     "depth": 3
   },
   {
     "topic": false,
     "title": "Amazon CloudFront Functions",
-    "url": "/web_changelog_2021/services/other1#amazon-cloudfront-functions",
+    "url": "/works/web_changelog_2021/services/others#amazon-cloudfront-functions",
     "depth": 3
   },
   {
     "topic": false,
     "title": "Google Open Source",
-    "url": "/web_changelog_2021/services/other1#google-open-source",
+    "url": "/works/web_changelog_2021/services/others#google-open-source",
     "depth": 3
   },
   {
-    "topic": false,
+    "topic": true,
     "title": "ライブラリ編",
     "url": "",
     "depth": 1
@@ -212,19 +212,19 @@
   {
     "topic": false,
     "title": "Partytown",
-    "url": "/web_changelog_2021/libraries/partytown#partytown",
+    "url": "/works/web_changelog_2021/libraries/partytown",
     "depth": 2
   },
   {
     "topic": false,
     "title": "SWR 1.0",
-    "url": "/web_changelog_2021/libraries/swr#swr-10",
+    "url": "/works/web_changelog_2021/libraries/swr",
     "depth": 2
   },
   {
     "topic": false,
     "title": "React18",
-    "url": "/web_changelog_2021/libraries/react18#react18",
+    "url": "/works/web_changelog_2021/libraries/react18",
     "depth": 2
   },
   {
@@ -236,13 +236,13 @@
   {
     "topic": false,
     "title": "React GUI",
-    "url": "/web_changelog_2021/libraries/other1#react-gui",
+    "url": "/works/web_changelog_2021/libraries/others#react-gui",
     "depth": 3
   },
   {
     "topic": false,
     "title": "Remotion",
-    "url": "/web_changelog_2021/libraries/other1#remotion",
+    "url": "/works/web_changelog_2021/libraries/others#remotion",
     "depth": 3
   },
   {
@@ -254,25 +254,25 @@
   {
     "topic": false,
     "title": "Remix",
-    "url": "/web_changelog_2021/frameworks/remix#remix",
+    "url": "/works/web_changelog_2021/frameworks/remix",
     "depth": 2
   },
   {
     "topic": false,
     "title": "Nuxt3",
-    "url": "/web_changelog_2021/frameworks/nuxt3#nuxt3",
+    "url": "/works/web_changelog_2021/frameworks/nuxt3",
     "depth": 2
   },
   {
     "topic": false,
     "title": "Next.js12",
-    "url": "/web_changelog_2021/frameworks/next12#nextjs-12",
+    "url": "/works/web_changelog_2021/frameworks/next12",
     "depth": 2
   },
   {
     "topic": false,
     "title": "TailwindCSS3.x",
-    "url": "/web_changelog_2021/frameworks/tailwind#tailwindcss-v3x",
+    "url": "/works/web_changelog_2021/frameworks/tailwind",
     "depth": 2
   },
   {
@@ -284,25 +284,25 @@
   {
     "topic": false,
     "title": "Shopify Hydrogen",
-    "url": "/web_changelog_2021/frameworks/other1#shopify-hydrogen",
+    "url": "/works/web_changelog_2021/frameworks/others#shopify-hydrogen",
     "depth": 3
   },
   {
     "topic": false,
     "title": "rails 7.0",
-    "url": "/web_changelog_2021/frameworks/other1#rails-70",
+    "url": "/works/web_changelog_2021/frameworks/others#rails-7.0",
     "depth": 3
   },
   {
     "topic": false,
     "title": "refine",
-    "url": "/web_changelog_2021/frameworks/other1#refine",
+    "url": "/works/web_changelog_2021/frameworks/others#refine",
     "depth": 3
   },
   {
     "topic": false,
     "title": "StyleX",
-    "url": "/web_changelog_2021/frameworks/other1#stylex",
+    "url": "/works/web_changelog_2021/frameworks/others#stylex",
     "depth": 3
   },
   {
@@ -314,23 +314,23 @@
   {
     "topic": false,
     "title": "Pulumi",
-    "url": "/web_changelog_2021/others/pulumi#pulumi",
+    "url": "/works/web_changelog_2021/others/pulumi",
     "depth": 2
   },
   {
     "topic": false,
     "title": "Chrome Extension Manifest V3",
-    "url": "/web_changelog_2021/others/chrome_extension#chrome-extension-manifest-v3",
+    "url": "/works/web_changelog_2021/others/chrome_extension",
     "depth": 2
   },
   {
     "topic": false,
     "title": "ES2021",
-    "url": "/web_changelog_2021/others/es2021#es2021",
+    "url": "/works/web_changelog_2021/others/es2021",
     "depth": 2
   },
   {
-    "topic": false,
+    "topic": true,
     "title": "その他",
     "url": "",
     "depth": 2
@@ -338,25 +338,25 @@
   {
     "topic": false,
     "title": "Wasmer",
-    "url": "/web_changelog_2021/others/others#wasmer",
+    "url": "/works/web_changelog_2021/others/others#wasmer",
     "depth": 3
   },
   {
     "topic": false,
     "title": "Dapr",
-    "url": "/web_changelog_2021/others/others#dapr",
+    "url": "/works/web_changelog_2021/others/others#dapr",
     "depth": 3
   },
   {
     "topic": false,
     "title": "WebExtensions Community Group",
-    "url": "/web_changelog_2021/others/others#webextensions-community-group",
+    "url": "/works/web_changelog_2021/others/others#webextensions-community-group",
     "depth": 3
   },
   {
     "topic": false,
     "title": "Open Web Docs",
-    "url": "/web_changelog_2021/others/others#open-web-docs",
+    "url": "/works/web_changelog_2021/others/others#open-web-docs",
     "depth": 3
   },
   {
@@ -368,7 +368,7 @@
   {
     "topic": false,
     "title": "Google / Chrome / GitHub / AWS / その他",
-    "url": "/web_changelog_2021/references#情報収集に役立つリソース",
+    "url": "/works/web_changelog_2021/references#情報収集に役立つリソース",
     "depth": 2
   }
 ]

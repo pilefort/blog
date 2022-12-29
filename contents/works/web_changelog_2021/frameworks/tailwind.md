@@ -1,5 +1,5 @@
 ## TailwindCSS v3.x
-　TailwindCSSはutility-firstを掲げており、必要最低限のスタイルを持ったクラスを組み合わせることで、デザインを構築することを目的としたCSSフレームワークです[^tailwindcss]。従来だと以下のような書き方をしていた部分が、TailwindCSSではいくつかのクラスを組み合わせて構築します。
+TailwindCSSはutility-firstを掲げており、必要最低限のスタイルを持ったクラスを組み合わせることで、デザインを構築することを目的としたCSSフレームワークです[^tailwindcss]。従来だと以下のような書き方をしていた部分が、TailwindCSSではいくつかのクラスを組み合わせて構築します。
 
 ```html
 <!-- 従来の方法 -->
@@ -60,17 +60,17 @@
 </div>
 ```
 
-　やり方としてはインラインでCSSを記述するやり方 (`style="xxx: yyy"`と書くやり方) と同じですが、TailwindCSSで書くとレスポンシブデザインや擬似クラスにも対応できます。
+やり方としてはインラインでCSSを記述するやり方 (`style="xxx: yyy"`と書くやり方) と同じですが、TailwindCSSで書くとレスポンシブデザインや擬似クラスにも対応できます。
 
-　必要最低限のクラスがたくさんあるものがTailwindCSSだとすると、パッケージサイズが大きくなる心配があるかもしれませんが、v3.x以前ではpurgeCSSを使って未使用のCSSをビルド時に削除する仕組みがありました。また、v3.xからは使用しているCSSのみをビルドするJITコンパイルが追加され、purgeCSSが削除されました。
+必要最低限のクラスがたくさんあるものがTailwindCSSだとすると、パッケージサイズが大きくなる心配があるかもしれませんが、v3.x以前ではpurgeCSSを使って未使用のCSSをビルド時に削除する仕組みがありました。また、v3.xからは使用しているCSSのみをビルドするJITコンパイルが追加され、purgeCSSが削除されました。
 
 ### JITコンパイル
-　これはテンプレートファイルを作成したときに、CSSをオンデマンドでコンパイルする仕組みです。これを利用することで、必要に応じてスタイルを生成するようになりました。このおかげで、開発環境であっても必要最低限のCSSを利用できるようになり、開発環境と本番環境のCSSが同一になりました (以前はビルド時に未使用のCSSを削除する関係上、開発環境は余分なCSSを持った状態でした)。
+これはテンプレートファイルを作成したときに、CSSをオンデマンドでコンパイルする仕組みです。これを利用することで、必要に応じてスタイルを生成するようになりました。このおかげで、開発環境であっても必要最低限のCSSを利用できるようになり、開発環境と本番環境のCSSが同一になりました (以前はビルド時に未使用のCSSを削除する関係上、開発環境は余分なCSSを持った状態でした)。
 
-　より詳細な内容はこちらのブログ[^tailwind_jit]やGitHubのリポジトリ[^tailwind_jid2]から確認できます。
+より詳細な内容はこちらのブログ[^tailwind_jit]やGitHubのリポジトリ[^tailwind_jid2]から確認できます。
 
 ### 設定ファイルにContent Configuration追加
-　JITコンパイルを採用したことで、contentセクションでTailwindCSSを適用させたいファイルを指定するようになりました。この部分が古いTailwindCSSの記事とズレる部分なので注意が必要です。
+JITコンパイルを採用したことで、contentセクションでTailwindCSSを適用させたいファイルを指定するようになりました。この部分が古いTailwindCSSの記事とズレる部分なので注意が必要です。
 
 ```javascript
 module.exports = {
@@ -83,9 +83,9 @@ module.exports = {
 ```
 
 ### カスタムスタイル
-　TailwindCSS 3.xまでは決められたフォントサイズや色しか使うことができませんでした。これは余分にクラスを追加すると、開発環境での動作が重くなるためです。3.x以降はJITコンパイルを利用するため、好きなフォントサイズや色、幅などを指定できるようになりました。
+TailwindCSS 3.xまでは決められたフォントサイズや色しか使うことができませんでした。これは余分にクラスを追加すると、開発環境での動作が重くなるためです。3.x以降はJITコンパイルを利用するため、好きなフォントサイズや色、幅などを指定できるようになりました。
 
- 　`[]`を使って以下のように指定することで、任意の値を使うことができます。
+`[]`を使って以下のように指定することで、任意の値を使うことができます。
 
 ```html
 <div class="h-[50px] bg-[#06395A]">
@@ -94,14 +94,14 @@ module.exports = {
 ```
 
 ### CDN経由での実行
-　3.xからTailwindCSSをCDN経由で実行できるようになりました。headに下記のスクリプトタグを追加することで試すことができます。これは開発や新機能のテスト向けで、本番での利用は推奨されてません[^tailwind_cdn]。
+3.xからTailwindCSSをCDN経由で実行できるようになりました。headに下記のスクリプトタグを追加することで試すことができます。これは開発や新機能のテスト向けで、本番での利用は推奨されてません[^tailwind_cdn]。
 
 ```html
 <script src="https://cdn.tailwindcss.com"></script>
 ```
 
 ### フォームの装飾
-　デフォルトのファイル入力フォームを装飾できるようになりました。`file-<適用したいスタイル>` で使います[^tailwind_input_button]。
+デフォルトのファイル入力フォームを装飾できるようになりました。`file-<適用したいスタイル>` で使います[^tailwind_input_button]。
 
 ```html
 <form>
@@ -121,12 +121,12 @@ module.exports = {
 ```
 
 <figure>
-  <img src='/images/web_changelog_2021/tailwindcss/form.png' width='350' alt='入力フォーム装飾の例' />
+  <img src='/images/web_changelog_2021/tailwindcss/form.png' width='350' height="350" alt='入力フォーム装飾の例' />
   <figcaption>入力フォーム装飾の例</figcaption>
 </figure>
 
 ### その他
-　その他にも色付きの影[^tailwind_box_shadow]やスクロールスナップAPI[^scroll_margin], マルチカラムレイアウト[^multi_column_layout]などがあります。開発時のCSSのサイズを気にしなくて良くなったので、今後も面白いクラスが追加されていきそうで今後も期待です。
+その他にも色付きの影[^tailwind_box_shadow]やスクロールスナップAPI[^scroll_margin], マルチカラムレイアウト[^multi_column_layout]などがあります。開発時のCSSのサイズを気にしなくて良くなったので、今後も面白いクラスが追加されていきそうで今後も期待です。
 
 [^tailwindcss]: [https://tailwindcss.com/](https://tailwindcss.com/)
 [^tailwind_jit]: [https://tailwindcss.com/blog/just-in-time-the-next-generation-of-tailwind-css](https://tailwindcss.com/blog/just-in-time-the-next-generation-of-tailwind-css)

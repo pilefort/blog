@@ -1,0 +1,356 @@
+[
+  {
+    "topic": true,
+    "title": "はじめに",
+    "url": "",
+    "depth": 1
+  },
+  {
+    "topic": false,
+    "title": "本書で扱うこと",
+    "url": "/works/web_changelog_2022part1/preface#本書で扱うこと",
+    "depth": 2
+  },
+  {
+    "topic": false,
+    "title": "問い合わせ先",
+    "url": "/works/web_changelog_2022part1/preface#問い合わせ先",
+    "depth": 2
+  },
+  {
+    "topic": true,
+    "title": "WebAssembly編",
+    "url": "",
+    "depth": 1
+  },
+  {
+    "topic": false,
+    "title": "WAPMアップデート",
+    "url": "/works/web_changelog_2022part1/webassembly/wapm",
+    "depth": 2
+  },
+  {
+    "topic": false,
+    "title": "PyScript",
+    "url": "/works/web_changelog_2022part1/webassembly/pyscript",
+    "depth": 2
+  },
+  {
+    "topic": false,
+    "title": "ブラウザでLinuxを動かせるサイト登場",
+    "url": "/works/web_changelog_2022part1/webassembly/linux",
+    "depth": 2
+  },
+  {
+    "topic": true,
+    "title": "開発ツール編",
+    "url": "",
+    "depth": 1
+  },
+  {
+    "topic": false,
+    "title": "LocalStack",
+    "url": "/works/web_changelog_2022part1/tools/local_stack",
+    "depth": 2
+  },
+  {
+    "topic": false,
+    "title": "Git 2.35 zdiff3",
+    "url": "/works/web_changelog_2022part1/tools/git",
+    "depth": 2
+  },
+  {
+    "topic": false,
+    "title": "GitHub Copilot",
+    "url": "/works/web_changelog_2022part1/tools/copilot#github-copilot",
+    "depth": 2
+  },
+  {
+    "topic": false,
+    "title": "GitHub Copilot Labs",
+    "url": "/works/web_changelog_2022part1/tools/copilot#github-copilot-labs",
+    "depth": 2
+  },
+  {
+    "topic": false,
+    "title": "Amazon CodeWhisperer",
+    "url": "/works/web_changelog_2022part1/tools/copilot#amazon-codewhisperer",
+    "depth": 2
+  },
+  {
+    "topic": false,
+    "title": "Chrome DevTools",
+    "url": "/works/web_changelog_2022part1/tools/chrome",
+    "depth": 2
+  },
+  {
+    "topic": true,
+    "title": "その他",
+    "url": "",
+    "depth": 2
+  },
+  {
+    "topic": false,
+    "title": "Rome Formatter",
+    "url": "/works/web_changelog_2022part1/tools/others#rome-formatter",
+    "depth": 3
+  },
+  {
+    "topic": false,
+    "title": "Jest Preview",
+    "url": "/works/web_changelog_2022part1/tools/others#jest-preview",
+    "depth": 3
+  },
+  {
+    "topic": false,
+    "title": "Alfred5",
+    "url": "/works/web_changelog_2022part1/tools/others#alfred5",
+    "depth": 3
+  },
+  {
+    "topic": false,
+    "title": "VSCode Server",
+    "url": "/works/web_changelog_2022part1/tools/vscode_server",
+    "depth": 3
+  },
+  {
+    "topic": false,
+    "title": "CDK for Terraform",
+    "url": "/works/web_changelog_2022part1/tools/cdk_for_terraform",
+    "depth": 3
+  },
+  {
+    "topic": false,
+    "title": "Infracost VSCode拡張",
+    "url": "/works/web_changelog_2022part1/tools/infracost_vscode",
+    "depth": 3
+  },
+  {
+    "topic": true,
+    "title": "フレームワーク編",
+    "url": "",
+    "depth": 1
+  },
+  {
+    "topic": false,
+    "title": "tauri",
+    "url": "/works/web_changelog_2022part1/frameworks/tauri",
+    "depth": 2
+  },
+  {
+    "topic": false,
+    "title": "Plasmo",
+    "url": "/works/web_changelog_2022part1/frameworks/plasmo",
+    "depth": 2
+  },
+  {
+    "topic": false,
+    "title": "Deno Fresh",
+    "url": "/works/web_changelog_2022part1/frameworks/deno_fresh",
+    "depth": 2
+  },
+  {
+    "topic": false,
+    "title": "Astro",
+    "url": "/works/web_changelog_2022part1/frameworks/astro",
+    "depth": 2
+  },
+  {
+    "topic": true,
+    "title": "その他",
+    "url": "",
+    "depth": 2
+  },
+  {
+    "topic": false,
+    "title": "Aleph.js",
+    "url": "/works/web_changelog_2022part1/frameworks/others#alephjs",
+    "depth": 3
+  },
+  {
+    "topic": false,
+    "title": "Lexical",
+    "url": "/works/web_changelog_2022part1/frameworks/others#lexical",
+    "depth": 3
+  },
+  {
+    "topic": false,
+    "title": "Serverless Framework v3",
+    "url": "/works/web_changelog_2022part1/frameworks/serverless_v3",
+    "depth": 3
+  },
+  {
+    "topic": false,
+    "title": "Remix Stacks",
+    "url": "/works/web_changelog_2022part1/frameworks/remix_stacks",
+    "depth": 3
+  },
+  {
+    "topic": true,
+    "title": "サービス編",
+    "url": "",
+    "depth": 1
+  },
+  {
+    "topic": false,
+    "title": "Cloudflare R2",
+    "url": "/works/web_changelog_2022part1/services/cloudflare_r2_and_d1#cloudflare-r2",
+    "depth": 2
+  },
+  {
+    "topic": false,
+    "title": "Cloudflare D1",
+    "url": "/works/web_changelog_2022part1/services/cloudflare_r2_and_d1#cloudflare-d1",
+    "depth": 2
+  },
+  {
+    "topic": false,
+    "title": "pkg.land",
+    "url": "/works/web_changelog_2022part1/services/others#pkg.land",
+    "depth": 2
+  },
+  {
+    "topic": false,
+    "title": "PocketBase",
+    "url": "/works/web_changelog_2022part1/services/others#pocketbase",
+    "depth": 2
+  },
+  {
+    "topic": false,
+    "title": "AutoRegex",
+    "url": "/works/web_changelog_2022part1/services/others#autoregex",
+    "depth": 2
+  },
+  {
+    "topic": false,
+    "title": "Shopify Hydrogen, Shopify Oxygen",
+    "url": "/works/web_changelog_2022part1/services/others#shopify-hydrogen,-oxygen",
+    "depth": 2
+  },
+  {
+    "topic": false,
+    "title": "AWS LambdaでURL発行",
+    "url": "/works/web_changelog_2022part1/services/others#aws-lambdaでurl発行",
+    "depth": 2
+  },
+  {
+    "topic": false,
+    "title": "CircleCI無料枠拡大",
+    "url": "/works/web_changelog_2022part1/services/others#circleci-無料枠拡大",
+    "depth": 2
+  },
+  {
+    "topic": false,
+    "title": "Storybook Component Encyclopedia",
+    "url": "/works/web_changelog_2022part1/services/others#storybook-component-encyclopedia",
+    "depth": 2
+  },
+  {
+    "topic": false,
+    "title": "MDN PLUS",
+    "url": "/works/web_changelog_2022part1/services/others#mdn-plus",
+    "depth": 2
+  },
+  {
+    "topic": false,
+    "title": "Tailwind UI",
+    "url": "/works/web_changelog_2022part1/services/others#tailwind-ui",
+    "depth": 2
+  },
+  {
+    "topic": true,
+    "title": "ライブラリ編",
+    "url": "",
+    "depth": 1
+  },
+  {
+    "topic": false,
+    "title": "React18",
+    "url": "/works/web_changelog_2022part1/libraries/others#react18",
+    "depth": 2
+  },
+  {
+    "topic": false,
+    "title": "Contentlayer",
+    "url": "/works/web_changelog_2022part1/libraries/remotion#contentlayer",
+    "depth": 2
+  },
+  {
+    "topic": false,
+    "title": "Remotion",
+    "url": "/works/web_changelog_2022part1/libraries/remotion#remotion",
+    "depth": 2
+  },
+  {
+    "topic": true,
+    "title": "その他",
+    "url": "",
+    "depth": 1
+  },
+  {
+    "topic": false,
+    "title": "ES2022",
+    "url": "/works/web_changelog_2022part1/others/es2022",
+    "depth": 2
+  },
+  {
+    "topic": false,
+    "title": "Core Web Vitalsがパソコン向け検索ランキングに適用",
+    "url": "/works/web_changelog_2022part1/others/others#core-web-vitalsがパソコン向けの検索ランキングに適用",
+    "depth": 2
+  },
+  {
+    "topic": false,
+    "title": "Google Analytics UAサポート終了",
+    "url": "/works/web_changelog_2022part1/others/others#google-analytics-uaサポート終了",
+    "depth": 2
+  },
+  {
+    "topic": false,
+    "title": "TypeScript公式のチートシート",
+    "url": "/works/web_changelog_2022part1/others/others#typescript公式のチートシート",
+    "depth": 2
+  },
+  {
+    "topic": false,
+    "title": "Vercelマルチテナントアプリケーション開発キット",
+    "url": "/works/web_changelog_2022part1/others/others#vercel-マルチテナントアプリケーション開発キット",
+    "depth": 2
+  },
+  {
+    "topic": false,
+    "title": "デザインシステム公開 (Vercel, AWS)",
+    "url": "/works/web_changelog_2022part1/others/others#デザインシステム公開",
+    "depth": 2
+  },
+  {
+    "topic": false,
+    "title": "ショップ公開 (Figma, Deno)",
+    "url": "/works/web_changelog_2022part1/others/others#ショップ公開",
+    "depth": 2
+  },
+  {
+    "topic": false,
+    "title": "SFCがGitHubからの移行発表",
+    "url": "/works/web_changelog_2022part1/others/others#software-freedom-conservancy-(sfc)-がgithubからの移行発表",
+    "depth": 2
+  },
+  {
+    "topic": false,
+    "title": "C++互換の新しい言語 Carbon",
+    "url": "/works/web_changelog_2022part1/others/others#c++互換の新しい言語-carbon",
+    "depth": 2
+  },
+  {
+    "topic": true,
+    "title": "情報収集に役立つリソース",
+    "url": "",
+    "depth": 1
+  },
+  {
+    "topic": false,
+    "title": "Google / Chrome / GitHub / AWS / その他",
+    "url": "/works/web_changelog_2022part1/references#情報収集に役立つリソース",
+    "depth": 2
+  }
+]

@@ -1,7 +1,7 @@
 ## PyScript
-　PyScriptはブラウザ上でPythonを動かすためのフレームワークです[^pyscript]。PyScriptはCPythonをWebAssemblyに移植したPyodideという基盤の上に構築しており、HTMLやJavaScriptの資産と組み合わせてPythonを動かすことができます。
+PyScriptはブラウザ上でPythonを動かすためのフレームワークです[^pyscript]。PyScriptはCPythonをWebAssemblyに移植したPyodideという基盤の上に構築しており、HTMLやJavaScriptの資産と組み合わせてPythonを動かすことができます。
 
-　動かし方はheadでPyScriptを読み込み、py-scriptタグ内にpythonのコードを書いて実行します。以下ではπの近似値を求めるコードです[^pyscript_sample1]。py-scriptタグ内はPythonと同じ文法になるため、インデントも気をつける必要があります。
+動かし方はheadでPyScriptを読み込み、py-scriptタグ内にpythonのコードを書いて実行します。以下ではπの近似値を求めるコードです[^pyscript_sample1]。py-scriptタグ内はPythonと同じ文法になるため、インデントも気をつける必要があります。
 
 ```html
 <!-- index.html -->
@@ -28,11 +28,11 @@
 ```
 
 <figure>
-  <img src='/images/web_changelog_2022part1/webassembly/pyscript_display_pi_value.png' alt='Pythonでπの近似値を計算し表示する例' width='350' />
+  <img src='/images/web_changelog_2022part1/webassembly/pyscript_display_pi_value.png' alt='Pythonでπの近似値を計算し表示する例' width='500' height="500" />
   <figcaption>Pythonでπの近似値を計算し表示する例</figcaption>
 </figure>
 
-　py-envタグで外部ライブラリを指定でき、NumPyやMatplotlibなどの機械学習・グラフプロットで使うライブラリも利用できます[^pyscript_sample2]。
+py-envタグで外部ライブラリを指定でき、NumPyやMatplotlibなどの機械学習・グラフプロットで使うライブラリも利用できます[^pyscript_sample2]。
 
 ```html
 <!-- index.html -->
@@ -65,11 +65,11 @@
 ```
 
 <figure>
-  <img src='/images/web_changelog_2022part1/webassembly/pyscript_display_random_plot_graph.png' alt='Pythonでランダムな数値の組からなるグラフを表示する例' width='400' />
+  <img src='/images/web_changelog_2022part1/webassembly/pyscript_display_random_plot_graph.png' alt='Pythonでランダムな数値の組からなるグラフを表示する例' width='500' height="500" />
   <figcaption>Pythonでランダムな数値の組からなるグラフを表示する例</figcaption>
 </figure>
 
-　他にもJavaScriptと連携したサンプルなども公開されてます[^pyscript_demo][^pyscript_sample_code]。
+他にもJavaScriptと連携したサンプルなども公開されてます[^pyscript_demo][^pyscript_sample_code]。
 
 [^pyscript]: [https://www.anaconda.com/blog/pyscript-python-in-the-browser](https://www.anaconda.com/blog/pyscript-python-in-the-browser)
 [^pyscript_sample1]: [https://codepen.io/kusakabe-t/pen/yLvYzvp](https://codepen.io/kusakabe-t/pen/yLvYzvp)

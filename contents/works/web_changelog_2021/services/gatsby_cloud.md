@@ -1,7 +1,7 @@
 ## Gatsby Cloud
-　GatsbyはReact製のSSGフレームワークです。利用シーンとしてはドキュメントやブログなどで利用されます。Gatsbyは今年からGatsby Cloudというクラウドサービスを開始しました[^gatsby_cloud]。Gatsby v4のアップデートのほとんどもCloudサービスを便利に使うための機能追加です。
+GatsbyはReact製のSSGフレームワークです。利用シーンとしてはドキュメントやブログなどで利用されます。Gatsbyは今年からGatsby Cloudというクラウドサービスを開始しました[^gatsby_cloud]。Gatsby v4のアップデートのほとんどもCloudサービスを便利に使うための機能追加です。
 
-　Gatsby Cloudの特徴は以下の通りです。
+Gatsby Cloudの特徴は以下の通りです。
 
 - 豊富な連携先があり、FastlyやAmazon CloudFront, Firebaseなどにもコンテンツを配信できる
 - ビルド情報を保持し、ワンクリックで以前のバージョンにロールバックできる
@@ -17,9 +17,9 @@
   <figcaption>CDN連携先</figcaption>
 </figure>
 
-　DSGはコンテンツが多い場合に有効な機能で、アクセス数の少ないページや古いページの生成を実際にアクセスがあるまで、ビルドを遅延させる機能です[^gatsby_dsg]。ページ数が多くないと利便性を感じない機能ですが、Next.jsのISRとはまた異なったアプローチで面白いです。
+DSGはコンテンツが多い場合に有効な機能で、アクセス数の少ないページや古いページの生成を実際にアクセスがあるまで、ビルドを遅延させる機能です[^gatsby_dsg]。ページ数が多くないと利便性を感じない機能ですが、Next.jsのISRとはまた異なったアプローチで面白いです。
 
-　また現時点ではビルド時のコマンドをカスタマイズできず、`gatsby build`が実行されるような動きをします。コンテンツをsubmoduleで管理してるような人には辛く感じる部分です。
+また現時点ではビルド時のコマンドをカスタマイズできず、`gatsby build`が実行されるような動きをします。コンテンツをsubmoduleで管理してるような人には辛く感じる部分です。
 
 [^gatsby_cloud]: [https://www.gatsbyjs.com/products/cloud/](https://www.gatsbyjs.com/products/cloud/)
 [^gatsby_dsg]: [https://www.gatsbyjs.com/docs/how-to/rendering-options/using-deferred-static-generation/](https://www.gatsbyjs.com/docs/how-to/rendering-options/using-deferred-static-generation/)

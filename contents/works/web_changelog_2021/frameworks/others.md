@@ -1,23 +1,23 @@
 ## その他
 ### Shopify Hydrogen
-　Shopify HydrogenはShopify Storefront APIを使って、ECサイトのフロント部分をフルカスタマイズするためのReactのフレームワークです[^shopify_hydrogen]。Storefront APIはShopifyの全機能が使えるという訳ではありませんが、商品や顧客の管理、商品購入周りなどECサイトで必要な機能を使うことができます[^shopify_getting_started]。
+Shopify HydrogenはShopify Storefront APIを使って、ECサイトのフロント部分をフルカスタマイズするためのReactのフレームワークです[^shopify_hydrogen]。Storefront APIはShopifyの全機能が使えるという訳ではありませんが、商品や顧客の管理、商品購入周りなどECサイトで必要な機能を使うことができます[^shopify_getting_started]。
 
-　Shopify Hydrogenは2022年1月4日現在ではまだプレビュー版ですが、バケット追加や商品購入、SNS共有などの一通りの機能を試すことができ、Cloudflare Worker上にデプロイできます[^shopify_deploy]。npxで簡単に開発を始めることもできますし、Stackblitzで試すこともできます[^shopify_stackblitz]。
+Shopify Hydrogenは2022年1月4日現在ではまだプレビュー版ですが、バケット追加や商品購入、SNS共有などの一通りの機能を試すことができ、Cloudflare Worker上にデプロイできます[^shopify_deploy]。npxで簡単に開発を始めることもできますし、Stackblitzで試すこともできます[^shopify_stackblitz]。
 
 ### Rails 7.0
-　Rails 7.0はフロントエンド周りを強化し、Babel, Webpack, Node.jsを使わなくても良くなりました[^rails7]。こちらのDHH氏のブログ[^rails_dhh]にて、どうしてそれらを使わなくて良くなったのかが解説されています。簡単にまとめると以下のようになります。
+Rails 7.0はフロントエンド周りを強化し、Babel, Webpack, Node.jsを使わなくても良くなりました[^rails7]。こちらのDHH氏のブログ[^rails_dhh]にて、どうしてそれらを使わなくて良くなったのかが解説されています。簡単にまとめると以下のようになります。
 
 - 主要ブラウザES6がサポートされたので、Babel不要
 - HTTP/2が普及し小さいファイルを大量に送ってもあまり問題ないので、Webpackでまとめる必要なし
 - Import mapsでCDN経由でモジュールを取り込めるので、Node.js不要
 
-　その他には、アプリケーションレベルの暗号化 (ActiveRecord::Encryption[^active_record_encryption]) やクエリの並列実行 (Relation#load_async[^relation_async]), 以前まで開発サーバーとして動いていたSpringのデフォルトで無効化などが入りました。
+その他には、アプリケーションレベルの暗号化 (ActiveRecord::Encryption[^active_record_encryption]) やクエリの並列実行 (Relation#load_async[^relation_async]), 以前まで開発サーバーとして動いていたSpringのデフォルトで無効化などが入りました。
 
 ### Refine
-　管理画面やダッシュボードなどのデータ集約型アプリケーションを簡単に作ることができるReactのフレームワークです[^refine]。Ant Design System[^ant_design_system]と連携でき、認証周りもオプトインされているフレームワークらしいです。触る時間が作れなかったので、具体的な内容は不明ですが、2021年に1.0と2.0がリリースされました。
+管理画面やダッシュボードなどのデータ集約型アプリケーションを簡単に作ることができるReactのフレームワークです[^refine]。Ant Design System[^ant_design_system]と連携でき、認証周りもオプトインされているフレームワークらしいです。触る時間が作れなかったので、具体的な内容は不明ですが、2021年に1.0と2.0がリリースされました。
 
 ### StyleX
-　StyleXはFacebookのホームページでも利用されている新しいCSS-in-JSのフレームワークです[^stylex]。styleXでスタイルを当てると、CSSの重複を防ぐようにそのスタイルを含むクラスを生成してくれるそうです。
+StyleXはFacebookのホームページでも利用されている新しいCSS-in-JSのフレームワークです[^stylex]。styleXでスタイルを当てると、CSSの重複を防ぐようにそのスタイルを含むクラスを生成してくれるそうです。
 
 ```jsx
 // styleXで記述したもの
