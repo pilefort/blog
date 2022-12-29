@@ -21,7 +21,7 @@ export const CustomHead = ({
       />
       <link
         rel="apple-touch-icon"
-        href="/icon.png"
+        href="/assets/favicon.png"
       />
       <link
         rel="icon"
@@ -68,7 +68,10 @@ export const CustomHead = ({
         property="og:url"
         content="https://pilefort.dev"
       />
-      {/*<meta property="og:image" content="/assets/ogp.png" />*/}
+      <meta
+        property="og:image"
+        content="/assets/favicon.png"
+      />
       {/* Twitter OGP */}
       <meta
         property="twitter:title"
