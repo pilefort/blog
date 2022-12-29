@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { ReactElement } from 'react'
 
 import { CodeBlock } from './CodeBlock'
 import { CustomImage } from '../CustomImage'
@@ -12,6 +12,11 @@ const components = {
   h2: H2,
   h3: H3,
   img: CustomImage,
+  figcaption: ({ children }: { children: string }) => {
+    // CustomImageで前後にmy-[32px]を設定してます
+    // 画像とキャプションを近くにするために、-32pxしてます
+    return <p className="mt-[-32px]">{children}</p>
+  },
   p: P,
   span: Span,
   li: List,
@@ -25,6 +30,14 @@ const components = {
       {children}
     </Link>
   ),
+  footer: ({ children }: { children: ReactElement<{ id: string; className: string; children: string[] }, string>[] }) => {
+    return (
+      <>
+        <hr className={'my-[32px] border-[#104359]'} />
+        <div>{children}</div>
+      </>
+    )
+  },
 }
 
 export const Mdx = ({ children }: { children: string }) => {
