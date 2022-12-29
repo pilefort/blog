@@ -16,7 +16,12 @@ const ScrapsDetailsPage: NextPage<InferGetStaticPropsType<typeof getStaticProps>
       <CustomHead
         title={`${dateTime}`}
         description={`${dateTime}のスクラップです`}
-      />
+      >
+        <meta
+          name="robots"
+          content="noindex"
+        />
+      </CustomHead>
       <CommonScrapsPage
         scraps={scraps}
         highlight={highlight}

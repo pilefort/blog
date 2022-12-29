@@ -1,6 +1,15 @@
 import Head from 'next/head'
+import { ReactElement } from 'react'
 
-export const CustomHead = ({ title, description }: { title?: string; description: string }) => {
+export const CustomHead = ({
+  children,
+  title,
+  description,
+}: {
+  children?: ReactElement<{ name: string; content: string }, 'meta'>
+  title?: string
+  description: string
+}) => {
   const metaTitle = title ? title + ' | Pilefort' : 'Pilefort'
 
   return (
@@ -69,6 +78,8 @@ export const CustomHead = ({ title, description }: { title?: string; description
         property="twitter:description"
         content={description}
       />
+      {/* その他、メタ情報 */}
+      {children && children}
     </Head>
   )
 }
