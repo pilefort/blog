@@ -30,7 +30,7 @@ const components = {
       {children}
     </Link>
   ),
-  footer: ({ children }: { children: ReactElement<{ id: string; className: string; children: string[] }, string>[] }) => {
+  footer: ({ children }: { children: ReactElement<{ id: string; className: string; children: string[] }, string | 'div'>[] }) => {
     return (
       <>
         <hr className={'my-[32px] border-[#104359]'} />
