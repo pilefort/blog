@@ -2,82 +2,87 @@ import { useRouter } from 'next/router'
 import { useState } from 'react'
 import Image from 'next/image'
 import LinkIcon from '../../public/assets/Link.svg'
+import Link from 'next/link'
 
-export const H1 = ({ children }: { children: string }) => {
+const formattedId = (id: string) => {
+  return id.toLowerCase().replace(/ /g, '-')
+}
+
+export const H1 = ({ children }: { children: string[] }) => {
   const router = useRouter()
   const route = router.asPath
   const [isShowLink, setIsShowLink] = useState<boolean>(false)
 
   return (
-    <a
-      href={`${route}/#${children}`}
-      className="relative mt-[56px] flex items-center text-[32px] md:text-[48px]"
+    <Link
+      href={`${route}/#${formattedId(children[0])}`}
+      className="relative flex items-center text-[32px] md:text-[48px]"
     >
       <LinkIconComponent isShowLink={isShowLink} />
-      <h1
-        id={children}
+      <div
+        id={formattedId(children[0])}
         className="font-bold"
         onMouseEnter={() => setIsShowLink(true)}
         onMouseLeave={() => setIsShowLink(false)}
       >
         {children}
-      </h1>
-    </a>
+      </div>
+    </Link>
   )
 }
 
-export const H2 = ({ children }: { children: string }) => {
+export const H2 = ({ children }: { children: string[] }) => {
   const router = useRouter()
   const route = router.asPath
   const [isShowLink, setIsShowLink] = useState<boolean>(false)
 
   return (
-    <a
-      href={`${route}/#${children}`}
+    <Link
+      href={`${route}/#${formattedId(children[0])}`}
       className="relative mt-[40px] flex items-center text-[24px] md:text-[42px]"
     >
       <LinkIconComponent isShowLink={isShowLink} />
-      <h2
-        id={children}
+      <div
+        id={formattedId(children[0])}
         className="font-bold"
         onMouseEnter={() => setIsShowLink(true)}
         onMouseLeave={() => setIsShowLink(false)}
       >
         {children}
-      </h2>
-    </a>
+      </div>
+    </Link>
   )
 }
 
-export const H3 = ({ children }: { children: string }) => {
+export const H3 = ({ children }: { children: string[] }) => {
   const router = useRouter()
   const route = router.asPath
   const [isShowLink, setIsShowLink] = useState<boolean>(false)
 
   return (
     <a
-      href={`${route}/#${children}`}
+      href={`${route}/#${formattedId(children[0])}`}
       className="relative mt-[40px] flex items-center text-[16px] md:text-[36px]"
     >
       <LinkIconComponent isShowLink={isShowLink} />
-      <h2
-        id={children}
-        className="font-bold"
+      <div
+        id={formattedId(children[0])}
+        className="font-bold "
         onMouseEnter={() => setIsShowLink(true)}
         onMouseLeave={() => setIsShowLink(false)}
       >
         {children}
-      </h2>
+      </div>
     </a>
   )
 }
 
-export const P = ({ children }: { children: string }) => <p className="text-[16px] md:text-[24px]">{children}</p>
+export const P = ({ children }: { children: string[] }) => <p className="my-[24px] indent-7 text-[16px] md:text-[24px]">{children}</p>
 
-export const Span = ({ children }: { children: string }) => <span className="text-[16px] md:text-[24px]">{children}</span>
+export const Span = ({ children }: { children: string[] }) => <span className="text-[16px] md:text-[24px]">{children}</span>
 
 // TODO: listのdictを作る
-export const List = ({ children }: { children: string }) => <div className="text-[16px] md:text-[24px]">・ {children}</div>
+export const List = ({ children }: { children: string[] }) => <div className="text-[16px] md:text-[24px]">・ {children}</div>
 
 const LinkIconComponent = ({ isShowLink, customClass }: { isShowLink: boolean; customClass?: string }) => {
   return (
