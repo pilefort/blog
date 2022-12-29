@@ -8,7 +8,7 @@ const WorksPage = () => {
     <div className="m-auto grid w-fit md:grid-cols-1 lg:grid-cols-2 xl:grid-cols-3">
       <Card
         src={'/works'}
-        body={'2022年後半に登場したライブラリ・サービス・フレームワークについて紹介する本'}
+        body={'2022年後半に登場したライブラリ・サービス・フレームワークについて紹介する本 (準備中)'}
         img={tech14}
       />
       <Card

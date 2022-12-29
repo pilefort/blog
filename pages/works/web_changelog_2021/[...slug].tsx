@@ -33,7 +33,6 @@ export const getStaticPaths = async () => {
 export const getStaticProps: ({ params }: GetStaticPropsContext<{ slug: string[] }>) => {
   props: { content: string }
 } = ({ params }) => {
-  console.warn('params', params)
   if (!params?.slug) throw new Error('slug not found')
 
   const contents = getContentBySlug('works/web_changelog_2021/' + params.slug.join('/'), ['content'])

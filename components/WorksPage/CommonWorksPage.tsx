@@ -11,11 +11,11 @@ export const CommonWorksPage = ({
   title: string
 }) => {
   return (
-    <div className={'flex'}>
+    <div className={'flex sm:flex-col-reverse md:flex-row'}>
       <WorksTOC
         TOCData={TOCData}
         title={title}
-        className={'h-screen min-w-[300px] overflow-scroll p-[32px]'}
+        className={'h-screen w-fit overflow-scroll p-[32px] sm:min-w-[300px]'}
       />
       <div className="m-[32px] w-auto overflow-x-auto">
         <Mdx>{content}</Mdx>

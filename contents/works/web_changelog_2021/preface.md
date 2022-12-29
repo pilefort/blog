@@ -33,7 +33,8 @@
 ## 問い合わせ先
 誤植や間違い、その他感想などはGitHubまたはTwitter, メールなどにて、ご連絡いただけると助かります。また、本書ではわかりやすさ優先のため、エンドポイントやリソース名をマスクせずに表示してます。それらのリソースは削除済みなので、ご連絡不要です。
 
-GitHub: https://github.com/pilefort/tech-dojin.2021.web-change-log
+GitHub:
+https://github.com/pilefort/tech-dojin.2021.web-change-log
 
 メールアドレス: pilefort2020@gmail.com
 
