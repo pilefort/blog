@@ -49,7 +49,7 @@ TailwindCSSはutility-firstを掲げており、必要最低限のスタイル�
 
 ```html
 <!-- TailwindCSSを使って書く場合 -->
-<div class="max-w-sm mx-auto flex p-6 bg-white rounded-lg shadow-xl">
+<div class="max-w-sm mx-auto flex p-6 bg-[white] rounded-lg shadow-xl">
   <div class="flex-shrink-0">
     <img class="h-12 w-12" src="/img/logo.svg" alt="ChitChat Logo">
   </div>

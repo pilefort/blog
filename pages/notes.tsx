@@ -16,8 +16,8 @@ const NotesIndexPage: NextPage<InferGetStaticPropsType<typeof getStaticProps>> =
       />
       <div className="p-[32px]">
         <div>
-          <div className="md:text-[36px]">最新記事</div>
-          <hr className="mt-[24px] border-[1px] border-black" />
+          <div className="md:text-h1">最新記事</div>
+          <hr className="mt-[24px] border-[1px] border-[black]" />
         </div>
         <div>
           {allContents.map(({ slug, title, description, date }) => {
@@ -31,13 +31,13 @@ const NotesIndexPage: NextPage<InferGetStaticPropsType<typeof getStaticProps>> =
                 <Link
                   href={slug}
                   passHref
-                  className="text-[16px] text-[#1ED3C6] md:text-[32px]"
+                  className="border-link text-h4 md:text-h1"
                 >
                   {title}
                 </Link>
-                <div className="text-[14px] md:text-[28px]">{createdAt}</div>
-                <div className="mt-[16px] md:text-[24px]">{description}</div>
-                <hr className="mt-[24px] border-[1px] border-black" />
+                <div className="text-h4 md:text-h3">{createdAt}</div>
+                <div className="mt-[16px] md:text-h3">{description}</div>
+                <hr className="mt-[24px] border-[1px] border-[black]" />
               </div>
             )
           })}

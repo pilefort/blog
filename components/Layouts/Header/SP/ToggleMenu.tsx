@@ -26,11 +26,11 @@ export const ToggleMenu = ({
 
   return (
     <div
-      className={`${toggleClass} fixed right-0 z-10 h-screen w-screen bg-black bg-opacity-[80%]`}
+      className={`${toggleClass} fixed right-0 z-10 h-screen w-screen bg-[black] bg-opacity-[80%]`}
       onClick={setToggleCloseClass}
     >
       <div
-        className={`fixed right-0 z-10 h-[100vh] w-[108px] ${toggleClass} bg-[#104359]`}
+        className={`fixed right-0 z-10 h-[100vh] w-[108px] ${toggleClass} bg-primary`}
         onClick={stopPropagationHandler}
       >
         <div

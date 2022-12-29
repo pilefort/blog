@@ -7,7 +7,7 @@ const Footer = () => {
   return (
     <div>
       <FooterLinks />
-      <div className="h-auto bg-[#104359] text-white md:text-[24px]">
+      <div className="h-auto bg-primary text-[white] md:text-h3">
         <div className="p-[16px] md:p-[80px]">
           <div className="hr-with-title text-center md:w-[calc(100vw-160px)]">自己紹介</div>
           <div className="mt-[24px] md:w-[calc(100vw-180px)]">

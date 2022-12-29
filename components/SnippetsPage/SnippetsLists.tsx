@@ -14,7 +14,7 @@ export const SnippetsLists = ({ allContents }: { allContents: { slug: string; ti
             <Link
               href={slug}
               passHref
-              className="text-[24px] text-[#1ED3C6] md:text-[32px]"
+              className="text-h3 border-link md:text-h1"
             >
               {title}
             </Link>

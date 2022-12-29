@@ -12,12 +12,11 @@ export const DesktopHeader = () => {
       <div className="flex h-[80px] items-center justify-between p-[16px] pr-[24px]">
         <Link
           href="/"
-          passHref
-          className="text-[36px] text-[#104359]"
+          className="text-h1 text-primary"
         >
           Pilefort
         </Link>
-        <div className="flex items-center text-[32px] text-[#104359]">
+        <div className="flex items-center text-h1 text-primary">
           <Link
             href="/notes"
             passHref

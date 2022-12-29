@@ -20,7 +20,7 @@ const ScrapsIndexPage: NextPage<InferGetStaticPropsType<typeof getStaticProps>> 
           return (
             <div
               key={id}
-              className="m-[24px] rounded-[10px] border border-black p-[32px] hover:bg-[#d6fdff9e]"
+              className="m-[24px] rounded-[10px] border border-[black] p-[32px] hover:bg-[#d6fdff9e]"
             >
               <Link
                 href={`/scraps/${id}`}

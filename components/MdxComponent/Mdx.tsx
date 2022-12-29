@@ -25,7 +25,7 @@ const components = {
       href={href}
       passHref
       target="_blank"
-      className="text-[#10AFA4]"
+      className="text-link"
     >
       {children}
     </Link>

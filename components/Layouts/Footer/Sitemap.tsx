@@ -9,7 +9,7 @@ export const Sitemap = () => {
           <Link
             href="/notes"
             passHref
-            className="text-[32px] font-bold"
+            className="text-h1 font-bold"
           >
             Notes
           </Link>
@@ -19,7 +19,7 @@ export const Sitemap = () => {
           <Link
             href="/scraps"
             passHref
-            className="text-[32px] font-bold"
+            className="text-h1 font-bold"
           >
             Scraps
           </Link>
@@ -29,7 +29,7 @@ export const Sitemap = () => {
           <Link
             href="/snippets"
             passHref
-            className="text-[32px] font-bold"
+            className="text-h1 font-bold"
           >
             Snippets
           </Link>
@@ -39,7 +39,7 @@ export const Sitemap = () => {
           <Link
             href="/works"
             passHref
-            className="text-[32px] font-bold"
+            className="text-h1 font-bold"
           >
             Works
           </Link>

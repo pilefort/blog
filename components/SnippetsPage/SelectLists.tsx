@@ -7,7 +7,7 @@ export const SelectLists = ({ tags }: { tags: { slug: string; name: string }[] }
 
   return (
     <>
-      <div className="text-[24px] md:text-[32px]">タグ一覧</div>
+      <div className="text-h3 md:text-h1">タグ一覧</div>
       <div className="mt-[16px] flex">
         {tags.map(({ slug, name }, index) => {
           return (
@@ -43,7 +43,7 @@ const SelectList = ({
           key="all"
           href="/snippets"
           passHref
-          className="md:text-[32px]"
+          className="md:text-h1"
         >
           <span className={currentPageTag === undefined ? 'text-[red]' : ''}>すべて</span>
         </Link>
@@ -52,7 +52,7 @@ const SelectList = ({
         key={slug}
         href={`/snippets/tag/${slug}`}
         passHref
-        className="ml-[16px] md:ml-[32px] md:text-[32px]"
+        className="ml-[16px] md:ml-[32px] md:text-h1"
       >
         <span className={currentPageTag === slug ? 'text-[red]' : ''}>{name}</span>
       </Link>
