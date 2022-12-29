@@ -35,6 +35,16 @@ export const Sitemap = () => {
           </Link>
           <div className="mt-[8px]">記事にするまでもないけど、便利なコマンドや豆知識</div>
         </div>
+        <div className="mt-[32px]">
+          <Link
+            href="/works"
+            passHref
+            className="text-[32px] font-bold"
+          >
+            Works
+          </Link>
+          <div className="mt-[8px]">同人誌一覧</div>
+        </div>
       </div>
     </div>
   )
