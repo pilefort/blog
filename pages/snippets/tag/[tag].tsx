@@ -1,10 +1,10 @@
-import tags from '../../../fetchData/snippets/tags.json'
+import tags from '@data/snippets/tags.json'
 
 import { InferGetStaticPropsType, NextPage, GetStaticPropsContext } from 'next'
 
-import { CustomHead } from '../../../components/MetaHead/CustomHead'
+import { CustomHead } from '@components/MetaHead/CustomHead'
 import { getAllContentPaths, getContentBySlug } from '../../../libs/getContentsFromMdx'
-import { CommonSnippetsIndexPage } from '../../../components/SnippetsPage/CommonSnippetsIndexPage'
+import { CommonSnippetsIndexPage } from '@components/SnippetsPage/CommonSnippetsIndexPage'
 
 const SnippetsIndexPage: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({ contents }) => {
   return (

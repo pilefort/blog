@@ -6,8 +6,8 @@ Astroではclientディレクティブをコンポーネントに指定するこ
 ```html:src/pages/index.astro
 ---
 // Example: hydrating framework components in the browser.
-import InteractiveButton from '../components/InteractiveButton.jsx';
-import InteractiveCounter from '../components/InteractiveCounter.jsx';
+import InteractiveButton from '@components/InteractiveButton.jsx';
+import InteractiveCounter from '@components/InteractiveCounter.jsx';
 ---
 
 <!-- ページがロードされてから、JavaScriptのインポートを開始 -->

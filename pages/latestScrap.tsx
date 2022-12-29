@@ -3,8 +3,8 @@ import { NextPage, InferGetStaticPropsType } from 'next'
 import { ScrapsType } from '../types/microCMS/Common'
 import { getListContents } from '../utils/getContents'
 import { utcToJst } from '../libs/date'
-import { CustomHead } from '../components/MetaHead/CustomHead'
-import { CommonScrapsPage } from '../components/ScrapsPage/CommonScrapsPage'
+import { CustomHead } from '@components/MetaHead/CustomHead'
+import { CommonScrapsPage } from '@components/ScrapsPage/CommonScrapsPage'
 
 const ScrapsIndexPage: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({ date, createdAt, highlight, scraps }) => {
   const dateTime = utcToJst({ date: date || createdAt })

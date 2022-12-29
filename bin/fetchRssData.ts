@@ -2,7 +2,7 @@
 import { createJsonFile } from './common/createJsonFile'
 import Parser from 'rss-parser'
 
-const folder = 'fetchData/notes'
+const folder = 'data/notes'
 const dataFileName = 'zenn.json'
 
 export const main = async () => {

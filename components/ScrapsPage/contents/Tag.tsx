@@ -1,6 +1,6 @@
 import Image from 'next/image'
 
-import TagIcon from '../../../public/assets/Tag.svg'
+import TagIcon from '@public/assets/Tag.svg'
 
 export const Tag = ({ id, title }: { id: string; title: string }) => {
   return (

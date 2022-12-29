@@ -1,11 +1,11 @@
-import zennLists from '../fetchData/notes/zenn.json'
+import zennLists from '@data/notes/zenn.json'
 
 import Link from 'next/link'
 import { InferGetStaticPropsType, NextPage } from 'next'
 
 import { getAllContentPaths, getContentBySlug } from '../libs/getContentsFromMdx'
 import { utcToJst } from '../libs/date'
-import { CustomHead } from '../components/MetaHead/CustomHead'
+import { CustomHead } from '@components/MetaHead/CustomHead'
 
 const NotesIndexPage: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({ allContents }) => {
   return (

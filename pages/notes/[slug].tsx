@@ -6,9 +6,9 @@ import { getAllContentPaths, getContentBySlug } from '../../libs/getContentsFrom
 
 import { utcToJst } from '../../libs/date'
 
-import { Mdx } from '../../components/MdxComponent/Mdx'
-import { TOC } from '../../components/MdxComponent/TOC'
-import { CustomHead } from '../../components/MetaHead/CustomHead'
+import { Mdx } from '@components/MdxComponent/Mdx'
+import { TOC } from '@components/MdxComponent/TOC'
+import { CustomHead } from '@components/MetaHead/CustomHead'
 
 const NotesDetailsPage: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({ title, content, date }) => {
   const dateTime = utcToJst({ date })

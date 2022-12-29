@@ -4,8 +4,8 @@ import Image from 'next/image'
 
 import Markdown from 'markdown-to-jsx'
 
-import Open from '../../public/assets/AccordionOpen.svg'
-import Close from '../../public/assets/AccordionClose.svg'
+import Open from '@public/assets/AccordionOpen.svg'
+import Close from '@public/assets/AccordionClose.svg'
 
 const components = {
   h1: ({ children }: { children: string }) => (
