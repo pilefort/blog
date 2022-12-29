@@ -1,7 +1,7 @@
 import Link from 'next/link'
 import Image from 'next/image'
 
-import { CustomImage } from '../../CustomImage'
+import { CustomImage } from '../../MdxComponent/CustomImage'
 
 import OpenNewWindow from '@public/assets/OpenNewWindow.svg'
 import TechDojin12Image from '@public/assets/tech-dojin/tech12.jpg'
