@@ -1,5 +1,5 @@
 import { SelectLists } from './SelectLists'
-import tags from '../../fetchData/snippets/tags.json'
+import tags from '@data/snippets/tags.json'
 import { SnippetsLists } from './SnippetsLists'
 
 export const CommonSnippetsIndexPage = ({ allContents }: { allContents: { slug: string; title: string; tags: string[]; date: string }[] }) => {

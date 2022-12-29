@@ -4,9 +4,9 @@ import { GetStaticPropsContext, InferGetStaticPropsType, NextPage } from 'next'
 
 import { getAllContentPaths, getContentBySlug } from '../../../libs/getContentsFromMdx'
 
-import TOCData from '../../../data/works/web_changelog_2022part1.json'
-import { CommonWorksPage } from '../../../components/WorksPage/CommonWorksPage'
-import { CustomHead } from '../../../components/MetaHead/CustomHead'
+import TOCData from '@data/works/web_changelog_2022part1.json'
+import { CommonWorksPage } from '@components/WorksPage/CommonWorksPage'
+import { CustomHead } from '@components/MetaHead/CustomHead'
 
 const WorkDetailsPage: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({ content }) => {
   return (

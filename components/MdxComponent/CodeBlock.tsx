@@ -4,6 +4,7 @@ import github from 'prism-react-renderer/themes/nightOwl'
 import { CodeHighlightSupportLanguages } from './CodeHighlightSupportLanguages'
 
 export const CodeBlock = ({ children, className }: { children: string; className: string }) => {
+  // classNameはjavascript:index.jsなどのコードブロック名のこと
   if (!className) {
     return <code className="bg-[#e1ecf7] p-[4px]">{children}</code>
   }

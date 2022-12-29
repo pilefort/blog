@@ -117,8 +117,8 @@ React18リリース時はRelayとの連携のみがサポートされますが�
 // pages/home.server.js
 import { Suspense } from 'react'
 
-import Profile from '../components/profile.server.js'
-import Content from '../components/content.client.js'
+import Profile from '@components/profile.server.js'
+import Content from '@components/content.client.js'
 
 export default function Home() {
   return (

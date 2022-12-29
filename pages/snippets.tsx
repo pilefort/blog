@@ -2,8 +2,8 @@ import { getAllContentPaths, getContentBySlug } from '../libs/getContentsFromMdx
 
 import { InferGetStaticPropsType, NextPage } from 'next'
 
-import { CustomHead } from '../components/MetaHead/CustomHead'
-import { CommonSnippetsIndexPage } from '../components/SnippetsPage/CommonSnippetsIndexPage'
+import { CustomHead } from '@components/MetaHead/CustomHead'
+import { CommonSnippetsIndexPage } from '@components/SnippetsPage/CommonSnippetsIndexPage'
 
 const SnippetsIndexPage: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({ allContents }) => {
   return (

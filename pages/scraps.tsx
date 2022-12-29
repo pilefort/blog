@@ -3,8 +3,8 @@ import { NextPage, InferGetStaticPropsType } from 'next'
 import { ContentsWithNoBody } from '../types/microCMS/Common'
 import { getAllListContents } from '../utils/getContents'
 import { utcToJst } from '../libs/date'
-import { CustomHead } from '../components/MetaHead/CustomHead'
-import { Mdx } from '../components/MdxComponent/Mdx'
+import { CustomHead } from '@components/MetaHead/CustomHead'
+import { Mdx } from '@components/MdxComponent/Mdx'
 import Link from 'next/link'
 
 const ScrapsIndexPage: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({ contents }) => {

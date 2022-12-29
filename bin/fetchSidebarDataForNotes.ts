@@ -3,7 +3,7 @@
 import { createJsonFile } from './common/createJsonFile'
 import { getAllListContents } from '../utils/getContents'
 
-const folder = 'fetchData/scraps'
+const folder = 'data/scraps'
 const categoriesDataFile = 'scrapLists.json'
 
 export const main = async () => {

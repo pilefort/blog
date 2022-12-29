@@ -4,9 +4,9 @@ import Script from 'next/script'
 
 import { useMediaQuery } from '../hooks/useMediaQuery'
 
-import { DesktopHeader } from '../components/Layouts/Header/DesktopHeader'
-import { SPHeader } from '../components/Layouts/Header/SP/SPHeader'
-import Footer from '../components/Layouts/Footer'
+import { DesktopHeader } from '@components/Layouts/Header/DesktopHeader'
+import { SPHeader } from '@components/Layouts/Header/SP/SPHeader'
+import Footer from '@components/Layouts/Footer'
 
 import type { AppProps } from 'next/app'
 
