@@ -1,5 +1,6 @@
 import { WorksTOC } from './WorksTOC'
 import { Mdx } from '../MdxComponent/Mdx'
+
 export const CommonWorksPage = ({
   content,
   TOCData,
