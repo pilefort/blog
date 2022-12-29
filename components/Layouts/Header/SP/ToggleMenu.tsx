@@ -65,6 +65,13 @@ export const ToggleMenu = ({
               Scraps
             </Link>
             <Link
+              href="/works"
+              passHref
+              className={`mt-[16px] text-[white] ${checkCurrentPathAndApplyStyles({ currentPagePath, targetPath: '/works' })}`}
+            >
+              Works
+            </Link>
+            <Link
               href="/snippets"
               passHref
               className={`mt-[16px] text-[white] ${checkCurrentPathAndApplyStyles({ currentPagePath, targetPath: '/snippets' })}`}
