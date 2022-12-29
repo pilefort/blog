@@ -6,5 +6,5 @@ module.exports = {
   sitemapSize: 10000,
   generateIndexSitemap: false,
   outDir: './public',
-  exclude: [],
+  exclude: ['/scraps/*'],
 }
