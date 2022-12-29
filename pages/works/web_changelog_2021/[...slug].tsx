@@ -4,18 +4,23 @@ import { GetStaticPropsContext, InferGetStaticPropsType, NextPage } from 'next'
 
 import { getAllContentPaths, getContentBySlug } from '../../../libs/getContentsFromMdx'
 
-import { Mdx } from '../../../components/MdxComponent/Mdx'
 import TOCData from '../../../data/works/web_changelog_2021.json'
-import { WorksTOC } from '../../../components/WorksPage/WorksTOC'
+import { CommonWorksPage } from '../../../components/WorksPage/CommonWorksPage'
+import { CustomHead } from '../../../components/MetaHead/CustomHead'
 
-const NotesDetailsPage: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({ content }) => {
+const WorkDetailsPage: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({ content }) => {
   return (
-    <div className={'flex'}>
-      <WorksTOC TOCData={TOCData} />
-      <div className="m-[32px] w-auto overflow-x-auto">
-        <Mdx>{content}</Mdx>
-      </div>
-    </div>
+    <>
+      <CustomHead
+        title="うぇぶちぇんじろぐ2021"
+        description="2021年に登場したライブラリ・サービス・フレームワーク・ツールを紹介した記事です"
+      />
+      <CommonWorksPage
+        title={'うぇぶちぇんじろぐ2022part1'}
+        content={content}
+        TOCData={TOCData}
+      />
+    </>
   )
 }
 
@@ -41,4 +46,4 @@ export const getStaticProps: ({ params }: GetStaticPropsContext<{ slug: string[]
   }
 }
 
-export default NotesDetailsPage
+export default WorkDetailsPage

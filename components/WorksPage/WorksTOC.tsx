@@ -1,8 +1,17 @@
 import Link from 'next/link'
 
-export const WorksTOC = ({ TOCData }: { TOCData: { topic: boolean; depth: number; title: string; url: string }[] }) => {
+export const WorksTOC = ({
+  TOCData,
+  className,
+  title,
+}: {
+  TOCData: { topic: boolean; depth: number; title: string; url: string }[]
+  className: string
+  title: string
+}) => {
   return (
-    <div className="h-screen min-w-[300px] overflow-scroll p-[32px]">
+    <div className={className}>
+      <h2 className={'text-[18px]'}>{title}</h2>
       <h2 className={'text-[32px]'}>目次</h2>
       <div>
         {TOCData.map((data, index) => {
@@ -17,7 +26,7 @@ export const WorksTOC = ({ TOCData }: { TOCData: { topic: boolean; depth: number
             <Link
               href={data.url}
               key={index}
-              className={'ml-[24px] block p-[4px] text-[18px] text-[blue]'}
+              className={'ml-[24px] block p-[8px] text-[18px] text-[blue]'}
             >
               {data.title}
             </Link>
