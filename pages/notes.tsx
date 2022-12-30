@@ -31,7 +31,7 @@ const NotesIndexPage: NextPage<InferGetStaticPropsType<typeof getStaticProps>> =
                 <Link
                   href={slug}
                   passHref
-                  className="border-link text-h4 md:text-h1"
+                  className="text-h4 text-link md:text-h1"
                 >
                   {title}
                 </Link>
