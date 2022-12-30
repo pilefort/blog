@@ -18,6 +18,7 @@ const WorksPage = () => {
           body={'2022年後半に登場したライブラリ・サービス・フレームワークについて紹介する本 (準備中)'}
           img={tech14}
           priority={true}
+          linkDisabled={true}
         />
         <Card
           src={'/works/web_changelog_2022part1/preface'}
