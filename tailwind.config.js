@@ -7,6 +7,16 @@ module.exports = {
       lg: '900px',
       xl: '1500px',
     },
+    fontSize: {
+      h1: '32px',
+      h2: '36px',
+      h3: '22px',
+      h4: '20px',
+    },
+    colors: {
+      primary: '#104359',
+      link: '#10AFA4',
+    },
     extend: {
       animation: {
         fadeIn: 'fadeIn 0.5s ease-in forwards',

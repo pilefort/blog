@@ -1,7 +1,7 @@
 import React, { ReactElement } from 'react'
 
 import { CodeBlock } from './CodeBlock'
-import { CustomImage } from '../CustomImage'
+import { CustomImage } from './CustomImage'
 import { H1, H2, H3, P, Span, List } from './Text'
 import Link from 'next/link'
 import Markdown from 'markdown-to-jsx'
@@ -25,7 +25,7 @@ const components = {
       href={href}
       passHref
       target="_blank"
-      className="text-[#10AFA4]"
+      className="text-link"
     >
       {children}
     </Link>

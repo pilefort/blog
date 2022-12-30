@@ -9,8 +9,7 @@ RomeはTypeScript, HTML, CSSなどのフォーマッターかつ、リンター�
 ## Jest Preview
 Jest PreviewというJestのデバッガーツールが登場しました[^jest_preview]。これを使うことで、実際の動きを見ながら、Jestのテストのデバッグができます。jest-previewからdebugをインポートして使えるので、複雑なUIのテストを書く際に役立ちそうです。こちらは、Stackblitzで試すことができます[^jest_preview_stackblitz]。
 
-```javascript
-// index.js
+```javascript:index.js
 import { debug } from 'jest-preview';
 
 describe('App', () => {

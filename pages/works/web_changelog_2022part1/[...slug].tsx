@@ -1,4 +1,4 @@
-import React from 'react'
+import { useState } from 'react'
 
 import { GetStaticPropsContext, InferGetStaticPropsType, NextPage } from 'next'
 
@@ -7,14 +7,22 @@ import { getAllContentPaths, getContentBySlug } from '../../../libs/getContentsF
 import TOCData from '@data/works/web_changelog_2022part1.json'
 import { CommonWorksPage } from '@components/WorksPage/CommonWorksPage'
 import { CustomHead } from '@components/MetaHead/CustomHead'
+import { WarningMessage } from '@components/WarningMessage'
 
 const WorkDetailsPage: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({ content }) => {
+  const [show, setShow] = useState(true)
   return (
     <>
       <CustomHead
         title="うぇぶちぇんじろぐ2022part1"
         description="2022年に登場したライブラリ・サービス・フレームワーク・ツールを紹介した記事です"
       />
+      {show && (
+        <WarningMessage
+          message={'このページ内容は2022年9月9日以降、再調査・再検証してません。実際に扱う際は最新の情報にアクセスしてください。'}
+          onClickHandler={() => setShow(!show)}
+        />
+      )}
       <CommonWorksPage
         title={'うぇぶちぇんじろぐ2022part1'}
         content={content}

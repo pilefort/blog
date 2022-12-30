@@ -1,8 +1,7 @@
 ## zx
 zxはGoogleが提供するJavaScriptでシェルスクリプトをラップして書くことができるツールです[^zx]。Top Level Awaitが使えるように、`xx.mjs`ファイルを作成し、以下のように使うことができます。
 
-```javascript
-// index.mjs
+```javascript:index.mjs
 import {$} from 'contents/tools/zx'
 
 await $`ls`;

@@ -1,7 +1,8 @@
+import tech12 from '@public/assets/tech-dojin/tech12.jpg'
+import tech13 from '@public/assets/tech-dojin/tech13.jpg'
+import tech14 from '@public/assets/tech-dojin/tech14.jpg'
+
 import { Card } from '@components/WorksPage/Card'
-import tech12 from '@public/images/web_changelog_2021/tech12.jpg'
-import tech13 from '@public/images/web_changelog_2022part1/tech13.jpg'
-import tech14 from '@public/images/web_changelog_2022part2/tech14.jpg'
 import { CustomHead } from '@components/MetaHead/CustomHead'
 
 const WorksPage = () => {
@@ -16,6 +17,8 @@ const WorksPage = () => {
           src={'/works'}
           body={'2022年後半に登場したライブラリ・サービス・フレームワークについて紹介する本 (準備中)'}
           img={tech14}
+          priority={true}
+          linkDisabled={true}
         />
         <Card
           src={'/works/web_changelog_2022part1/preface'}

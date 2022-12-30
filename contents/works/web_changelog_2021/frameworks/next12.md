@@ -4,8 +4,7 @@ Next.js Conf 2021の告知メールで、Next.js史上最大のアップデー�
 ### SSR Streaming (Suspense), React Server Component
 React18のSuspenseやReact Server Componentが使えるようになりました。ただしまだフラグが必要で、next.config.jsに以下の追加が必要です。
 
-```javascript
-// next.config.js
+```javascript:next.config.js
 module.exports = {
   experimental: {
     concurrentFeatures: true,
@@ -23,8 +22,7 @@ Middlewareのサンプルとして、Basic認証やIPブロック, ABテスト�
 
 例えばBasic認証を追加したい場合はpages配下に_middleware.tsを作成して、以下のようなコードを書きます[^middleware_basic_auth_sample]。
 
-```typescript
-// _middleware.ts
+```typescript:_middleware.ts
 // NextRequestでcookiesや地理情報, IPアドレスなどのヘッダー情報を取得できる
 import { NextRequest, NextResponse } from 'next/server'
 

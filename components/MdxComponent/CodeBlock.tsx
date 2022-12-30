@@ -16,13 +16,13 @@ export const CodeBlock = ({ children, className }: { children: string; className
   return (
     <div className="my-[16px] md:my-[32px]">
       <>
-        <div className="h-[35px] rounded-t-[10px] bg-black py-[4px] text-center">
+        <div className="h-[35px] rounded-t-[10px] bg-[black] py-[4px] text-center">
           <div className="relative ml-[16px] items-center">
             <div className="absolute top-[5px] left-0 h-[15px] w-[15px] rounded-[50%] bg-[#FF5F56]" />
             <div className="absolute top-[5px] left-[24px] h-[15px] w-[15px] rounded-[50%] bg-[#FFBD2E]" />
             <div className="absolute top-[5px] left-[48px] h-[15px] w-[15px] rounded-[50%] bg-[#27C93F]" />
           </div>
-          <span className="text-center text-white">{fileName}</span>
+          <span className="text-center text-[white]">{fileName}</span>
         </div>
         <Highlight
           code={children}
@@ -35,7 +35,7 @@ export const CodeBlock = ({ children, className }: { children: string; className
         >
           {({ className, style, tokens, getLineProps, getTokenProps }) => (
             <pre
-              className={`${className} mb-[32px] overflow-auto rounded-b-[10px] p-[16px] text-[15px] md:text-[20px]`}
+              className={`${className} mb-[32px] overflow-auto rounded-b-[10px] p-[16px] text-h4`}
               style={{ ...style }}
             >
               {tokens.map((line, index) => {

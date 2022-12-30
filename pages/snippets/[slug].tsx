@@ -19,7 +19,7 @@ const SnippetDetailsPage: NextPage<InferGetStaticPropsType<typeof getStaticProps
         description={`${title}に関するスニペットです`}
       />
       <div className="m-[24px]">
-        <div className="border-l-[6px] border-[#104359] p-[8px] text-[24px] md:text-[36px]">
+        <div className="border-l-[6px] border-[#104359] p-[8px] text-h2 md:text-h1">
           <span>{title}</span>
         </div>
         <div className="flex">
@@ -38,7 +38,7 @@ const SnippetDetailsPage: NextPage<InferGetStaticPropsType<typeof getStaticProps
             )
           })}
         </div>
-        <div className="mt-[8px] md:text-[24px]">{createdAt}</div>
+        <div className="mt-[8px] md:text-h3">{createdAt}</div>
         <div className="mt-[32px]">
           <Mdx>{content}</Mdx>
         </div>

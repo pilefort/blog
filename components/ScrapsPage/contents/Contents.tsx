@@ -17,7 +17,7 @@ export const Contents = ({ scraps }: { scraps: ScrapsType }) => {
             className="mt-[52px]"
             key={id}
           >
-            <div className="text-[32px]">{title}</div>
+            <div className="text-h1">{title}</div>
             <div>{date}</div>
             {tags &&
               tags.map(({ id, title }) => {
@@ -39,7 +39,7 @@ export const Contents = ({ scraps }: { scraps: ScrapsType }) => {
                 )
               })}
             {body && (
-              <details className="mt-[8px] cursor-pointer text-[18px]">
+              <details className="mt-[8px] cursor-pointer text-h4">
                 <summary>メモ</summary>
                 <div className="mt-[16px]">
                   {body.map(({ content }, index) => {

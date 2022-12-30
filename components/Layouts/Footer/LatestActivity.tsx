@@ -1,7 +1,7 @@
 import Link from 'next/link'
 import Image from 'next/image'
 
-import { CustomImage } from '../../CustomImage'
+import { CustomImage } from '../../MdxComponent/CustomImage'
 
 import OpenNewWindow from '@public/assets/OpenNewWindow.svg'
 import TechDojin12Image from '@public/assets/tech-dojin/tech12.jpg'
@@ -26,7 +26,7 @@ const WebChangeLog2022Part1 = ({ className }: { className: string }) => {
         <div className="mt-[24px]">
           2022年の1月から8月ぐらいまでに登場したり、大幅なアップデートがあったWebサービスや開発ツール、ライブラリ、フレームワークを紹介した本です。
         </div>
-        <div className="mt-[24px] text-[16px]">
+        <div className="mt-[24px] text-h4">
           <div className="mt-[16px]">
             <span>Booth: </span>
             <Link
@@ -63,7 +63,7 @@ const XMind2Markdown = ({ className }: { className: string }) => {
     <div className={className}>
       <div className="w-auto">
         <div className="font-bold">XMind8ファイルをMarkdownファイルに変換するツールを作りました。</div>
-        <div className="mt-[24px] text-[16px]">
+        <div className="mt-[24px] text-h4">
           <span>公式のxmind-sdk-jsのバージョンを下げて作ってます (最新版だと一部メソッドが削除されてるため)。</span>
           <div className="mt-[24px]">
             <div>
@@ -100,7 +100,7 @@ const WebChangeLog2021 = ({ className }: { className: string }) => {
         <div className="mt-[24px]">
           2021年に登場したり、大幅なアップデートがあったWebサービスや開発ツール、ライブラリ、フレームワークを紹介した本です。
         </div>
-        <div className="mt-[24px] text-[16px]">
+        <div className="mt-[24px] text-h4">
           <div>
             <span>Sample: </span>
             <Link
