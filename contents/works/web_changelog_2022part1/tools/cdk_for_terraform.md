@@ -3,8 +3,7 @@ Terraformの設定ファイルを書くときに、TypeScriptやJava, Goなど�
 
 いくつかサンプル[^terraform_cdk_sample]も用意されています。APIリファレンス[^terraform_cdk_reference]もありますが、リリースされたばかりでAPIの説明がまだなかったりします。
 
-```tsx
-// main.ts
+```tsx:main.ts
 import { Construct } from "constructs";
 import { App, TerraformStack } from "cdktf";
 

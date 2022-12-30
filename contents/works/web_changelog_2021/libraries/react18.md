@@ -113,8 +113,7 @@ React18リリース時はRelayとの連携のみがサポートされますが�
 ### React Server Components
 これはSPAとSSRを共存させるための機能です。こちらはNext.jsの説明[^react18_server_component]が分かりやすいです。SPAで表示したいコンポーネント (クライアントコンポーネント) はxxx.client.jsで作成し、SSRで表示したいコンポーネント (サーバーコンポーネント) はyyy.server.jsで作成します。サーバーコンポーネント内でクライアントコンポーネントをインポートすることで、一部はSPAで表示させ、一部はSuspenseを使って後から表示させることができるようになります。
 
-```tsx
-// pages/home.server.js
+```tsx:pages/home.server.js
 import { Suspense } from 'react'
 
 import Profile from '@components/profile.server.js'

@@ -1,7 +1,8 @@
+import tech12 from '@public/assets/tech-dojin/tech12.jpg'
+import tech13 from '@public/assets/tech-dojin/tech13.jpg'
+import tech14 from '@public/assets/tech-dojin/tech14.jpg'
+
 import { Card } from '@components/WorksPage/Card'
-import tech12 from '@public/images/web_changelog_2021/tech12.jpg'
-import tech13 from '@public/images/web_changelog_2022part1/tech13.jpg'
-import tech14 from '@public/images/web_changelog_2022part2/tech14.jpg'
 import { CustomHead } from '@components/MetaHead/CustomHead'
 
 const WorksPage = () => {

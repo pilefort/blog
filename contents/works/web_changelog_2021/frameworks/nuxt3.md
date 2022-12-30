@@ -17,8 +17,7 @@ export default defineNuxtConfig({
 ### APIのサポート
 Nuxt3からはNextjsのようなAPIを作れるようになりました。ルートディレクトリにserver/api/xxx.tsファイルを作成し、関数をexportすることで利用できます。すべてのリクエストで実行したい処理があるときは、server/middleware/xxx.tsファイルを作成することで処理できます。
 
-```tsx
-// ~/server/api/count.ts
+```tsx:~/server/api/count.ts
 let counter = 0
 export default () => {
   counter++
@@ -34,9 +33,8 @@ $ curl localhost:3000/api/count
 ### CDN Edge上でのSSR
 Nuxt3は設定ファイルにデプロイ形式を指定でき、AWS LambdaやCloudflare Worker上に簡単にデプロイできるようになりました。以前まではExpress上にNuxtを起動できないと無理だった部分が、Nuxtだけでできるようになりました[^nuxt3_preset]。
 
-```tsx
+```tsx:nuxt.config.ts
 // AWS Lambda, Netlify Function用にビルドしたいとき
-// nuxt.config.ts
 export default defineNuxtConfig({
   nitro: {
     preset: 'lambda'
