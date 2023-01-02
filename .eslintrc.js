@@ -9,6 +9,7 @@ module.exports = {
     'plugin:@next/next/recommended',
     'prettier',
     'plugin:prettier/recommended',
+    'plugin:storybook/recommended',
   ],
   rules: {
     'prettier/prettier': [
