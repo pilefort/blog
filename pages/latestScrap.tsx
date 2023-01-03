@@ -4,7 +4,7 @@ import { ScrapsType } from '../types/microCMS/Common'
 import { getListContents } from '../utils/getContents'
 import { utcToJst } from '../libs/date'
 import { CustomHead } from '@components/MetaHead/CustomHead'
-import { CommonScrapsPage } from '@components/ScrapsPage/CommonScrapsPage'
+import { DetailsPage } from '@components/ScrapsPage/Layouts/DetailsPage'
 
 const ScrapsIndexPage: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({ date, createdAt, highlight, scraps }) => {
   const dateTime = utcToJst({ date: date || createdAt })
@@ -15,7 +15,7 @@ const ScrapsIndexPage: NextPage<InferGetStaticPropsType<typeof getStaticProps>> 
         title="最新のスクラップ"
         description="個人的に収集した情報をまとめています"
       />
-      <CommonScrapsPage
+      <DetailsPage
         scraps={scraps}
         highlight={highlight}
         dateTime={dateTime}
