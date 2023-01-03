@@ -1,7 +1,7 @@
-import { WorksTOC } from './WorksTOC'
-import { Mdx } from '../MdxComponent/Mdx'
+import { WorksTOC } from '../WorksTOC'
+import { Mdx } from '../../MdxComponent/Mdx'
 
-export const CommonWorksPage = ({
+export const DetailsPage = ({
   content,
   TOCData,
   title,
