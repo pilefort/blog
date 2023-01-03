@@ -1,4 +1,4 @@
-import { WorksTOC } from '../WorksTOC'
+import { TOC } from '../TOC'
 import { Mdx } from '../../MdxComponent/Mdx'
 
 export const DetailsPage = ({
@@ -12,7 +12,7 @@ export const DetailsPage = ({
 }) => {
   return (
     <div className={'flex sm:flex-col-reverse md:flex-row'}>
-      <WorksTOC
+      <TOC
         TOCData={TOCData}
         title={title}
         className={'h-screen w-fit overflow-scroll p-[32px] sm:min-w-[300px]'}

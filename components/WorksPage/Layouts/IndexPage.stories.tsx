@@ -1,5 +1,5 @@
 import { Meta, StoryObj } from '@storybook/react'
-import { IndexPage } from '@components/WorksPage/Layouts/IndexPage'
+import { IndexPage } from './IndexPage'
 
 const meta: Meta<typeof IndexPage> = {
   title: 'Page/Works/Index',

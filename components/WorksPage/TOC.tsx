@@ -1,6 +1,6 @@
 import Link from 'next/link'
 
-export const WorksTOC = ({
+export const TOC = ({
   TOCData,
   className,
   title,
