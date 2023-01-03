@@ -6,9 +6,8 @@ import { getAllContentPaths, getContentBySlug } from '../../libs/getContentsFrom
 
 import { utcToJst } from '../../libs/date'
 
-import { Mdx } from '@components/MdxComponent/Mdx'
-import { TOC } from '@components/MdxComponent/TOC'
 import { CustomHead } from '@components/MetaHead/CustomHead'
+import { DetailsPage } from '@components/NotesPage/Layouts/DetailsPage'
 
 const NotesDetailsPage: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({ title, content, date }) => {
   const dateTime = utcToJst({ date })
@@ -19,20 +18,11 @@ const NotesDetailsPage: NextPage<InferGetStaticPropsType<typeof getStaticProps>>
         title={`${title}`}
         description={`${title}に関するノートです`}
       />
-      <div className="flex">
-        <div className="m-auto w-auto overflow-x-auto">
-          <div className="m-[24px]">
-            <div className="border-l-[6px] border-[#104359] p-[8px] text-h2 md:text-h1">
-              <span>{title}</span>
-            </div>
-            <div className="mt-[8px] md:text-h3">{dateTime}</div>
-            <TOC>{content}</TOC>
-            <div className="mt-[10px]">
-              <Mdx>{content}</Mdx>
-            </div>
-          </div>
-        </div>
-      </div>
+      <DetailsPage
+        title={title}
+        content={content}
+        dateTime={dateTime}
+      />
     </>
   )
 }

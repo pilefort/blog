@@ -1,11 +1,11 @@
 import zennLists from '@data/notes/zenn.json'
 
-import Link from 'next/link'
 import { InferGetStaticPropsType, NextPage } from 'next'
 
 import { getAllContentPaths, getContentBySlug } from '../libs/getContentsFromMdx'
-import { utcToJst } from '../libs/date'
+
 import { CustomHead } from '@components/MetaHead/CustomHead'
+import { IndexPage } from '@components/NotesPage/Layouts/IndexPage'
 
 const NotesIndexPage: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({ allContents }) => {
   return (
@@ -14,35 +14,7 @@ const NotesIndexPage: NextPage<InferGetStaticPropsType<typeof getStaticProps>> =
         title="ノート一覧"
         description="個人的なメモ一覧です"
       />
-      <div className="p-[32px]">
-        <div>
-          <div className="md:text-h1">最新記事</div>
-          <hr className="mt-[24px] border-[1px] border-[black]" />
-        </div>
-        <div>
-          {allContents.map(({ slug, title, description, date }) => {
-            const createdAt = utcToJst({ date })
-
-            return (
-              <div
-                key={slug}
-                className="mt-[32px]"
-              >
-                <Link
-                  href={slug}
-                  passHref
-                  className="text-h4 text-link md:text-h1"
-                >
-                  {title}
-                </Link>
-                <div className="text-h4 md:text-h3">{createdAt}</div>
-                <div className="mt-[16px] md:text-h3">{description}</div>
-                <hr className="mt-[24px] border-[1px] border-[black]" />
-              </div>
-            )
-          })}
-        </div>
-      </div>
+      <IndexPage allContents={allContents} />
     </>
   )
 }
