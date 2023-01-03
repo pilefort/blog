@@ -4,7 +4,7 @@ import { InferGetStaticPropsType, NextPage, GetStaticPropsContext } from 'next'
 
 import { CustomHead } from '@components/MetaHead/CustomHead'
 import { getAllContentPaths, getContentBySlug } from '../../../libs/getContentsFromMdx'
-import { CommonSnippetsIndexPage } from '@components/SnippetsPage/CommonSnippetsIndexPage'
+import { IndexPage } from '@components/SnippetsPage/Layouts/IndexPage'
 
 const SnippetsIndexPage: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({ contents }) => {
   return (
@@ -13,7 +13,7 @@ const SnippetsIndexPage: NextPage<InferGetStaticPropsType<typeof getStaticProps>
         title="スニペット一覧"
         description="個人的に便利だと感じたスニペット一覧です"
       />
-      <CommonSnippetsIndexPage allContents={contents} />
+      <IndexPage allContents={contents} />
     </>
   )
 }

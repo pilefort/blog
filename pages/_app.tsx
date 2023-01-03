@@ -2,17 +2,12 @@ import '../styles/globals.css'
 
 import Script from 'next/script'
 
-import { useMediaQuery } from '../hooks/useMediaQuery'
-
-import { DesktopHeader } from '@components/Layouts/Header/DesktopHeader'
-import { SPHeader } from '@components/Layouts/Header/SP/SPHeader'
-import Footer from '@components/Layouts/Footer'
+import { Header } from '@components/Layouts/Header'
+import { Footer } from '@components/Layouts/Footer'
 
 import type { AppProps } from 'next/app'
 
 function MyApp({ Component, pageProps }: AppProps) {
-  const isDesktop = useMediaQuery()
-
   return (
     <>
       <Script
@@ -31,22 +26,12 @@ function MyApp({ Component, pageProps }: AppProps) {
           gtag('config', '${process.env.NEXT_PUBLIC_GA_TRACKING_ID}');
         `}
       </Script>
-      {isDesktop ? (
-        <>
-          <DesktopHeader />
-          <SPHeader />
-          <div className="min-h-[calc(100vh-(80px+80px+128px+30px))]">
-            <Component {...pageProps} />
-          </div>
-        </>
-      ) : (
-        <>
-          <SPHeader />
-          <div className="min-h-[calc(100vh-(30px+80px+128px))]">
-            <Component {...pageProps} />
-          </div>
-        </>
-      )}
+      <>
+        <Header />
+        <div className="min-h-screen">
+          <Component {...pageProps} />
+        </div>
+      </>
       <Footer />
     </>
   )

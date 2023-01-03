@@ -6,7 +6,7 @@ import { getListContentById } from '../../utils/getContents'
 import { ScrapsType } from '../../types/microCMS/Common'
 import { utcToJst } from '../../libs/date'
 import { CustomHead } from '@components/MetaHead/CustomHead'
-import { CommonScrapsPage } from '@components/ScrapsPage/CommonScrapsPage'
+import { DetailsPage } from '@components/ScrapsPage/Layouts/DetailsPage'
 
 const ScrapsDetailsPage: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({ date, createdAt, highlight, scraps }) => {
   const dateTime = utcToJst({ date: date || createdAt })
@@ -22,7 +22,7 @@ const ScrapsDetailsPage: NextPage<InferGetStaticPropsType<typeof getStaticProps>
           content="noindex"
         />
       </CustomHead>
-      <CommonScrapsPage
+      <DetailsPage
         scraps={scraps}
         highlight={highlight}
         dateTime={dateTime}

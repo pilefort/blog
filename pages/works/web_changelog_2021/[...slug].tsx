@@ -4,9 +4,9 @@ import { GetStaticPropsContext, InferGetStaticPropsType, NextPage } from 'next'
 import { getAllContentPaths, getContentBySlug } from '../../../libs/getContentsFromMdx'
 
 import TOCData from '@data/works/web_changelog_2021.json'
-import { CommonWorksPage } from '@components/WorksPage/CommonWorksPage'
+import { DetailsPage } from '@components/WorksPage/Layouts/DetailsPage'
 import { CustomHead } from '@components/MetaHead/CustomHead'
-import { WarningMessage } from '@components/WarningMessage'
+import { WarningMessage } from '@components/WorksPage/WarningMessage'
 
 const WorkDetailsPage: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({ content }) => {
   const [show, setShow] = useState(true)
@@ -23,7 +23,7 @@ const WorkDetailsPage: NextPage<InferGetStaticPropsType<typeof getStaticProps>> 
           onClickHandler={() => setShow(!show)}
         />
       )}
-      <CommonWorksPage
+      <DetailsPage
         title={'うぇぶちぇんじろぐ2021'}
         content={content}
         TOCData={TOCData}
