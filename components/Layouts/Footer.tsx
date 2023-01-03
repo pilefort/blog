@@ -3,7 +3,7 @@ import { LatestActivity } from './Footer/LatestActivity'
 import { Introduction } from './Footer/Introduction'
 import { FooterLinks } from './Footer/FooterLinks'
 
-const Footer = () => {
+export const Footer = () => {
   return (
     <div>
       <FooterLinks />
@@ -22,5 +22,3 @@ const Footer = () => {
     </div>
   )
 }
-
-export default Footer

@@ -6,7 +6,7 @@ import { useRouter } from 'next/router'
 
 import AccordionCloseIcon from '@public/assets/AccordionClose.svg'
 
-import { checkCurrentPathAndApplyStyles } from '../../../../libs/checkCurrentPathAndApplyStyles'
+import { checkCurrentPathAndApplyStyles } from '../../../libs/checkCurrentPathAndApplyStyles'
 
 export const ToggleMenu = ({
   toggleClass,
@@ -51,28 +51,28 @@ export const ToggleMenu = ({
             onClick={() => setToggleClass('animate-slideOut')}
           >
             <Link
-              href="/notes"
+              href="/pages/notes"
               passHref
               className={`mt-[16px] text-[white] ${checkCurrentPathAndApplyStyles({ currentPagePath, targetPath: '/notes' })}`}
             >
               Notes
             </Link>
             <Link
-              href="/scraps"
+              href="/pages/scraps"
               passHref
               className={`mt-[16px] text-[white] ${checkCurrentPathAndApplyStyles({ currentPagePath, targetPath: '/scraps' })}`}
             >
               Scraps
             </Link>
             <Link
-              href="/works"
+              href="/pages/works"
               passHref
               className={`mt-[16px] text-[white] ${checkCurrentPathAndApplyStyles({ currentPagePath, targetPath: '/works' })}`}
             >
               Works
             </Link>
             <Link
-              href="/snippets"
+              href="/pages/snippets"
               passHref
               className={`mt-[16px] text-[white] ${checkCurrentPathAndApplyStyles({ currentPagePath, targetPath: '/snippets' })}`}
             >
