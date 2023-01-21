@@ -51,28 +51,28 @@ export const ToggleMenu = ({
             onClick={() => setToggleClass('animate-slideOut')}
           >
             <Link
-              href="/pages/notes"
+              href="/notes"
               passHref
               className={`mt-[16px] text-[white] ${checkCurrentPathAndApplyStyles({ currentPagePath, targetPath: '/notes' })}`}
             >
               Notes
             </Link>
             <Link
-              href="/pages/scraps"
+              href="/scraps"
               passHref
               className={`mt-[16px] text-[white] ${checkCurrentPathAndApplyStyles({ currentPagePath, targetPath: '/scraps' })}`}
             >
               Scraps
             </Link>
             <Link
-              href="/pages/works"
+              href="/works"
               passHref
               className={`mt-[16px] text-[white] ${checkCurrentPathAndApplyStyles({ currentPagePath, targetPath: '/works' })}`}
             >
               Works
             </Link>
             <Link
-              href="/pages/snippets"
+              href="/snippets"
               passHref
               className={`mt-[16px] text-[white] ${checkCurrentPathAndApplyStyles({ currentPagePath, targetPath: '/snippets' })}`}
             >
