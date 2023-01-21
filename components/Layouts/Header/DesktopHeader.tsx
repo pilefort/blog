@@ -3,12 +3,12 @@ import { useRouter } from 'next/router'
 
 import { checkCurrentPathAndApplyStyles } from '../../../libs/checkCurrentPathAndApplyStyles'
 
-export const DesktopHeader = () => {
+export const DesktopHeader = ({ className }: { className: string }) => {
   const router = useRouter()
   const currentPagePath = router.pathname
 
   return (
-    <div className="hidden lg:block">
+    <div className={className}>
       <div className="flex h-[80px] items-center justify-between p-[16px] pr-[24px]">
         <Link
           href="/"

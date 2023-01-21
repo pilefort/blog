@@ -18,5 +18,5 @@ export const Header = () => {
     return () => window.removeEventListener('resize', checkIsDesktop)
   }, [router.isReady])
 
-  return <>{isDesktop ? <DesktopHeader /> : <SPHeader />}</>
+  return <>{isDesktop ? <DesktopHeader className={'hidden lg:block'} /> : <SPHeader className="lg:hidden" />}</>
 }

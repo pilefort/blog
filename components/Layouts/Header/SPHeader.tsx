@@ -4,13 +4,13 @@ import Link from 'next/link'
 
 import { ToggleMenu } from './ToggleMenu'
 
-export const SPHeader = () => {
+export const SPHeader = ({ className }: { className: string }) => {
   const [toggleClass, setToggleClass] = useState('hidden')
   const setToggleCloseClass = () => setToggleClass('animate-slideOut')
   const setToggleOpenClass = () => setToggleClass('animate-slideIn block')
 
   return (
-    <div className="lg:hidden">
+    <div className={className}>
       {
         <ToggleMenu
           toggleClass={toggleClass}
