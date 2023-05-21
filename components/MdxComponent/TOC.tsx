@@ -18,7 +18,7 @@ const components = {
   ),
   h2: ({ children }: { children: string }) => (
     <a
-      className="ml-[28px] mb-[8px] w-fit text-h3 hover:text-[gray]"
+      className="mb-[8px] ml-[28px] w-fit text-h3 hover:text-[gray]"
       href={`#${children}`}
     >
       {children}

@@ -18,9 +18,9 @@ export const CodeBlock = ({ children, className }: { children: string; className
       <>
         <div className="h-[35px] rounded-t-[10px] bg-[black] py-[4px] text-center">
           <div className="relative ml-[16px] items-center">
-            <div className="absolute top-[5px] left-0 h-[15px] w-[15px] rounded-[50%] bg-[#FF5F56]" />
-            <div className="absolute top-[5px] left-[24px] h-[15px] w-[15px] rounded-[50%] bg-[#FFBD2E]" />
-            <div className="absolute top-[5px] left-[48px] h-[15px] w-[15px] rounded-[50%] bg-[#27C93F]" />
+            <div className="absolute left-0 top-[5px] h-[15px] w-[15px] rounded-[50%] bg-[#FF5F56]" />
+            <div className="absolute left-[24px] top-[5px] h-[15px] w-[15px] rounded-[50%] bg-[#FFBD2E]" />
+            <div className="absolute left-[48px] top-[5px] h-[15px] w-[15px] rounded-[50%] bg-[#27C93F]" />
           </div>
           <span className="text-center text-[white]">{fileName}</span>
         </div>
