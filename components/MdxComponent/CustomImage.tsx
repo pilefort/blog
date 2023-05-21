@@ -50,7 +50,7 @@ export const CustomImage = (props: ImagePropsType) => {
       </div>
       {isShowModal && (
         <div
-          className="fixed top-0 left-0 z-[100] flex h-screen w-screen items-center justify-center bg-[black] bg-opacity-60 transition duration-500 ease-out xl:scale-[1.5]"
+          className="fixed left-0 top-0 z-[100] flex h-screen w-screen items-center justify-center bg-[black] bg-opacity-60 transition duration-500 ease-out xl:scale-[1.5]"
           onClick={closeModalHandler}
         >
           <div
