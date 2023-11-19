@@ -4,8 +4,6 @@ import Image from 'next/image'
 import { CustomImage } from '../../MdxComponent/CustomImage'
 
 import OpenNewWindow from '@public/assets/OpenNewWindow.svg'
-import WebChangelog2023part1 from '@public/assets/tech_dojin/web_changelog_2023part1.jpg'
-import WebChangelog2022part2 from '@public/assets/tech_dojin/web_changelog_2022part2.jpg'
 import WebChangelog2022part1 from '@public/assets/tech_dojin/web_changelog_2022part1.jpg'
 import WebChangelog2021 from '@public/assets/tech_dojin/web_changelog_2021.jpg'
 

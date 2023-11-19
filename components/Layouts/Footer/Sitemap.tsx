@@ -17,16 +17,6 @@ export const Sitemap = () => {
         </div>
         <div className="mt-[32px]">
           <Link
-            href="/scraps"
-            passHref
-            className="text-h1 font-bold"
-          >
-            Scraps
-          </Link>
-          <div className="mt-[8px]">雑記。ネットで見つけた面白い記事やニュース</div>
-        </div>
-        <div className="mt-[32px]">
-          <Link
             href="/snippets"
             passHref
             className="text-h1 font-bold"
