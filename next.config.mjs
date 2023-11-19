@@ -5,7 +5,7 @@ const rewriteSetting = {
   beforeFiles: [
     {
       source: '/',
-      destination: '/latestScrap',
+      destination: '/notes',
     },
     {
       source: '/snippets',

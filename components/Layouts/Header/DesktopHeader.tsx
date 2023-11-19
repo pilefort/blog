@@ -26,19 +26,13 @@ export const DesktopHeader = ({ className }: { className: string }) => {
           </Link>
 
           <Link
-            href="/scraps"
-            passHref
-            className={`ml-[24px] ${checkCurrentPathAndApplyStyles({ currentPagePath, targetPath: '/scraps' })}`}
-          >
-            Scraps
-          </Link>
-          <Link
             href="/works"
             passHref
             className={`ml-[24px] ${checkCurrentPathAndApplyStyles({ currentPagePath, targetPath: '/works' })}`}
           >
             Works
           </Link>
+
           <Link
             href="/snippets"
             passHref
