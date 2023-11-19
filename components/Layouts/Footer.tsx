@@ -1,5 +1,4 @@
 import { Sitemap } from './Footer/Sitemap'
-import { LatestActivity } from './Footer/LatestActivity'
 import { Introduction } from './Footer/Introduction'
 import { FooterLinks } from './Footer/FooterLinks'
 

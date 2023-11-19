@@ -35,10 +35,17 @@ export const Card = ({
             priority={priority}
           />
           <Link href={src}>
-            <p className='text-link ml-[4px]'>サンプル</p>
-            </Link>
-          <div  className='mt-[8px] mb-[8px] ml-[4px] text-link'>
-            { url && <Link href={url} target='_blank'>{url}</Link>}
+            <p className="ml-[4px] text-link">サンプル</p>
+          </Link>
+          <div className="mb-[8px] ml-[4px] mt-[8px] text-link">
+            {url && (
+              <Link
+                href={url}
+                target="_blank"
+              >
+                {url}
+              </Link>
+            )}
           </div>
         </div>
       )}
