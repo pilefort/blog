@@ -10,7 +10,7 @@ import { PostHogProvider } from 'posthog-js/react'
 import type { AppProps } from 'next/app'
 
 if (typeof window !== 'undefined') { // checks that we are client-side
-  posthog.init(process.env.NEXT_PUBLIC_POSTHOG_KEY, {
+  posthog.init("phc_WYnf7GWtk4JERgIl29UUD6STVXAYRVSOeEzZpJJ9H20", {
     api_host: process.env.NEXT_PUBLIC_POSTHOG_HOST || 'https://us.i.posthog.com',
     loaded: (posthog) => {
       if (process.env.NODE_ENV === 'development') posthog.debug() // debug mode in development
