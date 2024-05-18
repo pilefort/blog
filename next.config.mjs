@@ -8,6 +8,10 @@ const rewriteSetting = {
       destination: '/notes',
     },
     {
+      source: '/.well-known/vercel/flags',
+      destination: '/api/vercel/flags',
+    },
+    {
       source: '/snippets',
       has: [
         {
