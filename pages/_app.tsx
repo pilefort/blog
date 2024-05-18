@@ -8,7 +8,7 @@ import posthog from 'posthog-js'
 import { PostHogProvider } from 'posthog-js/react'
 
 import type { AppProps } from 'next/app'
-import { FlagValues } from "@vercel/flags/react" 
+import { FlagValues } from '@vercel/flags/react'
 
 if (typeof window !== 'undefined') {
   // checks that we are client-side
