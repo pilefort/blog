@@ -8,6 +8,7 @@ import posthog from 'posthog-js'
 import { PostHogProvider } from 'posthog-js/react'
 
 import type { AppProps } from 'next/app'
+import { FlagValues } from "@vercel/flags/react" 
 
 if (typeof window !== 'undefined') {
   // checks that we are client-side
@@ -45,6 +46,7 @@ function MyApp({ Component, pageProps }: AppProps) {
             <Component {...pageProps} />
           </PostHogProvider>
         </div>
+        <FlagValues values={{ fasterCheckoutPage: true, landingPageRedesign: true }} />
       </>
       <Footer />
     </>

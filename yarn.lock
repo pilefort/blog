@@ -3496,6 +3496,13 @@
     "@typescript-eslint/types" "5.59.6"
     eslint-visitor-keys "^3.3.0"
 
+"@vercel/flags@^2.4.0":
+  version "2.4.0"
+  resolved "https://registry.yarnpkg.com/@vercel/flags/-/flags-2.4.0.tgz#61f45e03bc57b302ac3ffdf947f8f3dc7103c360"
+  integrity sha512-TDakuU6z3ejks4DZs4Jz4Ef0k4KJF8j4Y4bbg9INUe8bxG9bdQnoVg4ptdw7eJsj1cV5reyjNSVdLbGxDyi4kg==
+  dependencies:
+    jose "5.2.1"
+
 "@webassemblyjs/ast@1.11.1":
   version "1.11.1"
   resolved "https://registry.yarnpkg.com/@webassemblyjs/ast/-/ast-1.11.1.tgz#2bfd767eae1a6996f432ff7e8d7fc75679c0b6a7"
@@ -7004,6 +7011,11 @@ jiti@^1.18.2:
   version "1.18.2"
   resolved "https://registry.yarnpkg.com/jiti/-/jiti-1.18.2.tgz#80c3ef3d486ebf2450d9335122b32d121f2a83cd"
   integrity sha512-QAdOptna2NYiSSpv0O/BwoHBSmz4YhpzJHyi+fnMRTXFjp7B8i/YG5Z8IfusxB1ufjcD2Sre1F3R+nX3fvy7gg==
+
+jose@5.2.1:
+  version "5.2.1"
+  resolved "https://registry.yarnpkg.com/jose/-/jose-5.2.1.tgz#ec3befe173896e592e2d9ef5f267d061ffb203c5"
+  integrity sha512-qiaQhtQRw6YrOaOj0v59h3R6hUY9NvxBmmnMfKemkqYmBB0tEc97NbLP7ix44VP5p9/0YHG8Vyhzuo5YBNwviA==
 
 "js-tokens@^3.0.0 || ^4.0.0", js-tokens@^4.0.0:
   version "4.0.0"
